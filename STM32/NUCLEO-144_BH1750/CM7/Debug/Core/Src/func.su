@@ -1,0 +1,4 @@
+../Core/Src/func.c:15:6:light_on_Init	16	static
+../Core/Src/func.c:55:9:light_on_array	16	static
+../Core/Src/func.c:73:9:light_decide	24	static
+../Core/Src/func.c:90:9:light_status_indicator	32	static
