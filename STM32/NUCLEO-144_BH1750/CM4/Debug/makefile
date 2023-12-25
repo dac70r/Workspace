@@ -61,8 +61,8 @@ all: main-build
 main-build: BH1750_CM4.elf secondary-outputs
 
 # Tool invocations
-BH1750_CM4.elf BH1750_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\denni\STM32CubeIDE\workspace_1.14.0\BH1750\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BH1750_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\denni\STM32CubeIDE\workspace_1.14.0\BH1750\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BH1750_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BH1750_CM4.elf BH1750_CM4.map: $(OBJS) $(USER_OBJS) C:\Users\denni\OneDrive\Documents\Code\STM32\NUCLEO-144_BH1750\CM4\STM32H755ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BH1750_CM4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\denni\OneDrive\Documents\Code\STM32\NUCLEO-144_BH1750\CM4\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BH1750_CM4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
