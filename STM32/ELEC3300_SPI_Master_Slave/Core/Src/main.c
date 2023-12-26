@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-char data_tx[10] = {1,2,3,4,5,6,7,8,9,10};
+char data_tx[10] = {65,66,67,68,69,70,71,72,73,74};
 char data_rx[10];
 /* USER CODE END Includes */
 
@@ -44,6 +44,8 @@ char data_rx[10];
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 
+UART_HandleTypeDef huart1;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -53,6 +55,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_SPI2_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -96,6 +99,7 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 HAL_SPI_Receive_IT(&hspi2,(uint8_t*)data_rx,10);
   /* USER CODE END 2 */
@@ -111,6 +115,9 @@ HAL_SPI_Receive_IT(&hspi2,(uint8_t*)data_rx,10);
 		  HAL_Delay(100);
 		HAL_SPI_Transmit(&hspi1,(uint8_t*)data_tx,10,100);
 		while(HAL_SPI_GetState(&hspi1)!=HAL_SPI_STATE_READY);
+		
+		// UART Transmit
+		HAL_UART_Transmit(&huart1,(uint8_t*)&data_rx,sizeof(data_rx),5000);
   }
   /* USER CODE END 3 */
 }
@@ -223,6 +230,39 @@ static void MX_SPI2_Init(void)
   /* USER CODE BEGIN SPI2_Init 2 */
 
   /* USER CODE END SPI2_Init 2 */
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 

@@ -17,6 +17,7 @@
 "elec3300_spi_master_slave\stm32f1xx_hal_exti.o"
 "elec3300_spi_master_slave\stm32f1xx_hal_tim.o"
 "elec3300_spi_master_slave\stm32f1xx_hal_tim_ex.o"
+"elec3300_spi_master_slave\stm32f1xx_hal_uart.o"
 "elec3300_spi_master_slave\system_stm32f1xx.o"
 --library_type=microlib --strict --scatter "ELEC3300_SPI_Master_Slave\ELEC3300_SPI_Master_Slave.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols

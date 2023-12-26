@@ -26,3 +26,4 @@ elec3300_spi_master_slave\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_
 elec3300_spi_master_slave\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 elec3300_spi_master_slave\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 elec3300_spi_master_slave\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
+elec3300_spi_master_slave\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
