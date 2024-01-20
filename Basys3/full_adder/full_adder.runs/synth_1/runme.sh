@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/denni/OneDrive/Documents/Code/Basys3/full_adder/full_adder.runs/synth_1'
+HD_PWD='C:/Users/denni/Documents/Code/Basys3/full_adder/full_adder.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log two_bit_adder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source two_bit_adder.tcl
+EAStep vivado -log four_bit_adder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source four_bit_adder.tcl

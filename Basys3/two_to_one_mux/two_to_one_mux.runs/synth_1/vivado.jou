@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jan 21 00:01:08 2024
+# Process ID: 31552
+# Current directory: C:/Users/denni/Documents/Code/Basys3/two_to_one_mux/two_to_one_mux.runs/synth_1
+# Command line: vivado.exe -log two_to_one_mux.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source two_to_one_mux.tcl
+# Log file: C:/Users/denni/Documents/Code/Basys3/two_to_one_mux/two_to_one_mux.runs/synth_1/two_to_one_mux.vds
+# Journal file: C:/Users/denni/Documents/Code/Basys3/two_to_one_mux/two_to_one_mux.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source two_to_one_mux.tcl -notrace

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/denni/OneDrive/Documents/Code/Basys3/full_adder/full_adder.runs/impl_1'
+HD_PWD='C:/Users/denni/Documents/Code/Basys3/full_adder/full_adder.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .write_bitstream.begin.rst
-EAStep vivado -log two_bit_adder.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source two_bit_adder.tcl -notrace
+/bin/touch .init_design.begin.rst
+EAStep vivado -log four_bit_adder.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source four_bit_adder.tcl -notrace
 
 
