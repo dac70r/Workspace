@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Jan 22 00:18:42 2024
+# Process ID: 5488
+# Current directory: C:/Users/denni/Documents/Code/Basys3/debouncing_ciruit/debouncing_ciruit.runs/synth_1
+# Command line: vivado.exe -log debouncing.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source debouncing.tcl
+# Log file: C:/Users/denni/Documents/Code/Basys3/debouncing_ciruit/debouncing_ciruit.runs/synth_1/debouncing.vds
+# Journal file: C:/Users/denni/Documents/Code/Basys3/debouncing_ciruit/debouncing_ciruit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source debouncing.tcl -notrace
