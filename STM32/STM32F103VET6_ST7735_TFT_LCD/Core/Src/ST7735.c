@@ -184,8 +184,8 @@ void ST7735_Init(uint8_t rotation)
     _rowstart = 1;
 #endif
     ST7735_SetRotation (rotation);
+		ST7735_FillRectangle(0,0,128,160,WHITE);
     ST7735_Unselect();
-
 }
 
 void ST7735_SetRotation(uint8_t m)
@@ -280,6 +280,25 @@ void ST7735_WriteChar(uint16_t x, uint16_t y, char ch, FontDef font, uint16_t co
     }
 }
 
+void ST7735_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data)
+{
+    if((x >= _width) || (y >= _height)) return;
+    if((x + w - 1) >= _width) return;
+    if((y + h - 1) >= _height) return;
+		uint32_t buffid = 0;
+	
+    ST7735_Select();
+    ST7735_SetAddressWindow(x, y, x+w-1, y+h-1);
+    //ST7735_WriteData((uint8_t*)data, sizeof(uint16_t)*w*h);
+		for(int32_t z=y; z<h+y; z++){
+			for(int32_t k=x; k<w+x; k++){
+				ST7735_DrawPixel(k, z, data[buffid]);
+				buffid++;
+			}
+		}
+    ST7735_Unselect();
+}
+
 void ST7735_WriteString(uint16_t x, uint16_t y, const char* str, FontDef font, uint16_t color, uint16_t bgcolor) {
     ST7735_Select();
 
@@ -320,20 +339,10 @@ void ST7735_FillRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16
     for(y = h; y > 0; y--) {
         for(x = w; x > 0; x--) {
             HAL_SPI_Transmit(&ST7735_SPI_PORT, data, sizeof(data), HAL_MAX_DELAY);
+						//HAL_SPI_Transmit_DMA(&ST7735_SPI_PORT, data, sizeof(data));
         }
     }
 
-    ST7735_Unselect();
-}
-
-void ST7735_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data) {
-    if((x >= _width) || (y >= _height)) return;
-    if((x + w - 1) >= _width) return;
-    if((y + h - 1) >= _height) return;
-
-    ST7735_Select();
-    ST7735_SetAddressWindow(x, y, x+w-1, y+h-1);
-    ST7735_WriteData((uint8_t*)data, sizeof(uint16_t)*w*h);
     ST7735_Unselect();
 }
 
@@ -343,4 +352,85 @@ void ST7735_InvertColors(bool invert) {
     ST7735_Unselect();
 }
 
+void ST7735_ScreenFill(uint16_t color)
+{
+	ST7735_FillRectangle(0, 0, 160, 128, color); // for orientation 3 
+}
+
+void ST7735_DrawEllipse(int16_t x0, int16_t y0, int16_t rx, int16_t ry, uint16_t color)
+{
+  if (rx < 2) return;
+  if (ry < 2) return;
+  int16_t x, y;
+  int32_t rx2 = rx * rx;
+  int32_t ry2 = ry * ry;
+  int32_t fx2 = 4 * rx2;
+  int32_t fy2 = 4 * ry2;
+  int32_t s;
+
+  for (x = 0, y = ry, s = 2 * ry2 + rx2 * (1-2 * ry); ry2 * x <= rx2 * y; x++)
+  {
+    ST7735_DrawPixel(x0 + x, y0 + y, color);
+    ST7735_DrawPixel(x0 - x, y0 + y, color);
+    ST7735_DrawPixel(x0 - x, y0 - y, color);
+    ST7735_DrawPixel(x0 + x, y0 - y, color);
+    if (s >= 0)
+    {
+      s += fx2 * (1 - y);
+      y--;
+    }
+    s += ry2 * ((4 * x) + 6);
+  }
+
+  for (x = rx, y = 0, s = 2 * rx2 + ry2 * (1 - 2 * rx); rx2 * y <= ry2 * x; y++)
+  {
+    ST7735_DrawPixel(x0 + x, y0 + y, color);
+    ST7735_DrawPixel(x0 - x, y0 + y, color);
+    ST7735_DrawPixel(x0 - x, y0 - y, color);
+    ST7735_DrawPixel(x0 + x, y0 - y, color);
+  if (s >= 0)
+  {
+    s += fy2 * (1 - x);
+    x--;
+  }
+  s += rx2 * ((4 * y) + 6);
+  }
+}
+
+/* Draw XBitMap Files (*.xbm), exported from GIMP,
+ * Usage: Export from GIMP to *.xbm, rename *.xbm to *.c and open in editor.
+ * C Array can be directly used with this function */
+void drawXBitmap(int16_t x, int16_t y, const uint8_t *bitmap, 
+            int16_t w, int16_t h, uint16_t colour) 
+{
+  int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(*(bitmap + j * byteWidth + i / 8) & (1 << (i % 8))) {
+        ST7735_DrawPixel(x+i, y+j, colour);
+      }
+    }
+  }
+}
+
+/* Draw a 1-bit colour bitmap at the specified x, y position from the
+ * provided bitmap buffer using colour as the foreground colour and 
+ * bg as the background colour. */
+void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h,
+            uint16_t colour, uint16_t bg) 
+{
+  int16_t i, j, byteWidth = (w + 7) / 8;
+  
+  for(j=0; j<h; j++) {
+    for(i=0; i<w; i++ ) {
+      if(*(bitmap + j * byteWidth + i / 8) & (128 >> (i & 7))) {
+        ST7735_DrawPixel(x+i, y+j, colour);
+      }
+      else {
+        ST7735_DrawPixel(x+i, y+j, bg);
+      }
+    }
+  }
+}
 

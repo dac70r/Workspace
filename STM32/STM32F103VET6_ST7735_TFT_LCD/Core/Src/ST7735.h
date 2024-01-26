@@ -89,18 +89,24 @@ extern SPI_HandleTypeDef hspi1;
 #define MAGENTA 0xF81F
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
+
 #define color565(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
 
 // call before initializing any SPI devices
 void ST7735_Unselect();
-
 void ST7735_Init(uint8_t rotation);
 void ST7735_SetRotation(uint8_t m);
 void ST7735_DrawPixel(uint16_t x, uint16_t y, uint16_t color);
 void ST7735_WriteString(uint16_t x, uint16_t y, const char* str, FontDef font, uint16_t color, uint16_t bgcolor);
 void ST7735_FillRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16_t color);
 void ST7735_FillScreen(uint16_t color);
-void ST7735_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data);
 void ST7735_InvertColors(bool invert);
-
+void ST7735_ScreenFill(uint16_t color); // fills the screen with a predefined color
+void ST7735_DrawEllipse(int16_t x0, int16_t y0, int16_t rx, int16_t ry, uint16_t color);
+void drawXBitmap(int16_t x, int16_t y, const uint8_t *bitmap, 
+            int16_t w, int16_t h, uint16_t colour);
+void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h,
+            uint16_t colour, uint16_t bg);
+void ST7735_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data);
 #endif // __ST7735_H__
+

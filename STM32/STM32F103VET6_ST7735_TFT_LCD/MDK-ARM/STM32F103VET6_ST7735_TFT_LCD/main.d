@@ -29,3 +29,4 @@ stm32f103vet6_st7735_tft_lcd\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1
 stm32f103vet6_st7735_tft_lcd\main.o: ../Core/Src/ST7735.h
 stm32f103vet6_st7735_tft_lcd\main.o: ../Core/Src/fonts.h
 stm32f103vet6_st7735_tft_lcd\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+stm32f103vet6_st7735_tft_lcd\main.o: ../Core/Src/testing.h

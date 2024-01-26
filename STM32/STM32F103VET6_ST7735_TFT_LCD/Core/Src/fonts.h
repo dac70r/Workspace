@@ -15,4 +15,11 @@ extern FontDef Font_7x10;
 extern FontDef Font_11x18;
 extern FontDef Font_16x26;
 
+extern unsigned short testImage[];
+extern const uint16_t gateBrandenburg_gate [];
+extern const uint8_t dot_matrix[];
+extern const uint8_t Brandenburg_gate_resized_bits[];
+extern const uint16_t image_data_cat_resized[];
+extern const uint8_t ming[];
+
 #endif // __FONTS_H__
