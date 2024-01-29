@@ -108,5 +108,6 @@ void drawXBitmap(int16_t x, int16_t y, const uint8_t *bitmap,
 void drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h,
             uint16_t colour, uint16_t bg);
 void ST7735_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data);
+void ST7735_DrawImagez(uint16_t x, uint16_t y, uint16_t w, uint16_t h, const uint16_t* data);
 #endif // __ST7735_H__
 
