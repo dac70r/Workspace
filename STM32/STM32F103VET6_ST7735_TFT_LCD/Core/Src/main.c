@@ -100,8 +100,8 @@ int main(void)
 	fillScreen(BLACK);
 	
 	/* Task 1 - Write your name */
-	//ST7735_WriteString(0, 0, "Welcome     Back dac70r", Font_11x18, YELLOW, BLACK);
-	//drawXBitmap(70,70,ming,16,16,YELLOW);
+	ST7735_WriteString(0, 0, "Welcome     Back dac70r", Font_11x18, YELLOW, BLACK);
+	drawXBitmap(70,70,ming,32,16,YELLOW);
 	
 	/* Task 2 - Draw a dot */
 	//ST7735_DrawPixel(120,120,RED);
@@ -114,8 +114,8 @@ int main(void)
 	//drawXBitmap(100,100,dot_matrix,8,8,RED);
 	//drawBitmap(100,100,dot_matrix,8,8,RED,GREEN); 
 	//ST7735_DrawImagez(0,0, 128, 90, (uint16_t*)test_128x128);
-	ST7735_DrawImagez(0,0,94,120, acBrandenburg_gate_cropped[0]);
-	//ST7735_DrawImage(0,70, 64, 51, image_data_cat_resized);
+	//ST7735_DrawImagez(0,0,94,120, acBrandenburg_gate_cropped[0]);
+	ST7735_DrawImage(0,70, 64, 51, image_data_cat_resized);
 	//ST7735_DrawImage(15, 20, 94, 120, acBrandenburg_gate_cropped_low);
 	//ST7735_DrawEllipse(100,100,9,6,GREEN);
 	//ST7735_DrawImage(60, 60, 64, 51, image_data_cat_resized);

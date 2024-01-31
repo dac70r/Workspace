@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Jan 22 21:55:06 2024
+| Date         : Mon Jan 29 22:24:01 2024
 | Host         : DennisesLegion running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file led_switch_timing_summary_routed.rpt -pb led_switch_timing_summary_routed.pb -rpx led_switch_timing_summary_routed.rpx -warn_on_violation
 | Design       : led_switch
@@ -202,7 +202,7 @@ Slack (MET) :             5.935ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.600ns  (logic 0.828ns (22.997%)  route 2.772ns (77.003%))
+  Data Path Delay:        3.600ns  (logic 0.828ns (22.998%)  route 2.772ns (77.002%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.858ns = ( 14.858 - 10.000 ) 
@@ -263,7 +263,7 @@ Slack (MET) :             5.935ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.600ns  (logic 0.828ns (22.997%)  route 2.772ns (77.003%))
+  Data Path Delay:        3.600ns  (logic 0.828ns (22.998%)  route 2.772ns (77.002%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.858ns = ( 14.858 - 10.000 ) 
@@ -324,7 +324,7 @@ Slack (MET) :             5.935ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.600ns  (logic 0.828ns (22.997%)  route 2.772ns (77.003%))
+  Data Path Delay:        3.600ns  (logic 0.828ns (22.998%)  route 2.772ns (77.002%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.858ns = ( 14.858 - 10.000 ) 
@@ -385,7 +385,7 @@ Slack (MET) :             5.935ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.600ns  (logic 0.828ns (22.997%)  route 2.772ns (77.003%))
+  Data Path Delay:        3.600ns  (logic 0.828ns (22.998%)  route 2.772ns (77.002%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.858ns = ( 14.858 - 10.000 ) 
@@ -438,7 +438,7 @@ Slack (MET) :             5.935ns  (required time - arrival time)
   -------------------------------------------------------------------
                          slack                                  5.935    
 
-Slack (MET) :             6.071ns  (required time - arrival time)
+Slack (MET) :             6.024ns  (required time - arrival time)
   Source:                 db1/clk4hz/counter_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            db1/clk4hz/counter_reg[13]/R
@@ -446,7 +446,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.438ns  (logic 0.828ns (24.083%)  route 2.610ns (75.917%))
+  Data Path Delay:        3.485ns  (logic 0.828ns (23.760%)  route 2.657ns (76.240%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.856ns = ( 14.856 - 10.000 ) 
@@ -477,7 +477,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X1Y11          LUT6 (Prop_lut6_I1_O)        0.124     7.574 f  db1/clk4hz/counter[0]_i_2/O
                          net (fo=3, routed)           0.165     7.739    db1/clk4hz/counter[0]_i_2_n_0
     SLICE_X1Y11          LUT2 (Prop_lut2_I1_O)        0.124     7.863 r  db1/clk4hz/counter[23]_i_1/O
-                         net (fo=23, routed)          0.733     8.595    db1/clk4hz/clk_out
+                         net (fo=23, routed)          0.779     8.642    db1/clk4hz/clk_out
     SLICE_X0Y12          FDRE                                         r  db1/clk4hz/counter_reg[13]/R
   -------------------------------------------------------------------    -------------------
 
@@ -495,11 +495,11 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X0Y12          FDRE (Setup_fdre_C_R)       -0.429    14.666    db1/clk4hz/counter_reg[13]
   -------------------------------------------------------------------
                          required time                         14.666    
-                         arrival time                          -8.595    
+                         arrival time                          -8.642    
   -------------------------------------------------------------------
-                         slack                                  6.071    
+                         slack                                  6.024    
 
-Slack (MET) :             6.071ns  (required time - arrival time)
+Slack (MET) :             6.024ns  (required time - arrival time)
   Source:                 db1/clk4hz/counter_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            db1/clk4hz/counter_reg[14]/R
@@ -507,7 +507,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.438ns  (logic 0.828ns (24.083%)  route 2.610ns (75.917%))
+  Data Path Delay:        3.485ns  (logic 0.828ns (23.760%)  route 2.657ns (76.240%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.856ns = ( 14.856 - 10.000 ) 
@@ -538,7 +538,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X1Y11          LUT6 (Prop_lut6_I1_O)        0.124     7.574 f  db1/clk4hz/counter[0]_i_2/O
                          net (fo=3, routed)           0.165     7.739    db1/clk4hz/counter[0]_i_2_n_0
     SLICE_X1Y11          LUT2 (Prop_lut2_I1_O)        0.124     7.863 r  db1/clk4hz/counter[23]_i_1/O
-                         net (fo=23, routed)          0.733     8.595    db1/clk4hz/clk_out
+                         net (fo=23, routed)          0.779     8.642    db1/clk4hz/clk_out
     SLICE_X0Y12          FDRE                                         r  db1/clk4hz/counter_reg[14]/R
   -------------------------------------------------------------------    -------------------
 
@@ -556,11 +556,11 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X0Y12          FDRE (Setup_fdre_C_R)       -0.429    14.666    db1/clk4hz/counter_reg[14]
   -------------------------------------------------------------------
                          required time                         14.666    
-                         arrival time                          -8.595    
+                         arrival time                          -8.642    
   -------------------------------------------------------------------
-                         slack                                  6.071    
+                         slack                                  6.024    
 
-Slack (MET) :             6.071ns  (required time - arrival time)
+Slack (MET) :             6.024ns  (required time - arrival time)
   Source:                 db1/clk4hz/counter_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            db1/clk4hz/counter_reg[15]/R
@@ -568,7 +568,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.438ns  (logic 0.828ns (24.083%)  route 2.610ns (75.917%))
+  Data Path Delay:        3.485ns  (logic 0.828ns (23.760%)  route 2.657ns (76.240%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.856ns = ( 14.856 - 10.000 ) 
@@ -599,7 +599,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X1Y11          LUT6 (Prop_lut6_I1_O)        0.124     7.574 f  db1/clk4hz/counter[0]_i_2/O
                          net (fo=3, routed)           0.165     7.739    db1/clk4hz/counter[0]_i_2_n_0
     SLICE_X1Y11          LUT2 (Prop_lut2_I1_O)        0.124     7.863 r  db1/clk4hz/counter[23]_i_1/O
-                         net (fo=23, routed)          0.733     8.595    db1/clk4hz/clk_out
+                         net (fo=23, routed)          0.779     8.642    db1/clk4hz/clk_out
     SLICE_X0Y12          FDRE                                         r  db1/clk4hz/counter_reg[15]/R
   -------------------------------------------------------------------    -------------------
 
@@ -617,11 +617,11 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X0Y12          FDRE (Setup_fdre_C_R)       -0.429    14.666    db1/clk4hz/counter_reg[15]
   -------------------------------------------------------------------
                          required time                         14.666    
-                         arrival time                          -8.595    
+                         arrival time                          -8.642    
   -------------------------------------------------------------------
-                         slack                                  6.071    
+                         slack                                  6.024    
 
-Slack (MET) :             6.071ns  (required time - arrival time)
+Slack (MET) :             6.024ns  (required time - arrival time)
   Source:                 db1/clk4hz/counter_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            db1/clk4hz/counter_reg[16]/R
@@ -629,7 +629,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.438ns  (logic 0.828ns (24.083%)  route 2.610ns (75.917%))
+  Data Path Delay:        3.485ns  (logic 0.828ns (23.760%)  route 2.657ns (76.240%))
   Logic Levels:           3  (LUT2=1 LUT3=1 LUT6=1)
   Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.856ns = ( 14.856 - 10.000 ) 
@@ -660,7 +660,7 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X1Y11          LUT6 (Prop_lut6_I1_O)        0.124     7.574 f  db1/clk4hz/counter[0]_i_2/O
                          net (fo=3, routed)           0.165     7.739    db1/clk4hz/counter[0]_i_2_n_0
     SLICE_X1Y11          LUT2 (Prop_lut2_I1_O)        0.124     7.863 r  db1/clk4hz/counter[23]_i_1/O
-                         net (fo=23, routed)          0.733     8.595    db1/clk4hz/clk_out
+                         net (fo=23, routed)          0.779     8.642    db1/clk4hz/clk_out
     SLICE_X0Y12          FDRE                                         r  db1/clk4hz/counter_reg[16]/R
   -------------------------------------------------------------------    -------------------
 
@@ -678,9 +678,9 @@ Slack (MET) :             6.071ns  (required time - arrival time)
     SLICE_X0Y12          FDRE (Setup_fdre_C_R)       -0.429    14.666    db1/clk4hz/counter_reg[16]
   -------------------------------------------------------------------
                          required time                         14.666    
-                         arrival time                          -8.595    
+                         arrival time                          -8.642    
   -------------------------------------------------------------------
-                         slack                                  6.071    
+                         slack                                  6.024    
 
 Slack (MET) :             6.159ns  (required time - arrival time)
   Source:                 db1/clk4hz/counter_reg[1]/C

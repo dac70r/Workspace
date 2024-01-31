@@ -7,7 +7,8 @@ reg clk_out;
 always @ (posedge clk)
 begin
     counter <= counter + 1;
-    if(counter == 12_500_000)
+    //if(counter == 12_500_000) //4hz
+    if(counter == 6_250_000) //8hz
         begin
             counter <= 0;
             clk_out <= ~clk_out;
