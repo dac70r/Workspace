@@ -1,62 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1705589221">
-  <File Type="ROUTE-PWR" Name="clk_1hz_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="clk_1hz.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="clk_1hz_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="clk_1hz_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="clk_1hz.msk"/>
-  <File Type="ROUTE-CLK" Name="clk_1hz_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="clk_1hz.vdi"/>
-  <File Type="BG-BIT" Name="clk_1hz.bit"/>
-  <File Type="BG-DRC" Name="clk_1hz.drc"/>
-  <File Type="BG-BGN" Name="clk_1hz.bgn"/>
-  <File Type="BG-BIN" Name="clk_1hz.bin"/>
-  <File Type="BITSTR-RBT" Name="clk_1hz.rbt"/>
-  <File Type="BITSTR-NKY" Name="clk_1hz.nky"/>
-  <File Type="BITSTR-BMM" Name="clk_1hz_bd.bmm"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="clk_1hz_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MMI" Name="clk_1hz.mmi"/>
-  <File Type="BITSTR-SYSDEF" Name="clk_1hz.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1706924764">
+  <File Type="BITSTR-BMM" Name="clk_4hz_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="clk_4hz_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="clk_4hz_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="clk_4hz_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="clk_4hz.tcl"/>
+  <File Type="OPT-TIMING" Name="clk_4hz_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="clk_4hz_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="clk_4hz_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="clk_4hz_reports.tcl"/>
+  <File Type="OPT-DRC" Name="clk_4hz_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="clk_4hz.hwdef"/>
+  <File Type="PWROPT-DCP" Name="clk_4hz_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="clk_4hz_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="clk_4hz_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="clk_4hz_placed.dcp"/>
+  <File Type="PLACE-IO" Name="clk_4hz_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="clk_4hz_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="clk_4hz_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="clk_4hz_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="clk_4hz_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="clk_4hz_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="clk_4hz_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="clk_4hz_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="clk_4hz_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="clk_4hz.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="clk_4hz_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="clk_4hz_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="clk_4hz_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="clk_4hz.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="clk_4hz_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="clk_4hz_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="clk_4hz_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="clk_4hz_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="clk_4hz_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="clk_4hz_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="clk_4hz_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="clk_4hz.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="clk_4hz_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="clk_4hz_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="clk_4hz_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="clk_4hz_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="clk_4hz_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="clk_4hz_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="clk_4hz_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="clk_4hz_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="clk_4hz_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="clk_4hz_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="clk_4hz_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="clk_4hz_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="clk_4hz_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="clk_4hz_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="clk_4hz_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="clk_4hz_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="clk_4hz_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="clk_4hz_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="clk_4hz_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="clk_4hz_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="clk_4hz_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="clk_4hz.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="clk_4hz_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="clk_4hz.rbt"/>
+  <File Type="BITSTR-NKY" Name="clk_4hz.nky"/>
+  <File Type="PDI-FILE" Name="clk_4hz.pdi"/>
+  <File Type="RCFI_FILE" Name="clk_4hz.rcfi"/>
+  <File Type="CFI_FILE" Name="clk_4hz.cfi"/>
+  <File Type="RNPI_FILE" Name="clk_4hz.rnpi"/>
+  <File Type="NPI_FILE" Name="clk_4hz.npi"/>
+  <File Type="RBD_FILE" Name="clk_4hz.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="clk_1hz.ltx"/>
+  <File Type="BITSTR-LTX" Name="clk_4hz.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="clk_4hz.sysdef"/>
+  <File Type="BG-BGN" Name="clk_4hz.bgn"/>
+  <File Type="BG-DRC" Name="clk_4hz.drc"/>
+  <File Type="RDI-RDI" Name="clk_4hz.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-DRC" Name="clk_1hz_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="clk_1hz.hwdef"/>
-  <File Type="PLACE-IO" Name="clk_1hz_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="clk_1hz_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="clk_1hz_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="clk_1hz_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="clk_1hz_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="clk_1hz_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="clk_1hz_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="clk_1hz_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="clk_1hz_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="clk_1hz_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="clk_1hz_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="clk_1hz_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="clk_1hz_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="clk_1hz_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="clk_1hz_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="clk_1hz_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW" Name="clk_1hz_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="clk_1hz_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="clk_1hz_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="clk_1hz_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="clk_1hz_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="clk_1hz_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="clk_1hz_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="clk_1hz_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="clk_1hz_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="clk_1hz_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="clk_1hz_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="clk_1hz_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="clk_1hz_methodology_drc_routed.rpx"/>
-  <File Type="PDI-FILE" Name="clk_1hz.pdi"/>
-  <File Type="RCFI_FILE" Name="clk_1hz.rcfi"/>
-  <File Type="CFI_FILE" Name="clk_1hz.cfi"/>
-  <File Type="RNPI_FILE" Name="clk_1hz.rnpi"/>
-  <File Type="NPI_FILE" Name="clk_1hz.npi"/>
-  <File Type="RBD_FILE" Name="clk_1hz.rbd"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/clk_1hz.v">
@@ -70,6 +88,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/clk_2hz.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../heart_beat/heart_beat.srcs/sources_1/new/clk_2hz.v"/>
         <Attr Name="ImportTime" Val="1705589458"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -79,7 +98,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="clk_1hz"/>
+      <Option Name="TopModule" Val="clk_4hz"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -114,6 +133,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

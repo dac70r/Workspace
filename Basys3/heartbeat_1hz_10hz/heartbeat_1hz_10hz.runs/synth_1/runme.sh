@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/denni/heart_beat/heart_beat.runs/synth_1'
+HD_PWD='C:/Users/denni/Documents/Code/Basys3/heartbeat_1hz_10hz/heartbeat_1hz_10hz.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log clk_1hz.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_1hz.tcl
+EAStep vivado -log clk_4hz.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_4hz.tcl

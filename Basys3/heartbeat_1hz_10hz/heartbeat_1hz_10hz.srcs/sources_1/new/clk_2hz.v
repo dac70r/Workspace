@@ -6,7 +6,7 @@ wire clk_out_10hz;       // 10hz clock
 reg clk_out_1hz;         // 1hz clock
 reg [2:0] count = 0;     // count from 0 to 5
 
-clk_10hz clk10hz(clk,clk_out_10hz);
+clk_2hz clk10hz(clk,clk_out_10hz);
 
 always @ (posedge clk_out_10hz)
 begin

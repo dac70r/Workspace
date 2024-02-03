@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu Jan 18 22:47:05 2024
-# Process ID: 14892
-# Current directory: C:/Users/denni/heart_beat/heart_beat.runs/synth_1
-# Command line: vivado.exe -log clk_1hz.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_1hz.tcl
-# Log file: C:/Users/denni/heart_beat/heart_beat.runs/synth_1/clk_1hz.vds
-# Journal file: C:/Users/denni/heart_beat/heart_beat.runs/synth_1\vivado.jou
+# Start of session at: Sat Feb  3 09:46:07 2024
+# Process ID: 5996
+# Current directory: C:/Users/denni/Documents/Code/Basys3/heartbeat_1hz_10hz/heartbeat_1hz_10hz.runs/synth_1
+# Command line: vivado.exe -log clk_4hz.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_4hz.tcl
+# Log file: C:/Users/denni/Documents/Code/Basys3/heartbeat_1hz_10hz/heartbeat_1hz_10hz.runs/synth_1/clk_4hz.vds
+# Journal file: C:/Users/denni/Documents/Code/Basys3/heartbeat_1hz_10hz/heartbeat_1hz_10hz.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source clk_1hz.tcl -notrace
+source clk_4hz.tcl -notrace
