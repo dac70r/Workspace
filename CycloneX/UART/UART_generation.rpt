@@ -1,0 +1,30 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\denni\Documents\Code\CycloneX\UART.qsys --block-symbol-file --output-directory=C:\Users\denni\Documents\Code\CycloneX\UART --family="Cyclone 10 LP" --part=10CL006YE144A7G
+Progress: Loading CycloneX/UART.qsys
+Progress: Reading input file
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\denni\Documents\Code\CycloneX\UART.qsys --synthesis=VERILOG --output-directory=C:\Users\denni\Documents\Code\CycloneX\UART\synthesis --family="Cyclone 10 LP" --part=10CL006YE144A7G
+Progress: Loading CycloneX/UART.qsys
+Progress: Reading input file
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: UART: Generating UART "UART" for QUARTUS_SYNTH
+Info: rs232_0: Starting Generation of RS232 UART
+Error: rs232_0: The input clock frequency must be known at generation time.
+Info: rs232_0: "UART" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: UART: Done "UART" with 2 modules, 6 files
+Error: qsys-generate failed with exit code 1: 1 Error, 0 Warnings
+Info: Finished: Create HDL design files for synthesis

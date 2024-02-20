@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Feb 19 23:21:23 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : blinky
+Top-level Entity Name : blinky
+Family : Cyclone 10 LP
+Device : 10CL025YU256I7G
+Timing Models : Final
+Total logic elements : 546 / 24,624 ( 2 % )
+    Total combinational functions : 439 / 24,624 ( 2 % )
+    Dedicated logic registers : 377 / 24,624 ( 2 % )
+Total registers : 377
+Total pins : 3 / 151 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 64 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
