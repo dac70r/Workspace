@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Feb  7 08:55:55 2024
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Standard Edition
+Revision Name : simple_blinky
+Top-level Entity Name : simple_blinky
+Family : Cyclone 10 LP
+Device : 10CL025YU256I7G
+Timing Models : Final
+Total logic elements : 39 / 24,624 ( < 1 % )
+    Total combinational functions : 39 / 24,624 ( < 1 % )
+    Dedicated logic registers : 24 / 24,624 ( < 1 % )
+Total registers : 24
+Total pins : 5 / 151 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

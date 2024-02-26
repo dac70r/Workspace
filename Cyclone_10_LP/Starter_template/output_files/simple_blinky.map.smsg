@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at simple_counter.v(11): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA/Cyclone_X/Starter_template/simple_counter.v Line: 11
