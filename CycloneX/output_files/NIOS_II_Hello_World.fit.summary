@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Feb 25 20:48:02 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : NIOS_II_Hello_World
+Top-level Entity Name : hello_world
+Family : Cyclone 10 LP
+Device : 10CL025YU256I7G
+Timing Models : Final
+Total logic elements : 1,628 / 24,624 ( 7 % )
+    Total combinational functions : 1,511 / 24,624 ( 6 % )
+    Dedicated logic registers : 881 / 24,624 ( 4 % )
+Total registers : 881
+Total pins : 10 / 151 ( 7 % )
+Total virtual pins : 0
+Total memory bits : 142,336 / 608,256 ( 23 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

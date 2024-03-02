@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Jan 29 22:23:01 2024
-# Process ID: 33680
+# Start of session at: Sat Mar  2 21:01:36 2024
+# Process ID: 18428
 # Current directory: C:/Users/denni/Documents/Code/Basys3/toggle_flip_flop/toggle_flip_flop.runs/impl_1
 # Command line: vivado.exe -log led_switch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source led_switch.tcl -notrace
 # Log file: C:/Users/denni/Documents/Code/Basys3/toggle_flip_flop/toggle_flip_flop.runs/impl_1/led_switch.vdi

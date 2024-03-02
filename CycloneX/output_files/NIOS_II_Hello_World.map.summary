@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Feb 25 20:47:52 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : NIOS_II_Hello_World
+Top-level Entity Name : hello_world
+Family : Cyclone 10 LP
+Total logic elements : 1,678
+    Total combinational functions : 1,507
+    Dedicated logic registers : 889
+Total registers : 889
+Total pins : 10
+Total virtual pins : 0
+Total memory bits : 142,336
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
