@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Feb  3 16:19:55 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : blinky
+Top-level Entity Name : blinky
+Family : Cyclone 10 LP
+Total logic elements : 96
+    Total combinational functions : 96
+    Dedicated logic registers : 54
+Total registers : 54
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
