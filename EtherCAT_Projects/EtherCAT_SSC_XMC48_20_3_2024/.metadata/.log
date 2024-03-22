@@ -1,0 +1,2608 @@
+!SESSION 2024-03-20 09:05:26.119 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-20 09:06:03.183
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-20 09:06:03.260
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-20 09:06:03.261
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-20 09:06:06.380
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:06:06.674
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 09:06:06.746
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 09:06:07.555
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 09:06:08.410
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 09:06:18.452
+!MESSAGE Time taken for postProjectCreation: 0
+
+!ENTRY org.eclipse.equinox.ds 1 0 2024-03-20 09:07:22.297
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 09:07:23.956
+!MESSAGE Resource '/ETHCAT_SSC_XMC48' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2024-03-20 09:07:23.998
+!MESSAGE Resource '/ETHCAT_SSC_XMC48' is not open.
+
+!ENTRY Import 1 0 2024-03-20 09:07:24.017
+!MESSAGE USER_ACTION : Time taken for importing project: ETHCAT_SSC_XMC48 into workspace is : 12193 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 09:07:24.293
+!MESSAGE Resource '/ETHCAT_SSC_XMC48' is not open.
+
+!ENTRY APPSTORE 1 0 2024-03-20 09:07:24.654
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 274 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:24.661
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:24.962
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-20 09:07:26.349
+!MESSAGE Time Taken By De-Serialization  : 967 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 09:07:26.355
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:26.493
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1533 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:26.522
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 25 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:26.552
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 29 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:26.554
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:28.262
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1707 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 09:07:29.069
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 4412 msec 
+!SESSION 2024-03-20 11:26:20.620 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-03-20 11:26:28.050
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:32.062
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:32.127
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:32.128
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:35.264
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-20 11:26:37.907
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 293 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:37.942
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 3 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:38.080
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-20 11:26:39.593
+!MESSAGE Time Taken By De-Serialization  : 998 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:26:39.603
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:39.736
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1656 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:39.761
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 22 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:39.788
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 26 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:39.790
+!MESSAGE USER_ACTION : Time taken for updating views is: 0 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:41.273
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1483 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:41.549
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 3610 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:41.932
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:26:41.986
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:26:42.995
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:26:43.802
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:26:45.994
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:26:46.083
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-20 11:26:46.203
+!MESSAGE Time Taken By Serialization  : 119 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:26:46.437
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:26:46.495
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 241 msec 
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:46.496
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-20 11:26:46.747
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-03-20 11:37:27.660 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-20 11:37:36.354
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-20 11:37:36.419
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-20 11:37:36.420
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-20 11:37:39.542
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-20 11:37:39.811
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 267 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:39.838
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 3 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:40.053
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-20 11:37:41.304
+!MESSAGE Time Taken By De-Serialization  : 843 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:37:41.310
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:41.430
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1380 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:41.454
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 20 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:41.486
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 31 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:41.488
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:42.599
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1110 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:42.842
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 3007 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:37:43.229
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:37:43.266
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:37:44.138
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:37:44.940
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:47:28.428
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:47:28.632
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-20 11:47:28.721
+!MESSAGE Time Taken By Serialization  : 88 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:47:29.195
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:47:29.251
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 474 msec 
+
+!ENTRY SOLVER 1 0 2024-03-20 11:47:29.252
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-20 11:47:29.504
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-03-20 11:54:31.460 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-20 11:54:42.208
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-20 11:54:42.272
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-20 11:54:42.273
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-20 11:54:45.400
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-20 11:54:45.738
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 334 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:45.820
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:46.092
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-20 11:54:47.628
+!MESSAGE Time Taken By De-Serialization  : 1044 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 11:54:47.637
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:47.766
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1675 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:47.800
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 30 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:47.817
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 16 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:47.819
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:49.217
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1397 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:49.530
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 3713 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 11:54:49.854
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:54:49.928
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:54:50.960
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-20 11:54:51.990
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 14:42:32.779
+!MESSAGE USER_ACTION : Time taken for opening editor is: 258 msec 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:42:43.128
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.181
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\xmc4800.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.197
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP144.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.203
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.214
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.221
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\2\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.228
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.234
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.240
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.247
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\6\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.254
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\14\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.261
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.265
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.269
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.273
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.276
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.281
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.285
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.289
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 14:42:43.293
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:42:47.260
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> p1_rxd1 --> Not Selected
+
+!ENTRY SOLVER 1 0 2024-03-20 14:42:47.269
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-20 14:42:47.398
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-20 14:42:49.862
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:42:50.964
+!MESSAGE USER_ACTION : Pin Selection : 3729
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:43:01.701
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> led_link_act_p0 --> Not Selected
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:43:02.795
+!MESSAGE USER_ACTION : Pin Selection : 1115
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 14:43:28.320
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed without saving user configured data..!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:24:05.851
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:25:55.741
+!MESSAGE USER_ACTION : Signal Load : 9
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:26:07.500
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:26:27.083
+!MESSAGE USER_ACTION : Time taken for opening editor is: 123 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:26:47.269
+!MESSAGE USER_ACTION : Setting value = "A" of "gcombo_input_selection" in APP: EVENT_DETECTOR/4.0.6/1
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:26:47.296
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:26:47.297
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:26:47.387
+!MESSAGE Time taken for serialization in msec: 90
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:26:47.388
+!MESSAGE *****************************
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:27:02.532
+!MESSAGE USER_ACTION : Time taken for opening editor is: 87 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:27:05.855
+!MESSAGE USER_ACTION : Setting value = "B" of "gcombo_input_selection" in APP: EVENT_DETECTOR/4.0.6/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:27:05.858
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:27:05.859
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:27:05.885
+!MESSAGE Time taken for serialization in msec: 26
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:27:05.886
+!MESSAGE *****************************
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:27:34.194
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:27:44.066
+!MESSAGE USER_ACTION : Signal Load : 19
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:27:53.840
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:27:55.101
+!MESSAGE USER_ACTION : Time taken for opening editor is: 89 msec 
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:27:58.244
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:23.737
+!MESSAGE USER_ACTION : Signal Load : 15
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:28.802
+!MESSAGE USER_ACTION : Signal Load : 11
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:28.836
+!MESSAGE USER_ACTION : Signal Load : 33
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:37.897
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:41.334
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:28:54.831
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:29:19.501
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:29:26.526
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:29:29.159
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2024-03-20 16:29:33.015
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:29:50.312
+!MESSAGE USER_ACTION : Time taken for opening editor is: 85 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:30:01.415
+!MESSAGE USER_ACTION : Time taken for opening editor is: 79 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-20 16:30:37.125
+!MESSAGE USER_ACTION : Time taken for opening editor is: 611 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:31:03.019
+!MESSAGE USER_ACTION : Setting value = "Strong Driver Soft Edge" of "gcombo_ch1_out1_strng" in APP: PWM_CCU8/4.1.30/0
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.139
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\scu\0\MANIFEST\scu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.153
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\eru\1\MANIFEST\eru.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.172
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\cpu\0\MANIFEST\cpu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.222
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu8\0\MANIFEST\ccu8.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.233
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\fce\0\MANIFEST\fce.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.241
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu4\3\MANIFEST\ccu4.dd
+
+!ENTRY APPSTORE 1 0 2024-03-20 16:31:04.253
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ecat\0\MANIFEST\ecat.dd
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.279
+!MESSAGE Time taken for processing complete solver result is: 154 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.280
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.281
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.359
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-20 16:31:04.519
+!MESSAGE Time Taken By Serialization  : 159 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.606
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:04.661
+!MESSAGE Time taken for serialization in msec: 382
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:31:04.738
+!MESSAGE USER_ACTION : Time taken for refreshing PWM_CCU8/4.1.30/0 editor is : 9
+
+!ENTRY SOLVER 1 0 2024-03-20 16:31:04.740
+!MESSAGE Time Taken By Solver for UI Action: 1679 ms
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:31:06.731
+!MESSAGE USER_ACTION : Setting value = "Medium Driver" of "gcombo_ch1_out1_strng" in APP: PWM_CCU8/4.1.30/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:07.850
+!MESSAGE Time taken for processing complete solver result is: 31 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:07.851
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:07.852
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:07.912
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-20 16:31:08.014
+!MESSAGE Time Taken By Serialization  : 100 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:08.084
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 16:31:08.134
+!MESSAGE Time taken for serialization in msec: 282
+
+!ENTRY UI_EDITOR 1 0 2024-03-20 16:31:08.198
+!MESSAGE USER_ACTION : Time taken for refreshing PWM_CCU8/4.1.30/0 editor is : 10
+
+!ENTRY SOLVER 1 0 2024-03-20 16:31:08.199
+!MESSAGE Time Taken By Solver for UI Action: 1432 ms
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 16:31:20.672
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 16:31:23.205
+!MESSAGE USER_ACTION : Pins Load : 372
+
+!ENTRY PIN_CONFIG 1 0 2024-03-20 16:31:36.296
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-20 16:48:39.105
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-20 16:48:39.106
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 16:48:55.700
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 16:48:55.915
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.ui 4 4 2024-03-20 16:49:00.668
+!MESSAGE Conflicting handlers for org.eclipse.debug.ui.commands.DebugLast: {ActionDelegateHandlerProxy(null,org.eclipse.debug.internal.ui.actions.DebugLastAction in org.eclipse.debug.ui)} vs {ActionDelegateHandlerProxy(null,com.dave.activeproject.ui.actions.ActiveProjDebugLastAction in com.dave.activeproject)}
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 16:50:01.428
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 16:50:01.620
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2024-03-20 16:50:12.335
+!MESSAGE Debug session 'ETHCAT_SSC_XMC48 Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 17:17:07.913
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-20 17:17:08.114
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 17:27:38.944
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 17:27:39.071
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-20 17:27:39.260
+!MESSAGE Time Taken By Serialization  : 187 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-20 17:27:39.541
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-20 17:27:39.650
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 117 msec 
+
+!ENTRY SOLVER 1 0 2024-03-20 17:27:39.652
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-20 17:27:39.681
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-03-21 10:31:23.461 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-03-21 10:31:33.598
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY SOLVER 1 0 2024-03-21 10:31:40.272
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-21 10:31:40.336
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-21 10:31:40.337
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-21 10:31:43.459
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:31:44.037
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 272 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:44.156
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:44.330
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2024-03-21 10:31:45.181
+!MESSAGE Project facet jst.ejb has not been defined. It is used in plugin org.eclipse.jst.j2ee.
+
+!ENTRY COMMON 1 0 2024-03-21 10:31:45.942
+!MESSAGE Time Taken By De-Serialization  : 1118 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 10:31:45.949
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:46.087
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1758 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:46.113
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 22 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:46.144
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 29 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:46.145
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:47.553
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1406 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:48.299
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 4147 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 10:31:48.681
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 10:31:48.741
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 10:31:49.613
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 10:31:50.453
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:09.285
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.331
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\xmc4800.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.344
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP144.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.350
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.361
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.369
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\2\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.376
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.383
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.389
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.395
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\6\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.400
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\14\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.405
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.408
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.412
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.415
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.418
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.421
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.424
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.427
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 10:41:09.430
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:13.991
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> p1_link --> Not Selected
+
+!ENTRY SOLVER 1 0 2024-03-21 10:41:14.000
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-21 10:41:14.121
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-21 10:41:16.546
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:17.618
+!MESSAGE USER_ACTION : Pin Selection : 3654
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:23.516
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> p0_txd1 --> Not Selected
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:24.596
+!MESSAGE USER_ACTION : Pin Selection : 1098
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:29.376
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> p1_rxd2 --> Not Selected
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:41:30.441
+!MESSAGE USER_ACTION : Pin Selection : 1085
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:42:00.716
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : ECAT_SSC_0 --> p1_txd3 --> Not Selected
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:42:01.783
+!MESSAGE USER_ACTION : Pin Selection : 1082
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:04.128
+!MESSAGE USER_ACTION : Pins Load : 382
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:11.089
+!MESSAGE USER_ACTION : Pins Load : 376
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:15.703
+!MESSAGE USER_ACTION : Pins Load : 378
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:19.354
+!MESSAGE USER_ACTION : Pins Load : 377
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:24.026
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed without saving user configured data..!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:38.307
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:45.776
+!MESSAGE USER_ACTION : Pins Load : 374
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:49.689
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:43:57.864
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 10:46:41.385
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-21 11:10:53.649
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-21 11:10:53.650
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:11:10.273
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:11:10.632
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:16:59.839
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:17:00.140
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2024-03-21 11:29:23.405
+!MESSAGE Debug session 'ETHCAT_SSC_XMC48 Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2024-03-21 11:29:27.104
+!MESSAGE Debug session 'ETHCAT_SSC_XMC48 Debug' already started. Terminate the first one before restarting.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-21 11:29:36.558
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@58b9898d): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2024-03-21 11:29:36.558
+!MESSAGE Interrupt failed.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2024-03-21 11:29:44.674
+!MESSAGE Debug session 'ETHCAT_SSC_XMC48 Debug' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:30:51.307
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2024-03-21 11:31:03.506
+!MESSAGE J-Link GDB Server failed: 
+Could not connect to J-Link. Please check if plugged into USB port or Ethernet switch.
+
+For more details, see the JLinkGDBServerCL.exe console.
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 11:31:49.485
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 11:31:49.547
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 11:31:49.688
+!MESSAGE Time Taken By Serialization  : 139 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 11:31:49.896
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:31:49.948
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 190 msec 
+
+!ENTRY SOLVER 1 0 2024-03-21 11:31:49.949
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-21 11:31:50.212
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-03-21 11:31:55.913 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-21 11:32:05.436
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-21 11:32:05.507
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-21 11:32:05.508
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-21 11:32:08.630
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:32:08.852
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 219 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:08.984
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:09.202
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-21 11:32:10.537
+!MESSAGE Time Taken By De-Serialization  : 911 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 11:32:10.543
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:10.670
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1468 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:10.694
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 20 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:10.707
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 11 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:10.709
+!MESSAGE USER_ACTION : Time taken for updating views is: 0 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:11.828
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1118 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:12.130
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 3149 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 11:32:12.486
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 11:32:12.551
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 11:32:13.685
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-21 11:32:14.397
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-21 11:32:19.260
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-21 11:32:19.263
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 11:32:28.614
+!MESSAGE USER_ACTION : Time taken for opening editor is: 252 msec 
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:32:36.026
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 11:32:36.218
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.ui 4 4 2024-03-21 11:32:37.392
+!MESSAGE Conflicting handlers for org.eclipse.debug.ui.commands.DebugLast: {ActionDelegateHandlerProxy(null,com.dave.activeproject.ui.actions.ActiveProjDebugLastAction in com.dave.activeproject)} vs {ActionDelegateHandlerProxy(null,org.eclipse.debug.internal.ui.actions.DebugLastAction in org.eclipse.debug.ui)}
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 11:37:29.017
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.056
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\xmc4800.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.068
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP144.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.074
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.082
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.087
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\2\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.093
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.097
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.101
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.105
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\6\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.110
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\14\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.114
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.117
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.119
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.121
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.123
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.126
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.129
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.132
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 11:37:29.134
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 11:38:02.533
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 13:42:49.547
+!MESSAGE USER_ACTION : Time taken for opening editor is: 39 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 13:43:07.831
+!MESSAGE USER_ACTION : Time taken for opening editor is: 677 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 13:43:18.279
+!MESSAGE USER_ACTION : Time taken for opening editor is: 32 msec 
+
+!ENTRY CODEGEN 1 0 2024-03-21 13:43:29.505
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 13:43:31.029
+!MESSAGE Code generation completed...
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 13:44:32.156
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY SOLVER 1 0 2024-03-21 13:44:51.261
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-21 13:44:51.308
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-21 13:44:53.679
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 13:44:54.072
+!MESSAGE USER_ACTION : Pins Load : 2832
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 13:44:57.720
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : PWM_CCU8_0 --> PWM_CCU8 CH1 Invert Out --> #58 ( P5.8 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 13:44:57.740
+!MESSAGE USER_ACTION : Pin Selection : 40
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 13:45:19.362
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:13.733
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:13.752
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:13.931
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/0
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.145
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\scu\0\MANIFEST\scu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.155
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\eru\1\MANIFEST\eru.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.176
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\cpu\0\MANIFEST\cpu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.238
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu8\0\MANIFEST\ccu8.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.248
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\fce\0\MANIFEST\fce.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.261
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu4\3\MANIFEST\ccu4.dd
+
+!ENTRY APPSTORE 1 0 2024-03-21 14:12:15.295
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ecat\0\MANIFEST\ecat.dd
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.311
+!MESSAGE Time taken for processing complete solver result is: 179 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.313
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.314
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.396
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:15.592
+!MESSAGE Time Taken By Serialization  : 195 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.696
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:15.787
+!MESSAGE Time taken for serialization in msec: 475
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:29.828
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:29.845
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:29.873
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/1
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.008
+!MESSAGE Time taken for processing complete solver result is: 30 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.009
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.011
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.061
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:31.204
+!MESSAGE Time Taken By Serialization  : 142 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.265
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:31.322
+!MESSAGE Time taken for serialization in msec: 312
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:33.487
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:33.503
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:33.540
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/2
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.649
+!MESSAGE Time taken for processing complete solver result is: 18 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.650
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.650
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.710
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:34.817
+!MESSAGE Time Taken By Serialization  : 106 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.899
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:34.958
+!MESSAGE Time taken for serialization in msec: 309
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:35.939
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:35.958
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:35.973
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/3
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.070
+!MESSAGE Time taken for processing complete solver result is: 16 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.071
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.072
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.121
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:37.214
+!MESSAGE Time Taken By Serialization  : 92 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.277
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:37.324
+!MESSAGE Time taken for serialization in msec: 253
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:38.152
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:38.170
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:38.186
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/4
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.589
+!MESSAGE Time taken for processing complete solver result is: 24 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.590
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.591
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.654
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:39.769
+!MESSAGE Time Taken By Serialization  : 114 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.833
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:39.887
+!MESSAGE Time taken for serialization in msec: 296
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:41.572
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:41.592
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:41.608
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/5
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:42.752
+!MESSAGE Time taken for processing complete solver result is: 18 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:42.753
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:42.754
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:42.807
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:42.890
+!MESSAGE Time Taken By Serialization  : 83 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:42.956
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:43.002
+!MESSAGE Time taken for serialization in msec: 248
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:43.995
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:44.021
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:44.037
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/6
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.163
+!MESSAGE Time taken for processing complete solver result is: 21 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.164
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.165
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.217
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:45.303
+!MESSAGE Time Taken By Serialization  : 84 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.376
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:45.433
+!MESSAGE Time taken for serialization in msec: 269
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:46.485
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:46.504
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:12:46.525
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/7
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.655
+!MESSAGE Time taken for processing complete solver result is: 15 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.656
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.657
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.709
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:47.799
+!MESSAGE Time Taken By Serialization  : 88 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.860
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:47.916
+!MESSAGE Time taken for serialization in msec: 260
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:12:50.826
+!MESSAGE USER_ACTION : Time taken for opening editor is: 118 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:12:53.049
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.580
+!MESSAGE Time taken for processing complete solver result is: 12 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.581
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.582
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.632
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:12:54.735
+!MESSAGE Time Taken By Serialization  : 103 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.811
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:12:54.856
+!MESSAGE Time taken for serialization in msec: 274
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:12:54.926
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 17
+
+!ENTRY SOLVER 1 0 2024-03-21 14:12:54.927
+!MESSAGE Time Taken By Solver for UI Action: 1850 ms
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:13:21.693
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:13:23.195
+!MESSAGE Code generation completed...
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:13:27.536
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:13:34.165
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:13:39.974
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:13:39.996
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:13:40.011
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/8
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.186
+!MESSAGE Time taken for processing complete solver result is: 21 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.187
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.188
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.230
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:13:41.336
+!MESSAGE Time Taken By Serialization  : 106 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.425
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:41.488
+!MESSAGE Time taken for serialization in msec: 300
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:13:41.551
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 12
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:13:46.637
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:13:46.692
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/8
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:47.858
+!MESSAGE Time taken for processing complete solver result is: 10 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:47.859
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:47.860
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:47.901
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:13:48.000
+!MESSAGE Time Taken By Serialization  : 97 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:48.057
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:13:48.103
+!MESSAGE Time taken for serialization in msec: 244
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:13:48.154
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 10
+
+!ENTRY SOLVER 1 0 2024-03-21 14:13:48.155
+!MESSAGE Time Taken By Solver for UI Action: 1458 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:14:00.216
+!MESSAGE USER_ACTION : Time taken for opening editor is: 26 msec 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:02.935
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:07.604
+!MESSAGE USER_ACTION : Pins Load : 450
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:16.394
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_0 --> pin --> #102 ( P1.14 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:17.569
+!MESSAGE USER_ACTION : Pin Selection : 1204
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:28.289
+!MESSAGE USER_ACTION : Pins Load : 458
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:29.610
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_1 --> pin --> #136 ( P0.14 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:30.786
+!MESSAGE USER_ACTION : Pin Selection : 1193
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:38.132
+!MESSAGE USER_ACTION : Pins Load : 453
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:43.503
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_2 --> pin --> #134 ( P3.14 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:44.637
+!MESSAGE USER_ACTION : Pin Selection : 1152
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:50.516
+!MESSAGE USER_ACTION : Pins Load : 439
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:52.216
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_3 --> pin --> #135 ( P0.15 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:53.354
+!MESSAGE USER_ACTION : Pin Selection : 1155
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:14:59.762
+!MESSAGE USER_ACTION : Pins Load : 439
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:01.000
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_4 --> pin --> #110 ( P1.2 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:02.112
+!MESSAGE USER_ACTION : Pin Selection : 1130
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:08.280
+!MESSAGE USER_ACTION : Pins Load : 427
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:13.667
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_5 --> pin --> #10 ( P3.11 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:14.782
+!MESSAGE USER_ACTION : Pin Selection : 1132
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:15.944
+!MESSAGE USER_ACTION : Pins Load : 442
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:20.327
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_5 --> pin --> #8 ( P3.13 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:21.419
+!MESSAGE USER_ACTION : Pin Selection : 1108
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:28.150
+!MESSAGE USER_ACTION : Pins Load : 423
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:35.056
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_6 --> pin --> #81 ( P5.3 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:36.451
+!MESSAGE USER_ACTION : Pin Selection : 1411
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:43.840
+!MESSAGE USER_ACTION : Pins Load : 467
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:47.493
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_7 --> pin --> #10 ( P3.11 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:48.584
+!MESSAGE USER_ACTION : Pin Selection : 1108
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:54.609
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is not closed without saving user configured data..!
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.571
+!MESSAGE Time taken for processing complete solver result is: 71 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.572
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.573
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.643
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:15:55.788
+!MESSAGE Time Taken By Serialization  : 145 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.849
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:15:55.893
+!MESSAGE Time taken for serialization in msec: 320
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:15:55.965
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 11
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:55.966
+!MESSAGE USER_ACTION : Saved User configured Pin Data.!
+
+!ENTRY SOLVER 1 0 2024-03-21 14:15:55.967
+!MESSAGE Time Taken By Solve and Save Manual PIN Configuration  : 481 ms
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:15:57.637
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:16:04.232
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 14:16:36.188
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:16:37.976
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:16:39.150
+!MESSAGE Code generation completed...
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:23:46.895
+!MESSAGE USER_ACTION : App Getting Added: SYSTIMER [4.1.18]
+
+!ENTRY SOLVER 1 0 2024-03-21 14:23:46.913
+!MESSAGE USER_ACTION : Creating an APP: SYSTIMER [4.1.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:23:46.950
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CPU_CTRL_XMC4 [4.0.2] lStoreAppVersion: 4.0.16:p
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:23:46.968
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.2] lStoreAppVersion: 4.0.22:p
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 14:23:47.013
+!MESSAGE USER_ACTION : Created APP: SYSTIMER [4.1.18]-->http://resources/4.1.18/app/SYSTIMER/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.182
+!MESSAGE Time taken for processing complete solver result is: 48 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.183
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.184
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.233
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 14:23:48.344
+!MESSAGE Time Taken By Serialization  : 110 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.438
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:23:48.513
+!MESSAGE Time taken for serialization in msec: 330
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:23:58.856
+!MESSAGE USER_ACTION : Time taken for opening editor is: 74 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 14:24:02.213
+!MESSAGE USER_ACTION : Setting value = "2" of "ginteger_swtimers" in APP: SYSTIMER/4.1.18/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:24:02.216
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:24:02.217
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:24:02.261
+!MESSAGE Time taken for serialization in msec: 43
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 14:24:02.262
+!MESSAGE *****************************
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:24:06.935
+!MESSAGE USER_ACTION : Time taken for opening editor is: 479 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:24:08.523
+!MESSAGE USER_ACTION : Time taken for opening editor is: 171 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:24:10.876
+!MESSAGE USER_ACTION : Time taken for opening editor is: 41 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 14:24:28.782
+!MESSAGE USER_ACTION : Time taken for opening editor is: 37 msec 
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:39:22.852
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 14:39:24.345
+!MESSAGE Code generation completed...
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 14:46:36.857
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 14:46:37.066
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:00:23.208
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:00:23.393
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:13.135
+!MESSAGE USER_ACTION : Time taken for opening editor is: 116 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:19.178
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/1
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.362
+!MESSAGE Time taken for processing complete solver result is: 14 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.363
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.363
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.408
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:01:20.502
+!MESSAGE Time Taken By Serialization  : 94 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.564
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:20.620
+!MESSAGE Time taken for serialization in msec: 258
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:20.682
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/1 editor is : 13
+
+!ENTRY SOLVER 1 0 2024-03-21 15:01:20.684
+!MESSAGE Time Taken By Solver for UI Action: 1449 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:22.630
+!MESSAGE USER_ACTION : Time taken for opening editor is: 117 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:38.128
+!MESSAGE USER_ACTION : Time taken for opening editor is: 45 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:40.363
+!MESSAGE USER_ACTION : Time taken for opening editor is: 36 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:42.256
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/2
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.422
+!MESSAGE Time taken for processing complete solver result is: 15 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.423
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.424
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.465
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:01:43.550
+!MESSAGE Time Taken By Serialization  : 83 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.626
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:43.686
+!MESSAGE Time taken for serialization in msec: 262
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:43.762
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/2 editor is : 19
+
+!ENTRY SOLVER 1 0 2024-03-21 15:01:43.763
+!MESSAGE Time Taken By Solver for UI Action: 1474 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:45.446
+!MESSAGE USER_ACTION : Time taken for opening editor is: 117 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:47.942
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/3
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.105
+!MESSAGE Time taken for processing complete solver result is: 22 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.106
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.107
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.145
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:01:49.226
+!MESSAGE Time Taken By Serialization  : 81 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.289
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:49.342
+!MESSAGE Time taken for serialization in msec: 236
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:49.406
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/3 editor is : 14
+
+!ENTRY SOLVER 1 0 2024-03-21 15:01:49.407
+!MESSAGE Time Taken By Solver for UI Action: 1434 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:50.882
+!MESSAGE USER_ACTION : Time taken for opening editor is: 116 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:52.418
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/4
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.587
+!MESSAGE Time taken for processing complete solver result is: 11 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.589
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.589
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.630
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:01:53.728
+!MESSAGE Time Taken By Serialization  : 97 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.793
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:53.847
+!MESSAGE Time taken for serialization in msec: 259
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:53.927
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/4 editor is : 20
+
+!ENTRY SOLVER 1 0 2024-03-21 15:01:53.928
+!MESSAGE Time Taken By Solver for UI Action: 1477 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:54.659
+!MESSAGE USER_ACTION : Time taken for opening editor is: 128 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:56.662
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/5
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:57.816
+!MESSAGE Time taken for processing complete solver result is: 16 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:57.817
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:57.818
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:57.860
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:01:57.961
+!MESSAGE Time Taken By Serialization  : 100 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:58.027
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:01:58.078
+!MESSAGE Time taken for serialization in msec: 261
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:01:58.142
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/5 editor is : 19
+
+!ENTRY SOLVER 1 0 2024-03-21 15:01:58.143
+!MESSAGE Time Taken By Solver for UI Action: 1451 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:01:58.807
+!MESSAGE USER_ACTION : Time taken for opening editor is: 136 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:02:00.824
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/6
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.020
+!MESSAGE Time taken for processing complete solver result is: 11 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.021
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.021
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.071
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:02:02.182
+!MESSAGE Time Taken By Serialization  : 111 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.248
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:02.294
+!MESSAGE Time taken for serialization in msec: 273
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:02:02.369
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/6 editor is : 18
+
+!ENTRY SOLVER 1 0 2024-03-21 15:02:02.371
+!MESSAGE Time Taken By Solver for UI Action: 1514 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-21 15:02:03.093
+!MESSAGE USER_ACTION : Time taken for opening editor is: 124 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:02:04.756
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/7
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:05.916
+!MESSAGE Time taken for processing complete solver result is: 11 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:05.917
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:05.918
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:05.962
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 15:02:06.061
+!MESSAGE Time Taken By Serialization  : 99 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:06.124
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 15:02:06.175
+!MESSAGE Time taken for serialization in msec: 258
+
+!ENTRY UI_EDITOR 1 0 2024-03-21 15:02:06.236
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/7 editor is : 14
+
+!ENTRY SOLVER 1 0 2024-03-21 15:02:06.236
+!MESSAGE Time Taken By Solver for UI Action: 1446 ms
+
+!ENTRY CODEGEN 1 0 2024-03-21 15:02:14.415
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 15:02:15.723
+!MESSAGE Code generation completed...
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:06:06.764
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:06:06.983
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:24:57.540
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:24:57.732
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:25:46.105
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:25:46.287
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:34:22.241
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:34:22.419
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 15:40:59.216
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 15:41:02.320
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 15:41:06.754
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY PIN_CONFIG 1 0 2024-03-21 15:41:22.098
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:59:03.023
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 15:59:03.215
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:14.333
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:14.414
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.604
+!MESSAGE Time taken for processing complete solver result is: 41 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.604
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.605
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.650
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:15.773
+!MESSAGE Time Taken By Serialization  : 122 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.839
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:15.888
+!MESSAGE Time taken for serialization in msec: 284
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:15.941
+!MESSAGE Time Taken By Solver for UI Action: 1522 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:21.045
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:21.135
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/1
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.261
+!MESSAGE Time taken for processing complete solver result is: 13 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.262
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.263
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.301
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:22.396
+!MESSAGE Time Taken By Serialization  : 95 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.457
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:22.499
+!MESSAGE Time taken for serialization in msec: 237
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:22.552
+!MESSAGE Time Taken By Solver for UI Action: 1414 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:27.712
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:27.795
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/2
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:28.939
+!MESSAGE Time taken for processing complete solver result is: 11 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:28.939
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:28.940
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:28.979
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:29.059
+!MESSAGE Time Taken By Serialization  : 79 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:29.118
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:29.176
+!MESSAGE Time taken for serialization in msec: 237
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:29.235
+!MESSAGE Time Taken By Solver for UI Action: 1437 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:34.080
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:34.159
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/3
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.328
+!MESSAGE Time taken for processing complete solver result is: 10 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.329
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.330
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.369
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:35.455
+!MESSAGE Time Taken By Serialization  : 86 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.518
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:35.572
+!MESSAGE Time taken for serialization in msec: 243
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:35.624
+!MESSAGE Time Taken By Solver for UI Action: 1461 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:39.645
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:39.722
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/4
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:40.823
+!MESSAGE Time taken for processing complete solver result is: 11 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:40.824
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:40.825
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:40.865
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:40.947
+!MESSAGE Time Taken By Serialization  : 82 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:41.007
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:41.051
+!MESSAGE Time taken for serialization in msec: 226
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:41.108
+!MESSAGE Time Taken By Solver for UI Action: 1384 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:45.330
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:45.410
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/5
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.500
+!MESSAGE Time taken for processing complete solver result is: 13 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.501
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.511
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.553
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:46.640
+!MESSAGE Time Taken By Serialization  : 86 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.698
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:46.748
+!MESSAGE Time taken for serialization in msec: 247
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:46.799
+!MESSAGE Time Taken By Solver for UI Action: 1386 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:51.202
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:51.276
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/6
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.385
+!MESSAGE Time taken for processing complete solver result is: 10 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.386
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.386
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.420
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:52.513
+!MESSAGE Time Taken By Serialization  : 93 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.576
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:52.624
+!MESSAGE Time taken for serialization in msec: 239
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:52.684
+!MESSAGE Time Taken By Solver for UI Action: 1406 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:57.914
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:11:58.003
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.18/app/DIGITAL_IO/7
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.088
+!MESSAGE Time taken for processing complete solver result is: 16 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.089
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.089
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.123
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:11:59.222
+!MESSAGE Time Taken By Serialization  : 97 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.281
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:11:59.326
+!MESSAGE Time taken for serialization in msec: 238
+
+!ENTRY SOLVER 1 0 2024-03-21 16:11:59.376
+!MESSAGE Time Taken By Solver for UI Action: 1365 ms
+
+!ENTRY CODEGEN 1 0 2024-03-21 16:14:56.897
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-21 16:14:58.255
+!MESSAGE Code generation completed...
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 16:18:42.262
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-21 16:18:42.450
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:30:11.250
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:30:11.313
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-21 16:30:11.478
+!MESSAGE Time Taken By Serialization  : 164 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-21 16:30:11.687
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-21 16:30:11.705
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 19 msec 
+
+!ENTRY SOLVER 1 0 2024-03-21 16:30:11.707
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-21 16:30:11.976
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-21 16:30:12.962
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitor@1e352ca6): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2024-03-21 16:30:12.962
+!MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-03-21 16:30:13.109
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor354.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:531)
+	at org.eclipse.cdt.dsf.service.DsfSession.access$2(DsfSession.java:475)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:398)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.RejectedExecutionException: Display org.eclipse.swt.widgets.Display@297c9a9b is disposed
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.execute(SimpleDisplayExecutor.java:85)
+	at org.eclipse.cdt.dsf.ui.viewmodel.AbstractVMAdapter.handleEvent(AbstractVMAdapter.java:260)
+	at org.eclipse.cdt.dsf.ui.viewmodel.datamodel.AbstractDMVMAdapter.eventDispatched(AbstractDMVMAdapter.java:103)
+	... 13 more
+Caused by: org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1262)
+	at org.eclipse.swt.widgets.Display.asyncExec(Display.java:710)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.execute(SimpleDisplayExecutor.java:77)
+	... 15 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Display org.eclipse.swt.widgets.Display@297c9a9b is disposed
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.execute(SimpleDisplayExecutor.java:85)
+	at org.eclipse.cdt.dsf.ui.viewmodel.AbstractVMAdapter.handleEvent(AbstractVMAdapter.java:260)
+	at org.eclipse.cdt.dsf.ui.viewmodel.datamodel.AbstractDMVMAdapter.eventDispatched(AbstractDMVMAdapter.java:103)
+	at sun.reflect.GeneratedMethodAccessor354.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:531)
+	at org.eclipse.cdt.dsf.service.DsfSession.access$2(DsfSession.java:475)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:398)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.swt.SWTException: Device is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4533)
+	at org.eclipse.swt.SWT.error(SWT.java:4448)
+	at org.eclipse.swt.SWT.error(SWT.java:4419)
+	at org.eclipse.swt.widgets.Display.error(Display.java:1262)
+	at org.eclipse.swt.widgets.Display.asyncExec(Display.java:710)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.execute(SimpleDisplayExecutor.java:77)
+	... 15 more
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-03-21 16:30:14.039
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2024-03-22 08:37:08.604 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-22 08:37:25.726
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-22 08:37:25.799
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-22 08:37:25.799
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-22 08:37:28.936
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:37:29.476
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 349 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:29.559
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 3 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:29.868
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-22 08:37:31.508
+!MESSAGE Time Taken By De-Serialization  : 1057 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:37:31.518
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:31.658
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1791 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:31.684
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 23 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:31.708
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 23 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:31.710
+!MESSAGE USER_ACTION : Time taken for updating views is: 0 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:33.258
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1547 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:33.985
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 4430 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:37:34.352
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-22 08:37:34.421
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-22 08:37:39.201
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-22 08:37:45.711
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:16.534
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\xmc4800.dd
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:42:23.082
+!MESSAGE USER_ACTION : App Getting Added: DIGITAL_IO [4.0.18]
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:23.103
+!MESSAGE USER_ACTION : Creating an APP: DIGITAL_IO [4.0.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 08:42:23.309
+!MESSAGE USER_ACTION : Created APP: DIGITAL_IO [4.0.18]-->http://resources/4.0.18/app/DIGITAL_IO/0
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:23.324
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.8.00.F144.ALL\device\xmc4800\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:23.445
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:26.040
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\.metadata\.plugins\solver_data\XMC4.8.00.F144.ALL\xmc4500_solver.eco
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.247
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\scu\0\MANIFEST\scu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.259
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\eru\1\MANIFEST\eru.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.283
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\cpu\0\MANIFEST\cpu.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.294
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP144.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.324
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.344
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.350
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\6\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.362
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu8\0\MANIFEST\ccu8.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.369
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\peripheral\fce\0\MANIFEST\fce.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.373
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.382
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ccu4\3\MANIFEST\ccu4.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.386
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.413
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.1\peripheral\ecat\0\MANIFEST\ecat.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.426
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.437
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:27.445
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\2\MANIFEST\p.dd
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.453
+!MESSAGE Time taken for processing complete solver result is: 224 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.455
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.455
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.541
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-22 08:42:27.703
+!MESSAGE Time Taken By Serialization  : 162 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.791
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:27.844
+!MESSAGE Time taken for serialization in msec: 389
+
+!ENTRY APP_CONFIGURATOR 1 0 2024-03-22 08:42:31.897
+!MESSAGE USER_ACTION : Time taken for opening editor is: 204 msec 
+
+!ENTRY UI_EDITOR 1 0 2024-03-22 08:42:34.237
+!MESSAGE USER_ACTION : Setting value = "Input/Output" of "gcombo_io_function" in APP: DIGITAL_IO/4.0.18/0
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.511
+!MESSAGE Time taken for processing complete solver result is: 24 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.512
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.513
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.588
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-22 08:42:35.702
+!MESSAGE Time Taken By Serialization  : 112 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.778
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:35.828
+!MESSAGE Time taken for serialization in msec: 315
+
+!ENTRY UI_EDITOR 1 0 2024-03-22 08:42:35.903
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 20
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:35.903
+!MESSAGE Time Taken By Solver for UI Action: 1639 ms
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:38.148
+!MESSAGE USER_ACTION : Opening Manual Pin Allocator Dialog.!
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.165
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.171
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\p\14\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.174
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.177
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.180
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.183
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.186
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.188
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2024-03-22 08:42:38.192
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\48.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:42.993
+!MESSAGE USER_ACTION : Pins Load : 460
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:45.049
+!MESSAGE USER_ACTION : User selection (Pin Allocator) : DIGITAL_IO_0 --> pin --> #102 ( P1.14 ) 
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:46.203
+!MESSAGE USER_ACTION : Pin Selection : 1176
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:47.796
+!MESSAGE Time taken for processing complete solver result is: 20 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:47.797
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:47.797
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:47.845
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-22 08:42:47.951
+!MESSAGE Time Taken By Serialization  : 106 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:48.026
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 08:42:48.071
+!MESSAGE Time taken for serialization in msec: 275
+
+!ENTRY UI_EDITOR 1 0 2024-03-22 08:42:48.137
+!MESSAGE USER_ACTION : Time taken for refreshing DIGITAL_IO/4.0.18/0 editor is : 12
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:48.139
+!MESSAGE USER_ACTION : Saved User configured Pin Data.!
+
+!ENTRY SOLVER 1 0 2024-03-22 08:42:48.140
+!MESSAGE Time Taken By Solve and Save Manual PIN Configuration  : 377 ms
+
+!ENTRY PIN_CONFIG 1 0 2024-03-22 08:42:49.625
+!MESSAGE USER_ACTION : Manual Pin Allocator Dialog is closed..!
+
+!ENTRY CODEGEN 1 0 2024-03-22 08:42:53.077
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2024-03-22 08:42:54.553
+!MESSAGE Code generation completed...
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-22 08:45:08.032
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-22 08:45:08.033
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-22 08:46:18.438
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-22 08:46:18.711
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-22 09:40:41.114
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-22 09:40:41.378
+!MESSAGE C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\ARM-GCC-49/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 10:04:32.768
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 10:04:32.810
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-22 10:04:32.910
+!MESSAGE Time Taken By Serialization  : 100 ms :: C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-22 10:04:32.989
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-22 10:04:33.003
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 14 msec 
+
+!ENTRY SOLVER 1 0 2024-03-22 10:04:33.004
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-22 10:04:33.263
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-03-22 10:04:35.027
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
