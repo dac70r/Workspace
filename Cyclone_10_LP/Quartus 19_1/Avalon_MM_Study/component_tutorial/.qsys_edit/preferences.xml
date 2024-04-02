@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
+   <inputclock preferredWidth="262" />
+   <name preferredWidth="228" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Project,Project/My Own IP Cores,Library" />
+ <window width="1782" height="935" x="126" y="76" />
+ <generation path="_PROJECT_NAME_" />
+</preferences>
