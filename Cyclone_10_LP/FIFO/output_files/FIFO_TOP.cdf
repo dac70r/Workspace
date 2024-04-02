@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Desktop/Cyclone_10_LP/16_3_2024_FIFO_2/output_files/") File("FIFO_TOP.sof") MfrSpec(OpMask(1));
+		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/FIFO/output_files/") File("FIFO_TOP.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,0 +1,19 @@
+Fitter Status : Successful - Tue Apr 02 16:11:10 2024
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : component_tutorial
+Top-level Entity Name : component_tutorial
+Family : Cyclone V
+Device : 5CGXFC3B7F23C8
+Timing Models : Final
+Logic utilization (in ALMs) : 643 / 13,460 ( 5 % )
+Total registers : 837
+Total pins : 30 / 222 ( 14 % )
+Total virtual pins : 0
+Total block memory bits : 43,008 / 1,382,400 ( 3 % )
+Total DSP Blocks : 0 / 57 ( 0 % )
+Total HSSI RX PCSs : 0 / 3 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 3 ( 0 % )
+Total HSSI TX PCSs : 0 / 3 ( 0 % )
+Total HSSI TX Channels : 0 / 3 ( 0 % )
+Total PLLs : 0 / 7 ( 0 % )
+Total DLLs : 0 / 3 ( 0 % )
