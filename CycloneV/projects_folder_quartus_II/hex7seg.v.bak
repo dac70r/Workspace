@@ -1,0 +1,17 @@
+/* This module takes a hex symbol and displays it using the 7-segment display */
+
+module hex7seg(hex,display);
+
+input [3:0]hex;
+output [0:6]display;
+
+always @ (hex)
+begin
+
+
+
+end
+
+
+
+endmodule

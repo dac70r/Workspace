@@ -37,8 +37,8 @@ void setup()
   Serial.begin(9600);
   while (!Serial);             // Leonardo: wait for serial monitor
   Serial.println("\nI2C Scanner");
-  pinMode(13, OUTPUT);    // sets the digital pin 13 as output
-  digitalWrite(13, HIGH); // sets the digital pin 13 on -> BY1750-GY302 address different when ADDR is high
+  //pinMode(13, OUTPUT);    // sets the digital pin 13 as output
+  //digitalWrite(13, HIGH); // sets the digital pin 13 on -> BY1750-GY302 address different when ADDR is high
 }
 
 

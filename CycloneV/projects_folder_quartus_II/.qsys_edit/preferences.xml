@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+   <name preferredWidth="248" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="353" />
+   <clocksource preferredWidth="353" />
+   <frequency preferredWidth="339" />
+  </columns>
+ </clocktable>
+ <window width="1670" height="817" x="113" y="88" />
+ <library
+   expandedCategories="Library,Project,Project/System,Project/My Own IP Cores" />
+ <hdlexample language="VERILOG" />
+</preferences>
