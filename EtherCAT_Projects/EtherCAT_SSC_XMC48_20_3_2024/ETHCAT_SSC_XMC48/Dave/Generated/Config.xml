@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Project MotherSystem_Version="" Name="ETHCAT_SSC_XMC48" Path="C:\Users\guan-ming.dennis-won\Documents\Infineon\EtherCAT_Slave_Design\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48">
+<Project MotherSystem_Version="" Name="ETHCAT_SSC_XMC48" Path="C:\Users\denni\Documents\Code\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48">
     <COMPILER>
         <Name>ARM_GCC_HOME</Name>
         <Version/>

@@ -2606,3 +2606,449 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.d
 
 !ENTRY org.eclipse.core.jobs 2 2 2024-03-22 10:04:35.027
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2024-03-29 22:45:03.877 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY org.eclipse.equinox.ds 1 0 2024-03-29 22:46:14.551
+!MESSAGE Could not bind a reference of component org.eclipse.fx.core.internal.JUtilLoggerFactory. The reference is: Reference[name = registerHandler, interface = java.util.logging.Handler, policy = dynamic, policy-option = greedy, cardinality = 0..n, target = null, bind = registerHandler, unbind = unregisterHandler, updated = null]
+
+!ENTRY SOLVER 1 0 2024-03-29 22:46:23.122
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-29 22:46:23.254
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-29 22:46:23.255
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-29 22:46:23.488
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-29 22:46:24.952
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 1038 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:25.146
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 5 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:25.764
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-29 22:46:28.284
+!MESSAGE Time Taken By De-Serialization  : 1475 ms :: C:\Users\denni\Documents\Code\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:46:28.312
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:28.531
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 2767 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:28.557
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 23 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:28.576
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 19 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:28.578
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:30.300
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1722 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:30.849
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 5708 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:46:31.192
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:46:31.288
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:46:33.136
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:46:34.599
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-29 22:47:10.175
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-29 22:47:10.176
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-29 22:47:12.069
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-29 22:47:12.120
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@586a4be9): Status ERROR: ilg.gnuarmeclipse.debug.gdbjtag code=-1 Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed. org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.' resulted in an error.
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:47:12.120
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:47:12.122
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2024-03-29 22:47:12.131
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:582)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$4(Sequence.java:574)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleErrorOrWarning(Sequence.java:431)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleFailure(RequestMonitor.java:424)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:387)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:47:12.131
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:47:12.131
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:47:32.974
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:47:33.119
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-29 22:47:33.284
+!MESSAGE Time Taken By Serialization  : 164 ms :: C:\Users\denni\Documents\Code\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:47:33.492
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:47:33.658
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 329 msec 
+
+!ENTRY SOLVER 1 0 2024-03-29 22:47:33.658
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-29 22:47:33.912
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-03-29 22:52:02.615 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-03-29 22:52:17.283
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-03-29 22:52:17.354
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-03-29 22:52:17.355
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-03-29 22:52:17.496
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2024-03-29 22:52:17.724
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.8.00.F144.ALL] is: 225 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:17.750
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:18.028
+!MESSAGE USER_ACTION : Active project:ETHCAT_SSC_XMC48[ Software ID:XMC4.8.00.F144.ALL]
+
+!ENTRY COMMON 1 0 2024-03-29 22:52:19.198
+!MESSAGE Time Taken By De-Serialization  : 732 ms :: C:\Users\denni\Documents\Code\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:52:19.207
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:19.357
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1330 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:19.384
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 24 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:19.398
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 13 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:19.413
+!MESSAGE USER_ACTION : Time taken for updating views is: 14 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:20.781
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1367 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:21.217
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 3470 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:52:21.574
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:52:21.629
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY CODEGEN 1 0 2024-03-29 22:52:23.667
+!MESSAGE Code generation started...
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:52:25.337
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY CODEGEN 1 0 2024-03-29 22:52:25.601
+!MESSAGE Code generation completed...
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-03-29 22:52:26.350
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-29 22:52:30.402
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2024-03-29 22:52:30.403
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-29 22:52:37.623
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-29 22:52:37.677
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@73c1683): Status ERROR: ilg.gnuarmeclipse.debug.gdbjtag code=-1 Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed. org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.' resulted in an error.
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:52:37.677
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:52:37.678
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2024-03-29 22:52:37.687
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:582)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$4(Sequence.java:574)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleErrorOrWarning(Sequence.java:431)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleFailure(RequestMonitor.java:424)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:387)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:52:37.687
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:52:37.688
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.jlink 4 1 2024-03-29 22:53:23.164
+!MESSAGE C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2024-03-29 22:53:23.205
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@45301947): Status ERROR: ilg.gnuarmeclipse.debug.gdbjtag code=-1 Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed. org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.' resulted in an error.
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:53:23.205
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:53:23.206
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2024-03-29 22:53:23.207
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:582)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$4(Sequence.java:574)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleErrorOrWarning(Sequence.java:431)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleFailure(RequestMonitor.java:424)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:387)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 1 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:53:23.207
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:474)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	... 3 more
+!SUBENTRY 2 ilg.gnuarmeclipse.debug.gdbjtag 4 -1 2024-03-29 22:53:23.207
+!MESSAGE Launching command [C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe -if swd -device XMC4800-F144x2048 -endian little -speed 1000 -port 2331 -swoport 2332 -telnetport 2333 -vd -ir -localhostonly 1 -singlerun -strict -timeout 0] failed.
+!STACK 0
+java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLinkGDBServerCL.exe": Launching failed
+	at org.eclipse.cdt.utils.spawner.Spawner.exec(Spawner.java:349)
+	at org.eclipse.cdt.utils.spawner.Spawner.<init>(Spawner.java:91)
+	at org.eclipse.cdt.utils.spawner.ProcessFactory.exec(ProcessFactory.java:91)
+	at ilg.gnuarmeclipse.debug.gdbjtag.DebugUtils.exec(DebugUtils.java:471)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend.launchGdbServerProcess(GnuArmGdbServerBackend.java:333)
+	at ilg.gnuarmeclipse.debug.gdbjtag.dsf.GnuArmGdbServerBackend$GdbServerStep$2.run(GnuArmGdbServerBackend.java:780)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:53:26.623
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:53:26.715
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2024-03-29 22:53:26.855
+!MESSAGE Time Taken By Serialization  : 140 ms :: C:\Users\denni\Documents\Code\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024\ETHCAT_SSC_XMC48\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2024-03-29 22:53:27.068
+!MESSAGE ****************Cleaning project data:ETHCAT_SSC_XMC48*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2024-03-29 22:53:27.110
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 204 msec 
+
+!ENTRY SOLVER 1 0 2024-03-29 22:53:27.110
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-03-29 22:53:27.363
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
