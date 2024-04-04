@@ -9,12 +9,12 @@ preplace inst PLL_complete.nios2_gen2_0 -pg 1 -lvl 2 -y 140
 preplace inst PLL_complete.blink_0 -pg 1 -lvl 4 -y 70
 preplace inst PLL_complete.clk_0 -pg 1 -lvl 1 -y 30
 preplace netloc EXPORT<net_container>PLL_complete</net_container>(SLAVE)blink_0.conduit_end,(SLAVE)PLL_complete.to_outside) 1 0 4 NJ 100 NJ 100 NJ 120 NJ
-preplace netloc EXPORT<net_container>PLL_complete</net_container>(SLAVE)PLL_complete.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(SLAVE)blink_0.clock_sink,(MASTER)altpll_0.c0) 1 3 1 990
+preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(MASTER)nios2_gen2_0.data_master,(SLAVE)altpll_0.pll_slave) 1 2 1 750
 preplace netloc EXPORT<net_container>PLL_complete</net_container>(SLAVE)clk_0.clk_in,(SLAVE)PLL_complete.clk) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(SLAVE)altpll_0.pll_slave,(MASTER)nios2_gen2_0.data_master) 1 2 1 710
-preplace netloc INTERCONNECT<net_container>PLL_complete</net_container>(MASTER)clk_0.clk_reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)nios2_gen2_0.reset,(SLAVE)blink_0.clock_reset,(SLAVE)altpll_0.inclk_interface_reset) 1 1 3 290 60 690 140 950
-preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave) 1 1 2 310 280 690
-preplace netloc FAN_OUT<net_container>PLL_complete</net_container>(MASTER)clk_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)altpll_0.inclk_interface) 1 1 2 310 40 N
-preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(MASTER)altpll_0.c0,(SLAVE)blink_0.clock_sink) 1 3 1 930
-levelinfo -pg 1 0 80 1090
-levelinfo -hier PLL_complete 90 120 430 740 980 1080
+preplace netloc EXPORT<net_container>PLL_complete</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)PLL_complete.reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>PLL_complete</net_container>(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave) 1 1 2 330 320 690
+preplace netloc FAN_OUT<net_container>PLL_complete</net_container>(MASTER)clk_0.clk,(SLAVE)altpll_0.inclk_interface,(SLAVE)nios2_gen2_0.clk) 1 1 2 310 280 710
+preplace netloc INTERCONNECT<net_container>PLL_complete</net_container>(SLAVE)blink_0.clock_reset,(MASTER)clk_0.clk_reset,(SLAVE)altpll_0.inclk_interface_reset,(SLAVE)nios2_gen2_0.reset,(MASTER)nios2_gen2_0.debug_reset_request) 1 1 3 290 300 770 140 1010
+levelinfo -pg 1 0 80 1150
+levelinfo -hier PLL_complete 90 120 450 800 1040 1140

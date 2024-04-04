@@ -8,6 +8,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "to_outside_1_led",
+					"strict" : false
+				},
+				{
 					"name" : "reset_reset_n",
 					"strict" : false
 				},
