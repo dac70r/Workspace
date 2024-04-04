@@ -1,0 +1,11 @@
+module PLL_avalon_interface (clock, resetn, LED);
+
+// signals for connecting to the Avalon fabric
+input clock, resetn;
+
+// signal for exporting register contents outside of the embedded system
+output LED;
+
+PLL_Platform_Desginer U1 ( .clock(clock), .resetn(resetn), .LED(LED));
+
+endmodule
