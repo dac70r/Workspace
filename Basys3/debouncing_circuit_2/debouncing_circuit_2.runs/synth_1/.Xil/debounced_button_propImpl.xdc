@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/denni/Documents/Code/Basys3/debouncing_circuit_2/debouncing_circuit_2.srcs/constrs_1/new/my_constraints_debouncing_circuit_2.xdc rfile:../../../debouncing_circuit_2.srcs/constrs_1/new/my_constraints_debouncing_circuit_2.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property src_info {type:XDC file:1 line:48 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U16 [get_ports {led}]
+set_property src_info {type:XDC file:1 line:112 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U18 [get_ports push_button]

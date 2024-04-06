@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Apr  6 12:10:02 2024
+# Process ID: 8928
+# Current directory: C:/Users/denni/Documents/Code/Basys3/debouncing_circuit_2/debouncing_circuit_2.runs/synth_1
+# Command line: vivado.exe -log debounced_button.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source debounced_button.tcl
+# Log file: C:/Users/denni/Documents/Code/Basys3/debouncing_circuit_2/debouncing_circuit_2.runs/synth_1/debounced_button.vds
+# Journal file: C:/Users/denni/Documents/Code/Basys3/debouncing_circuit_2/debouncing_circuit_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source debounced_button.tcl -notrace
