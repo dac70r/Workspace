@@ -2,7 +2,7 @@
 
 Reference manual - https://digilent.com/reference/programmable-logic/basys-3/reference-manual      
 
-#Feature Projects: 
+# Feature Projects: 
 ## Traffic Controller Project
 
 This project was developed to gain experience working with state machines and was referenced from: https://github.com/FPGADude/Digital-Design with minor alterations. 
