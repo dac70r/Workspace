@@ -19,11 +19,9 @@ debouncing db1( CLK100MHZ, btnC, led_output_btnC); // led_output_btnL is the out
 // whenever btnC is pressed, the status_led is modified
 always @ (posedge led_output_btnC)
 begin
-    if(status_led == 1)
-        begin status_led <=0;end 
-        else begin status_led <= status_led + 1;end 
-    end
+    status_led <= status_led + 1;
+end
 
-assign led = status_led;
+assign led = status_led;h
     
 endmodule
