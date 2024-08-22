@@ -1,0 +1,18 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst My_First_NIOS_II.DEBUG -pg 1 -lvl 3 -y 150
+preplace inst My_First_NIOS_II.HelloNios -pg 1 -lvl 1 -y 110
+preplace inst My_First_NIOS_II.HelloNios.clock_bridge -pg 1
+preplace inst My_First_NIOS_II.clk_0 -pg 1 -lvl 2 -y 80
+preplace inst My_First_NIOS_II.HelloNios.cpu -pg 1
+preplace inst My_First_NIOS_II.HelloNios.reset_bridge -pg 1
+preplace inst My_First_NIOS_II -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst My_First_NIOS_II.SRAM -pg 1 -lvl 3 -y 70
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II</net_container>(MASTER)clk_0.clk_reset,(SLAVE)DEBUG.reset,(SLAVE)HelloNios.reset,(SLAVE)SRAM.reset1) 1 0 3 80 270 NJ 270 700
+preplace netloc INTERCONNECT<net_container>My_First_NIOS_II</net_container>(MASTER)HelloNios.data_master,(MASTER)HelloNios.instruction_master,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)SRAM.s1,(SLAVE)HelloNios.debug_mem_slave) 1 0 3 60 250 460 160 720
+preplace netloc EXPORT<net_container>My_First_NIOS_II</net_container>(SLAVE)clk_0.clk_in,(SLAVE)My_First_NIOS_II.clk) 1 0 2 NJ 50 NJ
+preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II</net_container>(MASTER)HelloNios.debug_reset_request,(SLAVE)clk_0.clk_in_reset) 1 1 1 440
+preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II</net_container>(SLAVE)DEBUG.irq,(MASTER)HelloNios.irq) 1 1 2 N 200 NJ
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II</net_container>(SLAVE)DEBUG.clk,(SLAVE)SRAM.clk1,(MASTER)clk_0.clk,(SLAVE)HelloNios.clk) 1 0 3 60 30 NJ 70 680
+levelinfo -pg 1 0 30 900
+levelinfo -hier My_First_NIOS_II 40 200 510 750 890

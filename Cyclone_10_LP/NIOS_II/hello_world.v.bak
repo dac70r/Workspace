@@ -1,9 +1,0 @@
-module hello_world(
-	// reset and clock
-		input clock,
-		input reset,
-		
-	// LED and push button
-		input [3:0] LED,
-		output [3:0] button
-);

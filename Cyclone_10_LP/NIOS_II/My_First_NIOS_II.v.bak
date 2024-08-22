@@ -1,0 +1,12 @@
+
+
+
+module my_first_niosii(
+
+	input CLOCK_50,
+	input RESET,
+	
+	output [3:0] LEDG
+);
+
+endmodule

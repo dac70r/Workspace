@@ -8,14 +8,15 @@ Progress: Adding blink_0 [blink 1.0]
 Progress: Parameterizing module blink_0
 Progress: Adding blink_1 [blink 1.0]
 Progress: Parameterizing module blink_1
+Progress: Adding blink_2 [blink 1.0]
+Progress: Parameterizing module blink_2
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
-Progress: Parameterizing module nios2_gen2_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: PLL_complete.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -29,57 +30,19 @@ Progress: Adding blink_0 [blink 1.0]
 Progress: Parameterizing module blink_0
 Progress: Adding blink_1 [blink 1.0]
 Progress: Parameterizing module blink_1
+Progress: Adding blink_2 [blink 1.0]
+Progress: Parameterizing module blink_2
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
-Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.1]
-Progress: Parameterizing module nios2_gen2_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: PLL_complete.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
 Info: PLL_complete: Generating PLL_complete "PLL_complete" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master nios2_gen2_0.data_master and slave altpll_0.pll_slave because the master has address signal 12 bit wide, but the slave is 2 bit wide.
-Info: Interconnect is inserted between master nios2_gen2_0.data_master and slave altpll_0.pll_slave because the master has byteenable signal 4 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master nios2_gen2_0.data_master and slave altpll_0.pll_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master nios2_gen2_0.data_master and slave altpll_0.pll_slave because the master has debugaccess signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master nios2_gen2_0.instruction_master and slave nios2_gen2_0.debug_mem_slave because the master has address signal 11 bit wide, but the slave is 9 bit wide.
 Info: altpll_0: "PLL_complete" instantiated altpll "altpll_0"
 Info: blink_0: "PLL_complete" instantiated blink "blink_0"
-Info: nios2_gen2_0: "PLL_complete" instantiated altera_nios2_gen2 "nios2_gen2_0"
-Info: mm_interconnect_0: "PLL_complete" instantiated altera_mm_interconnect "mm_interconnect_0"
-Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
-Info: mm_interconnect_1: "PLL_complete" instantiated altera_mm_interconnect "mm_interconnect_1"
-Info: irq_mapper: "PLL_complete" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "PLL_complete" instantiated altera_reset_controller "rst_controller"
-Info: cpu: Starting RTL generation for module 'PLL_complete_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=PLL_complete_nios2_gen2_0_cpu --dir=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt9817_7016144539728553283.dir/0007_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/GUAN-M~1.DEN/AppData/Local/Temp/alt9817_7016144539728553283.dir/0007_cpu_gen//PLL_complete_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2024.04.04 08:52:49 (*) Starting Nios II generation
-Info: cpu: # 2024.04.04 08:52:49 (*)   Checking for plaintext license.
-Info: cpu: # 2024.04.04 08:52:56 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2024.04.04 08:52:56 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2024.04.04 08:52:56 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2024.04.04 08:52:56 (*)   Plaintext license not found.
-Info: cpu: # 2024.04.04 08:52:56 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2024.04.04 08:52:56 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2024.04.04 08:52:56 (*)   Creating all objects for CPU
-Info: cpu: # 2024.04.04 08:52:57 (*)   Generating RTL from CPU objects
-Info: cpu: # 2024.04.04 08:52:57 (*)   Creating plain-text RTL
-Info: cpu: # 2024.04.04 08:52:57 (*) Done Nios II generation
-Info: cpu: Done RTL generation for module 'PLL_complete_nios2_gen2_0_cpu'
-Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
-Info: nios2_gen2_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_gen2_0_data_master_translator"
-Info: altpll_0_pll_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "altpll_0_pll_slave_translator"
-Info: nios2_gen2_0_instruction_master_agent: "mm_interconnect_1" instantiated altera_merlin_master_agent "nios2_gen2_0_instruction_master_agent"
-Info: nios2_gen2_0_debug_mem_slave_agent: "mm_interconnect_1" instantiated altera_merlin_slave_agent "nios2_gen2_0_debug_mem_slave_agent"
-Info: nios2_gen2_0_debug_mem_slave_agent_rsp_fifo: "mm_interconnect_1" instantiated altera_avalon_sc_fifo "nios2_gen2_0_debug_mem_slave_agent_rsp_fifo"
-Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
-Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/Quartus 18_1/Blinky_Platform_Designer_Only/PLL_complete/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: PLL_complete: Done "PLL_complete" with 21 modules, 33 files
+Info: PLL_complete: Done "PLL_complete" with 4 modules, 6 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

@@ -3052,3 +3052,40 @@ java.io.IOException: Cannot run program "C:/Program Files/SEGGER/JLink_V796a/JLi
 
 !ENTRY SOLVER 1 0 2024-03-29 22:53:27.363
 !MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2024-07-25 17:07:22.925 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation -application com.ifx.davex.product.daveApplication -showlocation -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation -application com.ifx.davex.product.daveApplication -showlocation -data C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\EtherCAT_Projects\EtherCAT_SSC_XMC48_20_3_2024 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2024-07-25 17:07:39.924
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2024-07-25 17:07:39.999
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2024-07-25 17:07:40.000
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2024-07-25 17:07:43.155
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPLICATION_MODEL 1 0 2024-07-25 17:07:43.623
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-07-25 17:07:43.710
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-07-25 17:07:44.796
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2024-07-25 17:07:45.891
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY SOLVER 1 0 2024-07-25 17:10:29.504
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2024-07-25 17:10:29.797
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
