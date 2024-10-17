@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex&apos;" deleteContents="false" description="Delete resource &apos;HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex&apos;" element1="/HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1729149825284"/>
+</session>

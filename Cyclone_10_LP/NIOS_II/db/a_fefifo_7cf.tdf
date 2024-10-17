@@ -17,7 +17,7 @@
 --  refer to the applicable agreement for further details.
 
 
-FUNCTION cntr_vg7 (aclr, clock, cnt_en, sclr, updown)
+FUNCTION cntr_6o7 (aclr, clock, cnt_en, sclr, updown)
 RETURNS ( q[5..0]);
 
 --synthesis_resources = lut 6 reg 8 
@@ -35,7 +35,7 @@ SUBDESIGN a_fefifo_7cf
 VARIABLE 
 	b_full : dffe;
 	b_non_empty : dffe;
-	count_usedw : cntr_vg7;
+	count_usedw : cntr_6o7;
 	equal_af1w[5..0]	: WIRE;
 	equal_one[5..0]	: WIRE;
 	is_almost_empty0	: WIRE;

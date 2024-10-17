@@ -20,7 +20,7 @@
 FUNCTION a_dpfifo_e011 (aclr, clock, data[7..0], rreq, sclr, wreq)
 RETURNS ( empty, full, q[7..0], usedw[5..0]);
 
---synthesis_resources = lut 12 M9K 1 reg 12 
+--synthesis_resources = lut 18 M9K 1 reg 20 
 SUBDESIGN scfifo_cr21
 ( 
 	aclr	:	input;

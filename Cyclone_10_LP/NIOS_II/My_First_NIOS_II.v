@@ -30,7 +30,8 @@ assign LEDG[3] = LEDG_Stat;
 */
 
 My_First_NIOS_II_Platform_Designer u0 (
-		.clk_clk (CLOCK_50),  									// clk.clk
+		.clk_clk (CLOCK_50), 
+		.reset_reset_n(RESET),   
 		.gpio_external_connection_export(LEDG)				// led	
 	);
 

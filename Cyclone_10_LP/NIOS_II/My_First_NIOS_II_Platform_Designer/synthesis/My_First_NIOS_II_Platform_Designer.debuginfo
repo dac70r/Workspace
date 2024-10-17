@@ -5,7 +5,7 @@
  version="18.1"
  fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2024.08.22.16:19:45 -->
+ <!-- 2024.10.17.15:26:15 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -57,7 +57,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1724314766</value>
+  <value>1729149958</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -3517,7 +3517,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_CLK_CLOCK_DOMAIN">
    <type>java.lang.Integer</type>
-   <value>2</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3527,7 +3527,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_CLK_RESET_DOMAIN">
    <type>java.lang.Integer</type>
-   <value>2</value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5063,7 +5063,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initializationFileName">
    <type>java.lang.String</type>
-   <value>C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/My_First_NIOS_II_Platform_Designer/simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
+   <value>C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/software/HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5274,7 +5274,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_init_file_name">
    <type>java.lang.String</type>
-   <value>C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/My_First_NIOS_II_Platform_Designer/simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
+   <value>C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/software/HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9340,33 +9340,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
-   name="HelloNios.debug_reset_request/clk_0.clk_in_reset"
-   kind="reset"
-   version="18.1"
-   start="HelloNios.debug_reset_request"
-   end="clk_0.clk_in_reset">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>HelloNios</startModule>
-  <startConnectionPoint>debug_reset_request</startConnectionPoint>
-  <endModule>clk_0</endModule>
-  <endConnectionPoint>clk_in_reset</endConnectionPoint>
- </connection>
- <connection
    name="HelloNios.data_master/mm_interconnect_0.HelloNios_data_master"
    kind="avalon"
    version="18.1"
@@ -10332,14 +10305,6 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>1</instanceCount>
-  <name>reset</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Reset Connection</displayName>
-  <version>18.1</version>
- </plugin>
- <plugin>
   <instanceCount>6</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
@@ -10372,5 +10337,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>A46BB631DB7400000191792B564D</uniqueIdentifier>
+ <uniqueIdentifier>A46BB631DB7400000192995E8088</uniqueIdentifier>
 </EnsembleReport>

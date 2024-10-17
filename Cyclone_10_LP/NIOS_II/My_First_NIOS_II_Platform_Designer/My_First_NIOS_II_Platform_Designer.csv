@@ -1,12 +1,12 @@
-# system info My_First_NIOS_II_Platform_Designer on 2024.08.22.16:19:22
+# system info My_First_NIOS_II_Platform_Designer on 2024.10.17.15:25:55
 system_info:
 name,value
 DEVICE,10CL025YU256I7G
 DEVICE_FAMILY,Cyclone 10 LP
-GENERATION_ID,1724314722
+GENERATION_ID,1729149923
 #
 #
-# Files generated for My_First_NIOS_II_Platform_Designer on 2024.08.22.16:19:22
+# Files generated for My_First_NIOS_II_Platform_Designer on 2024.10.17.15:25:55
 files:
 filepath,kind,attributes,module,is_top
 simulation/My_First_NIOS_II_Platform_Designer.v,VERILOG,,My_First_NIOS_II_Platform_Designer,true

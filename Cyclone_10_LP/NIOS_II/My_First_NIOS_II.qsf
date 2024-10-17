@@ -60,6 +60,5 @@ set_location_assignment PIN_J14 -to LEDG[2]
 set_location_assignment PIN_K15 -to LEDG[1]
 set_location_assignment PIN_L14 -to LEDG[0]
 set_global_assignment -name QIP_FILE My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.qip
-set_global_assignment -name VERILOG_FILE My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.v -library My_First_NIOS_II_Platform_Designer
 set_global_assignment -name VERILOG_FILE My_First_NIOS_II.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

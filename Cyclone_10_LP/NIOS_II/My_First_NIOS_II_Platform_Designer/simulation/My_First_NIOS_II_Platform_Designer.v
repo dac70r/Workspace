@@ -5,10 +5,10 @@
 `timescale 1 ps / 1 ps
 module My_First_NIOS_II_Platform_Designer (
 		input  wire       clk_clk,                         //                      clk.clk
-		output wire [7:0] gpio_external_connection_export  // gpio_external_connection.export
+		output wire [7:0] gpio_external_connection_export, // gpio_external_connection.export
+		input  wire       reset_reset_n                    //                    reset.reset_n
 	);
 
-	wire         hellonios_debug_reset_request_reset;                     // HelloNios:debug_reset_request -> rst_controller:reset_in0
 	wire  [31:0] hellonios_data_master_readdata;                          // mm_interconnect_0:HelloNios_data_master_readdata -> HelloNios:d_readdata
 	wire         hellonios_data_master_waitrequest;                       // mm_interconnect_0:HelloNios_data_master_waitrequest -> HelloNios:d_waitrequest
 	wire         hellonios_data_master_debugaccess;                       // HelloNios:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:HelloNios_data_master_debugaccess
@@ -98,7 +98,7 @@ module My_First_NIOS_II_Platform_Designer (
 		.i_waitrequest                       (hellonios_instruction_master_waitrequest),                //                          .waitrequest
 		.i_readdatavalid                     (hellonios_instruction_master_readdatavalid),              //                          .readdatavalid
 		.irq                                 (hellonios_irq_irq),                                       //                       irq.irq
-		.debug_reset_request                 (hellonios_debug_reset_request_reset),                     //       debug_reset_request.reset
+		.debug_reset_request                 (),                                                        //       debug_reset_request.reset
 		.debug_mem_slave_address             (mm_interconnect_0_hellonios_debug_mem_slave_address),     //           debug_mem_slave.address
 		.debug_mem_slave_byteenable          (mm_interconnect_0_hellonios_debug_mem_slave_byteenable),  //                          .byteenable
 		.debug_mem_slave_debugaccess         (mm_interconnect_0_hellonios_debug_mem_slave_debugaccess), //                          .debugaccess
@@ -203,41 +203,41 @@ module My_First_NIOS_II_Platform_Designer (
 		.USE_RESET_REQUEST_IN15    (0),
 		.ADAPT_RESET_REQUEST       (0)
 	) rst_controller (
-		.reset_in0      (hellonios_debug_reset_request_reset), // reset_in0.reset
-		.clk            (clk_clk),                             //       clk.clk
-		.reset_out      (rst_controller_reset_out_reset),      // reset_out.reset
-		.reset_req      (rst_controller_reset_out_reset_req),  //          .reset_req
-		.reset_req_in0  (1'b0),                                // (terminated)
-		.reset_in1      (1'b0),                                // (terminated)
-		.reset_req_in1  (1'b0),                                // (terminated)
-		.reset_in2      (1'b0),                                // (terminated)
-		.reset_req_in2  (1'b0),                                // (terminated)
-		.reset_in3      (1'b0),                                // (terminated)
-		.reset_req_in3  (1'b0),                                // (terminated)
-		.reset_in4      (1'b0),                                // (terminated)
-		.reset_req_in4  (1'b0),                                // (terminated)
-		.reset_in5      (1'b0),                                // (terminated)
-		.reset_req_in5  (1'b0),                                // (terminated)
-		.reset_in6      (1'b0),                                // (terminated)
-		.reset_req_in6  (1'b0),                                // (terminated)
-		.reset_in7      (1'b0),                                // (terminated)
-		.reset_req_in7  (1'b0),                                // (terminated)
-		.reset_in8      (1'b0),                                // (terminated)
-		.reset_req_in8  (1'b0),                                // (terminated)
-		.reset_in9      (1'b0),                                // (terminated)
-		.reset_req_in9  (1'b0),                                // (terminated)
-		.reset_in10     (1'b0),                                // (terminated)
-		.reset_req_in10 (1'b0),                                // (terminated)
-		.reset_in11     (1'b0),                                // (terminated)
-		.reset_req_in11 (1'b0),                                // (terminated)
-		.reset_in12     (1'b0),                                // (terminated)
-		.reset_req_in12 (1'b0),                                // (terminated)
-		.reset_in13     (1'b0),                                // (terminated)
-		.reset_req_in13 (1'b0),                                // (terminated)
-		.reset_in14     (1'b0),                                // (terminated)
-		.reset_req_in14 (1'b0),                                // (terminated)
-		.reset_in15     (1'b0),                                // (terminated)
-		.reset_req_in15 (1'b0)                                 // (terminated)
+		.reset_in0      (~reset_reset_n),                     // reset_in0.reset
+		.clk            (clk_clk),                            //       clk.clk
+		.reset_out      (rst_controller_reset_out_reset),     // reset_out.reset
+		.reset_req      (rst_controller_reset_out_reset_req), //          .reset_req
+		.reset_req_in0  (1'b0),                               // (terminated)
+		.reset_in1      (1'b0),                               // (terminated)
+		.reset_req_in1  (1'b0),                               // (terminated)
+		.reset_in2      (1'b0),                               // (terminated)
+		.reset_req_in2  (1'b0),                               // (terminated)
+		.reset_in3      (1'b0),                               // (terminated)
+		.reset_req_in3  (1'b0),                               // (terminated)
+		.reset_in4      (1'b0),                               // (terminated)
+		.reset_req_in4  (1'b0),                               // (terminated)
+		.reset_in5      (1'b0),                               // (terminated)
+		.reset_req_in5  (1'b0),                               // (terminated)
+		.reset_in6      (1'b0),                               // (terminated)
+		.reset_req_in6  (1'b0),                               // (terminated)
+		.reset_in7      (1'b0),                               // (terminated)
+		.reset_req_in7  (1'b0),                               // (terminated)
+		.reset_in8      (1'b0),                               // (terminated)
+		.reset_req_in8  (1'b0),                               // (terminated)
+		.reset_in9      (1'b0),                               // (terminated)
+		.reset_req_in9  (1'b0),                               // (terminated)
+		.reset_in10     (1'b0),                               // (terminated)
+		.reset_req_in10 (1'b0),                               // (terminated)
+		.reset_in11     (1'b0),                               // (terminated)
+		.reset_req_in11 (1'b0),                               // (terminated)
+		.reset_in12     (1'b0),                               // (terminated)
+		.reset_req_in12 (1'b0),                               // (terminated)
+		.reset_in13     (1'b0),                               // (terminated)
+		.reset_req_in13 (1'b0),                               // (terminated)
+		.reset_in14     (1'b0),                               // (terminated)
+		.reset_req_in14 (1'b0),                               // (terminated)
+		.reset_in15     (1'b0),                               // (terminated)
+		.reset_req_in15 (1'b0)                                // (terminated)
 	);
 
 endmodule

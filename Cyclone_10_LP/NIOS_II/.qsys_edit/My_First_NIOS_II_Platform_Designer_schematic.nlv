@@ -1,20 +1,20 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst My_First_NIOS_II_Platform_Designer.SRAM -pg 1 -lvl 3 -y 140
-preplace inst My_First_NIOS_II_Platform_Designer.HelloNios -pg 1 -lvl 1 -y 70
+preplace inst My_First_NIOS_II_Platform_Designer.SRAM -pg 1 -lvl 3 -y 120
+preplace inst My_First_NIOS_II_Platform_Designer.HelloNios -pg 1 -lvl 1 -y 50
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.cpu -pg 1
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.clock_bridge -pg 1
-preplace inst My_First_NIOS_II_Platform_Designer.clk_0 -pg 1 -lvl 2 -y 160
-preplace inst My_First_NIOS_II_Platform_Designer.DEBUG -pg 1 -lvl 3 -y 220
+preplace inst My_First_NIOS_II_Platform_Designer.clk_0 -pg 1 -lvl 2 -y 140
+preplace inst My_First_NIOS_II_Platform_Designer.DEBUG -pg 1 -lvl 3 -y 200
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.reset_bridge -pg 1
-preplace inst My_First_NIOS_II_Platform_Designer.GPIO -pg 1 -lvl 3 -y 320
+preplace inst My_First_NIOS_II_Platform_Designer.GPIO -pg 1 -lvl 3 -y 300
 preplace inst My_First_NIOS_II_Platform_Designer -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)DEBUG.irq,(MASTER)HelloNios.irq) 1 1 2 590 270 NJ
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.gpio_external_connection,(SLAVE)GPIO.external_connection) 1 0 3 NJ 350 NJ 350 NJ
-preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(MASTER)clk_0.clk_reset,(SLAVE)SRAM.reset1,(SLAVE)HelloNios.reset,(SLAVE)GPIO.reset,(SLAVE)DEBUG.reset) 1 0 3 230 230 NJ 150 890
-preplace netloc INTERCONNECT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(MASTER)HelloNios.data_master,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)HelloNios.debug_mem_slave,(SLAVE)GPIO.s1,(SLAVE)SRAM.s1,(MASTER)HelloNios.instruction_master) 1 0 3 190 30 630 230 910
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 250 NJ
-preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)HelloNios.clk,(MASTER)clk_0.clk,(SLAVE)DEBUG.clk,(SLAVE)SRAM.clk1,(SLAVE)GPIO.clk) 1 0 3 210 210 NJ 130 930
-preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(MASTER)HelloNios.debug_reset_request,(SLAVE)clk_0.clk_in_reset) 1 1 1 610
+preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)DEBUG.irq,(MASTER)HelloNios.irq) 1 1 2 NJ 250 NJ
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.gpio_external_connection,(SLAVE)GPIO.external_connection) 1 0 3 NJ 330 NJ 330 NJ
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)DEBUG.clk,(SLAVE)HelloNios.clk,(MASTER)clk_0.clk,(SLAVE)GPIO.clk,(SLAVE)SRAM.clk1) 1 0 3 190 210 NJ 130 890
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)DEBUG.reset,(SLAVE)HelloNios.reset,(MASTER)clk_0.clk_reset,(SLAVE)SRAM.reset1,(SLAVE)GPIO.reset) 1 0 3 210 270 NJ 210 910
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 230 NJ
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.reset,(SLAVE)clk_0.clk_in_reset) 1 0 2 NJ 250 NJ
+preplace netloc INTERCONNECT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)HelloNios.debug_mem_slave,(MASTER)HelloNios.instruction_master,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)SRAM.s1,(MASTER)HelloNios.data_master,(SLAVE)GPIO.s1) 1 0 3 230 190 650 230 930
 levelinfo -pg 1 0 160 1120
 levelinfo -hier My_First_NIOS_II_Platform_Designer 170 350 720 960 1110
