@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Oct 24 16:31:56 2024
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : Timer
+Top-level Entity Name : Timer
+Family : Cyclone 10 LP
+Total logic elements : 1,687
+    Total combinational functions : 1,518
+    Dedicated logic registers : 883
+Total registers : 883
+Total pins : 2
+Total virtual pins : 0
+Total memory bits : 44,032
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

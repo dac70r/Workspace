@@ -113,11 +113,10 @@
    internal="GPIO.external_connection"
    type="conduit"
    dir="end" />
- <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module
    name="DEBUG"
    kind="altera_avalon_jtag_uart"
-   version="18.1"
+   version="19.1"
    enabled="1">
   <parameter name="allowMultipleConnections" value="false" />
   <parameter name="avalonSpec" value="2.0" />
@@ -133,7 +132,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="GPIO" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module name="GPIO" kind="altera_avalon_pio" version="19.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -147,7 +146,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="HelloNios" kind="altera_nios2_gen2" version="18.1" enabled="1">
+ <module name="HelloNios" kind="altera_nios2_gen2" version="19.1" enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
   <parameter name="AUTO_DEVICE" value="10CL025YU256I7G" />
@@ -204,7 +203,7 @@
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
-  <parameter name="impl" value="Fast" />
+  <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="14" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
@@ -328,7 +327,7 @@
  <module
    name="SRAM"
    kind="altera_avalon_onchip_memory2"
-   version="18.1"
+   version="19.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
   <parameter name="autoInitializationFileName" value="$${FILENAME}_SRAM" />
@@ -353,11 +352,11 @@
   <parameter name="singleClockOperation" value="false" />
   <parameter name="slave1Latency" value="1" />
   <parameter name="slave2Latency" value="1" />
-  <parameter name="useNonDefaultInitFile" value="true" />
+  <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
  </module>
- <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
+ <module name="clk_0" kind="clock_source" version="19.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
@@ -365,7 +364,7 @@
  </module>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.data_master"
    end="DEBUG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -374,7 +373,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.data_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -383,7 +382,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.data_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -392,7 +391,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.data_master"
    end="GPIO.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -401,7 +400,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.instruction_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -410,28 +409,33 @@
  </connection>
  <connection
    kind="avalon"
-   version="18.1"
+   version="19.1"
    start="HelloNios.instruction_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="18.1" start="clk_0.clk" end="HelloNios.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="DEBUG.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="GPIO.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="SRAM.clk1" />
- <connection kind="interrupt" version="18.1" start="HelloNios.irq" end="DEBUG.irq">
+ <connection kind="clock" version="19.1" start="clk_0.clk" end="HelloNios.clk" />
+ <connection kind="clock" version="19.1" start="clk_0.clk" end="DEBUG.clk" />
+ <connection kind="clock" version="19.1" start="clk_0.clk" end="GPIO.clk" />
+ <connection kind="clock" version="19.1" start="clk_0.clk" end="SRAM.clk1" />
+ <connection kind="interrupt" version="19.1" start="HelloNios.irq" end="DEBUG.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="reset"
-   version="18.1"
+   version="19.1"
    start="clk_0.clk_reset"
    end="HelloNios.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="DEBUG.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="GPIO.reset" />
- <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="SRAM.reset1" />
+ <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="DEBUG.reset" />
+ <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="GPIO.reset" />
+ <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="SRAM.reset1" />
+ <connection
+   kind="reset"
+   version="19.1"
+   start="HelloNios.debug_reset_request"
+   end="clk_0.clk_in_reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

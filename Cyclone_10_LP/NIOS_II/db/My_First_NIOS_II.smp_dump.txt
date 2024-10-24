@@ -1,9 +1,0 @@
-
-State Machine - |My_First_NIOS_II|My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_HelloNios:hellonios|My_First_NIOS_II_Platform_Designer_HelloNios_cpu:cpu|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_nios2_oci:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_nios2_oci|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_tck:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_tck|DRsize
-Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
-DRsize.000 0 0 0 0 0 0 
-DRsize.001 0 0 0 0 1 1 
-DRsize.010 0 0 0 1 0 1 
-DRsize.011 0 0 1 0 0 1 
-DRsize.100 0 1 0 0 0 1 
-DRsize.101 1 0 0 0 0 1 

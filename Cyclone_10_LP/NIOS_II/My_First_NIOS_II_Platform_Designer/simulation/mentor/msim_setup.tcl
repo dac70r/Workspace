@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2024.10.17.15:25:56
+# ACDS 19.1 670 win32 2024.10.24.15:52:34
 
 # ----------------------------------------
 # Initialize variables
@@ -113,7 +113,7 @@ if ![info exists QSYS_SIMDIR] {
 }
 
 if ![info exists QUARTUS_INSTALL_DIR] { 
-  set QUARTUS_INSTALL_DIR "C:/intelfpga_lite/18.1/quartus/"
+  set QUARTUS_INSTALL_DIR "C:/intelfpga_lite/19.1/quartus/"
 }
 
 if ![info exists USER_DEFINED_COMPILE_OPTIONS] { 
@@ -141,15 +141,6 @@ if ![ string match "*-64 vsim*" [ vsim -version ] ] {
 # Copy ROM/RAM files to simulation directory
 alias file_copy {
   echo "\[exec\] file_copy"
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.dat ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.hex ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.mif ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.dat ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.hex ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.mif ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.dat ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.hex ./
-  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.mif ./
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ociram_default_contents.dat ./
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ociram_default_contents.hex ./
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ociram_default_contents.mif ./
@@ -159,6 +150,7 @@ alias file_copy {
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.dat ./
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.hex ./
   file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.mif ./
+  file copy -force $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex ./
 }
 
 # ----------------------------------------
@@ -190,8 +182,6 @@ ensure_lib                                        ./libraries/rsp_mux_001/
 vmap       rsp_mux_001                            ./libraries/rsp_mux_001/                           
 ensure_lib                                        ./libraries/rsp_mux/                               
 vmap       rsp_mux                                ./libraries/rsp_mux/                               
-ensure_lib                                        ./libraries/rsp_demux_001/                         
-vmap       rsp_demux_001                          ./libraries/rsp_demux_001/                         
 ensure_lib                                        ./libraries/rsp_demux/                             
 vmap       rsp_demux                              ./libraries/rsp_demux/                             
 ensure_lib                                        ./libraries/cmd_mux_001/                           
@@ -202,8 +192,6 @@ ensure_lib                                        ./libraries/cmd_demux_001/
 vmap       cmd_demux_001                          ./libraries/cmd_demux_001/                         
 ensure_lib                                        ./libraries/cmd_demux/                             
 vmap       cmd_demux                              ./libraries/cmd_demux/                             
-ensure_lib                                        ./libraries/HelloNios_data_master_limiter/         
-vmap       HelloNios_data_master_limiter          ./libraries/HelloNios_data_master_limiter/         
 ensure_lib                                        ./libraries/router_003/                            
 vmap       router_003                             ./libraries/router_003/                            
 ensure_lib                                        ./libraries/router_002/                            
@@ -263,7 +251,6 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                                               -work rsp_mux_001                           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                               
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                                               -work rsp_mux                               
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux_001.sv"                     -work rsp_demux_001                         
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                             
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_mux_001.sv"                       -work cmd_mux_001                           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                                               -work cmd_mux_001                           
@@ -271,10 +258,6 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                                               -work cmd_mux                               
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                         
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                             
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv"                                                          -work HelloNios_data_master_limiter         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_reorder_memory.sv"                                                           -work HelloNios_data_master_limiter         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                                                   -work HelloNios_data_master_limiter         
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                                                          -work HelloNios_data_master_limiter         
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_router_003.sv"                        -work router_003                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_router_002.sv"                        -work router_002                            
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_router_001.sv"                        -work router_001                            
@@ -285,11 +268,10 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_agent.sv"                                                             -work HelloNios_data_master_agent           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_slave_translator.sv"                                                         -work DEBUG_avalon_jtag_slave_translator    
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_master_translator.sv"                                                        -work HelloNios_data_master_translator      
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu.vo"                                       -work cpu                                   
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu.v"                                        -work cpu                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_sysclk.v"                     -work cpu                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_tck.v"                        -work cpu                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper.v"                    -work cpu                                   
-  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_mult_cell.v"                              -work cpu                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_test_bench.v"                             -work cpu                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                                                 -work rst_controller                        
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                                               -work rst_controller                        
@@ -306,14 +288,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_001 -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L HelloNios_data_master_limiter -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_001 -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L HelloNios_data_master_limiter -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

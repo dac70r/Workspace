@@ -1,4 +1,4 @@
-// (C) 2001-2018 Intel Corporation. All rights reserved.
+// (C) 2001-2019 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
 // files from any of the foregoing (including device programming or simulation 
@@ -11,9 +11,9 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
+// $Id: //acds/rel/19.1std/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2018/07/18 $
+// $Date: 2018/11/07 $
 // $Author: psgswbuild $
 
 // -------------------------------------
@@ -31,7 +31,7 @@
 //   ST_DATA_W:           88
 //   ST_CHANNEL_W:        4
 //   NUM_OUTPUTS:         2
-//   VALID_WIDTH:         4
+//   VALID_WIDTH:         1
 // ------------------------------------------
 
 //------------------------------------------
@@ -45,7 +45,7 @@ module My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_demux_001
     // -------------------
     // Sink
     // -------------------
-    input  [4-1      : 0]   sink_valid,
+    input  [1-1      : 0]   sink_valid,
     input  [88-1    : 0]   sink_data, // ST_DATA_W=88
     input  [4-1 : 0]   sink_channel, // ST_CHANNEL_W=4
     input                         sink_startofpacket,
@@ -92,14 +92,14 @@ module My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_demux_001
         src0_endofpacket   = sink_endofpacket;
         src0_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src0_valid         = sink_channel[0] && sink_valid[0];
+        src0_valid         = sink_channel[0] && sink_valid;
 
         src1_data          = sink_data;
         src1_startofpacket = sink_startofpacket;
         src1_endofpacket   = sink_endofpacket;
         src1_channel       = sink_channel >> NUM_OUTPUTS;
 
-        src1_valid         = sink_channel[1] && sink_valid[1];
+        src1_valid         = sink_channel[1] && sink_valid;
 
     end
 

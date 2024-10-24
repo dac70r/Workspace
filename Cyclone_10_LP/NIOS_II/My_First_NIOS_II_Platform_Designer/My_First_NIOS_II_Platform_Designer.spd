@@ -25,10 +25,6 @@
    type="SYSTEM_VERILOG"
    library="rsp_mux" />
  <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux_001.sv"
-   type="SYSTEM_VERILOG"
-   library="rsp_demux_001" />
- <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux.sv"
    type="SYSTEM_VERILOG"
    library="rsp_demux" />
@@ -56,22 +52,6 @@
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_cmd_demux.sv"
    type="SYSTEM_VERILOG"
    library="cmd_demux" />
- <file
-   path="simulation/submodules/altera_merlin_traffic_limiter.sv"
-   type="SYSTEM_VERILOG"
-   library="HelloNios_data_master_limiter" />
- <file
-   path="simulation/submodules/altera_merlin_reorder_memory.sv"
-   type="SYSTEM_VERILOG"
-   library="HelloNios_data_master_limiter" />
- <file
-   path="simulation/submodules/altera_avalon_sc_fifo.v"
-   type="SYSTEM_VERILOG"
-   library="HelloNios_data_master_limiter" />
- <file
-   path="simulation/submodules/altera_avalon_st_pipeline_base.v"
-   type="SYSTEM_VERILOG"
-   library="HelloNios_data_master_limiter" />
  <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0_router_003.sv"
    type="SYSTEM_VERILOG"
@@ -117,32 +97,8 @@
    type="SDC"
    library="cpu" />
  <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu.vo"
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu.v"
    type="VERILOG"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_bht_ram.mif"
-   type="MIF"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_dc_tag_ram.mif"
-   type="MIF"
    library="cpu" />
  <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_sysclk.v"
@@ -154,22 +110,6 @@
    library="cpu" />
  <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper.v"
-   type="VERILOG"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.dat"
-   type="DAT"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.hex"
-   type="HEX"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_ic_tag_ram.mif"
-   type="MIF"
-   library="cpu" />
- <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_mult_cell.v"
    type="VERILOG"
    library="cpu" />
  <file
@@ -236,6 +176,10 @@
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
+ <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex"
+   type="HEX"
+   library="SRAM" />
  <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"
    type="VERILOG"

@@ -1,0 +1,17 @@
+
+
+
+module Timer(
+
+	input CLOCK_50,
+	output LEDG
+);
+
+
+my_timer u0 (
+		.clk_clk (CLOCK_50),   
+		.gpio_external_connection_export(LEDG)				// led
+	);
+
+endmodule
+

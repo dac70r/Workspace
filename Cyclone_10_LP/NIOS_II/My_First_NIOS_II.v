@@ -4,8 +4,6 @@
 module My_First_NIOS_II(
 
 	input CLOCK_50,
-	input RESET,
-	
 	output [7:0] LEDG
 );
 
@@ -30,9 +28,8 @@ assign LEDG[3] = LEDG_Stat;
 */
 
 My_First_NIOS_II_Platform_Designer u0 (
-		.clk_clk (CLOCK_50), 
-		.reset_reset_n(RESET),   
-		.gpio_external_connection_export(LEDG)				// led	
+		.clk_clk (CLOCK_50),   
+		.gpio_external_connection_export(LEDG)				// led
 	);
 
 endmodule

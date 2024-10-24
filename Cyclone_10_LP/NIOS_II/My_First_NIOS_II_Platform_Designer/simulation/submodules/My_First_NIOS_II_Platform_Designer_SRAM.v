@@ -36,7 +36,7 @@ module My_First_NIOS_II_Platform_Designer_SRAM (
                                                )
 ;
 
-  parameter INIT_FILE = "C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/software/HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex";
+  parameter INIT_FILE = "My_First_NIOS_II_Platform_Designer_SRAM.hex";
 
 
   output  [ 31: 0] readdata;
