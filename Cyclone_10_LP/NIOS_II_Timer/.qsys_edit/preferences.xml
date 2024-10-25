@@ -7,7 +7,6 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/University Program/Clock,Project,Library/Processors and Peripherals/Hard Processor Systems,Library,Library/Basic Functions,Library/University Program,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library/Basic Functions/Simulation; Debug and Verification,Library/Processors and Peripherals" />
- <window width="1698" height="969" x="0" y="0" />
+ <library expandedCategories="Project,Library" />
+ <window width="1825" height="1033" x="0" y="0" />
 </preferences>

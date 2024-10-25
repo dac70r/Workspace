@@ -79,14 +79,27 @@
  */
 
 #include "sys/alt_stdio.h"
+#include "system.h"
+#include "altera_avalon_pio_regs.h"
 
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
+  int count = 0;
+  int delay = 0;
 
   /* Event loop never exits. */
   while (1){
-	  alt_putstr("Hello from Nios II hahaha !\n");
+	  if(count<=2500000){
+	  		  count++;
+	  	  }
+
+	  else{
+		  alt_putstr("Hello from Nios II hahaha !\n");
+		  IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, ~(delay));
+		  delay++;
+		  count = 0;
+	  }
   };
 
   return 0;
