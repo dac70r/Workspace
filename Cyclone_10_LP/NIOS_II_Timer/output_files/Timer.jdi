@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="f25de2f3d6d9eb4915ec"/>
+    <hash md5_digest_80b="64ed1ad42d9b790db5dd"/>
   </project>
   <file_info>
     <file device="10CL025YU256I7G" path="Timer.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="my_timer:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME my_timer HAS_SOPCINFO 1 GENERATION_ID 1729844124"/>
+        <assignment_value text="QSYS_NAME my_timer HAS_SOPCINFO 1 GENERATION_ID 1729857215"/>
       </assignment_values>
       <parameters/>
     </sld_info>

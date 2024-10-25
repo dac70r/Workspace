@@ -81,14 +81,26 @@
 #include "sys/alt_stdio.h"
 #include "system.h"
 #include "altera_avalon_pio_regs.h"
+#include <stdio.h>
+#include <sys/alt_irq.h>
+#include <altera_avalon_timer_regs.h>
+#include "sys/alt_alarm.h"
+#include "alt_types.h"
+
+// Function Declararions
+void init_timer_interrupt( void );
+static void timer_isr( void * context, alt_u32 id );
+void init_timer() ;
 
 int main()
 { 
   alt_putstr("Hello from Nios II!\n");
   int count = 0;
   int delay = 0;
+  alt_u32 led_state = 0;
 
   /* Event loop never exits. */
+  /*
   while (1){
 	  if(count<=2500000){
 	  		  count++;
@@ -100,7 +112,45 @@ int main()
 		  delay++;
 		  count = 0;
 	  }
-  };
+  };*/
+	// Enable the timer
+	init_timer_interrupt();
+
+	while(1){
+
+	}
 
   return 0;
 }
+
+void init_timer_interrupt( void )
+{
+	// Register the ISR with HAL
+	alt_ic_isr_register(0, 1, (void *)timer_isr, NULL, 0x0);
+
+	static const alt_u32 CLOCK_FREQUENCY = 50000000; // 50 MHz
+	static const alt_u32 TIMER_PERIOD = CLOCK_FREQUENCY; // 1 second (50,000,000 counts)
+
+	// Set the timer period
+	IOWR_ALTERA_AVALON_TIMER_PERIODL(0x3000, TIMER_PERIOD & 0xFFFF); // Lower 16 bits
+	IOWR_ALTERA_AVALON_TIMER_PERIODH(0x3000, (TIMER_PERIOD >> 16) & 0xFFFF); // Upper 16 bits
+
+	// Start the timer
+	IOWR_ALTERA_AVALON_TIMER_CONTROL(0x3000, ALTERA_AVALON_TIMER_CONTROL_CONT_MSK
+			                                   | ALTERA_AVALON_TIMER_CONTROL_START_MSK
+											   | ALTERA_AVALON_TIMER_CONTROL_ITO_MSK);
+}
+
+static void timer_isr( void * context, alt_u32 id )
+{
+	static int count = 0;
+
+	// Clear the interrupt
+	IOWR_ALTERA_AVALON_TIMER_STATUS(0x3000, 0);
+	alt_u32 pio_state = IORD_ALTERA_AVALON_PIO_DATA(PIO_0_BASE);
+
+	// Do something
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, ~((pio_state & 0x01)));
+	alt_putstr("Hello from Nios II!\n"); //printf("\nTimer Expired: %d", count++);
+}
+
