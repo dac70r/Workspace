@@ -1,0 +1,9 @@
+13:35:04 **** Incremental Build of configuration Nios II for project nios ****
+make all 
+Info: Building ../nios_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_bsp/
+[BSP build complete]
+[nios build complete]
+
+13:35:06 Build Finished (took 1s.367ms)
+

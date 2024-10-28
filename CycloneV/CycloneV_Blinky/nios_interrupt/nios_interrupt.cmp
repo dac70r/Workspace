@@ -1,0 +1,6 @@
+	component nios_interrupt is
+		port (
+			clk_clk : in std_logic := 'X'  -- clk
+		);
+	end component nios_interrupt;
+

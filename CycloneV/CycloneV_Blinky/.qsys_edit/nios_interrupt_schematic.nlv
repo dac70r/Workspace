@@ -1,0 +1,18 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst nios_interruptz -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst nios_interruptz.NIOS.clock_bridge -pg 1
+preplace inst nios_interruptz.clk_0 -pg 1 -lvl 2 -y 220
+preplace inst nios_interruptz.NIOS.reset_bridge -pg 1
+preplace inst nios_interruptz.DEBUG -pg 1 -lvl 3 -y 90
+preplace inst nios_interruptz.NIOS -pg 1 -lvl 1 -y 50
+preplace inst nios_interruptz.sysid_qsys_0 -pg 1 -lvl 3 -y 270
+preplace inst nios_interruptz.SRAM -pg 1 -lvl 3 -y 190
+preplace inst nios_interruptz.NIOS.cpu -pg 1
+preplace netloc FAN_OUT<net_container>nios_interruptz</net_container>(SLAVE)sysid_qsys_0.clk,(SLAVE)SRAM.clk1,(SLAVE)NIOS.clk,(SLAVE)DEBUG.clk,(MASTER)clk_0.clk) 1 0 3 60 210 NJ 210 700
+preplace netloc INTERCONNECT<net_container>nios_interruptz</net_container>(MASTER)clk_0.clk_reset,(SLAVE)SRAM.reset1,(SLAVE)clk_0.clk_in_reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)DEBUG.reset,(SLAVE)NIOS.reset,(MASTER)NIOS.debug_reset_request) 1 0 3 80 250 460 120 680
+preplace netloc EXPORT<net_container>nios_interruptz</net_container>(SLAVE)nios_interruptz.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 230 NJ
+preplace netloc INTERCONNECT<net_container>nios_interruptz</net_container>(SLAVE)NIOS.debug_mem_slave,(MASTER)NIOS.instruction_master,(SLAVE)sysid_qsys_0.control_slave,(MASTER)NIOS.data_master,(SLAVE)SRAM.s1,(SLAVE)DEBUG.avalon_jtag_slave) 1 0 3 100 190 480 100 720
+preplace netloc POINT_TO_POINT<net_container>nios_interruptz</net_container>(MASTER)NIOS.irq,(SLAVE)DEBUG.irq) 1 1 2 NJ 140 N
+levelinfo -pg 1 0 30 900
+levelinfo -hier nios_interruptz 40 220 510 750 890
