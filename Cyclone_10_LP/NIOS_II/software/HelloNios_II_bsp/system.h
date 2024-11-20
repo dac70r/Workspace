@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Wed Nov 20 15:15:22 SGT 2024
+ * Generated: Wed Nov 20 17:24:42 SGT 2024
  */
 
 /*
@@ -134,7 +134,7 @@
  */
 
 #define ALT_MODULE_CLASS_DEBUG altera_avalon_jtag_uart
-#define DEBUG_BASE 0x3030
+#define DEBUG_BASE 0x3050
 #define DEBUG_IRQ 0
 #define DEBUG_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define DEBUG_NAME "/dev/DEBUG"
@@ -154,6 +154,7 @@
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
+#define __ALTERA_AVALON_SPI
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
@@ -164,7 +165,7 @@
  */
 
 #define ALT_MODULE_CLASS_GPIO altera_avalon_pio
-#define GPIO_BASE 0x3020
+#define GPIO_BASE 0x3040
 #define GPIO_BIT_CLEARING_EDGE_REGISTER 0
 #define GPIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define GPIO_CAPTURE 0
@@ -230,19 +231,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/DEBUG"
-#define ALT_STDERR_BASE 0x3030
+#define ALT_STDERR_BASE 0x3050
 #define ALT_STDERR_DEV DEBUG
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/DEBUG"
-#define ALT_STDIN_BASE 0x3030
+#define ALT_STDIN_BASE 0x3050
 #define ALT_STDIN_DEV DEBUG
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/DEBUG"
-#define ALT_STDOUT_BASE 0x3030
+#define ALT_STDOUT_BASE 0x3050
 #define ALT_STDOUT_DEV DEBUG
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -257,7 +258,7 @@
 
 #define ALT_MODULE_CLASS_TIMER altera_avalon_timer
 #define TIMER_ALWAYS_RUN 0
-#define TIMER_BASE 0x3000
+#define TIMER_BASE 0x3020
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 50000000
@@ -285,5 +286,36 @@
 #define ALT_MAX_FD 4
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
+
+
+/*
+ * spi_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_spi_0 altera_avalon_spi
+#define SPI_0_BASE 0x3000
+#define SPI_0_CLOCKMULT 1
+#define SPI_0_CLOCKPHASE 1
+#define SPI_0_CLOCKPOLARITY 1
+#define SPI_0_CLOCKUNITS "Hz"
+#define SPI_0_DATABITS 8
+#define SPI_0_DATAWIDTH 16
+#define SPI_0_DELAYMULT "1.0E-9"
+#define SPI_0_DELAYUNITS "ns"
+#define SPI_0_EXTRADELAY 0
+#define SPI_0_INSERT_SYNC 0
+#define SPI_0_IRQ 2
+#define SPI_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define SPI_0_ISMASTER 1
+#define SPI_0_LSBFIRST 0
+#define SPI_0_NAME "/dev/spi_0"
+#define SPI_0_NUMSLAVES 1
+#define SPI_0_PREFIX "spi_"
+#define SPI_0_SPAN 32
+#define SPI_0_SYNC_REG_DEPTH 2
+#define SPI_0_TARGETCLOCK 3125000u
+#define SPI_0_TARGETSSDELAY "0.0"
+#define SPI_0_TYPE "altera_avalon_spi"
 
 #endif /* __SYSTEM_H_ */

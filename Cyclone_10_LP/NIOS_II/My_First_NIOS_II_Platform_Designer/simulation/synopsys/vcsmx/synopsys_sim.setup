@@ -24,6 +24,7 @@ cpu:                                    ./libraries/cpu/
 rst_controller:                         ./libraries/rst_controller/                        
 irq_mapper:                             ./libraries/irq_mapper/                            
 mm_interconnect_0:                      ./libraries/mm_interconnect_0/                     
+spi_0:                                  ./libraries/spi_0/                                 
 TIMER:                                  ./libraries/TIMER/                                 
 SRAM:                                   ./libraries/SRAM/                                  
 HelloNios:                              ./libraries/HelloNios/                             

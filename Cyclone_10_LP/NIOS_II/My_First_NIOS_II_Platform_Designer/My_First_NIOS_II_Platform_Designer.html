@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2024.11.20.16:22:10</td>
+    <td class="l">2024.11.20.17:27:30</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -104,7 +104,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_onchip_memory2 18.1
      <br/>&#160;&#160;
      <a href="#module_TIMER"><b>TIMER</b>
-     </a> altera_avalon_timer 18.1</span>
+     </a> altera_avalon_timer 18.1
+     <br/>&#160;&#160;
+     <a href="#module_spi_0"><b>spi_0</b>
+     </a> altera_avalon_spi 18.1</span>
    </div>
   </div>
   <div style="width:100% ;  height:10px"> </div>
@@ -131,7 +134,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00003030</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003050</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -144,7 +147,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00003020</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003040</td>
     <td class="empty"></td>
    </tr>
    <tr>
@@ -183,6 +186,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003020</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_spi_0"><b>spi_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">spi_control_port&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>00003000</td>
     <td class="empty"></td>
    </tr>
@@ -549,7 +565,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_0">clk_0</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="24">HelloNios</td>
+      <td class="main" rowspan="29">HelloNios</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -640,6 +656,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_spi_0">spi_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;spi_control_port</td>
      </tr>
      <tr>
       <td></td>
@@ -1366,7 +1408,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='SRAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='HelloNios.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='TIMER.s1' start='0x3000' end='0x3020' type='altera_avalon_timer.s1' /&gt;&lt;slave name='GPIO.s1' start='0x3020' end='0x3030' type='altera_avalon_pio.s1' /&gt;&lt;slave name='DEBUG.avalon_jtag_slave' start='0x3030' end='0x3038' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='SRAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='HelloNios.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x3000' end='0x3020' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='TIMER.s1' start='0x3020' end='0x3040' type='altera_avalon_timer.s1' /&gt;&lt;slave name='GPIO.s1' start='0x3040' end='0x3050' type='altera_avalon_pio.s1' /&gt;&lt;slave name='DEBUG.avalon_jtag_slave' start='0x3050' end='0x3058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -1418,7 +1460,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">3</td>
+        <td class="parametervalue">7</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -2058,7 +2100,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_HelloNios">HelloNios</a>
       </td>
       <td class="from">debug_reset_request&#160;&#160;</td>
-      <td class="main" rowspan="26">clk_0</td>
+      <td class="main" rowspan="31">clk_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk_in_reset</td>
@@ -2172,6 +2214,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="from">clk&#160;&#160;</td>
       <td class="neighbor" rowspan="4">
+       <a href="#module_spi_0">spi_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
        <a href="#module_SRAM">SRAM</a>
       </td>
      </tr>
@@ -2234,10 +2302,222 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_spi_0"> </a>
+  <div>
+   <hr/>
+   <h2>spi_0</h2>altera_avalon_spi v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_HelloNios">HelloNios</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="9">spi_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;spi_control_port</td>
+     </tr>
+     <tr>
+      <td class="from">irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">clockPhase</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockPolarity</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">dataWidth</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">disableAvalonFlowControl</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">insertDelayBetweenSlaveSelectAndSClk</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">insertSync</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">lsbOrderedFirst</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">masterSPI</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">numberOfSlaves</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">syncRegDepth</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">targetClockRate</td>
+        <td class="parametervalue">3125000</td>
+       </tr>
+       <tr>
+        <td class="parametername">targetSlaveSelectToSClkDelay</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">avalonSpec</td>
+        <td class="parametervalue">2.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputClockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">actualClockRate</td>
+        <td class="parametervalue">3125000.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">actualSlaveSelectToSClkDelay</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">legacySignalsAllow</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">slaveDataBusWidth</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">CLOCKMULT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLOCKPHASE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLOCKPOLARITY</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLOCKUNITS</td>
+        <td class="parametervalue">"Hz"</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATABITS</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATAWIDTH</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">DELAYMULT</td>
+        <td class="parametervalue">"1.0E-9"</td>
+       </tr>
+       <tr>
+        <td class="parametername">DELAYUNITS</td>
+        <td class="parametervalue">"ns"</td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTRADELAY</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">INSERT_SYNC</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">ISMASTER</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">LSBFIRST</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">NUMSLAVES</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PREFIX</td>
+        <td class="parametervalue">"spi_"</td>
+       </tr>
+       <tr>
+        <td class="parametername">SYNC_REG_DEPTH</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">TARGETCLOCK</td>
+        <td class="parametervalue">3125000u</td>
+       </tr>
+       <tr>
+        <td class="parametername">TARGETSSDELAY</td>
+        <td class="parametervalue">"0.0"</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.00 seconds</td>
-    <td class="r">rendering took 0.01 seconds</td>
+    <td class="r">rendering took 0.02 seconds</td>
    </tr>
   </table>
  </body>

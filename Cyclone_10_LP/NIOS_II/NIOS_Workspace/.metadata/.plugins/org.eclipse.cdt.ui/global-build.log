@@ -1,49 +1,5 @@
-16:21:23 **** Build of configuration Nios II for project HelloNios_II ****
+17:26:30 **** Build of configuration Nios II for project HelloNios_II ****
 make mem_init_generate 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
 [BSP build complete]
-Post-processing to create mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex...
-elf2hex HelloNios_II.elf 0x00001000 0x00001fff --width=32 --little-endian-mem --create-lanes=0 mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex
-Post-processing to create mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.dat...
-elf2dat --infile=HelloNios_II.elf --outfile=mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.dat \
-		--base=0x00001000 --end=0x00001fff --width=32 \
-		--little-endian-mem --create-lanes=0 
-Post-processing to create mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.sym...
-nios2-elf-nm -n HelloNios_II.elf > mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.sym
-16:31:15 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-Makefile not up to date.
-../../My_First_NIOS_II_Platform_Designer.sopcinfo has been modified since the BSP was generated.
-
-Generate the BSP to update the Makefile, and then build again.
-
-To generate from Eclipse:
- 1. Right-click the BSP project.
- 2. In the Nios II Menu, click Generate BSP.
-
-To generate from the command line:
- nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
-
-make[1]: *** [public.mk] Error 1
-make: *** [../HelloNios_II_bsp/-recurs-make-lib] Error 2
-16:31:32 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-Makefile not up to date.
-../../My_First_NIOS_II_Platform_Designer.sopcinfo has been modified since the BSP was generated.
-
-Generate the BSP to update the Makefile, and then build again.
-
-To generate from Eclipse:
- 1. Right-click the BSP project.
- 2. In the Nios II Menu, click Generate BSP.
-
-To generate from the command line:
- nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
-
-make[1]: *** [public.mk] Error 1
-make: *** [../HelloNios_II_bsp/-recurs-make-lib] Error 2

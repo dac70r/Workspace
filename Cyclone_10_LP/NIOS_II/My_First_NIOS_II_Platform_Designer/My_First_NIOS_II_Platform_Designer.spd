@@ -177,6 +177,10 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_spi_0.v"
+   type="VERILOG"
+   library="spi_0" />
+ <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_TIMER.v"
    type="VERILOG"
    library="TIMER" />

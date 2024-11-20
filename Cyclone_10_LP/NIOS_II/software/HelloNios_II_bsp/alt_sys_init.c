@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Wed Nov 20 13:11:08 SGT 2024
+ * Generated: Wed Nov 20 17:24:42 SGT 2024
  */
 
 /*
@@ -60,6 +60,7 @@
 
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
+#include "altera_avalon_spi.h"
 #include "altera_avalon_timer.h"
 
 /*
@@ -68,6 +69,7 @@
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( HELLONIOS, HelloNios);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( DEBUG, DEBUG);
+ALTERA_AVALON_SPI_INSTANCE ( SPI_0, spi_0);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, TIMER);
 
 /*
@@ -93,4 +95,5 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER, TIMER);
     ALTERA_AVALON_JTAG_UART_INIT ( DEBUG, DEBUG);
+    ALTERA_AVALON_SPI_INIT ( SPI_0, spi_0);
 }

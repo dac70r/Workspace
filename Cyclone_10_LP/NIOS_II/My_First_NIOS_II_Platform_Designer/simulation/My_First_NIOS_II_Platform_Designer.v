@@ -5,7 +5,11 @@
 `timescale 1 ps / 1 ps
 module My_First_NIOS_II_Platform_Designer (
 		input  wire       clk_clk,                         //                      clk.clk
-		output wire [7:0] gpio_external_connection_export  // gpio_external_connection.export
+		output wire [7:0] gpio_external_connection_export, // gpio_external_connection.export
+		input  wire       spi_0_external_MISO,             //           spi_0_external.MISO
+		output wire       spi_0_external_MOSI,             //                         .MOSI
+		output wire       spi_0_external_SCLK,             //                         .SCLK
+		output wire       spi_0_external_SS_n              //                         .SS_n
 	);
 
 	wire         hellonios_debug_reset_request_reset;                     // HelloNios:debug_reset_request -> rst_controller:reset_in0
@@ -53,10 +57,17 @@ module My_First_NIOS_II_Platform_Designer (
 	wire   [2:0] mm_interconnect_0_timer_s1_address;                      // mm_interconnect_0:TIMER_s1_address -> TIMER:address
 	wire         mm_interconnect_0_timer_s1_write;                        // mm_interconnect_0:TIMER_s1_write -> TIMER:write_n
 	wire  [15:0] mm_interconnect_0_timer_s1_writedata;                    // mm_interconnect_0:TIMER_s1_writedata -> TIMER:writedata
+	wire         mm_interconnect_0_spi_0_spi_control_port_chipselect;     // mm_interconnect_0:spi_0_spi_control_port_chipselect -> spi_0:spi_select
+	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_readdata;       // spi_0:data_to_cpu -> mm_interconnect_0:spi_0_spi_control_port_readdata
+	wire   [2:0] mm_interconnect_0_spi_0_spi_control_port_address;        // mm_interconnect_0:spi_0_spi_control_port_address -> spi_0:mem_addr
+	wire         mm_interconnect_0_spi_0_spi_control_port_read;           // mm_interconnect_0:spi_0_spi_control_port_read -> spi_0:read_n
+	wire         mm_interconnect_0_spi_0_spi_control_port_write;          // mm_interconnect_0:spi_0_spi_control_port_write -> spi_0:write_n
+	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_writedata;      // mm_interconnect_0:spi_0_spi_control_port_writedata -> spi_0:data_from_cpu
 	wire         irq_mapper_receiver0_irq;                                // DEBUG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                // TIMER:irq -> irq_mapper:receiver1_irq
+	wire         irq_mapper_receiver2_irq;                                // spi_0:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] hellonios_irq_irq;                                       // irq_mapper:sender_irq -> HelloNios:irq
-	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, TIMER:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, TIMER:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, spi_0:reset_n]
 	wire         rst_controller_reset_out_reset_req;                      // rst_controller:reset_req -> [HelloNios:reset_req, SRAM:reset_req, rst_translator:reset_req_in]
 
 	My_First_NIOS_II_Platform_Designer_DEBUG debug (
@@ -137,6 +148,22 @@ module My_First_NIOS_II_Platform_Designer (
 		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
 	);
 
+	My_First_NIOS_II_Platform_Designer_spi_0 spi_0 (
+		.clk           (clk_clk),                                             //              clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),                     //            reset.reset_n
+		.data_from_cpu (mm_interconnect_0_spi_0_spi_control_port_writedata),  // spi_control_port.writedata
+		.data_to_cpu   (mm_interconnect_0_spi_0_spi_control_port_readdata),   //                 .readdata
+		.mem_addr      (mm_interconnect_0_spi_0_spi_control_port_address),    //                 .address
+		.read_n        (~mm_interconnect_0_spi_0_spi_control_port_read),      //                 .read_n
+		.spi_select    (mm_interconnect_0_spi_0_spi_control_port_chipselect), //                 .chipselect
+		.write_n       (~mm_interconnect_0_spi_0_spi_control_port_write),     //                 .write_n
+		.irq           (irq_mapper_receiver2_irq),                            //              irq.irq
+		.MISO          (spi_0_external_MISO),                                 //         external.export
+		.MOSI          (spi_0_external_MOSI),                                 //                 .export
+		.SCLK          (spi_0_external_SCLK),                                 //                 .export
+		.SS_n          (spi_0_external_SS_n)                                  //                 .export
+	);
+
 	My_First_NIOS_II_Platform_Designer_mm_interconnect_0 mm_interconnect_0 (
 		.clk_0_clk_clk                               (clk_clk),                                                 //                             clk_0_clk.clk
 		.HelloNios_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                          // HelloNios_reset_reset_bridge_in_reset.reset
@@ -172,6 +199,12 @@ module My_First_NIOS_II_Platform_Designer (
 		.HelloNios_debug_mem_slave_byteenable        (mm_interconnect_0_hellonios_debug_mem_slave_byteenable),  //                                      .byteenable
 		.HelloNios_debug_mem_slave_waitrequest       (mm_interconnect_0_hellonios_debug_mem_slave_waitrequest), //                                      .waitrequest
 		.HelloNios_debug_mem_slave_debugaccess       (mm_interconnect_0_hellonios_debug_mem_slave_debugaccess), //                                      .debugaccess
+		.spi_0_spi_control_port_address              (mm_interconnect_0_spi_0_spi_control_port_address),        //                spi_0_spi_control_port.address
+		.spi_0_spi_control_port_write                (mm_interconnect_0_spi_0_spi_control_port_write),          //                                      .write
+		.spi_0_spi_control_port_read                 (mm_interconnect_0_spi_0_spi_control_port_read),           //                                      .read
+		.spi_0_spi_control_port_readdata             (mm_interconnect_0_spi_0_spi_control_port_readdata),       //                                      .readdata
+		.spi_0_spi_control_port_writedata            (mm_interconnect_0_spi_0_spi_control_port_writedata),      //                                      .writedata
+		.spi_0_spi_control_port_chipselect           (mm_interconnect_0_spi_0_spi_control_port_chipselect),     //                                      .chipselect
 		.SRAM_s1_address                             (mm_interconnect_0_sram_s1_address),                       //                               SRAM_s1.address
 		.SRAM_s1_write                               (mm_interconnect_0_sram_s1_write),                         //                                      .write
 		.SRAM_s1_readdata                            (mm_interconnect_0_sram_s1_readdata),                      //                                      .readdata
@@ -191,6 +224,7 @@ module My_First_NIOS_II_Platform_Designer (
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
+		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
 		.sender_irq    (hellonios_irq_irq)               //    sender.irq
 	);
 

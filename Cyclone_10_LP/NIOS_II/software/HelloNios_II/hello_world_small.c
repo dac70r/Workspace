@@ -94,6 +94,12 @@ void timer_isr(void *context) {
 
     // Clear the timer interrupt
     IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
+
+    // Prints the message on Console (UART to Console is established through a USB Blaster)
+    // Such that the message appears in synchronous with the LED
+    if(led_state==0){
+    	alt_putstr("Hello from Nios II!\n");
+    }
 }
 
 // Initializes and Starts the Timer
@@ -114,10 +120,6 @@ alt_ic_isr_register(TIMER_IRQ_INTERRUPT_CONTROLLER_ID,
 
 int main()
 { 
-  alt_putstr("Hello from Nios II!\n");
-  int count = 0;
-  int delay = 0;
-
   init_timer();
 
   /* Event loop never exits. */

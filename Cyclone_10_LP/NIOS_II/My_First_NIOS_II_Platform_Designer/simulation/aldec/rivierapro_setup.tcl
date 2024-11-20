@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2024.11.20.16:22:07
+# ACDS 18.1 625 win32 2024.11.20.17:27:26
 # ----------------------------------------
 # Auto-generated simulation script rivierapro_setup.tcl
 # ----------------------------------------
@@ -225,6 +225,8 @@ ensure_lib                                        ./libraries/irq_mapper
 vmap       irq_mapper                             ./libraries/irq_mapper                            
 ensure_lib                                        ./libraries/mm_interconnect_0                     
 vmap       mm_interconnect_0                      ./libraries/mm_interconnect_0                     
+ensure_lib                                        ./libraries/spi_0                                 
+vmap       spi_0                                  ./libraries/spi_0                                 
 ensure_lib                                        ./libraries/TIMER                                 
 vmap       TIMER                                  ./libraries/TIMER                                 
 ensure_lib                                        ./libraries/SRAM                                  
@@ -284,6 +286,7 @@ alias com {
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                                               -work rst_controller                        
   eval  vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS      "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_irq_mapper.sv"                                          -work irq_mapper                            
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v"                                    -work mm_interconnect_0                     
+  eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_spi_0.v"                                                -work spi_0                                 
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_TIMER.v"                                                -work TIMER                                 
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"                                                 -work SRAM                                  
   eval  vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v"                                            -work HelloNios                             
@@ -296,14 +299,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L TIMER -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L spi_0 -L TIMER -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -dbg -O2 option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L TIMER -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim -dbg -O2 +access +r -t ps $ELAB_OPTIONS -L work -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L spi_0 -L TIMER -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
