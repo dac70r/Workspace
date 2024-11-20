@@ -4,11 +4,12 @@
 
 `timescale 1 ps / 1 ps
 module PLL_complete (
-		input  wire  clk_clk,          //          clk.clk
-		input  wire  reset_reset_n,    //        reset.reset_n
-		output wire  to_outside_led,   //   to_outside.led
-		output wire  to_outside_1_led, // to_outside_1.led
-		output wire  to_outside_2_led  // to_outside_2.led
+		output wire  altpll_0_locked_conduit_export, // altpll_0_locked_conduit.export
+		input  wire  clk_clk,                        //                     clk.clk
+		input  wire  reset_reset_n,                  //                   reset.reset_n
+		output wire  to_outside_led,                 //              to_outside.led
+		output wire  to_outside_1_led,               //            to_outside_1.led
+		output wire  to_outside_2_led                //            to_outside_2.led
 	);
 
 	wire    altpll_0_c0_clk;                    // altpll_0:c0 -> [blink_0:clock, rst_controller_001:clk]
@@ -30,10 +31,10 @@ module PLL_complete (
 		.c0                 (altpll_0_c0_clk),                //                    c0.clk
 		.c1                 (altpll_0_c1_clk),                //                    c1.clk
 		.c2                 (altpll_0_c2_clk),                //                    c2.clk
+		.locked             (altpll_0_locked_conduit_export), //        locked_conduit.export
 		.scandone           (),                               //           (terminated)
 		.scandataout        (),                               //           (terminated)
 		.areset             (1'b0),                           //           (terminated)
-		.locked             (),                               //           (terminated)
 		.phasedone          (),                               //           (terminated)
 		.phasecounterselect (4'b0000),                        //           (terminated)
 		.phaseupdown        (1'b0),                           //           (terminated)

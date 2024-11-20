@@ -8,6 +8,8 @@ Progress: Adding blink_0 [blink 1.0]
 Progress: Parameterizing module blink_0
 Progress: Adding blink_1 [blink 1.0]
 Progress: Parameterizing module blink_1
+Progress: Adding blink_2 [blink 1.0]
+Progress: Parameterizing module blink_2
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
 Progress: Building connections
@@ -28,6 +30,8 @@ Progress: Adding blink_0 [blink 1.0]
 Progress: Parameterizing module blink_0
 Progress: Adding blink_1 [blink 1.0]
 Progress: Parameterizing module blink_1
+Progress: Adding blink_2 [blink 1.0]
+Progress: Parameterizing module blink_2
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
 Progress: Building connections

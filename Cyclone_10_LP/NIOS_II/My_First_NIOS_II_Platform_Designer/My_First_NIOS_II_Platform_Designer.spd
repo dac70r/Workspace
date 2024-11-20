@@ -177,9 +177,9 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
-   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex"
-   type="HEX"
-   library="SRAM" />
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_TIMER.v"
+   type="VERILOG"
+   library="TIMER" />
  <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"
    type="VERILOG"

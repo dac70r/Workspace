@@ -7,6 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library,Project/My Own IP Cores" />
+ <library
+   expandedCategories="Library/Interface Protocols,Library/University Program,Project/System,Library,Library/University Program/Clock,Library/Basic Functions/Clocks; PLLs and Resets/PLL,Library/Interface Protocols/Transceiver PLL,Library/Basic Functions,Library/Basic Functions/Clocks; PLLs and Resets,Project" />
  <window width="1938" height="1048" x="-8" y="3" />
 </preferences>

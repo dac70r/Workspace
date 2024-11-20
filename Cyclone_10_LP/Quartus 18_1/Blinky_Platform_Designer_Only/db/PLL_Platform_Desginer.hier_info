@@ -1,12 +1,13 @@
 |PLL_complete
+altpll_0_locked_conduit_export <= PLL_complete_altpll_0:altpll_0.locked
 clk_clk => clk_clk.IN2
 reset_reset_n => _.IN1
 reset_reset_n => _.IN1
 reset_reset_n => _.IN1
 reset_reset_n => _.IN1
-to_outside_led << PLL_Platform_Desginer:blink_0.LED
-to_outside_1_led << PLL_Platform_Desginer:blink_1.LED
-to_outside_2_led << PLL_Platform_Desginer:blink_2.LED
+to_outside_led <= PLL_Platform_Desginer:blink_0.LED
+to_outside_1_led <= PLL_Platform_Desginer:blink_1.LED
+to_outside_2_led <= PLL_Platform_Desginer:blink_2.LED
 
 
 |PLL_complete|PLL_complete_altpll_0:altpll_0

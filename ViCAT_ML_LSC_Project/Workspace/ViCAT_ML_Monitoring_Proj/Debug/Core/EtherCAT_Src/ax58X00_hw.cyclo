@@ -1,0 +1,15 @@
+../Core/EtherCAT_Src/ax58X00_hw.c:67:16:HW_SPI_TransmitReceive	1
+../Core/EtherCAT_Src/ax58X00_hw.c:94:13:HW_SPI_Read	5
+../Core/EtherCAT_Src/ax58X00_hw.c:158:13:HW_SPI_Write	5
+../Core/EtherCAT_Src/ax58X00_hw.c:217:13:GetInterruptRegister	1
+../Core/EtherCAT_Src/ax58X00_hw.c:235:13:ISR_GetInterruptRegister	1
+../Core/EtherCAT_Src/ax58X00_hw.c:246:9:HW_Init	7
+../Core/EtherCAT_Src/ax58X00_hw.c:337:6:HW_Release	1
+../Core/EtherCAT_Src/ax58X00_hw.c:344:10:HW_GetALEventRegister	1
+../Core/EtherCAT_Src/ax58X00_hw.c:357:10:HW_GetALEventRegister_Isr	1
+../Core/EtherCAT_Src/ax58X00_hw.c:372:6:HW_EscRead	1
+../Core/EtherCAT_Src/ax58X00_hw.c:390:6:HW_EscReadIsr	1
+../Core/EtherCAT_Src/ax58X00_hw.c:404:6:HW_EscWrite	1
+../Core/EtherCAT_Src/ax58X00_hw.c:427:6:HW_EscWriteIsr	1
+../Core/EtherCAT_Src/ax58X00_hw.c:459:6:EXTI9_5_IRQHandler	3
+../Core/EtherCAT_Src/ax58X00_hw.c:482:6:EXTI4_IRQHandler	2

@@ -1,4 +1,4 @@
-# NIOS II Blinky on Cyclone 10 LP Evaluation Kit
+# Using NIOS II to do Blinky with Timer Peripheral on Cyclone 10 LP Evaluation Kit
 
 # Skills learnt: 
 
@@ -10,5 +10,8 @@
 
 4. Everytime we port our design elsewhere, we need to regerate the bsp file in NIOS. To generate the hex file, make file -> build -> mem_init_gen, remember to add this to onchip memory in platform designer.
 
-
+# Peripherals used: Timer
+1. Add a timer to your system using Platform Designer
+2. Configure your parameters with the desired period and mode of operation.
+3. In this example, we run an ISR every time the timer period is up. The ISR program includes the toggling of LED on the Cyclone 10 LP Dev Kit. 
 

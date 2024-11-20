@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HelloNios_II/own_def&apos; to &apos;own_def.h&apos;" description="Rename resource &apos;own_def&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="own_def" name="own_def.h" stamp="1732087832621" updateReferences="true"/>
+</session>

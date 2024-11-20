@@ -1,0 +1,10 @@
+17:23:20 **** Incremental Build of configuration Debug for project ViCAT_ML_Monitoring_Proj ****
+make -j8 all 
+arm-none-eabi-size  ViCAT_ML_Monitoring_Proj.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52760	   1040	   4144	  57944	   e258	ViCAT_ML_Monitoring_Proj.elf
+Finished building: default.size.stdout
+ 
+
+17:23:20 Build Finished. 0 errors, 0 warnings. (took 666ms)
+

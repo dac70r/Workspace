@@ -1,0 +1,325 @@
+#ifndef __SAMPLEHW_H__
+#define __SAMPLEHW_H__
+
+#include "esc.h"
+
+/**
+ * @brief Local Settings
+ *
+ */
+#include "chip_driver_config.h"
+
+/**
+ * @brief Local Config
+ *
+ */
+#define HW_SAME_IRQHANDLER 0
+
+/* Sync0 and Sync1 */
+#define HW_SYNC0_PORT ESC_SYNC_L0_GPIO_Port
+#define HW_SYNC0_PIN ESC_SYNC_L0_Pin
+#define HW_SYNC1_PORT ESC_SYNC_L1_GPIO_Port
+#define HW_SYNC1_PIN ESC_SYNC_L1_Pin
+
+/* Interrupt */
+#define HW_SPI_ESC_INT_PORT ESC_SPI_SINT_GPIO_Port
+#define HW_SPI_ESC_INT_PIN ESC_SPI_SINT_Pin
+#define HW_ALEVENT_IRQHandler EXTI3_IRQHandler
+
+#if HW_SAME_IRQHANDLER == 1
+#define HW_SYNC0_SYNC1_ALEVENT_IRQHandler EXTI10_4_IRQHandler
+#else
+#define HW_SYNC0_SYNC1_IRQHandler EXTI10_4_IRQHandler
+#endif
+
+/* EEPROM done check pin */
+#define HW_EEPROM_RELOAD_TIMEOUT 10000  // unit in 1ms
+#define HW_EEPROM_PORT ESC_EEP_DONE_GPIO_Port
+#define HW_EEPROM_PIN ESC_EEP_DONE_Pin
+
+/* Timer for tick or delay function use at 2ms*/
+#define HW_TIMETICK_MAX_VALUE 0xFFFFU
+#define HW_TIMETICK_INSTANCE TIM6
+#define HW_TIMETICK_INSTANCE_H htim6
+
+/* Timer for periodic task execution at 1ms*/
+#define HW_TIMETASK_INSTANCE TIM16
+#define HW_TIMETASK_INSTANCE_H htim16
+#define HW_TIMETASK_IRQHandler TIM16_IRQHandler
+
+/* SPI PDI */
+#define ENABLE_3_BYTES_ADDR 1
+#define SPI_ACTIVE_LOW 1
+
+#define HW_SPI_ESC_INSTANCE_H hspi1
+
+#define HW_SPI_ESC_CS_PORT ESC_SPI_CS_GPIO_Port
+#define HW_SPI_ESC_CS_PIN ESC_SPI_CS_Pin
+
+/**
+ * @brief Fixed Config
+ *
+ */
+#define HW_SPI_MAX_DATA_FRAGMENT_SIZE 512
+#define HW_SPI_MAX_ADDR_DUMMY_BYTES 4
+#define HW_SPI_MAX_XFER_BUF_SIZE \
+    (HW_SPI_MAX_ADDR_DUMMY_BYTES + HW_SPI_MAX_DATA_FRAGMENT_SIZE)
+#define HW_SPI_XFER_TIMEOUT 10  // ms
+#define HW_MAX_DELAY 0xFFFFFFFFU
+
+/* SPI command definition */
+#define HW_SPI_NOP_CMD 0x00
+#define HW_SPI_READ_CMD 0x02
+#define HW_SPI_READ_WITH_WAIT_CMD 0x03
+#define HW_SPI_WRITE_CMD 0x04
+#define HW_SPI_ADDR_EXT_CMD 0x06
+#define HW_SPI_CMD_MASK 0x07
+
+/* ESC Memory Mapping */
+#define ESC_ALIAS_ADDRESS_OFFSET 0x0012
+
+/* EtherCAT Definitions */
+#define ESC_RD 0x02 /**< \brief Indicates a read access to ESC or EEPROM*/
+#define ESC_WR 0x04 /**< \brief Indicates a write access to ESC or EEPROM.*/
+
+/**
+ * @brief  625 ticks per ms
+ */
+#define ECAT_TIMER_INC_P_MS 0x271
+
+/**
+ * @brief  Disable interrupt source INT1
+ */
+#ifndef DISABLE_ESC_INT
+#define DISABLE_ESC_INT()
+#endif
+
+/**
+ * @brief  ENABLE interrupt source INT1
+ */
+#ifndef ENABLE_ESC_INT
+#define ENABLE_ESC_INT()
+#endif
+
+/**
+ * @brief  Access to the hardware timer
+ */
+#ifndef HW_GetTimer
+#define HW_GetTimer() ((uint16_t)(HW_TIMETICK_INSTANCE->CNT >> 1))
+#endif
+
+/**
+ * @brief  Clear the hardware timer
+ */
+#ifndef HW_ClearTimer
+#define HW_ClearTimer() (HW_TIMETICK_INSTANCE->CNT = 0)
+#endif
+
+/**
+ * @brief  No interrupts are supported so the default Get AL Event register
+ * (0x220) function is used
+ */
+#if !INTERRUPTS_SUPPORTED
+#define HW_GetALEventRegister_Isr HW_GetALEventRegister
+#endif
+
+/**
+ * @brief  16Bit ESC read access
+ */
+#define HW_EscReadWord(WordValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  32Bit ESC read access
+ */
+#define HW_EscReadDWord(DWordValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  8Bit ESC read access
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscReadByte(ByteValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif
+
+/**
+ * @brief  The mailbox data is stored in the local uC memory therefore the
+ * default read function is used.
+ */
+#define HW_EscReadMbxMem(pData, Address, Len) \
+    HW_EscRead(((MEM_ADDR *)(pData)), ((uint16_t)(Address)), (Len))
+
+#if INTERRUPTS_SUPPORTED
+/**
+ * @brief  Interrupt specific 16Bit ESC read access
+ */
+#define HW_EscReadWordIsr(WordValue, Address) \
+    HW_EscReadIsr(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  Interrupt specific 32Bit ESC read access
+ */
+#define HW_EscReadDWordIsr(DWordValue, Address) \
+    HW_EscReadIsr(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  Interrupt specific 8Bit ESC read access
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscReadByteIsr(ByteValue, Address) \
+    HW_EscReadIsr(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif
+
+#else  //! INTERRUPTS_SUPPORTED
+
+/**
+ * @brief  No Interrupts are supported so the generic ESC write access function
+ * is used
+ */
+#define HW_EscReadIsr(pData, Address, Len) \
+    HW_EscRead(((MEM_ADDR *)(pData)), ((uint16_t)(Address)), (Len))
+
+/**
+ * @brief  No Interrupts are used so the generic (16Bit) ESC read access
+ * function is used
+ */
+#define HW_EscReadWordIsr(WordValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  No Interrupts are used so the generic (32Bit) ESC read access
+ * function is used
+ */
+#define HW_EscReadDWordIsr(DWordValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  No Interrupts are used so the generic (8Bit) ESC read access function
+ * is used
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscReadByteIsr(ByteValue, Address) \
+    HW_EscRead(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif  //! ESC_16BIT_ACCESS
+
+#endif  // end of INTERRUPTS_SUPPORTED
+
+/**
+ * @brief  16Bit ESC write access
+ */
+#define HW_EscWriteWord(WordValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  32Bit ESC write access
+ */
+#define HW_EscWriteDWord(DWordValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  8Bit ESC write access
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscWriteByte(ByteValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif
+
+/**
+ * @brief  The mailbox data is stored in the local uC memory therefore the
+ * default write function is used.
+ */
+#define HW_EscWriteMbxMem(pData, Address, Len) \
+    HW_EscWrite(((MEM_ADDR *)(pData)), ((uint16_t)(Address)), (Len))
+
+#if INTERRUPTS_SUPPORTED
+/**
+ * @brief  Interrupt specific 16Bit ESC write access
+ */
+#define HW_EscWriteWordIsr(WordValue, Address) \
+    HW_EscWriteIsr(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  Interrupt specific 32Bit ESC write access
+ */
+#define HW_EscWriteDWordIsr(DWordValue, Address) \
+    HW_EscWriteIsr(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  Interrupt specific 8Bit ESC write access
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscWriteByteIsr(ByteValue, Address) \
+    HW_EscWriteIsr(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif
+
+#else  //! INTERRUPTS_SUPPORTED
+
+/**
+ * @brief  No Interrupts are supported so the generic ESC write access function
+ * is used
+ */
+#define HW_EscWriteIsr(pData, Address, Len) \
+    HW_EscWrite(((MEM_ADDR *)(pData)), ((uint16_t)(Address)), (Len))
+
+/**
+ * @brief  No Interrupts are used so the generic (16Bit) ESC write access
+ * function is used
+ */
+#define HW_EscWriteWordIsr(WordValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(WordValue)), ((uint16_t)(Address)), 2)
+
+/**
+ * @brief  No Interrupts are used so the generic (32Bit) ESC write access
+ * function is used
+ */
+#define HW_EscWriteDWordIsr(DWordValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(DWordValue)), ((uint16_t)(Address)), 4)
+
+/**
+ * @brief  No Interrupts are used so the generic (8Bit) ESC write access
+ * function is used
+ */
+#if !ESC_16BIT_ACCESS
+#define HW_EscWriteByteIsr(ByteValue, Address) \
+    HW_EscWrite(((MEM_ADDR *)&(ByteValue)), ((uint16_t)(Address)), 1)
+#endif
+
+#endif  // end of INTERRUPTS_SUPPORTED
+
+#if __SAMPLEHW__
+#define PROTO
+#else
+#define PROTO extern
+#endif
+
+PROTO uint8_t HW_Init(void);
+PROTO void HW_Release(void);
+PROTO uint16_t HW_GetALEventRegister(void);
+
+#if INTERRUPTS_SUPPORTED
+PROTO uint16_t HW_GetALEventRegister_Isr(void);
+#endif  // end of INTERRUPTS_SUPPORTED
+
+PROTO void HW_EscRead(MEM_ADDR *pData, uint16_t Address, uint16_t Len);
+#if INTERRUPTS_SUPPORTED
+PROTO void HW_EscReadIsr(MEM_ADDR *pData, uint16_t Address, uint16_t Len);
+#endif
+
+PROTO void HW_EscWrite(MEM_ADDR *pData, uint16_t Address, uint16_t Len);
+
+#if INTERRUPTS_SUPPORTED
+PROTO void HW_EscWriteIsr(MEM_ADDR *pData, uint16_t Address, uint16_t Len);
+#endif
+
+#if BOOTSTRAPMODE_SUPPORTED
+PROTO void HW_RestartTarget(void);
+#endif
+
+#if ESC_EEPROM_EMULATION
+PROTO uint16_t HW_EepromReload(void);
+#endif
+
+#undef PROTO
+
+#endif

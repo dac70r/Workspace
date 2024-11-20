@@ -1,0 +1,14 @@
+
+#ifndef __OWN_DEF_H__
+#define __OWN_DEF_H__
+
+void timer_isr(void *context) {
+    static int led_state = 0;
+
+    // Toggle LED state
+    led_state = !led_state;
+    IOWR_ALTERA_AVALON_PIO_DATA(LED_BASE, led_state);
+
+    // Clear the timer interrupt
+    IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
+}

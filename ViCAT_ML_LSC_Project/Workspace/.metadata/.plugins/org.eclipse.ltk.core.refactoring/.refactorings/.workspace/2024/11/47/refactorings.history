@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;ViCAT_ML_Monitoring_Proj/Core/EtherCAT&apos;" deleteContents="false" description="Delete resource &apos;ViCAT_ML_Monitoring_Proj/Core/EtherCAT&apos;" element1="/ViCAT_ML_Monitoring_Proj/Core/EtherCAT" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1731897880394"/>&#x0A;&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/ViCAT_ML_Monitoring_Proj/Core/EtherCAT_Src/el9800hw.c" element2="/ViCAT_ML_Monitoring_Proj/Core/EtherCAT_Src/el9800hw.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1731904597060"/>
+</session>

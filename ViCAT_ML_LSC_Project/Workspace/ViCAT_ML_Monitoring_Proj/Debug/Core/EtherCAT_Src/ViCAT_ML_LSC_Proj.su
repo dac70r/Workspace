@@ -1,0 +1,12 @@
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:61:9:APPL_AckErrorInd	16	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:80:8:APPL_StartMailboxHandler	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:96:8:APPL_StopMailboxHandler	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:117:8:APPL_StartInputHandler	16	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:133:8:APPL_StopInputHandler	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:151:8:APPL_StartOutputHandler	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:167:8:APPL_StopOutputHandler	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:181:8:APPL_GenerateMapping	48	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:270:6:APPL_InputMapping	16	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:281:6:APPL_OutputMapping	16	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:291:6:APPL_Application	4	static
+../Core/EtherCAT_Src/ViCAT_ML_LSC_Proj.c:326:6:main_initial	8	static

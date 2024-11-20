@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 19.1 670 win32 2024.10.24.15:52:34
+# ACDS 18.1 625 win32 2024.11.20.16:22:07
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 19.1 670 win32 2024.10.24.15:52:34
+# ACDS 18.1 625 win32 2024.11.20.16:22:07
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="My_First_NIOS_II_Platform_Designer"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="C:/intelfpga_lite/19.1/quartus/"
+QUARTUS_INSTALL_DIR="C:/intelfpga_lite/18.1/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
@@ -139,7 +139,6 @@ if [ $SKIP_FILE_COPY -eq 0 ]; then
   cp -f $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.dat ./
   cp -f $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.hex ./
   cp -f $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu_rf_ram_b.mif ./
-  cp -f $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.hex ./
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
@@ -178,6 +177,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_irq_mapper.sv \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v \
+  $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_TIMER.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_GPIO.v \

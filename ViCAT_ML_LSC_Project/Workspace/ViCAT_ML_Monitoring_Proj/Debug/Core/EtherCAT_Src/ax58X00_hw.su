@@ -1,0 +1,15 @@
+../Core/EtherCAT_Src/ax58X00_hw.c:67:16:HW_SPI_TransmitReceive	40	static
+../Core/EtherCAT_Src/ax58X00_hw.c:94:13:HW_SPI_Read	32	static
+../Core/EtherCAT_Src/ax58X00_hw.c:158:13:HW_SPI_Write	32	static
+../Core/EtherCAT_Src/ax58X00_hw.c:217:13:GetInterruptRegister	8	static
+../Core/EtherCAT_Src/ax58X00_hw.c:235:13:ISR_GetInterruptRegister	8	static
+../Core/EtherCAT_Src/ax58X00_hw.c:246:9:HW_Init	32	static,ignoring_inline_asm
+../Core/EtherCAT_Src/ax58X00_hw.c:337:6:HW_Release	4	static
+../Core/EtherCAT_Src/ax58X00_hw.c:344:10:HW_GetALEventRegister	8	static
+../Core/EtherCAT_Src/ax58X00_hw.c:357:10:HW_GetALEventRegister_Isr	8	static
+../Core/EtherCAT_Src/ax58X00_hw.c:372:6:HW_EscRead	16	static
+../Core/EtherCAT_Src/ax58X00_hw.c:390:6:HW_EscReadIsr	16	static
+../Core/EtherCAT_Src/ax58X00_hw.c:404:6:HW_EscWrite	24	static,ignoring_inline_asm
+../Core/EtherCAT_Src/ax58X00_hw.c:427:6:HW_EscWriteIsr	16	static
+../Core/EtherCAT_Src/ax58X00_hw.c:459:6:EXTI9_5_IRQHandler	8	static
+../Core/EtherCAT_Src/ax58X00_hw.c:482:6:EXTI4_IRQHandler	8	static

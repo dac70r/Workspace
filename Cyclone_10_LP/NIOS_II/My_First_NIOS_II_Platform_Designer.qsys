@@ -26,7 +26,7 @@
    {
       datum baseAddress
       {
-         value = "12304";
+         value = "12336";
          type = "String";
       }
    }
@@ -42,7 +42,7 @@
    {
       datum baseAddress
       {
-         value = "12288";
+         value = "12320";
          type = "String";
       }
    }
@@ -75,6 +75,22 @@
       datum baseAddress
       {
          value = "4096";
+         type = "String";
+      }
+   }
+   element TIMER
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element TIMER.s1
+   {
+      datum baseAddress
+      {
+         value = "12288";
          type = "String";
       }
    }
@@ -116,7 +132,7 @@
  <module
    name="DEBUG"
    kind="altera_avalon_jtag_uart"
-   version="19.1"
+   version="18.1"
    enabled="1">
   <parameter name="allowMultipleConnections" value="false" />
   <parameter name="avalonSpec" value="2.0" />
@@ -132,7 +148,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="GPIO" kind="altera_avalon_pio" version="19.1" enabled="1">
+ <module name="GPIO" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -146,7 +162,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="HelloNios" kind="altera_nios2_gen2" version="19.1" enabled="1">
+ <module name="HelloNios" kind="altera_nios2_gen2" version="18.1" enabled="1">
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
   <parameter name="AUTO_DEVICE" value="10CL025YU256I7G" />
@@ -166,7 +182,7 @@
   <parameter name="dataAddrWidth" value="14" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='GPIO.s1' start='0x3000' end='0x3010' type='altera_avalon_pio.s1' /><slave name='DEBUG.avalon_jtag_slave' start='0x3010' end='0x3018' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='TIMER.s1' start='0x3000' end='0x3020' type='altera_avalon_timer.s1' /><slave name='GPIO.s1' start='0x3020' end='0x3030' type='altera_avalon_pio.s1' /><slave name='DEBUG.avalon_jtag_slave' start='0x3030' end='0x3038' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -212,7 +228,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="internalIrqMaskSystemInfo" value="3" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -327,7 +343,7 @@
  <module
    name="SRAM"
    kind="altera_avalon_onchip_memory2"
-   version="19.1"
+   version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
   <parameter name="autoInitializationFileName" value="$${FILENAME}_SRAM" />
@@ -342,7 +358,7 @@
   <parameter name="enPRInitMode" value="false" />
   <parameter name="enableDiffWidth" value="false" />
   <parameter name="initMemContent" value="true" />
-  <parameter name="initializationFileName">C:/Users/guan-ming.dennis-won/Documents/FPGA_Folder/NIOS_II/software/HelloWorldSmall/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</parameter>
+  <parameter name="initializationFileName">C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</parameter>
   <parameter name="instanceID" value="NONE" />
   <parameter name="memorySize" value="4096" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
@@ -352,11 +368,23 @@
   <parameter name="singleClockOperation" value="false" />
   <parameter name="slave1Latency" value="1" />
   <parameter name="slave2Latency" value="1" />
-  <parameter name="useNonDefaultInitFile" value="false" />
+  <parameter name="useNonDefaultInitFile" value="true" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
  </module>
- <module name="clk_0" kind="clock_source" version="19.1" enabled="1">
+ <module name="TIMER" kind="altera_avalon_timer" version="18.1" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="0.5" />
+  <parameter name="periodUnits" value="SEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
+ <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
@@ -364,16 +392,16 @@
  </module>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.data_master"
    end="DEBUG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3010" />
+  <parameter name="baseAddress" value="0x3030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.data_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -382,7 +410,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.data_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -391,16 +419,25 @@
  </connection>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.data_master"
    end="GPIO.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="HelloNios.data_master"
+   end="TIMER.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.instruction_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -409,31 +446,36 @@
  </connection>
  <connection
    kind="avalon"
-   version="19.1"
+   version="18.1"
    start="HelloNios.instruction_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x1000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="19.1" start="clk_0.clk" end="HelloNios.clk" />
- <connection kind="clock" version="19.1" start="clk_0.clk" end="DEBUG.clk" />
- <connection kind="clock" version="19.1" start="clk_0.clk" end="GPIO.clk" />
- <connection kind="clock" version="19.1" start="clk_0.clk" end="SRAM.clk1" />
- <connection kind="interrupt" version="19.1" start="HelloNios.irq" end="DEBUG.irq">
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="HelloNios.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="DEBUG.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="GPIO.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="TIMER.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="SRAM.clk1" />
+ <connection kind="interrupt" version="18.1" start="HelloNios.irq" end="DEBUG.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="HelloNios.irq" end="TIMER.irq">
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="reset"
-   version="19.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="HelloNios.reset" />
- <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="DEBUG.reset" />
- <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="GPIO.reset" />
- <connection kind="reset" version="19.1" start="clk_0.clk_reset" end="SRAM.reset1" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="DEBUG.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="GPIO.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="TIMER.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="SRAM.reset1" />
  <connection
    kind="reset"
-   version="19.1"
+   version="18.1"
    start="HelloNios.debug_reset_request"
    end="clk_0.clk_in_reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

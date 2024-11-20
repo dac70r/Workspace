@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Apr 19 15:01:33 2024
+Analysis & Synthesis Status : Successful - Wed Nov 20 12:50:54 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : PLL_Platform_Desginer
 Top-level Entity Name : PLL_complete
 Family : Cyclone 10 LP
-Total logic elements : 66
-    Total combinational functions : 57
-    Dedicated logic registers : 51
-Total registers : 51
-Total pins : 5
+Total logic elements : 738
+    Total combinational functions : 537
+    Dedicated logic registers : 536
+Total registers : 536
+Total pins : 6
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 8,192
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
