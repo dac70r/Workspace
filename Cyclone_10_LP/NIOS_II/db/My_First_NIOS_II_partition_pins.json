@@ -36,7 +36,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_SS",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_MISO",
 					"strict" : false
 				},
 				{

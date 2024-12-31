@@ -1,0 +1,3 @@
+C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II_STM32/NIOS_II_STM32/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c:75:19:HAL_SPIEx_FlushRxFifo	8
+C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II_STM32/NIOS_II_STM32/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c:114:19:HAL_SPIEx_EnableLockConfiguration	4
+C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II_STM32/NIOS_II_STM32/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c:162:19:HAL_SPIEx_ConfigureUnderrun	5

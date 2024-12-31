@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2024.11.20.17:27:30 -->
+ <!-- 2024.12.26.17:09:53 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1732094850</value>
+  <value>1735204192</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -5037,7 +5037,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initializationFileName">
    <type>java.lang.String</type>
-   <value>C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
+   <value>C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5248,7 +5248,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_init_file_name">
    <type>java.lang.String</type>
-   <value>C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
+   <value>C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

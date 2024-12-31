@@ -1,0 +1,10 @@
+15:20:19 **** Incremental Build of configuration Debug for project NIOS_II_STM32_CM4 ****
+make -j8 all 
+arm-none-eabi-size  NIOS_II_STM32_CM4.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3148	     16	   1568	   4732	   127c	NIOS_II_STM32_CM4.elf
+Finished building: default.size.stdout
+ 
+
+15:20:20 Build Finished. 0 errors, 0 warnings. (took 637ms)
+

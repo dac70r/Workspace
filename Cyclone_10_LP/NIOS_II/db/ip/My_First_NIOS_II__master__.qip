@@ -1,0 +1,1 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) My_First_NIOS_II_Platform_Designer/My_First_NIOS_II_Platform_Designer.qip]
