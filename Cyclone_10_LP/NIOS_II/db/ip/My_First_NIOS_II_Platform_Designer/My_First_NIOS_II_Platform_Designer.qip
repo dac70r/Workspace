@@ -2,7 +2,7 @@ set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "My_First_NIOS_II_Platform_Designer" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../My_First_NIOS_II_Platform_Designer.sopcinfo"]
-set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name SLD_INFO "QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735204192"
+set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name SLD_INFO "QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735633293"
 set_global_assignment -library "My_First_NIOS_II_Platform_Designer" -name SLD_FILE [file join $::quartus(qip_path) "My_First_NIOS_II_Platform_Designer.regmap"]
 set_global_assignment -library "My_First_NIOS_II_Platform_Designer" -name SLD_FILE [file join $::quartus(qip_path) "My_First_NIOS_II_Platform_Designer.debuginfo"]
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_TARGETED_DEVICE_FAMILY "Cyclone 10 LP"
@@ -15,7 +15,7 @@ set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTczNTIwNDE5Mg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTczNTYzMzI5Mw==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSAxMCBMUA==::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MTBDTDAyNVlVMjU2STdH::QXV0byBERVZJQ0U="
 set_global_assignment -entity "My_First_NIOS_II_Platform_Designer" -library "My_First_NIOS_II_Platform_Designer" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

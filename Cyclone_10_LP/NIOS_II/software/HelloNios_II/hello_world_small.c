@@ -148,21 +148,29 @@ int main()
 	alt_u8 tx_data[] = {0xA5, 0x5A};
 	alt_u8 rx_data[2];
 
-	init_timer();
+	//init_timer();
+	int spi_check = -1;
 
 	/* Event loop never exits. */
 	while (1){
-		int spi_check = alt_avalon_spi_command(SPI_0_BASE,
-									0,					// number of slaves
-									sizeof(tx_data),		// number of bytes to send to SPI Slave, '0' if only reading
-									tx_data,			// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-									0,		// The number of bytes to read from the SPI slave, '0' if only writing
-									NULL,			// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
-									0					// Special control flags for the SPI command
-									);
-		}
-		delay_ms(1000);
+		spi_check = alt_avalon_spi_command(SPI_0_BASE,
+											0,					// number of slaves
+											sizeof(tx_data),		// number of bytes to send to SPI Slave, '0' if only reading
+											tx_data,			// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+											0,		// The number of bytes to read from the SPI slave, '0' if only writing
+											NULL,			// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+											0					// Special control flags for the SPI command
+											);
 
+		if(spi_check == 0){
+			alt_putstr("SPI Ok!\n");
+			}
+		else
+			alt_putstr("SPI Fault!\n");
+		}
+
+
+		delay_ms(1000);
   return 0;
 }
 

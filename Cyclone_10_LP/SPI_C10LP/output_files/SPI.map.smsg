@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at SPI_module.v(48): always construct contains both blocking and non-blocking assignments File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SPI_C10LP/SPI_module.v Line: 48

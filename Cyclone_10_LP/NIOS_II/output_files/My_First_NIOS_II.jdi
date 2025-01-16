@@ -139,8 +139,8 @@
   <sld_infos>
     <sld_info hpath="My_First_NIOS_II_Platform_Designer:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735202990"/>
-        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735204192"/>
+        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735633179"/>
+        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735633293"/>
       </assignment_values>
       <parameters/>
     </sld_info>

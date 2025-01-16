@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Cyclone_10_LP/NIOS_II/output_files/") File("My_First_NIOS_II.sof") MfrSpec(OpMask(1));
+		Device PartName(10CL025YU256) Path("C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/output_files/") File("My_First_NIOS_II.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

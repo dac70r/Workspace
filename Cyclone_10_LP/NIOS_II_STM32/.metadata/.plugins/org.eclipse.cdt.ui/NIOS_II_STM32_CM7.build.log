@@ -1,35 +1,10 @@
-15:28:33 **** Incremental Build of configuration Debug for project NIOS_II_STM32_CM7 ****
+16:30:17 **** Incremental Build of configuration Debug for project NIOS_II_STM32_CM7 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DCORE_CM7 -DUSE_HAL_DRIVER -DSTM32H755xx -c -I../Core/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:142:18: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  142 |   uart_buf_len = sprintf(uart_buf, "Timer Test\r\n");                                                   // Calculates the size of the sentence
-      |                  ^~~~~~~
-../Core/Src/main.c:25:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   24 | #include "gpio.h"
-  +++ |+#include <stdio.h>
-   25 | 
-../Core/Src/main.c:142:18: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-  142 |   uart_buf_len = sprintf(uart_buf, "Timer Test\r\n");                                                   // Calculates the size of the sentence
-      |                  ^~~~~~~
-../Core/Src/main.c:142:18: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-../Core/Src/main.c:155:17: warning: unused variable 'rec_buff' [-Wunused-variable]
-  155 |         uint8_t rec_buff[4];                                                                                                            // Define Receive Buffer
-      |                 ^~~~~~~~
-../Core/Src/main.c:80:18: warning: unused variable 'timer_val' [-Wunused-variable]
-   80 |         uint16_t timer_val;                                                             // TIMER VARIABLES
-      |                  ^~~~~~~~~
-arm-none-eabi-gcc -o "NIOS_II_STM32_CM7.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II_STM32\NIOS_II_STM32\CM7\STM32H755ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NIOS_II_STM32_CM7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NIOS_II_STM32_CM7.elf
- 
 arm-none-eabi-size  NIOS_II_STM32_CM7.elf 
-arm-none-eabi-objdump -h -S NIOS_II_STM32_CM7.elf  > "NIOS_II_STM32_CM7.list"
    text	   data	    bss	    dec	    hex	filename
   31744	     96	   2408	  34248	   85c8	NIOS_II_STM32_CM7.elf
 Finished building: default.size.stdout
  
-Finished building: NIOS_II_STM32_CM7.list
- 
 
-15:28:36 Build Finished. 0 errors, 4 warnings. (took 2s.814ms)
+16:30:18 Build Finished. 0 errors, 0 warnings. (took 687ms)
 
