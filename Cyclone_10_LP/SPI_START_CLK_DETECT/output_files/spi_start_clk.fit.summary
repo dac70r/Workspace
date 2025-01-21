@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Jan 20 10:26:13 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : spi_start_clk
+Top-level Entity Name : spi_start_clk
+Family : Cyclone 10 LP
+Device : 10CL025YU256I7G
+Timing Models : Final
+Total logic elements : 2 / 24,624 ( < 1 % )
+    Total combinational functions : 1 / 24,624 ( < 1 % )
+    Dedicated logic registers : 2 / 24,624 ( < 1 % )
+Total registers : 2
+Total pins : 4 / 151 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

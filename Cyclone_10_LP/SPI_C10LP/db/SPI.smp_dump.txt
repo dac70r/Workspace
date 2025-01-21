@@ -1,0 +1,7 @@
+
+State Machine - |SPI|SPI_module:my_spi_module|current_state
+Name current_state.CHECK_COMPLETE current_state.STORE_BYTE current_state.RECEIVE_BIT current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.RECEIVE_BIT 0 0 1 1 
+current_state.STORE_BYTE 0 1 0 1 
+current_state.CHECK_COMPLETE 1 0 0 1 

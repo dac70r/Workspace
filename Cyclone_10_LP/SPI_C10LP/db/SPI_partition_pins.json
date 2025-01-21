@@ -4,6 +4,70 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "rx_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bit_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bit_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_bit_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_byte_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_byte_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "debug_byte_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "byte_received",
+					"strict" : false
+				},
+				{
+					"name" : "data_transaction_complete",
+					"strict" : false
+				},
+				{
 					"name" : "led",
 					"strict" : false
 				},
@@ -12,7 +76,87 @@
 					"strict" : false
 				},
 				{
+					"name" : "shift_reg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "shift_reg[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sclk_prev",
+					"strict" : false
+				},
+				{
+					"name" : "memory[0]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[1]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[2]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[3]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[4]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[5]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[6]",
+					"strict" : false
+				},
+				{
+					"name" : "memory[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ss",
+					"strict" : false
+				},
+				{
+					"name" : "sclk",
+					"strict" : false
+				},
+				{
+					"name" : "mosi",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
 					"strict" : false
 				},
 				{
