@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t rx_data[10] =  {5,6,5,5,5,5,5,5};					// Define Global Variable as UART Buffer
+uint8_t rx_data[10] =  {1,2,3,4,5,6,7,8};					// Define Global Variable as UART Buffer
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

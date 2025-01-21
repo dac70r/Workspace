@@ -48,6 +48,7 @@ memory[4] <= SPI_module:my_spi_module.memory
 memory[5] <= SPI_module:my_spi_module.memory
 memory[6] <= SPI_module:my_spi_module.memory
 memory[7] <= SPI_module:my_spi_module.memory
+lagged_clock <= SPI_module:my_spi_module.lagged_clock
 
 
 |SPI|clock:my_clock
@@ -166,7 +167,7 @@ led <= led_output.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |SPI|SPI_module:my_spi_module
-clk => ~NO_FANOUT~
+clk => lagged_clock~reg0.CLK
 rst_n => rx_data[0]~reg0.ACLR
 rst_n => rx_data[1]~reg0.ACLR
 rst_n => rx_data[2]~reg0.ACLR
@@ -190,6 +191,7 @@ rst_n => bit_count[0]~reg0.ENA
 rst_n => byte_count[2]~reg0.ENA
 rst_n => byte_count[1]~reg0.ENA
 rst_n => byte_count[0]~reg0.ENA
+spi_start => ~NO_FANOUT~
 sclk => byte_count[0]~reg0.CLK
 sclk => byte_count[1]~reg0.CLK
 sclk => byte_count[2]~reg0.CLK
@@ -213,7 +215,7 @@ sclk => rx_data[4]~reg0.CLK
 sclk => rx_data[5]~reg0.CLK
 sclk => rx_data[6]~reg0.CLK
 sclk => rx_data[7]~reg0.CLK
-sclk => sclk_prev.DATAIN
+sclk => lagged_clock~reg0.DATAIN
 ss => shift_reg.OUTPUTSELECT
 ss => shift_reg.OUTPUTSELECT
 ss => shift_reg.OUTPUTSELECT
@@ -268,7 +270,7 @@ shift_reg[4] <= shift_reg[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 shift_reg[5] <= shift_reg[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 shift_reg[6] <= shift_reg[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 shift_reg[7] <= shift_reg[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-sclk_prev <= sclk.DB_MAX_OUTPUT_PORT_TYPE
+sclk_prev <= <GND>
 sclk_rising_edge <= <GND>
 memory[0] <= memory.DB_MAX_OUTPUT_PORT_TYPE
 memory[1] <= memory.DB_MAX_OUTPUT_PORT_TYPE
@@ -278,5 +280,6 @@ memory[4] <= memory.DB_MAX_OUTPUT_PORT_TYPE
 memory[5] <= memory.DB_MAX_OUTPUT_PORT_TYPE
 memory[6] <= memory.DB_MAX_OUTPUT_PORT_TYPE
 memory[7] <= memory.DB_MAX_OUTPUT_PORT_TYPE
+lagged_clock <= lagged_clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

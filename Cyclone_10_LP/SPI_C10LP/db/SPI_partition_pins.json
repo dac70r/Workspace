@@ -108,10 +108,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "sclk_prev",
-					"strict" : false
-				},
-				{
 					"name" : "memory[0]",
 					"strict" : false
 				},
@@ -144,15 +140,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "lagged_clock",
+					"strict" : false
+				},
+				{
 					"name" : "ss",
 					"strict" : false
 				},
 				{
-					"name" : "sclk",
+					"name" : "mosi",
 					"strict" : false
 				},
 				{
-					"name" : "mosi",
+					"name" : "sclk",
 					"strict" : false
 				},
 				{

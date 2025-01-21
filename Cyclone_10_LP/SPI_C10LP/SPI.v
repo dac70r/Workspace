@@ -26,7 +26,8 @@ module SPI (
 	 output [7:0] shift_reg,  
 	 output sclk_prev,
 	 output sclk_rising_edge,
-	 output [7:0] memory
+	 output [7:0] memory,
+	 output lagged_clock
 );
  
 wire c0,c1,c2,c3;			// clk outputs from the clk module
@@ -77,7 +78,8 @@ wire c0,c1,c2,c3;			// clk outputs from the clk module
 	 .shift_reg(shift_reg),    													// Shift register for MOSI data
 	 .sclk_prev(sclk_prev),
 	 .sclk_rising_edge(sclk_rising_edge),
-	 .memory(memory)
+	 .memory(memory),
+	 .lagged_clock(lagged_clock)
 );
 
 assign debug_ss = ~ss; 				// used for better visualiztion of the start and stop of SPI Transaction
