@@ -159,9 +159,8 @@ int main()
 	// ADS131A0xReset();
 	IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, 1);
 
-	// Event loop that runs forever
+	/* Event loop never exits. */
 	while (1){
-		// launch debug mode to check the spi_check value
 		spi_check = alt_avalon_spi_command(SPI_0_BASE,
 											0,							// number of slaves
 											sizeof(opcode_null),		// number of bytes to send to SPI Slave, '0' if only reading
@@ -170,9 +169,16 @@ int main()
 											opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
 											0							// Special control flags for the SPI command
 											);
-		alt_putstr("Delay 1000ms !\n");
-		//delay_ms(1000);
-	}
+
+		if(spi_check == 0){
+			alt_putstr("SPI Ok!\n");
+			}
+		else
+			alt_putstr("SPI Fault!\n");
+		}
+
+
+		delay_ms(1000);
   return 0;
 }
 

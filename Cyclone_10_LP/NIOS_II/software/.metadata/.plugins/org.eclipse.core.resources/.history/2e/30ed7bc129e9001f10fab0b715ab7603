@@ -170,7 +170,8 @@ int main()
 											opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
 											0							// Special control flags for the SPI command
 											);
-		alt_putstr("Delay 1000ms !\n");
+
+		// delay
 		//delay_ms(1000);
 	}
   return 0;

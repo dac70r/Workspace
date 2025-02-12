@@ -119,13 +119,10 @@ void init_timer (void) {
 						NULL);
 }
 
-// Creating Own SPI Command
-// Returns the number of bytes stored in the read_data buffer.
-
-int spi_command (const alt_u8 * write_data, alt_u32 read_length,
+// Initializes the SPI Peripheral
+void spi_command (const alt_u8 * write_data, alt_u32 read_length,
 		alt_u8 * read_data ) {
 
-	// Returns:	The number of bytes stored in the read_data buffer.
 	int spi_check = alt_avalon_spi_command(SPI_0_BASE,
 							0,					// number of slaves
 							sizeof(write_data),		// number of bytes to send to SPI Slave, '0' if only reading
@@ -134,8 +131,9 @@ int spi_command (const alt_u8 * write_data, alt_u32 read_length,
 							read_data,			// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
 							0					// Special control flags for the SPI command
 							);
-
-	return spi_check;
+	if(spi_check == 0){
+		alt_putstr("SPI Transmit Error!\n");
+	}
 }
 
 // Delay function
@@ -150,29 +148,29 @@ int main()
 	alt_u8 tx_data[] = {0xA5, 0x5A};
 	alt_u8 rx_data[2];
 
-	alt_u8 opcode_null[2] = {0x00, 0x00};
-	alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x3, 0x04};
-
 	//init_timer();
 	int spi_check = -1;
 
-	// ADS131A0xReset();
-	IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, 1);
-
-	// Event loop that runs forever
+	/* Event loop never exits. */
 	while (1){
-		// launch debug mode to check the spi_check value
 		spi_check = alt_avalon_spi_command(SPI_0_BASE,
-											0,							// number of slaves
-											sizeof(opcode_null),		// number of bytes to send to SPI Slave, '0' if only reading
-											opcode_null,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-											2,							// The number of bytes to read from the SPI slave, '0' if only writing
-											opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
-											0							// Special control flags for the SPI command
+											0,					// number of slaves
+											sizeof(tx_data),		// number of bytes to send to SPI Slave, '0' if only reading
+											tx_data,			// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+											0,		// The number of bytes to read from the SPI slave, '0' if only writing
+											NULL,			// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+											0					// Special control flags for the SPI command
 											);
-		alt_putstr("Delay 1000ms !\n");
-		//delay_ms(1000);
-	}
+
+		if(spi_check == 0){
+			alt_putstr("SPI Ok!\n");
+			}
+		else
+			alt_putstr("SPI Fault!\n");
+		}
+
+
+		delay_ms(1000);
   return 0;
 }
 
