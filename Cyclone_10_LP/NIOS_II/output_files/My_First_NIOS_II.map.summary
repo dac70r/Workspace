@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Dec 31 16:22:22 2024
+Analysis & Synthesis Status : Successful - Wed Feb 12 17:21:12 2025
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : My_First_NIOS_II
 Top-level Entity Name : My_First_NIOS_II
 Family : Cyclone 10 LP
-Total logic elements : 2,126
-    Total combinational functions : 1,810
+Total logic elements : 2,138
+    Total combinational functions : 1,822
     Dedicated logic registers : 1,179
 Total registers : 1179
 Total pins : 13

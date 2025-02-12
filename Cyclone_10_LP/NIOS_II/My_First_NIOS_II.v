@@ -7,7 +7,7 @@ module My_First_NIOS_II(
 	output [7:0] 	LEDG,
 	input 			SPI_MISO,
 	output 			SPI_MOSI,
-	input 			SPI_CLOCK,
+	output 			SPI_CLOCK,
 	output 			SPI_SS
 	
 );

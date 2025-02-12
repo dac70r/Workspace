@@ -111,10 +111,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_RESET);							// Pulls the SPI line down low
-	  HAL_SPI_Transmit(&hspi6, rx_data, 8U, 1000);									// Single SPI Receive in Regular Mode
+	  HAL_SPI_Receive(&hspi6, rx_data, 2U, 1000);									// Single SPI Receive in Regular Mode
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_SET);							// Pulls the SPI line back high
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14); 										// Toggle LED to show the system is running
-	  //HAL_Delay(1000);
+	  HAL_Delay(1000);
 	  /*
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_RESET);
 	  HAL_SPI_Transmit(&hspi6, rx_data, 8U, 1000);

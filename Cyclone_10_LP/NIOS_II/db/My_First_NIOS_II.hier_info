@@ -10,7 +10,7 @@ LEDG[6] <= My_First_NIOS_II_Platform_Designer:u0.gpio_external_connection_export
 LEDG[7] <= My_First_NIOS_II_Platform_Designer:u0.gpio_external_connection_export
 SPI_MISO => SPI_MISO.IN1
 SPI_MOSI <= My_First_NIOS_II_Platform_Designer:u0.spi_0_external_MOSI
-SPI_CLOCK => SPI_CLOCK.IN1
+SPI_CLOCK <= My_First_NIOS_II_Platform_Designer:u0.spi_0_external_SCLK
 SPI_SS <= My_First_NIOS_II_Platform_Designer:u0.spi_0_external_SS_n
 
 

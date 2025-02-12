@@ -40,6 +40,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SPI_CLOCK",
+					"strict" : false
+				},
+				{
 					"name" : "SPI_SS",
 					"strict" : false
 				},
