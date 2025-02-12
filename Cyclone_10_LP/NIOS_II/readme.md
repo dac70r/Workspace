@@ -10,8 +10,14 @@
 
 4. Everytime we port our design elsewhere, we need to regerate the bsp file in NIOS. To generate the hex file, make file -> build -> mem_init_gen, remember to add this to onchip memory in platform designer.
 
-# Peripherals used: Timer
+## Peripherals used: Timer, SPI
+# Timer
 1. Add a timer to your system using Platform Designer
 2. Configure your parameters with the desired period and mode of operation.
-3. In this example, we run an ISR every time the timer period is up. The ISR program includes the toggling of LED on the Cyclone 10 LP Dev Kit. 
+3. In this example, we run an ISR every time the timer period is up. The ISR program includes the toggling of LED on the Cyclone 10 LP Dev Kit.
 
+# SPI
+1. Add a SPI peripheral using Platform Designer
+2. Configure the SPI Mode (CPOL=1,CPHA=1 in this case)
+3. Use the SPI Peripheral to send data packet to STM32F43ZI2 Nucleo board.
+4. Verify results by debugging MCU. 
