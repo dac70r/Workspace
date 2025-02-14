@@ -1,5 +1,5 @@
 Flow report for My_First_NIOS_II
-Wed Feb 12 17:21:29 2025
+Fri Feb 14 13:55:09 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Feb 12 17:21:25 2025       ;
+; Flow Status                        ; Successful - Fri Feb 14 13:55:04 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; My_First_NIOS_II                            ;
 ; Top-level Entity Name              ; My_First_NIOS_II                            ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/12/2025 17:20:36 ;
+; Start date & time ; 02/14/2025 13:54:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; My_First_NIOS_II    ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------+
 ; Assignment Name                     ; Value                                                                                          ; Default Value ; Entity Name                        ; Section Id ;
 +-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 198642186969524.173935203600280                                                                ; --            ; --                                 ; --         ;
+; COMPILER_SIGNATURE_ID               ; 198642186969524.173951244003840                                                                ; --            ; --                                 ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                                                                            ; --            ; --                                 ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                                                                            ; --            ; --                                 ; --         ;
 ; MISC_FILE                           ; My_First_NIOS_II_Platform_Designer/synthesis/../My_First_NIOS_II_Platform_Designer.cmp         ; --            ; --                                 ; --         ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 4903 MB             ; 00:00:16                           ;
-; Fitter               ; 00:00:09     ; 1.1                     ; 5464 MB             ; 00:00:04                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4800 MB             ; 00:00:01                           ;
-; Total                ; 00:00:48     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis ; 00:00:43     ; 1.0                     ; 4910 MB             ; 00:00:20                           ;
+; Fitter               ; 00:00:14     ; 1.1                     ; 5466 MB             ; 00:00:06                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4686 MB             ; 00:00:00                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4797 MB             ; 00:00:01                           ;
+; Total                ; 00:01:03     ; --                      ; --                  ; 00:00:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

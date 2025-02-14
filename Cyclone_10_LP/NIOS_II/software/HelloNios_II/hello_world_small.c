@@ -150,14 +150,14 @@ int main()
 	alt_u8 tx_data[] = {0xA5, 0x5A};
 	alt_u8 rx_data[2];
 
-	alt_u8 opcode_null[2] = {0x00, 0x00};
+	alt_u8 opcode_null[4] = {0x00, 0x00, 0x00, 0x00};
 	alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x3, 0x04};
 
 	//init_timer();
 	int spi_check = -1;
 
 	// ADS131A0xReset();
-	IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, 1);
+	IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, 0b00011001);
 
 	// Event loop that runs forever
 	while (1){
@@ -166,7 +166,7 @@ int main()
 											0,							// number of slaves
 											sizeof(opcode_null),		// number of bytes to send to SPI Slave, '0' if only reading
 											opcode_null,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-											2,							// The number of bytes to read from the SPI slave, '0' if only writing
+											4,							// The number of bytes to read from the SPI slave, '0' if only writing
 											opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
 											0							// Special control flags for the SPI command
 											);
