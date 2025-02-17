@@ -1,5 +1,5 @@
 Flow report for My_First_NIOS_II
-Fri Feb 14 13:55:09 2025
+Mon Feb 17 11:19:32 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 14 13:55:04 2025       ;
+; Flow Status                        ; Successful - Mon Feb 17 11:19:27 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; My_First_NIOS_II                            ;
 ; Top-level Entity Name              ; My_First_NIOS_II                            ;
 ; Family                             ; Cyclone 10 LP                               ;
 ; Device                             ; 10CL025YU256I7G                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,006 / 24,624 ( 8 % )                      ;
-;     Total combinational functions  ; 1,826 / 24,624 ( 7 % )                      ;
-;     Dedicated logic registers      ; 1,171 / 24,624 ( 5 % )                      ;
-; Total registers                    ; 1171                                        ;
-; Total pins                         ; 13 / 151 ( 9 % )                            ;
+; Total logic elements               ; 2,573 / 24,624 ( 10 % )                     ;
+;     Total combinational functions  ; 2,198 / 24,624 ( 9 % )                      ;
+;     Dedicated logic registers      ; 1,634 / 24,624 ( 7 % )                      ;
+; Total registers                    ; 1634                                        ;
+; Total pins                         ; 21 / 151 ( 14 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 44,032 / 608,256 ( 7 % )                    ;
+; Total memory bits                  ; 45,568 / 608,256 ( 7 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -64,34 +64,64 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/14/2025 13:54:00 ;
+; Start date & time ; 02/17/2025 11:18:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; My_First_NIOS_II    ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                                       ;
-+-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------+
-; Assignment Name                     ; Value                                                                                          ; Default Value ; Entity Name                        ; Section Id ;
-+-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 198642186969524.173951244003840                                                                ; --            ; --                                 ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 100                                                                                            ; --            ; --                                 ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; -40                                                                                            ; --            ; --                                 ; --         ;
-; MISC_FILE                           ; My_First_NIOS_II_Platform_Designer/synthesis/../My_First_NIOS_II_Platform_Designer.cmp         ; --            ; --                                 ; --         ;
-; MISC_FILE                           ; My_First_NIOS_II_Platform_Designer/synthesis/../../My_First_NIOS_II_Platform_Designer.qsys     ; --            ; --                                 ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                            ; --            ; --                                 ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                          ; --            ; --                                 ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                   ; --            ; --                                 ; --         ;
-; SLD_FILE                            ; My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.regmap         ; --            ; --                                 ; --         ;
-; SLD_FILE                            ; My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.debuginfo      ; --            ; --                                 ; --         ;
-; SLD_INFO                            ; QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1735633179           ; --            ; My_First_NIOS_II_Platform_Designer ; --         ;
-; SOPCINFO_FILE                       ; My_First_NIOS_II_Platform_Designer/synthesis/../../My_First_NIOS_II_Platform_Designer.sopcinfo ; --            ; --                                 ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                                                             ; --            ; --                                 ; --         ;
-+-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                             ;
++-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------------+
+; Assignment Name                     ; Value                                                                                          ; Default Value ; Entity Name                        ; Section Id       ;
++-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 198642186969524.173976229402996                                                                ; --            ; --                                 ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                                                             ; --            ; --                                 ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 100                                                                                            ; --            ; --                                 ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; -40                                                                                            ; --            ; --                                 ; --               ;
+; MISC_FILE                           ; My_First_NIOS_II_Platform_Designer/synthesis/../My_First_NIOS_II_Platform_Designer.cmp         ; --            ; --                                 ; --               ;
+; MISC_FILE                           ; My_First_NIOS_II_Platform_Designer/synthesis/../../My_First_NIOS_II_Platform_Designer.qsys     ; --            ; --                                 ; --               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top              ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                                                         ; --            ; --                                 ; Top              ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                            ; --            ; --                                 ; --               ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                          ; --            ; --                                 ; --               ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                   ; --            ; --                                 ; --               ;
+; SLD_FILE                            ; My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.regmap         ; --            ; --                                 ; --               ;
+; SLD_FILE                            ; My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.debuginfo      ; --            ; --                                 ; --               ;
+; SLD_FILE                            ; db/stp1_auto_stripped.stp                                                                      ; --            ; --                                 ; --               ;
+; SLD_INFO                            ; QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1739762241           ; --            ; My_First_NIOS_II_Platform_Designer ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                                            ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                  ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_BLOCK_TYPE=AUTO                                                                        ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=12                                                                               ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=12                                                                            ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_BITS=12                                                                  ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                        ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                         ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000                   ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=57                                                                   ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                  ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                                           ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                     ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                 ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                              ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                         ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                   ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INCREMENTAL_ROUTING=1                                                                      ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                            ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                                           ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                       ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_PIPELINE=0                                                                         ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_RAM_PIPELINE=0                                                                             ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_COUNTER_PIPELINE=0                                                                         ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                           ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                   ; --            ; --                                 ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                  ; --            ; --                                 ; auto_signaltap_0 ;
+; SOPCINFO_FILE                       ; My_First_NIOS_II_Platform_Designer/synthesis/../../My_First_NIOS_II_Platform_Designer.sopcinfo ; --            ; --                                 ; --               ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                                             ; --            ; --                                 ; --               ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                                                       ; --            ; --                                 ; --               ;
++-------------------------------------+------------------------------------------------------------------------------------------------+---------------+------------------------------------+------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -99,11 +129,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:43     ; 1.0                     ; 4910 MB             ; 00:00:20                           ;
-; Fitter               ; 00:00:14     ; 1.1                     ; 5466 MB             ; 00:00:06                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4686 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4797 MB             ; 00:00:01                           ;
-; Total                ; 00:01:03     ; --                      ; --                  ; 00:00:27                           ;
+; Analysis & Synthesis ; 00:00:49     ; 1.0                     ; 4932 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:13     ; 1.2                     ; 5479 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4689 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 4807 MB             ; 00:00:01                           ;
+; Total                ; 00:01:08     ; --                      ; --                  ; 00:00:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 14, 2025 1:59:34 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1739512774494</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 17, 2025 1:04:04 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1739768644996</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\My_First_NIOS_II_Platform_Designer.sopcinfo</SopcDesignFile>
@@ -917,14 +917,20 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>GPIO</slaveDescriptor>
+                <slaveDescriptor>pio_0</slaveDescriptor>
                 <addressRange>0x00003040 - 0x0000304F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>GPIO</slaveDescriptor>
+                <addressRange>0x00003050 - 0x0000305F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>DEBUG</slaveDescriptor>
-                <addressRange>0x00003050 - 0x00003057</addressRange>
+                <addressRange>0x00003060 - 0x00003067</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

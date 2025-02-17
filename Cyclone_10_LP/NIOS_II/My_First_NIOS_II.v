@@ -5,6 +5,7 @@ module My_First_NIOS_II(
 
 	input 			CLOCK_50,
 	output [7:0] 	LEDG,
+	output [7:0] 	RESET_ADC,
 	input 			SPI_MISO,
 	output 			SPI_MOSI,
 	output 			SPI_CLOCK,
@@ -15,6 +16,7 @@ module My_First_NIOS_II(
 My_First_NIOS_II_Platform_Designer u0 (
 		.clk_clk (CLOCK_50),   
 		.gpio_external_connection_export(LEDG),			// led
+		.reset_adc_export(RESET_ADC),                	// 
 		.spi_0_external_MISO(SPI_MISO),             		// spi_0_external.MISO
 		.spi_0_external_MOSI(SPI_MOSI),             		// spi_0_external.MOSI
 		.spi_0_external_SCLK(SPI_CLOCK),             	// spi_0_external.SCLK

@@ -16,8 +16,10 @@
 2. Configure your parameters with the desired period and mode of operation.
 3. In this example, we run an ISR every time the timer period is up. The ISR program includes the toggling of LED on the Cyclone 10 LP Dev Kit.
 
-# SPI
+# 3-Wire SPI IP Core
 1. Add a SPI peripheral using Platform Designer
 2. Configure the SPI Mode (CPOL=1,CPHA=1 in this case)
 3. Use the SPI Peripheral to send data packet to STM32F43ZI2 Nucleo board.
 4. Verify results by debugging MCU. 
+5. SPI Transmit and Receive must be seperate, one after the other to work, this might be due to the 3-wire nature of this IP. If full-duplex
+    is required, use 4-wire SPI IP Core. However, it is only available in newer versions of Quartus Prime.

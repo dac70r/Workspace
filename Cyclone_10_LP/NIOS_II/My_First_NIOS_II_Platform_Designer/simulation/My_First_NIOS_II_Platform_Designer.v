@@ -6,6 +6,7 @@
 module My_First_NIOS_II_Platform_Designer (
 		input  wire       clk_clk,                         //                      clk.clk
 		output wire [7:0] gpio_external_connection_export, // gpio_external_connection.export
+		output wire [7:0] reset_adc_export,                //                reset_adc.export
 		input  wire       spi_0_external_MISO,             //           spi_0_external.MISO
 		output wire       spi_0_external_MOSI,             //                         .MOSI
 		output wire       spi_0_external_SCLK,             //                         .SCLK
@@ -57,6 +58,11 @@ module My_First_NIOS_II_Platform_Designer (
 	wire   [2:0] mm_interconnect_0_timer_s1_address;                      // mm_interconnect_0:TIMER_s1_address -> TIMER:address
 	wire         mm_interconnect_0_timer_s1_write;                        // mm_interconnect_0:TIMER_s1_write -> TIMER:write_n
 	wire  [15:0] mm_interconnect_0_timer_s1_writedata;                    // mm_interconnect_0:TIMER_s1_writedata -> TIMER:writedata
+	wire         mm_interconnect_0_pio_0_s1_chipselect;                   // mm_interconnect_0:pio_0_s1_chipselect -> pio_0:chipselect
+	wire  [31:0] mm_interconnect_0_pio_0_s1_readdata;                     // pio_0:readdata -> mm_interconnect_0:pio_0_s1_readdata
+	wire   [1:0] mm_interconnect_0_pio_0_s1_address;                      // mm_interconnect_0:pio_0_s1_address -> pio_0:address
+	wire         mm_interconnect_0_pio_0_s1_write;                        // mm_interconnect_0:pio_0_s1_write -> pio_0:write_n
+	wire  [31:0] mm_interconnect_0_pio_0_s1_writedata;                    // mm_interconnect_0:pio_0_s1_writedata -> pio_0:writedata
 	wire         mm_interconnect_0_spi_0_spi_control_port_chipselect;     // mm_interconnect_0:spi_0_spi_control_port_chipselect -> spi_0:spi_select
 	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_readdata;       // spi_0:data_to_cpu -> mm_interconnect_0:spi_0_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_spi_0_spi_control_port_address;        // mm_interconnect_0:spi_0_spi_control_port_address -> spi_0:mem_addr
@@ -67,7 +73,7 @@ module My_First_NIOS_II_Platform_Designer (
 	wire         irq_mapper_receiver1_irq;                                // TIMER:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                // spi_0:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] hellonios_irq_irq;                                       // irq_mapper:sender_irq -> HelloNios:irq
-	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, TIMER:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, spi_0:reset_n]
+	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, TIMER:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, pio_0:reset_n, rst_translator:in_reset, spi_0:reset_n]
 	wire         rst_controller_reset_out_reset_req;                      // rst_controller:reset_req -> [HelloNios:reset_req, SRAM:reset_req, rst_translator:reset_req_in]
 
 	My_First_NIOS_II_Platform_Designer_DEBUG debug (
@@ -148,6 +154,17 @@ module My_First_NIOS_II_Platform_Designer (
 		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
 	);
 
+	My_First_NIOS_II_Platform_Designer_GPIO pio_0 (
+		.clk        (clk_clk),                               //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.address    (mm_interconnect_0_pio_0_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_pio_0_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_pio_0_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_pio_0_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_pio_0_s1_readdata),   //                    .readdata
+		.out_port   (reset_adc_export)                       // external_connection.export
+	);
+
 	My_First_NIOS_II_Platform_Designer_spi_0 spi_0 (
 		.clk           (clk_clk),                                             //              clk.clk
 		.reset_n       (~rst_controller_reset_out_reset),                     //            reset.reset_n
@@ -199,6 +216,11 @@ module My_First_NIOS_II_Platform_Designer (
 		.HelloNios_debug_mem_slave_byteenable        (mm_interconnect_0_hellonios_debug_mem_slave_byteenable),  //                                      .byteenable
 		.HelloNios_debug_mem_slave_waitrequest       (mm_interconnect_0_hellonios_debug_mem_slave_waitrequest), //                                      .waitrequest
 		.HelloNios_debug_mem_slave_debugaccess       (mm_interconnect_0_hellonios_debug_mem_slave_debugaccess), //                                      .debugaccess
+		.pio_0_s1_address                            (mm_interconnect_0_pio_0_s1_address),                      //                              pio_0_s1.address
+		.pio_0_s1_write                              (mm_interconnect_0_pio_0_s1_write),                        //                                      .write
+		.pio_0_s1_readdata                           (mm_interconnect_0_pio_0_s1_readdata),                     //                                      .readdata
+		.pio_0_s1_writedata                          (mm_interconnect_0_pio_0_s1_writedata),                    //                                      .writedata
+		.pio_0_s1_chipselect                         (mm_interconnect_0_pio_0_s1_chipselect),                   //                                      .chipselect
 		.spi_0_spi_control_port_address              (mm_interconnect_0_spi_0_spi_control_port_address),        //                spi_0_spi_control_port.address
 		.spi_0_spi_control_port_write                (mm_interconnect_0_spi_0_spi_control_port_write),          //                                      .write
 		.spi_0_spi_control_port_read                 (mm_interconnect_0_spi_0_spi_control_port_read),           //                                      .read

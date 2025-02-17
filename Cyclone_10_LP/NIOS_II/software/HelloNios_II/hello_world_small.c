@@ -84,7 +84,108 @@
 #include "altera_avalon_timer_regs.h"
 #include "sys/alt_irq.h"
 #include "altera_avalon_spi.h"
+#include "altera_avalon_spi_regs.h"
 #include <unistd.h>
+
+/* This is a very simple routine which performs one SPI master transaction.
+ * It would be possible to implement a more efficient version using interrupts
+ * and sleeping threads but this is probably not worthwhile initially.
+ */
+
+int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
+                           alt_u32 write_length, const alt_u8 * write_data,
+                           alt_u32 read_length, alt_u8 * read_data,
+                           alt_u32 flags)
+{
+  const alt_u8 * write_end = write_data + write_length;
+  alt_u8 * read_end = read_data + read_length;
+
+  alt_u32 write_zeros = read_length;
+  alt_u32 read_ignore = write_length;
+  alt_u32 status;
+
+  /* We must not send more than two bytes to the target before it has
+   * returned any as otherwise it will overflow. */
+  /* Unfortunately the hardware does not seem to work with credits > 1,
+   * leave it at 1 for now. */
+  alt_32 credits = 1;
+
+  /* Warning: this function is not currently safe if called in a multi-threaded
+   * environment, something above must perform locking to make it safe if more
+   * than one thread intends to use it.
+   */
+
+  IOWR_ALTERA_AVALON_SPI_SLAVE_SEL(base, 1 << slave);
+
+  /* Set the SSO bit (force chipselect) only if the toggle flag is not set */
+  if ((flags & ALT_AVALON_SPI_COMMAND_TOGGLE_SS_N) == 0) {
+    IOWR_ALTERA_AVALON_SPI_CONTROL(base, ALTERA_AVALON_SPI_CONTROL_SSO_MSK);
+  }
+
+  /*
+   * Discard any stale data present in the RXDATA register, in case
+   * previous communication was interrupted and stale data was left
+   * behind.
+   */
+  IORD_ALTERA_AVALON_SPI_RXDATA(base);
+
+  /* Keep clocking until all the data has been processed. */
+  for ( ; ; )
+  {
+
+    do
+    {
+      status = IORD_ALTERA_AVALON_SPI_STATUS(base);
+    }
+    while (((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 || credits == 0) &&
+            (status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) == 0);
+
+    if ((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) != 0 && credits > 0)
+    {
+      credits--;
+
+      if (write_data < write_end)
+        IOWR_ALTERA_AVALON_SPI_TXDATA(base, *write_data++);
+      else if (write_zeros > 0)
+      {
+        write_zeros--;
+        IOWR_ALTERA_AVALON_SPI_TXDATA(base, 0);
+      }
+      else
+        credits = -1024;
+    };
+
+    if ((status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) != 0)
+    {
+      alt_u32 rxdata = IORD_ALTERA_AVALON_SPI_RXDATA(base);
+
+      if (read_ignore > 0)
+        read_ignore--;
+      else
+        *read_data++ = (alt_u8)rxdata;
+      credits++;
+
+      if (read_ignore == 0 && read_data == read_end)
+        break;
+    }
+
+  }
+
+  /* Wait until the interface has finished transmitting */
+  do
+  {
+    status = IORD_ALTERA_AVALON_SPI_STATUS(base);
+  }
+  while ((status & ALTERA_AVALON_SPI_STATUS_TMT_MSK) == 0);
+
+  /* Clear SSO (release chipselect) unless the caller is going to
+   * keep using this chip
+   */
+  if ((flags & ALT_AVALON_SPI_COMMAND_MERGE) == 0)
+    IOWR_ALTERA_AVALON_SPI_CONTROL(base, 0);
+
+  return read_length;
+}
 
 // timer ISR - Triggers every period of the timer
 void timer_isr(void *context) {
@@ -150,28 +251,88 @@ int main()
 	alt_u8 tx_data[] = {0xA5, 0x5A};
 	alt_u8 rx_data[2];
 
-	alt_u8 opcode_null[4] = {0x00, 0x00, 0x00, 0x00};
-	alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x3, 0x04};
+	alt_u8 opcode_null[4] = {0x00,0x00,0x00,0x00};
+	alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x03, 0x04};
+	alt_u8 opcode_ready[4] = {0x06, 0x55, 0x00, 0x00};
+	alt_u8 opcode_ready_receive[4] = {0x05, 0x06, 0x07, 0x08};
 
 	//init_timer();
 	int spi_check = -1;
 
+	// local status register for led
+	alt_u32 led_status = 0;
+
 	// ADS131A0xReset();
-	IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, 0b00011001);
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0b00000000);
+	delay_ms(5);
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0b00000001);
+	delay_ms(20);
 
 	// Event loop that runs forever
 	while (1){
 		// launch debug mode to check the spi_check value
-		spi_check = alt_avalon_spi_command(SPI_0_BASE,
+		IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, led_status);
+		//status = IORD_ALTERA_AVALON_SPI_STATUS(SPI_0_BASE);
+		//opcode_null_receive = IORD_ALTERA_AVALON_SPI_RXDATA(SPI_0_BASE);
+		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
 											0,							// number of slaves
-											sizeof(opcode_null),		// number of bytes to send to SPI Slave, '0' if only reading
+											4,		// number of bytes to send to SPI Slave, '0' if only reading
 											opcode_null,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-											4,							// The number of bytes to read from the SPI slave, '0' if only writing
-											opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+											0,							// The number of bytes to read from the SPI slave, '0' if only writing
+											0,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
 											0							// Special control flags for the SPI command
 											);
+
+		 delay_ms(50);
+		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
+		 											0,							// number of slaves
+		 											0,							// number of bytes to send to SPI Slave, '0' if only reading
+		 											0,							// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+		 											4,							// The number of bytes to read from the SPI slave, '0' if only writing
+													opcode_null_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+		 											0							// Special control flags for the SPI command
+		 											);
+
+		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
+											0,							// number of slaves
+											4,		// number of bytes to send to SPI Slave, '0' if only reading
+											opcode_ready,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+											0,							// The number of bytes to read from the SPI slave, '0' if only writing
+											0,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+											0							// Special control flags for the SPI command
+											);
+
+		 delay_ms(50);
+		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
+		 											0,							// number of slaves
+		 											0,							// number of bytes to send to SPI Slave, '0' if only reading
+		 											0,							// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+		 											4,							// The number of bytes to read from the SPI slave, '0' if only writing
+													opcode_ready_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+		 											0							// Special control flags for the SPI command
+		 											);
+		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
+		 											0,							// number of slaves
+		 											4,		// number of bytes to send to SPI Slave, '0' if only reading
+		 											opcode_ready,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+		 											0,							// The number of bytes to read from the SPI slave, '0' if only writing
+		 											0,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+		 											0							// Special control flags for the SPI command
+		 											);
+
+		 		 delay_ms(50);
+		 		 spi_check = alt_avalon_spi_command(SPI_0_BASE,
+		 		 											0,							// number of slaves
+		 		 											0,							// number of bytes to send to SPI Slave, '0' if only reading
+		 		 											0,							// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+		 		 											4,							// The number of bytes to read from the SPI slave, '0' if only writing
+		 													opcode_ready_receive,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+		 		 											0							// Special control flags for the SPI command
+		 		 											);
+
 		alt_putstr("Delay 1000ms !\n");
-		//delay_ms(1000);
+		led_status = led_status + 1;
+		delay_ms(1000);
 	}
   return 0;
 }

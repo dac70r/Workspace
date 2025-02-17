@@ -46,7 +46,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t rx_data[10] =  {1,2,3,4,5,6,7,8};					// Define Global Variable as UART Buffer
+uint8_t rx_data[10] =  {1,2,3,4,5,6,7,8};						// Define Global Variable as UART Buffer
+uint8_t tx_data[10] =  {0xff,0x82,0xff,0x04};					// Define Global Variable as UART Buffer
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,7 +101,7 @@ int main(void)
   MX_SPI6_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_SPI_Receive_IT(&hspi6, rx_data, 4U);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -110,10 +111,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_RESET);							// Pulls the SPI line down low
-	  HAL_SPI_Receive(&hspi6, rx_data, 2U, 1000);									// Single SPI Receive in Regular Mode
-	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_SET);							// Pulls the SPI line back high
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14); 										// Toggle LED to show the system is running
+	  //HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_RESET);							// Pulls the SPI line down low
+	  //HAL_SPI_Receive_IT(&hspi6, rx_data, 4U);											// Single SPI Receive in Regular Mode
+	  //HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_SET);								// Pulls the SPI line back high
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14); 											// Toggle LED to show the system is running
 	  HAL_Delay(1000);
 	  /*
 	  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_3, GPIO_PIN_RESET);
@@ -220,6 +221,22 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
     	HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_1);
     	//HAL_UART_Transmit(&huart3, (uint8_t *)rx_data, sizeof(4U), 100);
 
+    	// Single SPI Receive gets the SPI ready for any incoming traffic via SPI
+    	/*
+    	 if (HAL_SPI_Receive_IT(&hspi6, (uint8_t*)rx_data, sizeof(4U)) != HAL_OK) {
+    	  		// Reception Error
+    	  		Error_Handler();
+    	 }*/
+    }
+}
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef *hspi) {
+    if (hspi->Instance == SPI6) {
+        // Data reception complete, print in serial terminal
+    	//HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_1);
+    	HAL_UART_Transmit(&huart3, (uint8_t *)rx_data, sizeof(4U), 100);
+    	HAL_SPI_Transmit(&hspi6, (uint8_t*)tx_data, sizeof(4U), 10000);
+    	HAL_SPI_Receive_IT(&hspi6, (uint8_t*)rx_data, sizeof(4U));
     	// Single SPI Receive gets the SPI ready for any incoming traffic via SPI
     	/*
     	 if (HAL_SPI_Receive_IT(&hspi6, (uint8_t*)rx_data, sizeof(4U)) != HAL_OK) {

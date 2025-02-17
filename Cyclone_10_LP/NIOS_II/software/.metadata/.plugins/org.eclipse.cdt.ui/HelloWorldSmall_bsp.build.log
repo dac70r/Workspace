@@ -1,4 +1,4 @@
-10:36:23 **** Build of configuration Nios II for project HelloWorldSmall_bsp ****
+13:03:48 **** Incremental Build of configuration Nios II for project HelloWorldSmall_bsp ****
 make all 
 Makefile not up to date.
 ../../My_First_NIOS_II_Platform_Designer.sopcinfo has been modified since the BSP was generated.
@@ -14,5 +14,5 @@ To generate from the command line:
 
 make: *** [public.mk] Error 1
 
-10:36:25 Build Finished (took 1s.519ms)
+13:03:49 Build Finished (took 1s.178ms)
 

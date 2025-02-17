@@ -1,4 +1,4 @@
-10:36:22 **** Build of configuration Nios II for project HelloWorldSmall ****
+13:03:47 **** Incremental Build of configuration Nios II for project HelloWorldSmall ****
 make all 
 Info: Building ../HelloWorldSmall_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloWorldSmall_bsp/
@@ -17,5 +17,5 @@ To generate from the command line:
 make[1]: *** [public.mk] Error 1
 make: *** [../HelloWorldSmall_bsp/-recurs-make-lib] Error 2
 
-10:36:23 Build Finished (took 1s.770ms)
+13:03:48 Build Finished (took 1s.277ms)
 

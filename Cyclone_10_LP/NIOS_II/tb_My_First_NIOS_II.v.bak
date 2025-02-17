@@ -1,0 +1,10 @@
+module tb_My_First_NIOS_II();
+
+	reg 			CLOCK_50;
+	wire [7:0] 	LEDG;
+	wire [7:0] 	RESET_ADC;
+	reg 			SPI_MISO;
+	wire 			SPI_MOSI;
+	wire 			SPI_CLOCK;
+	wire 			SPI_SS;
+	

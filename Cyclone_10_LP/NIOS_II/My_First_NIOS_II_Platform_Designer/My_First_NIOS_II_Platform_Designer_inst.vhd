@@ -2,6 +2,7 @@
 		port (
 			clk_clk                         : in  std_logic                    := 'X'; -- clk
 			gpio_external_connection_export : out std_logic_vector(7 downto 0);        -- export
+			reset_adc_export                : out std_logic_vector(7 downto 0);        -- export
 			spi_0_external_MISO             : in  std_logic                    := 'X'; -- MISO
 			spi_0_external_MOSI             : out std_logic;                           -- MOSI
 			spi_0_external_SCLK             : out std_logic;                           -- SCLK
@@ -13,6 +14,7 @@
 		port map (
 			clk_clk                         => CONNECTED_TO_clk_clk,                         --                      clk.clk
 			gpio_external_connection_export => CONNECTED_TO_gpio_external_connection_export, -- gpio_external_connection.export
+			reset_adc_export                => CONNECTED_TO_reset_adc_export,                --                reset_adc.export
 			spi_0_external_MISO             => CONNECTED_TO_spi_0_external_MISO,             --           spi_0_external.MISO
 			spi_0_external_MOSI             => CONNECTED_TO_spi_0_external_MOSI,             --                         .MOSI
 			spi_0_external_SCLK             => CONNECTED_TO_spi_0_external_SCLK,             --                         .SCLK

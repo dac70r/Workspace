@@ -36,6 +36,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "RESET_ADC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_ADC[7]",
+					"strict" : false
+				},
+				{
 					"name" : "SPI_MOSI",
 					"strict" : false
 				},

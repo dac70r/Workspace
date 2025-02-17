@@ -1,25 +1,10 @@
-10:36:13 **** Build of configuration Nios II for project HelloNios ****
+13:03:41 **** Incremental Build of configuration Nios II for project HelloNios ****
 make all 
 Info: Building ../HelloNios_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_bsp/
 makefile:529: Warning: SOPC File ../../My_First_NIOS_II.sopcinfo could not be found.
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_bsp//HAL/inc -I../HelloNios_bsp/ -I../HelloNios_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:91:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-Info: Linking HelloNios.elf
-    printf ("Hello world!");
-nios2-elf-g++  -T'../HelloNios_bsp//linker.x' -msys-crt0='../HelloNios_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_bsp/  -msmallc  -Wl,-Map=HelloNios.map   -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi
-    ^
-hello_world_small.c:91:4: warning: incompatible implicit declaration of built-in function 'printf'
-hello_world_small.c:91:4: note: include '<stdio.h>' or provide a declaration of 'printf'
-Info: (HelloNios.elf) 3408 Bytes program size (code + initialized data).
-Info:                 448 Bytes free for stack + heap.
-Info: Creating HelloNios.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios.elf >HelloNios.objdump
 [HelloNios build complete]
 
-10:36:18 Build Finished (took 4s.971ms)
+13:03:42 Build Finished (took 1s.271ms)
 

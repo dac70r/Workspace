@@ -24,6 +24,7 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.412830742.1773002785" name="My_First_NIOS_II_Platform_Designer_SRAM.hex" rcbsApplicability="disable" resourcePath="mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex" toolsToInvoke=""/>
 				</configuration>
 			</storageModule>
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.412830742" moduleId="org.eclipse.cdt.core.settings" name="Nios II">
@@ -79,5 +80,10 @@
 				<runAllBuilders>false</runAllBuilders>
 			</target>
 		</buildTargets>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Nios II">
+			<resource resourceType="PROJECT" workspacePath="/HelloNios_II"/>
+		</configuration>
 	</storageModule>
 </cproject>

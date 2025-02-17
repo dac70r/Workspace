@@ -1,7 +1,7 @@
-10:36:20 **** Build of configuration Nios II for project HelloNios_bsp ****
+13:03:46 **** Incremental Build of configuration Nios II for project HelloNios_bsp ****
 make all 
 makefile:529: Warning: SOPC File ../../My_First_NIOS_II.sopcinfo could not be found.
 [BSP build complete]
 
-10:36:21 Build Finished (took 1s.112ms)
+13:03:47 Build Finished (took 1s.36ms)
 

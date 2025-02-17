@@ -3,7 +3,7 @@
 <stringAttribute key="byteStreamDeviceCableName" value="Cyclone 10 LP Evaluation Kit on localhost [USB-1]"/>
 <stringAttribute key="byteStreamDeviceDeviceID" value="1"/>
 <stringAttribute key="byteStreamDeviceInstanceID" value="0"/>
-<stringAttribute key="com.altera.sbtgui.launch.REMOTE_PORT" value="62924"/>
+<stringAttribute key="com.altera.sbtgui.launch.REMOTE_PORT" value="52586"/>
 <booleanAttribute key="downloadProgram" value="true"/>
 <stringAttribute key="elfFile" value="C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II\HelloNios_II.elf"/>
 <stringAttribute key="org.eclipse.cdt.debug.mi.core.GDB_INIT" value=""/>
