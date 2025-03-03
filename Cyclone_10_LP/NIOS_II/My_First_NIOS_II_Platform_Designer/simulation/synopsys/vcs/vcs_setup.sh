@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.02.17.11:17:15
+# ACDS 18.1 625 win32 2025.03.03.15:56:43
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.02.17.11:17:15
+# ACDS 18.1 625 win32 2025.03.03.15:56:43
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="My_First_NIOS_II_Platform_Designer"
@@ -177,7 +177,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_irq_mapper.sv \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v \
-  $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_spi_0.v \
+  $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_esc_spi.v \
+  $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_adc_1_spi.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_TIMER.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v \
   $QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v \

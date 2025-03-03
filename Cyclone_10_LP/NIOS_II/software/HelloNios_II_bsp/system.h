@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Mon Feb 17 11:21:25 SGT 2025
+ * Generated: Mon Mar 03 16:11:23 SGT 2025
  */
 
 /*
@@ -134,7 +134,7 @@
  */
 
 #define ALT_MODULE_CLASS_DEBUG altera_avalon_jtag_uart
-#define DEBUG_BASE 0x3060
+#define DEBUG_BASE 0x30a0
 #define DEBUG_IRQ 0
 #define DEBUG_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define DEBUG_NAME "/dev/DEBUG"
@@ -165,7 +165,7 @@
  */
 
 #define ALT_MODULE_CLASS_GPIO altera_avalon_pio
-#define GPIO_BASE 0x3050
+#define GPIO_BASE 0x3090
 #define GPIO_BIT_CLEARING_EDGE_REGISTER 0
 #define GPIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define GPIO_CAPTURE 0
@@ -231,19 +231,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/DEBUG"
-#define ALT_STDERR_BASE 0x3060
+#define ALT_STDERR_BASE 0x30a0
 #define ALT_STDERR_DEV DEBUG
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/DEBUG"
-#define ALT_STDIN_BASE 0x3060
+#define ALT_STDIN_BASE 0x30a0
 #define ALT_STDIN_DEV DEBUG
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/DEBUG"
-#define ALT_STDOUT_BASE 0x3060
+#define ALT_STDOUT_BASE 0x30a0
 #define ALT_STDOUT_DEV DEBUG
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -258,7 +258,7 @@
 
 #define ALT_MODULE_CLASS_TIMER altera_avalon_timer
 #define TIMER_ALWAYS_RUN 0
-#define TIMER_BASE 0x3020
+#define TIMER_BASE 0x3060
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 50000000
@@ -278,6 +278,68 @@
 
 
 /*
+ * adc_1_spi configuration
+ *
+ */
+
+#define ADC_1_SPI_BASE 0x3020
+#define ADC_1_SPI_CLOCKMULT 1
+#define ADC_1_SPI_CLOCKPHASE 1
+#define ADC_1_SPI_CLOCKPOLARITY 0
+#define ADC_1_SPI_CLOCKUNITS "Hz"
+#define ADC_1_SPI_DATABITS 8
+#define ADC_1_SPI_DATAWIDTH 16
+#define ADC_1_SPI_DELAYMULT "1.0E-9"
+#define ADC_1_SPI_DELAYUNITS "ns"
+#define ADC_1_SPI_EXTRADELAY 0
+#define ADC_1_SPI_INSERT_SYNC 0
+#define ADC_1_SPI_IRQ 4
+#define ADC_1_SPI_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define ADC_1_SPI_ISMASTER 1
+#define ADC_1_SPI_LSBFIRST 0
+#define ADC_1_SPI_NAME "/dev/adc_1_spi"
+#define ADC_1_SPI_NUMSLAVES 1
+#define ADC_1_SPI_PREFIX "spi_"
+#define ADC_1_SPI_SPAN 32
+#define ADC_1_SPI_SYNC_REG_DEPTH 2
+#define ADC_1_SPI_TARGETCLOCK 3125000u
+#define ADC_1_SPI_TARGETSSDELAY "0.0"
+#define ADC_1_SPI_TYPE "altera_avalon_spi"
+#define ALT_MODULE_CLASS_adc_1_spi altera_avalon_spi
+
+
+/*
+ * esc_spi configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_esc_spi altera_avalon_spi
+#define ESC_SPI_BASE 0x3000
+#define ESC_SPI_CLOCKMULT 1
+#define ESC_SPI_CLOCKPHASE 1
+#define ESC_SPI_CLOCKPOLARITY 1
+#define ESC_SPI_CLOCKUNITS "Hz"
+#define ESC_SPI_DATABITS 8
+#define ESC_SPI_DATAWIDTH 16
+#define ESC_SPI_DELAYMULT "1.0E-9"
+#define ESC_SPI_DELAYUNITS "ns"
+#define ESC_SPI_EXTRADELAY 0
+#define ESC_SPI_INSERT_SYNC 0
+#define ESC_SPI_IRQ 3
+#define ESC_SPI_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define ESC_SPI_ISMASTER 1
+#define ESC_SPI_LSBFIRST 0
+#define ESC_SPI_NAME "/dev/esc_spi"
+#define ESC_SPI_NUMSLAVES 1
+#define ESC_SPI_PREFIX "spi_"
+#define ESC_SPI_SPAN 32
+#define ESC_SPI_SYNC_REG_DEPTH 2
+#define ESC_SPI_TARGETCLOCK 3125000u
+#define ESC_SPI_TARGETSSDELAY "0.0"
+#define ESC_SPI_TYPE "altera_avalon_spi"
+
+
+/*
  * hal configuration
  *
  */
@@ -294,7 +356,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_0 altera_avalon_pio
-#define PIO_0_BASE 0x3040
+#define PIO_0_BASE 0x3080
 #define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_0_CAPTURE 0
@@ -321,7 +383,7 @@
  */
 
 #define ALT_MODULE_CLASS_spi_0 altera_avalon_spi
-#define SPI_0_BASE 0x3000
+#define SPI_0_BASE 0x3040
 #define SPI_0_CLOCKMULT 1
 #define SPI_0_CLOCKPHASE 1
 #define SPI_0_CLOCKPOLARITY 0

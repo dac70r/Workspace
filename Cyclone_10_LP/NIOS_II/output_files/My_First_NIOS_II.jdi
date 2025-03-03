@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="c426a7315ca112bb7248"/>
+    <hash md5_digest_80b="8e9cddcf513354e278a3"/>
   </project>
   <file_info>
     <file device="10CL025YU256I7G" path="My_First_NIOS_II.sof" usercode="0xFFFFFFFF"/>
@@ -202,7 +202,7 @@
   <sld_infos>
     <sld_info hpath="My_First_NIOS_II_Platform_Designer:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1739762241"/>
+        <assignment_value text="QSYS_NAME My_First_NIOS_II_Platform_Designer HAS_SOPCINFO 1 GENERATION_ID 1740988608"/>
       </assignment_values>
       <parameters/>
     </sld_info>

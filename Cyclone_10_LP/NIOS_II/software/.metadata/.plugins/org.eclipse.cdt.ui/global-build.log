@@ -1,60 +1,14 @@
-13:04:14 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:04:28 **** Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:04:30 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:10:31 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:279:28: warning: implicit declaration of function 'IORD_ALTERA_AVALON_SPI_RDDATA' [-Wimplicit-function-declaration]
-   opcode_null_receive[0] = IORD_ALTERA_AVALON_SPI_RDDATA(SPI_0_BASE);
-                            ^
-hello_world_small.c:258:6: warning: unused variable 'spi_check' [-Wunused-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:255:9: warning: variable 'opcode_null_receive' set but not used [-Wunused-but-set-variable]
-  alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x3, 0x04};
-         ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-obj/default/hello_world_small.o: In function `main':
-C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II/hello_world_small.c:279: undefined reference to `IORD_ALTERA_AVALON_SPI_RDDATA'
-C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II/hello_world_small.c:280: undefined reference to `IORD_ALTERA_AVALON_SPI_RDDATA'
-C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II/hello_world_small.c:281: undefined reference to `IORD_ALTERA_AVALON_SPI_RDDATA'
-C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II/hello_world_small.c:282: undefined reference to `IORD_ALTERA_AVALON_SPI_RDDATA'
-collect2.exe: error: ld returned 1 exit status
-make: *** [HelloNios_II.elf] Error 1
-13:11:09 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+16:19:31 **** Clean-only build of configuration Nios II for project HelloNios_II ****
 make clean 
 [HelloNios_II clean complete]
-13:11:09 **** Build of configuration Nios II for project HelloNios_II ****
+16:19:48 **** Build of configuration Nios II for project HelloNios ****
+make all 
+Info: Building ../HelloNios_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_bsp/
+makefile:529: Warning: SOPC File ../../My_First_NIOS_II.sopcinfo could not be found.
+[BSP build complete]
+[HelloNios build complete]
+16:19:49 **** Build of configuration Nios II for project HelloNios_II ****
 make all 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
@@ -62,337 +16,252 @@ C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-dir
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
 nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
 hello_world_small.c: In function 'main':
-hello_world_small.c:258:6: warning: unused variable 'spi_check' [-Wunused-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:255:9: warning: variable 'opcode_null_receive' set but not used [-Wunused-but-set-variable]
-  alt_u8 opcode_null_receive[4] = {0x01, 0x01, 0x3, 0x04};
-         ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2776 Bytes program size (code + initialized data).
-Info:                    1312 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-13:11:35 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:27:40 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:258:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2828 Bytes program size (code + initialized data).
-Info:                    1260 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-13:28:27 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:28:54 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:43:53 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:258:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2856 Bytes program size (code + initialized data).
-Info:                    1232 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-13:56:27 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:258:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2896 Bytes program size (code + initialized data).
-Info:                    1192 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-13:56:45 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-13:57:30 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-14:12:42 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-14:13:14 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:258:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2872 Bytes program size (code + initialized data).
-Info:                    1216 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-16:00:25 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:256:31: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                               ^
-hello_world_small.c:256:31: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:37: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                                     ^
-hello_world_small.c:256:37: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:43: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                                           ^
-hello_world_small.c:256:43: note: (near initialization for 'opcode_ready')
 hello_world_small.c:260:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
   int spi_check = -1;
       ^
-hello_world_small.c:257:9: warning: unused variable 'opcode_ready_receive' [-Wunused-variable]
-  alt_u8 opcode_ready_receive[4] = {0x05, 0x06, 0x07, 0x08};
-         ^
-hello_world_small.c:256:9: warning: unused variable 'opcode_ready' [-Wunused-variable]
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-         ^
 hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
   alt_u8 rx_data[2];
          ^
 hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
   alt_u8 tx_data[] = {0xA5, 0x5A};
+Info: Linking HelloNios_II.elf
          ^
 hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
 nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
 nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2948 Bytes program size (code + initialized data).
-Info:                    1140 Bytes free for stack + heap.
+  alt_u32 status;
+          ^
+Info: (HelloNios_II.elf) 3076 Bytes program size (code + initialized data).
+Info:                    1012 Bytes free for stack + heap.
 Info: Creating HelloNios_II.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
 [HelloNios_II build complete]
-16:06:12 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+16:19:52 **** Build of configuration Nios II for project HelloNios_II_bsp ****
+make all 
+[BSP build complete]
+16:19:53 **** Build of configuration Nios II for project HelloNios_bsp ****
+make all 
+makefile:529: Warning: SOPC File ../../My_First_NIOS_II.sopcinfo could not be found.
+[BSP build complete]
+16:19:54 **** Build of configuration Nios II for project HelloWorldSmall ****
+make all 
+Info: Building ../HelloWorldSmall_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloWorldSmall_bsp/
+Makefile not up to date.
+../../My_First_NIOS_II_Platform_Designer.sopcinfo has been modified since the BSP was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [public.mk] Error 1
+make: *** [../HelloWorldSmall_bsp/-recurs-make-lib] Error 2
+16:19:55 **** Build of configuration Nios II for project HelloWorldSmall_bsp ****
+make all 
+Makefile not up to date.
+../../My_First_NIOS_II_Platform_Designer.sopcinfo has been modified since the BSP was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make: *** [public.mk] Error 1
+16:21:02 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+[HelloNios_II build complete]
+17:01:38 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+[HelloNios_II build complete]
+17:04:00 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+[HelloNios_II build complete]
+17:36:20 **** Clean-only build of configuration Nios II for project HelloNios_II ****
 make clean 
 [HelloNios_II clean complete]
-16:06:13 **** Build of configuration Nios II for project HelloNios_II ****
+17:36:20 **** Build of configuration Nios II for project HelloNios_II ****
 make all 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
 [BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:256:31: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                               ^
-hello_world_small.c:256:31: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:37: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                                     ^
-hello_world_small.c:256:37: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:43: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
+Info: Compiling EtherCAT/Microcontroller_Asix58100_ESI.c to obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o EtherCAT/Microcontroller_Asix58100_ESI.c
+In file included from EtherCAT/ecatslv.h:49:0,
+                 from EtherCAT/applInterface.h:44,
+                 from EtherCAT/Microcontroller_Asix58100_ESI.c:24:
+EtherCAT/ax58100_hw.h:7:18: fatal error: main.h: No such file or directory
+compilation terminated.
+make: *** [obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o] Error 1
+17:38:23 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+make clean 
+[HelloNios_II clean complete]
+17:38:24 **** Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+Info: Compiling EtherCAT/Microcontroller_Asix58100_ESI.c to obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o EtherCAT/Microcontroller_Asix58100_ESI.c
+In file included from EtherCAT/applInterface.h:44:0,
+                 from EtherCAT/Microcontroller_Asix58100_ESI.c:24:
+EtherCAT/ecatslv.h:49:24: fatal error: ax58100_hw.h: No such file or directory
+compilation terminated.
+make: *** [obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o] Error 1
+17:39:56 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+make clean 
+[HelloNios_II clean complete]
+17:39:56 **** Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+Info: Compiling EtherCAT/Microcontroller_Asix58100_ESI.c to obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o EtherCAT/Microcontroller_Asix58100_ESI.c
+Info: Compiling EtherCAT/coeappl.c to obj/default/EtherCAT/coeappl.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/coeappl.o EtherCAT/coeappl.c
+Info: Compiling EtherCAT/ecatappl.c to obj/default/EtherCAT/ecatappl.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/ecatappl.o EtherCAT/ecatappl.c
+In file included from EtherCAT/ecatslv.h:49:0,
+                 from EtherCAT/ecatappl.c:137:
+EtherCAT/ecatappl.c: In function 'ESC_EepromAccess':
+EtherCAT/ax58100_hw.h:37:30: error: 'TIM6' undeclared (first use in this function)
+ #define HW_TIMETICK_INSTANCE TIM6
+                              ^
+EtherCAT/ax58100_hw.h:93:35: note: in expansion of macro 'HW_TIMETICK_INSTANCE'
+ #define HW_GetTimer() ((uint16_t)(HW_TIMETICK_INSTANCE->CNT >> 1))
+                                   ^
+EtherCAT/ecatappl.c:1119:43: note: in expansion of macro 'HW_GetTimer'
+                     UINT16 u16LastTimer = HW_GetTimer();
                                            ^
-hello_world_small.c:256:43: note: (near initialization for 'opcode_ready')
-hello_world_small.c:299:12: warning: passing argument 4 of 'alt_avalon_spi_command' makes pointer from integer without a cast [-Wint-conversion]
-            opcode_ready,    // A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-            ^
-hello_world_small.c:95:5: note: expected 'const alt_u8 * {aka const unsigned char *}' but argument is of type 'alt_u8 {aka unsigned char}'
- int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
-     ^
-hello_world_small.c:260:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
-         ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
-         ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 2976 Bytes program size (code + initialized data).
-Info:                    1112 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-16:06:40 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-16:09:06 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
-16:09:35 **** Incremental Build of configuration Nios II for project HelloNios_II ****
-make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
-nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
-hello_world_small.c: In function 'main':
-hello_world_small.c:256:31: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                               ^
-hello_world_small.c:256:31: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:37: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
-                                     ^
-hello_world_small.c:256:37: note: (near initialization for 'opcode_ready')
-hello_world_small.c:256:43: warning: excess elements in scalar initializer
-  alt_u8 opcode_ready = {0x06, 0x55, 0x00, 0x00};
+EtherCAT/ax58100_hw.h:37:30: note: each undeclared identifier is reported only once for each function it appears in
+ #define HW_TIMETICK_INSTANCE TIM6
+                              ^
+EtherCAT/ax58100_hw.h:93:35: note: in expansion of macro 'HW_TIMETICK_INSTANCE'
+ #define HW_GetTimer() ((uint16_t)(HW_TIMETICK_INSTANCE->CNT >> 1))
+                                   ^
+EtherCAT/ecatappl.c:1119:43: note: in expansion of macro 'HW_GetTimer'
+                     UINT16 u16LastTimer = HW_GetTimer();
                                            ^
-hello_world_small.c:256:43: note: (near initialization for 'opcode_ready')
-hello_world_small.c:299:12: warning: passing argument 4 of 'alt_avalon_spi_command' makes pointer from integer without a cast [-Wint-conversion]
-            opcode_ready,    // A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-            ^
-hello_world_small.c:95:5: note: expected 'const alt_u8 * {aka const unsigned char *}' but argument is of type 'alt_u8 {aka unsigned char}'
- int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
+make: *** [obj/default/EtherCAT/ecatappl.o] Error 1
+17:42:13 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+make clean 
+[HelloNios_II clean complete]
+17:42:14 **** Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+Info: Compiling EtherCAT/Microcontroller_Asix58100_ESI.c to obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/Microcontroller_Asix58100_ESI.o EtherCAT/Microcontroller_Asix58100_ESI.c
+EtherCAT/Microcontroller_Asix58100_ESI.c: In function 'main_initial':
+EtherCAT/Microcontroller_Asix58100_ESI.c:337:5: warning: implicit declaration of function 'HW_Init' [-Wimplicit-function-declaration]
+     HW_Init();
      ^
-hello_world_small.c:317:15: warning: passing argument 4 of 'alt_avalon_spi_command' makes pointer from integer without a cast [-Wint-conversion]
-               opcode_ready,    // A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
-               ^
-hello_world_small.c:95:5: note: expected 'const alt_u8 * {aka const unsigned char *}' but argument is of type 'alt_u8 {aka unsigned char}'
- int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
+EtherCAT/Microcontroller_Asix58100_ESI.c:345:5: warning: implicit declaration of function 'HW_Release' [-Wimplicit-function-declaration]
+     HW_Release();
      ^
-hello_world_small.c:260:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
-  int spi_check = -1;
-      ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
-  alt_u8 rx_data[2];
+Info: Compiling EtherCAT/ax58100_hw.c to obj/default/EtherCAT/ax58100_hw.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/ax58100_hw.o EtherCAT/ax58100_hw.c
+Info: Compiling EtherCAT/coeappl.c to obj/default/EtherCAT/coeappl.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/coeappl.o EtherCAT/coeappl.c
+EtherCAT/coeappl.c: In function 'COE_SyncTimeStamp':
+EtherCAT/coeappl.c:378:9: warning: implicit declaration of function 'HW_EscReadDWord' [-Wimplicit-function-declaration]
+         HW_EscReadDWord(DcTime, ESC_SYSTEMTIME_OFFSET);
          ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
-  alt_u8 tx_data[] = {0xA5, 0x5A};
+EtherCAT/coeappl.c:395:9: warning: implicit declaration of function 'HW_EscRead' [-Wimplicit-function-declaration]
+         HW_EscRead((MEM_ADDR *)&u64Timestamp, ESC_SYSTEMTIME_OFFSET, 8);
          ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
-  alt_u32 status;
-          ^
-Info: Linking HelloNios_II.elf
-nios2-elf-g++  -T'../HelloNios_II_bsp//linker.x' -msys-crt0='../HelloNios_II_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../HelloNios_II_bsp/  -msmallc  -Wl,-Map=HelloNios_II.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o HelloNios_II.elf obj/default/hello_world_small.o -lm -msys-lib=m
-nios2-elf-insert HelloNios_II.elf --thread_model hal --cpu_name HelloNios --qsys true --simulation_enabled false --stderr_dev DEBUG --stdin_dev DEBUG --stdout_dev DEBUG --sopc_system_name My_First_NIOS_II_Platform_Designer --quartus_project_dir "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II" --jdi ../..//output_files/My_First_NIOS_II.jdi --sopcinfo C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II_bsp/../../My_First_NIOS_II_Platform_Designer.sopcinfo
-Info: (HelloNios_II.elf) 3052 Bytes program size (code + initialized data).
-Info:                    1036 Bytes free for stack + heap.
-Info: Creating HelloNios_II.objdump
-nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
-[HelloNios_II build complete]
-16:11:44 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+Info: Compiling EtherCAT/ecatappl.c to obj/default/EtherCAT/ecatappl.o
+nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/EtherCAT/ecatappl.o EtherCAT/ecatappl.c
+EtherCAT/ecatappl.c:169:2: warning: #warning "Define the timer ticks per ms" [-Wcpp]
+ #warning "Define the timer ticks per ms"
+  ^
+EtherCAT/ecatappl.c: In function 'PDO_InputMapping':
+EtherCAT/ecatappl.c:227:22: warning: implicit declaration of function 'HW_GetALEventRegister_Isr' [-Wimplicit-function-declaration]
+     UINT16 ALEvent = HW_GetALEventRegister_Isr();
+                      ^
+EtherCAT/ecatappl.c:243:5: warning: implicit declaration of function 'HW_EscWriteIsr' [-Wimplicit-function-declaration]
+     HW_EscWriteIsr(((MEM_ADDR *) aPdInputData), nEscAddrInputData, nPdInputSize );
+     ^
+EtherCAT/ecatappl.c: In function 'PDO_OutputMapping':
+EtherCAT/ecatappl.c:310:5: warning: implicit declaration of function 'HW_EscReadIsr' [-Wimplicit-function-declaration]
+     HW_EscReadIsr(((MEM_ADDR *)aPdOutputData), nEscAddrOutputData, nPdOutputSize );
+     ^
+EtherCAT/ecatappl.c: In function 'GetSystemTimeDelay':
+EtherCAT/ecatappl.c:423:4: warning: implicit declaration of function 'HW_EscReadDWordIsr' [-Wimplicit-function-declaration]
+    HW_EscReadDWordIsr(u32CurValue, ESC_SYSTEMTIME_OFFSET);
+    ^
+EtherCAT/ecatappl.c: In function 'PDI_Isr':
+EtherCAT/ecatappl.c:511:13: warning: implicit declaration of function 'HW_EscReadByteIsr' [-Wimplicit-function-declaration]
+             HW_EscReadByteIsr(u8dummy,nEscAddrOutputData);
+             ^
+EtherCAT/ecatappl.c:565:9: warning: implicit declaration of function 'HW_EscReadDWord' [-Wimplicit-function-declaration]
+         HW_EscReadDWord(SyncState, ESC_DC_SYNC_STATUS);
+         ^
+EtherCAT/ecatappl.c: In function 'MainInit':
+EtherCAT/ecatappl.c:738:5: warning: implicit declaration of function 'HW_EscReadWord' [-Wimplicit-function-declaration]
+     HW_EscReadWord(eepromConfigControl,ESC_EEPROM_CONFIG_OFFSET);
+     ^
+EtherCAT/ecatappl.c:747:9: warning: implicit declaration of function 'HW_EscWriteWord' [-Wimplicit-function-declaration]
+         HW_EscWriteWord(eepromConfigControl,ESC_EEPROM_CONFIG_OFFSET);
+         ^
+EtherCAT/ecatappl.c: In function 'MainLoop':
+EtherCAT/ecatappl.c:839:34: warning: implicit declaration of function 'HW_GetALEventRegister' [-Wimplicit-function-declaration]
+                 UINT16 ALEvent = HW_GetALEventRegister();
+                                  ^
+EtherCAT/ecatappl.c:863:13: warning: implicit declaration of function 'DISABLE_ESC_INT' [-Wimplicit-function-declaration]
+             DISABLE_ESC_INT();
+             ^
+EtherCAT/ecatappl.c:873:13: warning: implicit declaration of function 'ENABLE_ESC_INT' [-Wimplicit-function-declaration]
+             ENABLE_ESC_INT();
+             ^
+EtherCAT/ecatappl.c: In function 'ESC_EepromAccess':
+EtherCAT/ecatappl.c:1013:24: error: 'ESC_RD' undeclared (first use in this function)
+         if ( access == ESC_RD )
+                        ^
+EtherCAT/ecatappl.c:1013:24: note: each undeclared identifier is reported only once for each function it appears in
+EtherCAT/ecatappl.c:1034:13: warning: implicit declaration of function 'HW_EscWrite' [-Wimplicit-function-declaration]
+             HW_EscWrite((MEM_ADDR *) &wordaddress, ESC_EEPROM_ADDRESS_OFFSET, 4);
+             ^
+EtherCAT/ecatappl.c:1096:21: warning: implicit declaration of function 'HW_EscRead' [-Wimplicit-function-declaration]
+                     HW_EscRead((MEM_ADDR *) &pData[i], ESC_EEPROM_DATA_OFFSET, u16BytesToCopy);
+                     ^
+EtherCAT/ecatappl.c:1116:53: error: 'ECAT_TIMER_INC_P_MS' undeclared (first use in this function)
+                     INT32 i32TimeoutTicks = (INT32)(ECAT_TIMER_INC_P_MS * 10);
+                                                     ^
+EtherCAT/ecatappl.c:1119:43: warning: implicit declaration of function 'HW_GetTimer' [-Wimplicit-function-declaration]
+                     UINT16 u16LastTimer = HW_GetTimer();
+                                           ^
+EtherCAT/ecatappl.c: In function 'ESC_EepromWriteCRC':
+EtherCAT/ecatappl.c:1178:59: error: 'ESC_RD' undeclared (first use in this function)
+     u16Return = ESC_EepromAccess(0,7,(UINT16 *)EscCfgData,ESC_RD);
+                                                           ^
+EtherCAT/ecatappl.c:1204:50: error: 'ESC_WR' undeclared (first use in this function)
+         u16Return = ESC_EepromAccess(7,1,&u16Crc,ESC_WR);
+                                                  ^
+make: *** [obj/default/EtherCAT/ecatappl.o] Error 1
+17:44:17 **** Clean-only build of configuration Nios II for project HelloNios_II ****
+make clean 
+[HelloNios_II clean complete]
+17:44:18 **** Build of configuration Nios II for project HelloNios_II ****
 make all 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
@@ -400,16 +269,16 @@ C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-dir
 Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
 nios2-elf-gcc -xc -MP -MMD -c -I../HelloNios_II_bsp//HAL/inc -I../HelloNios_II_bsp/ -I../HelloNios_II_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
 hello_world_small.c: In function 'main':
-hello_world_small.c:260:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
+hello_world_small.c:181:6: warning: variable 'spi_check' set but not used [-Wunused-but-set-variable]
   int spi_check = -1;
       ^
-hello_world_small.c:252:9: warning: unused variable 'rx_data' [-Wunused-variable]
+hello_world_small.c:173:9: warning: unused variable 'rx_data' [-Wunused-variable]
   alt_u8 rx_data[2];
          ^
-hello_world_small.c:251:9: warning: unused variable 'tx_data' [-Wunused-variable]
+hello_world_small.c:172:9: warning: unused variable 'tx_data' [-Wunused-variable]
   alt_u8 tx_data[] = {0xA5, 0x5A};
          ^
-hello_world_small.c:250:10: warning: unused variable 'status' [-Wunused-variable]
+hello_world_small.c:171:10: warning: unused variable 'status' [-Wunused-variable]
   alt_u32 status;
           ^
 Info: Linking HelloNios_II.elf
@@ -420,13 +289,13 @@ Info:                    1012 Bytes free for stack + heap.
 Info: Creating HelloNios_II.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source HelloNios_II.elf >HelloNios_II.objdump
 [HelloNios_II build complete]
-16:11:52 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+17:44:45 **** Incremental Build of configuration Nios II for project HelloNios_II ****
 make all 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
 [BSP build complete]
 [HelloNios_II build complete]
-16:12:16 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+17:46:36 **** Incremental Build of configuration Nios II for project HelloNios_II ****
 make all 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
