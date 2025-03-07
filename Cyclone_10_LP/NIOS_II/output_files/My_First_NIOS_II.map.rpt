@@ -1,5 +1,5 @@
 Analysis & Synthesis report for My_First_NIOS_II
-Mon Mar 03 16:06:39 2025
+Fri Mar 07 15:34:49 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -200,11 +200,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 192. Port Connectivity Checks: "My_First_NIOS_II_Platform_Designer:u0"
 193. Signal Tap Logic Analyzer Settings
 194. Post-Synthesis Netlist Statistics for Top Partition
-195. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
-196. Elapsed Time Per Partition
-197. Connections to In-System Debugging Instance "auto_signaltap_0"
-198. Analysis & Synthesis Messages
-199. Analysis & Synthesis Suppressed Messages
+195. Elapsed Time Per Partition
+196. Connections to In-System Debugging Instance "auto_signaltap_0"
+197. Analysis & Synthesis Messages
+198. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -230,7 +229,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 03 16:06:39 2025       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 07 15:34:49 2025       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; My_First_NIOS_II                            ;
 ; Top-level Entity Name              ; My_First_NIOS_II                            ;
@@ -346,9 +345,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
-;     Processor 3            ;   0.3%      ;
-;     Processor 4            ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -1437,16 +1436,6 @@ Encoding Type:  One-Hot
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |My_First_NIOS_II|My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_HelloNios:hellonios|My_First_NIOS_II_Platform_Designer_HelloNios_cpu:cpu|W_rf_wr_data[4]                                                                                                                                                                                                                                                                                                                                                                                                      ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |My_First_NIOS_II|My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_HelloNios:hellonios|My_First_NIOS_II_Platform_Designer_HelloNios_cpu:cpu|D_dst_regnum[1]                                                                                                                                                                                                                                                                                                                                                                                                      ;
 ; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; No         ; |My_First_NIOS_II|My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_mm_interconnect_0:mm_interconnect_0|My_First_NIOS_II_Platform_Designer_mm_interconnect_0_router:router|src_channel[2]                                                                                                                                                                                                                                                                                                                                                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][0]                                                                                                                                                                                                                                  ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[3][9]                                                                                                                                                                                                                                  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[2]                                                                                                                                                                                                                                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][0]                                                                                                                                                                                                                                         ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[3][4]                                                                                                                                                                                                                                         ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[4]                                                                                                                                                                                                               ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[3]                                                                                                                                                                                                                            ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[9]                                                                                                                                                                                                                                           ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                                                                                                                                                                                                                                    ;
-; 36:1               ; 4 bits    ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |My_First_NIOS_II|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[1]                                                                                                                                                                                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -5065,44 +5054,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; boundary_port         ; 239                                      ;
-; cycloneiii_ff         ; 112                                      ;
-;     CLR               ; 6                                        ;
-;     ENA               ; 16                                       ;
-;     ENA CLR           ; 50                                       ;
-;     ENA CLR SLD       ; 2                                        ;
-;     ENA SCLR          ; 6                                        ;
-;     ENA SLD           ; 9                                        ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; cycloneiii_lcell_comb ; 186                                      ;
-;     arith             ; 9                                        ;
-;         2 data inputs ; 9                                        ;
-;     normal            ; 177                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 6                                        ;
-;         2 data inputs ; 25                                       ;
-;         3 data inputs ; 59                                       ;
-;         4 data inputs ; 86                                       ;
-;                       ;                                          ;
-; Max LUT depth         ; 4.00                                     ;
-; Average LUT depth     ; 1.96                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:07     ;
-; sld_hub:auto_hub ; 00:00:01     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5176,7 +5134,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Mar 03 16:05:29 2025
+    Info: Processing started: Fri Mar 07 15:33:46 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off My_First_NIOS_II -c My_First_NIOS_II
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -5284,11 +5242,11 @@ Info (12021): Found 5 design units, including 5 entities, in source file my_firs
     Info (12023): Found entity 4: My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_r File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/submodules/My_First_NIOS_II_Platform_Designer_DEBUG.v Line: 243
     Info (12023): Found entity 5: My_First_NIOS_II_Platform_Designer_DEBUG File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/submodules/My_First_NIOS_II_Platform_Designer_DEBUG.v Line: 331
 Info (12021): Found 1 design units, including 1 entities, in source file my_first_nios_ii.v
-    Info (12023): Found entity 1: My_First_NIOS_II File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v Line: 4
+    Info (12023): Found entity 1: My_First_NIOS_II File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file tb_my_first_nios_ii.v
     Info (12023): Found entity 1: tb_My_First_NIOS_II File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_My_First_NIOS_II.v Line: 3
 Info (12127): Elaborating entity "My_First_NIOS_II" for the top level hierarchy
-Info (12128): Elaborating entity "My_First_NIOS_II_Platform_Designer" for hierarchy "My_First_NIOS_II_Platform_Designer:u0" File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v Line: 41
+Info (12128): Elaborating entity "My_First_NIOS_II_Platform_Designer" for hierarchy "My_First_NIOS_II_Platform_Designer:u0" File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v Line: 39
 Info (12128): Elaborating entity "My_First_NIOS_II_Platform_Designer_DEBUG" for hierarchy "My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_DEBUG:debug" File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.v Line: 112
 Info (12128): Elaborating entity "My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_w" for hierarchy "My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_DEBUG:debug|My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_w:the_My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_w" File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/submodules/My_First_NIOS_II_Platform_Designer_DEBUG.v Line: 420
 Info (12128): Elaborating entity "scfifo" for hierarchy "My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_DEBUG:debug|My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_w:the_My_First_NIOS_II_Platform_Designer_DEBUG_scfifo_w|scfifo:wfifo" File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/submodules/My_First_NIOS_II_Platform_Designer_DEBUG.v Line: 139
@@ -5507,7 +5465,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ggc File: C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/db/cmpr_ggc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.03.03.16:06:10 Progress: Loading sld4f5a1263/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.03.07.15:34:23 Progress: Loading sld4f5a1263/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -5535,9 +5493,6 @@ Info (13000): Registers with preset signals will power-up high File: C:/Users/gu
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 70 registers lost all their fanouts during netlist optimizations.
-Info (13000): Registers with preset signals will power-up high File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (144001): Generated suppressed messages file C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/output_files/My_First_NIOS_II.map.smsg
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 57 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -5548,10 +5503,10 @@ Info (21057): Implemented 3392 device resources after synthesis - the final reso
     Info (21061): Implemented 3210 logic cells
     Info (21064): Implemented 156 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4942 megabytes
-    Info: Processing ended: Mon Mar 03 16:06:39 2025
-    Info: Elapsed time: 00:01:10
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 4944 megabytes
+    Info: Processing ended: Fri Mar 07 15:34:49 2025
+    Info: Elapsed time: 00:01:03
+    Info: Total CPU time (on all processors): 00:00:34
 
 
 +------------------------------------------+

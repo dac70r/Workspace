@@ -7,8 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Memory Interfaces and Controllers,Library/Interface Protocols/Serial,Library/University Program/Generic IO,Library/Processors and Peripherals,Library/Basic Functions,Library/Basic Functions/On Chip Memory,Library,Library/University Program,Project,Library/Processors and Peripherals/Peripherals,Library/Interface Protocols,Library/Memory Interfaces and Controllers/Flash" />
- <window width="2902" height="1570" x="-11" y="-1631" />
+ <library expandedCategories="Library,Project" />
+ <window width="2522" height="1346" x="173" y="-1470" />
  <generation simulation="VERILOG" />
 </preferences>

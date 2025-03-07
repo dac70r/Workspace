@@ -1,0 +1,26 @@
+#ifndef PERIPHERAL_LINKER_H
+#define PERIPHERAL_LINKER_H
+
+#include "system.h"	// must include otherwise will not work
+
+// Base addresses for peripherals (example addresses, these will depend on your actual hardware)
+#define GPIO 	GPIO_BASE
+
+// SPI Channels for Machine Learning
+#define SPI0		SPI_0_BASE
+#define SPI1		SPI_1_BASE
+
+// SPI Channel for EtherCAT Slave Controller
+#define ESC_SPI		ESC_SPI_BASE
+
+// Other Peripherals as required
+
+
+// function declaration
+void init_timer (void);												// Initializes the timer
+int spi_command (const alt_u8 * write_data, alt_u32 read_length, 	// SPI Command
+		alt_u8 * read_data );
+void delay_ms(int milliseconds);									// Simple Delay
+void adc_init(void);												// Initializes the ADC
+
+#endif // LINKER_H

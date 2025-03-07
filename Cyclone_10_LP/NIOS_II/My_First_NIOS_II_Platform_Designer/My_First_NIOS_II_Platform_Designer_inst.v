@@ -1,18 +1,18 @@
 	My_First_NIOS_II_Platform_Designer u0 (
+		.adc_1_spi_external_MISO         (<connected-to-adc_1_spi_external_MISO>),         //       adc_1_spi_external.MISO
+		.adc_1_spi_external_MOSI         (<connected-to-adc_1_spi_external_MOSI>),         //                         .MOSI
+		.adc_1_spi_external_SCLK         (<connected-to-adc_1_spi_external_SCLK>),         //                         .SCLK
+		.adc_1_spi_external_SS_n         (<connected-to-adc_1_spi_external_SS_n>),         //                         .SS_n
 		.clk_clk                         (<connected-to-clk_clk>),                         //                      clk.clk
+		.esc_spi_external_MISO           (<connected-to-esc_spi_external_MISO>),           //         esc_spi_external.MISO
+		.esc_spi_external_MOSI           (<connected-to-esc_spi_external_MOSI>),           //                         .MOSI
+		.esc_spi_external_SCLK           (<connected-to-esc_spi_external_SCLK>),           //                         .SCLK
+		.esc_spi_external_SS_n           (<connected-to-esc_spi_external_SS_n>),           //                         .SS_n
 		.gpio_external_connection_export (<connected-to-gpio_external_connection_export>), // gpio_external_connection.export
 		.reset_adc_export                (<connected-to-reset_adc_export>),                //                reset_adc.export
 		.spi_0_external_MISO             (<connected-to-spi_0_external_MISO>),             //           spi_0_external.MISO
 		.spi_0_external_MOSI             (<connected-to-spi_0_external_MOSI>),             //                         .MOSI
 		.spi_0_external_SCLK             (<connected-to-spi_0_external_SCLK>),             //                         .SCLK
-		.spi_0_external_SS_n             (<connected-to-spi_0_external_SS_n>),             //                         .SS_n
-		.adc_1_spi_external_MISO         (<connected-to-adc_1_spi_external_MISO>),         //       adc_1_spi_external.MISO
-		.adc_1_spi_external_MOSI         (<connected-to-adc_1_spi_external_MOSI>),         //                         .MOSI
-		.adc_1_spi_external_SCLK         (<connected-to-adc_1_spi_external_SCLK>),         //                         .SCLK
-		.adc_1_spi_external_SS_n         (<connected-to-adc_1_spi_external_SS_n>),         //                         .SS_n
-		.esc_spi_external_MISO           (<connected-to-esc_spi_external_MISO>),           //         esc_spi_external.MISO
-		.esc_spi_external_MOSI           (<connected-to-esc_spi_external_MOSI>),           //                         .MOSI
-		.esc_spi_external_SCLK           (<connected-to-esc_spi_external_SCLK>),           //                         .SCLK
-		.esc_spi_external_SS_n           (<connected-to-esc_spi_external_SS_n>)            //                         .SS_n
+		.spi_0_external_SS_n             (<connected-to-spi_0_external_SS_n>)              //                         .SS_n
 	);
 

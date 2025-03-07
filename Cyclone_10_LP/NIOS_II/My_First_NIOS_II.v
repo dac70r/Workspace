@@ -1,6 +1,4 @@
 
-
-
 module My_First_NIOS_II(
 
 	input 			CLOCK_50,
@@ -21,7 +19,7 @@ reg         adc_1_spi_external_MISO;         //       adc_1_spi_external.MISO
 reg        	adc_1_spi_external_MOSI;         //                         .MOSI
 reg       	adc_1_spi_external_SCLK;         //                         .SCLK
 reg        	adc_1_spi_external_SS_n;         //                         .SS_n
-
+		
 My_First_NIOS_II_Platform_Designer u0 (
 		.clk_clk (CLOCK_50),   
 		.gpio_external_connection_export(LEDG),			// led
@@ -41,24 +39,3 @@ My_First_NIOS_II_Platform_Designer u0 (
 	);
 
 endmodule
-
-
-/*2
-reg [31:0] count = 0;
-reg 		  LEDG_Stat = 0;
-
-always @ (posedge CLOCK_50)
-begin
-	if(count >= 50_000_000)
-	begin
-		count <= 0;
-		LEDG_Stat <= !LEDG_Stat;
-	end
-	else
-	begin
-		count <= count + 1;
-	end
-end
-
-assign LEDG[3] = LEDG_Stat;
-*/
