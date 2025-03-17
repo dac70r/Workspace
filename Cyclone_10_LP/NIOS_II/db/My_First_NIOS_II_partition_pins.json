@@ -4,6 +4,38 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LEDG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ADC1_MOSI",
 					"strict" : false
 				},
@@ -16,15 +48,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "esc_spi_external_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_SS_n",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "SPI_WR_TRIG",
+					"name" : "RST_N",
 					"strict" : false
 				},
 				{
-					"name" : "RST_N",
+					"name" : "esc_spi_external_MISO",
 					"strict" : false
 				},
 				{

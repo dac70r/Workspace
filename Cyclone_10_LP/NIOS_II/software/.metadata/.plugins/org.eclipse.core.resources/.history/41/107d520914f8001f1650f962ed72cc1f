@@ -1,9 +1,0 @@
-#ifndef __SAMPLEHW_H__
-#define __SAMPLEHW_H__
-
-#include <stdio.h>
-
-#include "esc.h"
-#include <stdint.h>  // For C
-
-#endif

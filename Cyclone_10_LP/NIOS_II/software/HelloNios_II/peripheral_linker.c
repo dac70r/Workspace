@@ -1,6 +1,7 @@
 #include "peripheral_linker.h"  // Include the linker header file with peripheral definitions
 
 // Function to initialize the Timer peripheral
+/*
 // timer ISR - Triggers every period of the timer
 void timer_isr(void *context) {
     static int led_state = 0;
@@ -112,3 +113,4 @@ void adc_init(void){
 			 		 											0							// Special control flags for the SPI command
 			 		 											);
 }
+*/

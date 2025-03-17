@@ -9,7 +9,7 @@ int main()
 	alt_u32 led_status = 0;
 	alt_u32 value =0;
 	value = IORD(0x3080, 0);
-	adc_init();
+	//adc_init();
 	value = IORD(0x3080, 0);
 
 	// Event loop that runs forever
@@ -17,7 +17,7 @@ int main()
 		IOWR_ALTERA_AVALON_PIO_DATA(GPIO, led_status);
 		alt_putstr("Delay 1000ms !\n");
 		led_status = led_status + 1;
-		delay_ms(1000);
+		alt_busy_sleep(500000);
 	}
 
   return 0;

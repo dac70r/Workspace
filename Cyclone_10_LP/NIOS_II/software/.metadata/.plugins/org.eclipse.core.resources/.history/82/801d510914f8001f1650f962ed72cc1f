@@ -1,7 +1,0 @@
-#include "ecat_def.h"
-#include "ecatappl.h"
-
-#define __AX58100_HW__ 1
-#include "ax58100_hw.h"
-#undef __AX58100_HW__
-#define __AX58100_HW__ 0

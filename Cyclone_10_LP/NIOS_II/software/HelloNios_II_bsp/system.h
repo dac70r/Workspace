@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Fri Mar 07 14:04:04 SGT 2025
+ * Generated: Mon Mar 17 13:53:31 SGT 2025
  */
 
 /*
@@ -155,7 +155,6 @@
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SPI
-#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -252,63 +251,6 @@
 
 
 /*
- * TIMER configuration
- *
- */
-
-#define ALT_MODULE_CLASS_TIMER altera_avalon_timer
-#define TIMER_ALWAYS_RUN 0
-#define TIMER_BASE 0x3060
-#define TIMER_COUNTER_SIZE 32
-#define TIMER_FIXED_PERIOD 0
-#define TIMER_FREQ 50000000
-#define TIMER_IRQ 1
-#define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_LOAD_VALUE 24999999
-#define TIMER_MULT 1.0
-#define TIMER_NAME "/dev/TIMER"
-#define TIMER_PERIOD 0.5
-#define TIMER_PERIOD_UNITS "s"
-#define TIMER_RESET_OUTPUT 0
-#define TIMER_SNAPSHOT 1
-#define TIMER_SPAN 32
-#define TIMER_TICKS_PER_SEC 2
-#define TIMER_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_TYPE "altera_avalon_timer"
-
-
-/*
- * adc_1_spi configuration
- *
- */
-
-#define ADC_1_SPI_BASE 0x3020
-#define ADC_1_SPI_CLOCKMULT 1
-#define ADC_1_SPI_CLOCKPHASE 1
-#define ADC_1_SPI_CLOCKPOLARITY 0
-#define ADC_1_SPI_CLOCKUNITS "Hz"
-#define ADC_1_SPI_DATABITS 8
-#define ADC_1_SPI_DATAWIDTH 16
-#define ADC_1_SPI_DELAYMULT "1.0E-9"
-#define ADC_1_SPI_DELAYUNITS "ns"
-#define ADC_1_SPI_EXTRADELAY 0
-#define ADC_1_SPI_INSERT_SYNC 0
-#define ADC_1_SPI_IRQ 4
-#define ADC_1_SPI_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define ADC_1_SPI_ISMASTER 1
-#define ADC_1_SPI_LSBFIRST 0
-#define ADC_1_SPI_NAME "/dev/adc_1_spi"
-#define ADC_1_SPI_NUMSLAVES 1
-#define ADC_1_SPI_PREFIX "spi_"
-#define ADC_1_SPI_SPAN 32
-#define ADC_1_SPI_SYNC_REG_DEPTH 2
-#define ADC_1_SPI_TARGETCLOCK 3125000u
-#define ADC_1_SPI_TARGETSSDELAY "0.0"
-#define ADC_1_SPI_TYPE "altera_avalon_spi"
-#define ALT_MODULE_CLASS_adc_1_spi altera_avalon_spi
-
-
-/*
  * esc_spi configuration
  *
  */
@@ -348,63 +290,5 @@
 #define ALT_MAX_FD 4
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
-
-
-/*
- * pio_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_pio_0 altera_avalon_pio
-#define PIO_0_BASE 0x3080
-#define PIO_0_BIT_CLEARING_EDGE_REGISTER 0
-#define PIO_0_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_0_CAPTURE 0
-#define PIO_0_DATA_WIDTH 8
-#define PIO_0_DO_TEST_BENCH_WIRING 0
-#define PIO_0_DRIVEN_SIM_VALUE 0
-#define PIO_0_EDGE_TYPE "NONE"
-#define PIO_0_FREQ 50000000
-#define PIO_0_HAS_IN 0
-#define PIO_0_HAS_OUT 1
-#define PIO_0_HAS_TRI 0
-#define PIO_0_IRQ -1
-#define PIO_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_0_IRQ_TYPE "NONE"
-#define PIO_0_NAME "/dev/pio_0"
-#define PIO_0_RESET_VALUE 0
-#define PIO_0_SPAN 16
-#define PIO_0_TYPE "altera_avalon_pio"
-
-
-/*
- * spi_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_spi_0 altera_avalon_spi
-#define SPI_0_BASE 0x3040
-#define SPI_0_CLOCKMULT 1
-#define SPI_0_CLOCKPHASE 1
-#define SPI_0_CLOCKPOLARITY 0
-#define SPI_0_CLOCKUNITS "Hz"
-#define SPI_0_DATABITS 8
-#define SPI_0_DATAWIDTH 16
-#define SPI_0_DELAYMULT "1.0E-9"
-#define SPI_0_DELAYUNITS "ns"
-#define SPI_0_EXTRADELAY 0
-#define SPI_0_INSERT_SYNC 0
-#define SPI_0_IRQ 2
-#define SPI_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define SPI_0_ISMASTER 1
-#define SPI_0_LSBFIRST 0
-#define SPI_0_NAME "/dev/spi_0"
-#define SPI_0_NUMSLAVES 1
-#define SPI_0_PREFIX "spi_"
-#define SPI_0_SPAN 32
-#define SPI_0_SYNC_REG_DEPTH 2
-#define SPI_0_TARGETCLOCK 3125000u
-#define SPI_0_TARGETSSDELAY "0.0"
-#define SPI_0_TYPE "altera_avalon_spi"
 
 #endif /* __SYSTEM_H_ */

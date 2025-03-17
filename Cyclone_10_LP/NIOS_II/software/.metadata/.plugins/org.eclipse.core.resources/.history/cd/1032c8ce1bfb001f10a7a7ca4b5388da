@@ -1,9 +1,0 @@
-#ifndef PERIPHERAL_LINKER_H
-#define PERIPHERAL_LINKER_H
-
-#include "system.h"
-
-// Base addresses for peripherals (example addresses, these will depend on your actual hardware)
-#define GPIO GPIO_BASE
-
-#endif // LINKER_H

@@ -1,29 +1,22 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst My_First_NIOS_II_Platform_Designer.spi_0 -pg 1 -lvl 3 -y 430
-preplace inst My_First_NIOS_II_Platform_Designer.SRAM -pg 1 -lvl 3 -y 250
-preplace inst My_First_NIOS_II_Platform_Designer.HelloNios -pg 1 -lvl 1 -y 180
+preplace inst My_First_NIOS_II_Platform_Designer.SRAM -pg 1 -lvl 3 -y 140
+preplace inst My_First_NIOS_II_Platform_Designer.HelloNios -pg 1 -lvl 1 -y 70
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.cpu -pg 1
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.clock_bridge -pg 1
-preplace inst My_First_NIOS_II_Platform_Designer.esc_spi -pg 1 -lvl 3 -y 750
-preplace inst My_First_NIOS_II_Platform_Designer.clk_0 -pg 1 -lvl 2 -y 220
-preplace inst My_First_NIOS_II_Platform_Designer.TIMER -pg 1 -lvl 3 -y 150
-preplace inst My_First_NIOS_II_Platform_Designer.adc_1_spi -pg 1 -lvl 3 -y 30
-preplace inst My_First_NIOS_II_Platform_Designer.DEBUG -pg 1 -lvl 3 -y 330
-preplace inst My_First_NIOS_II_Platform_Designer.pio_0 -pg 1 -lvl 3 -y 550
+preplace inst My_First_NIOS_II_Platform_Designer.esc_spi -pg 1 -lvl 3 -y 640
+preplace inst My_First_NIOS_II_Platform_Designer.clk_0 -pg 1 -lvl 2 -y 110
+preplace inst My_First_NIOS_II_Platform_Designer.DEBUG -pg 1 -lvl 3 -y 220
 preplace inst My_First_NIOS_II_Platform_Designer.HelloNios.reset_bridge -pg 1
-preplace inst My_First_NIOS_II_Platform_Designer.GPIO -pg 1 -lvl 3 -y 650
+preplace inst My_First_NIOS_II_Platform_Designer.GPIO -pg 1 -lvl 3 -y 540
 preplace inst My_First_NIOS_II_Platform_Designer -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.gpio_external_connection,(SLAVE)GPIO.external_connection) 1 0 3 NJ 680 NJ 680 NJ
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)spi_0.external,(SLAVE)My_First_NIOS_II_Platform_Designer.spi_0_external) 1 0 3 NJ 460 NJ 460 NJ
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)adc_1_spi.external,(SLAVE)My_First_NIOS_II_Platform_Designer.adc_1_spi_external) 1 0 3 NJ 340 NJ 210 NJ
-preplace netloc INTERCONNECT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)SRAM.s1,(SLAVE)spi_0.spi_control_port,(SLAVE)adc_1_spi.spi_control_port,(MASTER)HelloNios.data_master,(SLAVE)TIMER.s1,(SLAVE)GPIO.s1,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)esc_spi.spi_control_port,(SLAVE)HelloNios.debug_mem_slave,(SLAVE)pio_0.s1,(MASTER)HelloNios.instruction_master) 1 0 3 230 320 590 190 930
-preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(MASTER)clk_0.clk_reset,(SLAVE)SRAM.reset1,(SLAVE)DEBUG.reset,(SLAVE)HelloNios.reset,(SLAVE)TIMER.reset,(SLAVE)spi_0.reset,(SLAVE)adc_1_spi.reset,(SLAVE)esc_spi.reset,(SLAVE)GPIO.reset,(SLAVE)pio_0.reset) 1 0 3 210 140 NJ 140 970
-preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)esc_spi.clk,(SLAVE)adc_1_spi.clk,(MASTER)clk_0.clk,(SLAVE)GPIO.clk,(SLAVE)spi_0.clk,(SLAVE)DEBUG.clk,(SLAVE)SRAM.clk1,(SLAVE)TIMER.clk,(SLAVE)HelloNios.clk,(SLAVE)pio_0.clk) 1 0 3 190 380 NJ 380 910
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 360 NJ
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)pio_0.external_connection,(SLAVE)My_First_NIOS_II_Platform_Designer.reset_adc) 1 0 3 NJ 580 NJ 580 NJ
-preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(MASTER)HelloNios.debug_reset_request,(SLAVE)clk_0.clk_in_reset) 1 1 1 650
-preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)esc_spi.external,(SLAVE)My_First_NIOS_II_Platform_Designer.esc_spi_external) 1 0 3 NJ 780 NJ 780 NJ
-preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)adc_1_spi.irq,(SLAVE)esc_spi.irq,(MASTER)HelloNios.irq,(SLAVE)spi_0.irq,(SLAVE)TIMER.irq,(SLAVE)DEBUG.irq) 1 1 2 NJ 290 950
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)GPIO.reset,(MASTER)clk_0.clk_reset,(SLAVE)HelloNios.reset,(SLAVE)esc_spi.reset,(SLAVE)SRAM.reset1,(SLAVE)DEBUG.reset) 1 0 3 210 30 NJ 30 910
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.gpio_external_connection,(SLAVE)GPIO.external_connection) 1 0 3 NJ 570 NJ 570 NJ
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)esc_spi.irq,(SLAVE)DEBUG.irq,(MASTER)HelloNios.irq) 1 1 2 NJ 80 950
+preplace netloc FAN_OUT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)esc_spi.clk,(SLAVE)HelloNios.clk,(SLAVE)GPIO.clk,(SLAVE)SRAM.clk1,(MASTER)clk_0.clk,(SLAVE)DEBUG.clk) 1 0 3 190 230 NJ 100 930
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)My_First_NIOS_II_Platform_Designer.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 250 NJ
+preplace netloc POINT_TO_POINT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)clk_0.clk_in_reset,(MASTER)HelloNios.debug_reset_request) 1 1 1 630
+preplace netloc INTERCONNECT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)DEBUG.avalon_jtag_slave,(MASTER)HelloNios.data_master,(SLAVE)HelloNios.debug_mem_slave,(SLAVE)SRAM.s1,(MASTER)HelloNios.instruction_master,(SLAVE)esc_spi.spi_control_port,(SLAVE)GPIO.s1) 1 0 3 230 210 590 60 890
+preplace netloc EXPORT<net_container>My_First_NIOS_II_Platform_Designer</net_container>(SLAVE)esc_spi.external,(SLAVE)My_First_NIOS_II_Platform_Designer.esc_spi_external) 1 0 3 NJ 670 NJ 670 NJ
 levelinfo -pg 1 0 160 1160
 levelinfo -hier My_First_NIOS_II_Platform_Designer 170 350 720 1000 1150

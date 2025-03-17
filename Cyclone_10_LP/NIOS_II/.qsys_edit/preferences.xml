@@ -5,9 +5,11 @@
   <columns>
    <connections preferredWidth="143" />
    <irq preferredWidth="34" />
+   <export preferredWidth="222" />
+   <inputclock preferredWidth="107" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
+ <library expandedCategories="Project,Library" />
  <window width="2522" height="1346" x="173" y="-1470" />
  <generation simulation="VERILOG" />
 </preferences>

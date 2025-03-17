@@ -4,21 +4,12 @@
 
 `timescale 1 ps / 1 ps
 module My_First_NIOS_II_Platform_Designer (
-		input  wire       adc_1_spi_external_MISO,         //       adc_1_spi_external.MISO
-		output wire       adc_1_spi_external_MOSI,         //                         .MOSI
-		output wire       adc_1_spi_external_SCLK,         //                         .SCLK
-		output wire       adc_1_spi_external_SS_n,         //                         .SS_n
 		input  wire       clk_clk,                         //                      clk.clk
 		input  wire       esc_spi_external_MISO,           //         esc_spi_external.MISO
 		output wire       esc_spi_external_MOSI,           //                         .MOSI
 		output wire       esc_spi_external_SCLK,           //                         .SCLK
 		output wire       esc_spi_external_SS_n,           //                         .SS_n
-		output wire [7:0] gpio_external_connection_export, // gpio_external_connection.export
-		output wire [7:0] reset_adc_export,                //                reset_adc.export
-		input  wire       spi_0_external_MISO,             //           spi_0_external.MISO
-		output wire       spi_0_external_MOSI,             //                         .MOSI
-		output wire       spi_0_external_SCLK,             //                         .SCLK
-		output wire       spi_0_external_SS_n              //                         .SS_n
+		output wire [7:0] gpio_external_connection_export  // gpio_external_connection.export
 	);
 
 	wire         hellonios_debug_reset_request_reset;                     // HelloNios:debug_reset_request -> rst_controller:reset_in0
@@ -61,28 +52,6 @@ module My_First_NIOS_II_Platform_Designer (
 	wire   [1:0] mm_interconnect_0_gpio_s1_address;                       // mm_interconnect_0:GPIO_s1_address -> GPIO:address
 	wire         mm_interconnect_0_gpio_s1_write;                         // mm_interconnect_0:GPIO_s1_write -> GPIO:write_n
 	wire  [31:0] mm_interconnect_0_gpio_s1_writedata;                     // mm_interconnect_0:GPIO_s1_writedata -> GPIO:writedata
-	wire         mm_interconnect_0_timer_s1_chipselect;                   // mm_interconnect_0:TIMER_s1_chipselect -> TIMER:chipselect
-	wire  [15:0] mm_interconnect_0_timer_s1_readdata;                     // TIMER:readdata -> mm_interconnect_0:TIMER_s1_readdata
-	wire   [2:0] mm_interconnect_0_timer_s1_address;                      // mm_interconnect_0:TIMER_s1_address -> TIMER:address
-	wire         mm_interconnect_0_timer_s1_write;                        // mm_interconnect_0:TIMER_s1_write -> TIMER:write_n
-	wire  [15:0] mm_interconnect_0_timer_s1_writedata;                    // mm_interconnect_0:TIMER_s1_writedata -> TIMER:writedata
-	wire         mm_interconnect_0_pio_0_s1_chipselect;                   // mm_interconnect_0:pio_0_s1_chipselect -> pio_0:chipselect
-	wire  [31:0] mm_interconnect_0_pio_0_s1_readdata;                     // pio_0:readdata -> mm_interconnect_0:pio_0_s1_readdata
-	wire   [1:0] mm_interconnect_0_pio_0_s1_address;                      // mm_interconnect_0:pio_0_s1_address -> pio_0:address
-	wire         mm_interconnect_0_pio_0_s1_write;                        // mm_interconnect_0:pio_0_s1_write -> pio_0:write_n
-	wire  [31:0] mm_interconnect_0_pio_0_s1_writedata;                    // mm_interconnect_0:pio_0_s1_writedata -> pio_0:writedata
-	wire         mm_interconnect_0_spi_0_spi_control_port_chipselect;     // mm_interconnect_0:spi_0_spi_control_port_chipselect -> spi_0:spi_select
-	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_readdata;       // spi_0:data_to_cpu -> mm_interconnect_0:spi_0_spi_control_port_readdata
-	wire   [2:0] mm_interconnect_0_spi_0_spi_control_port_address;        // mm_interconnect_0:spi_0_spi_control_port_address -> spi_0:mem_addr
-	wire         mm_interconnect_0_spi_0_spi_control_port_read;           // mm_interconnect_0:spi_0_spi_control_port_read -> spi_0:read_n
-	wire         mm_interconnect_0_spi_0_spi_control_port_write;          // mm_interconnect_0:spi_0_spi_control_port_write -> spi_0:write_n
-	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_writedata;      // mm_interconnect_0:spi_0_spi_control_port_writedata -> spi_0:data_from_cpu
-	wire         mm_interconnect_0_adc_1_spi_spi_control_port_chipselect; // mm_interconnect_0:adc_1_spi_spi_control_port_chipselect -> adc_1_spi:spi_select
-	wire  [15:0] mm_interconnect_0_adc_1_spi_spi_control_port_readdata;   // adc_1_spi:data_to_cpu -> mm_interconnect_0:adc_1_spi_spi_control_port_readdata
-	wire   [2:0] mm_interconnect_0_adc_1_spi_spi_control_port_address;    // mm_interconnect_0:adc_1_spi_spi_control_port_address -> adc_1_spi:mem_addr
-	wire         mm_interconnect_0_adc_1_spi_spi_control_port_read;       // mm_interconnect_0:adc_1_spi_spi_control_port_read -> adc_1_spi:read_n
-	wire         mm_interconnect_0_adc_1_spi_spi_control_port_write;      // mm_interconnect_0:adc_1_spi_spi_control_port_write -> adc_1_spi:write_n
-	wire  [15:0] mm_interconnect_0_adc_1_spi_spi_control_port_writedata;  // mm_interconnect_0:adc_1_spi_spi_control_port_writedata -> adc_1_spi:data_from_cpu
 	wire         mm_interconnect_0_esc_spi_spi_control_port_chipselect;   // mm_interconnect_0:esc_spi_spi_control_port_chipselect -> esc_spi:spi_select
 	wire  [15:0] mm_interconnect_0_esc_spi_spi_control_port_readdata;     // esc_spi:data_to_cpu -> mm_interconnect_0:esc_spi_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_esc_spi_spi_control_port_address;      // mm_interconnect_0:esc_spi_spi_control_port_address -> esc_spi:mem_addr
@@ -90,12 +59,9 @@ module My_First_NIOS_II_Platform_Designer (
 	wire         mm_interconnect_0_esc_spi_spi_control_port_write;        // mm_interconnect_0:esc_spi_spi_control_port_write -> esc_spi:write_n
 	wire  [15:0] mm_interconnect_0_esc_spi_spi_control_port_writedata;    // mm_interconnect_0:esc_spi_spi_control_port_writedata -> esc_spi:data_from_cpu
 	wire         irq_mapper_receiver0_irq;                                // DEBUG:av_irq -> irq_mapper:receiver0_irq
-	wire         irq_mapper_receiver1_irq;                                // TIMER:irq -> irq_mapper:receiver1_irq
-	wire         irq_mapper_receiver2_irq;                                // spi_0:irq -> irq_mapper:receiver2_irq
-	wire         irq_mapper_receiver3_irq;                                // esc_spi:irq -> irq_mapper:receiver3_irq
-	wire         irq_mapper_receiver4_irq;                                // adc_1_spi:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver1_irq;                                // esc_spi:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] hellonios_irq_irq;                                       // irq_mapper:sender_irq -> HelloNios:irq
-	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, TIMER:reset_n, adc_1_spi:reset_n, esc_spi:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, pio_0:reset_n, rst_translator:in_reset, spi_0:reset_n]
+	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, esc_spi:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                      // rst_controller:reset_req -> [HelloNios:reset_req, SRAM:reset_req, rst_translator:reset_req_in]
 
 	My_First_NIOS_II_Platform_Designer_DEBUG debug (
@@ -165,33 +131,6 @@ module My_First_NIOS_II_Platform_Designer (
 		.freeze     (1'b0)                                  // (terminated)
 	);
 
-	My_First_NIOS_II_Platform_Designer_TIMER timer (
-		.clk        (clk_clk),                               //   clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),       // reset.reset_n
-		.address    (mm_interconnect_0_timer_s1_address),    //    s1.address
-		.writedata  (mm_interconnect_0_timer_s1_writedata),  //      .writedata
-		.readdata   (mm_interconnect_0_timer_s1_readdata),   //      .readdata
-		.chipselect (mm_interconnect_0_timer_s1_chipselect), //      .chipselect
-		.write_n    (~mm_interconnect_0_timer_s1_write),     //      .write_n
-		.irq        (irq_mapper_receiver1_irq)               //   irq.irq
-	);
-
-	My_First_NIOS_II_Platform_Designer_adc_1_spi adc_1_spi (
-		.clk           (clk_clk),                                                 //              clk.clk
-		.reset_n       (~rst_controller_reset_out_reset),                         //            reset.reset_n
-		.data_from_cpu (mm_interconnect_0_adc_1_spi_spi_control_port_writedata),  // spi_control_port.writedata
-		.data_to_cpu   (mm_interconnect_0_adc_1_spi_spi_control_port_readdata),   //                 .readdata
-		.mem_addr      (mm_interconnect_0_adc_1_spi_spi_control_port_address),    //                 .address
-		.read_n        (~mm_interconnect_0_adc_1_spi_spi_control_port_read),      //                 .read_n
-		.spi_select    (mm_interconnect_0_adc_1_spi_spi_control_port_chipselect), //                 .chipselect
-		.write_n       (~mm_interconnect_0_adc_1_spi_spi_control_port_write),     //                 .write_n
-		.irq           (irq_mapper_receiver4_irq),                                //              irq.irq
-		.MISO          (adc_1_spi_external_MISO),                                 //         external.export
-		.MOSI          (adc_1_spi_external_MOSI),                                 //                 .export
-		.SCLK          (adc_1_spi_external_SCLK),                                 //                 .export
-		.SS_n          (adc_1_spi_external_SS_n)                                  //                 .export
-	);
-
 	My_First_NIOS_II_Platform_Designer_esc_spi esc_spi (
 		.clk           (clk_clk),                                               //              clk.clk
 		.reset_n       (~rst_controller_reset_out_reset),                       //            reset.reset_n
@@ -201,38 +140,11 @@ module My_First_NIOS_II_Platform_Designer (
 		.read_n        (~mm_interconnect_0_esc_spi_spi_control_port_read),      //                 .read_n
 		.spi_select    (mm_interconnect_0_esc_spi_spi_control_port_chipselect), //                 .chipselect
 		.write_n       (~mm_interconnect_0_esc_spi_spi_control_port_write),     //                 .write_n
-		.irq           (irq_mapper_receiver3_irq),                              //              irq.irq
+		.irq           (irq_mapper_receiver1_irq),                              //              irq.irq
 		.MISO          (esc_spi_external_MISO),                                 //         external.export
 		.MOSI          (esc_spi_external_MOSI),                                 //                 .export
 		.SCLK          (esc_spi_external_SCLK),                                 //                 .export
 		.SS_n          (esc_spi_external_SS_n)                                  //                 .export
-	);
-
-	My_First_NIOS_II_Platform_Designer_GPIO pio_0 (
-		.clk        (clk_clk),                               //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),       //               reset.reset_n
-		.address    (mm_interconnect_0_pio_0_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_pio_0_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_pio_0_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_pio_0_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_pio_0_s1_readdata),   //                    .readdata
-		.out_port   (reset_adc_export)                       // external_connection.export
-	);
-
-	My_First_NIOS_II_Platform_Designer_adc_1_spi spi_0 (
-		.clk           (clk_clk),                                             //              clk.clk
-		.reset_n       (~rst_controller_reset_out_reset),                     //            reset.reset_n
-		.data_from_cpu (mm_interconnect_0_spi_0_spi_control_port_writedata),  // spi_control_port.writedata
-		.data_to_cpu   (mm_interconnect_0_spi_0_spi_control_port_readdata),   //                 .readdata
-		.mem_addr      (mm_interconnect_0_spi_0_spi_control_port_address),    //                 .address
-		.read_n        (~mm_interconnect_0_spi_0_spi_control_port_read),      //                 .read_n
-		.spi_select    (mm_interconnect_0_spi_0_spi_control_port_chipselect), //                 .chipselect
-		.write_n       (~mm_interconnect_0_spi_0_spi_control_port_write),     //                 .write_n
-		.irq           (irq_mapper_receiver2_irq),                            //              irq.irq
-		.MISO          (spi_0_external_MISO),                                 //         external.export
-		.MOSI          (spi_0_external_MOSI),                                 //                 .export
-		.SCLK          (spi_0_external_SCLK),                                 //                 .export
-		.SS_n          (spi_0_external_SS_n)                                  //                 .export
 	);
 
 	My_First_NIOS_II_Platform_Designer_mm_interconnect_0 mm_interconnect_0 (
@@ -250,12 +162,6 @@ module My_First_NIOS_II_Platform_Designer (
 		.HelloNios_instruction_master_waitrequest    (hellonios_instruction_master_waitrequest),                //                                      .waitrequest
 		.HelloNios_instruction_master_read           (hellonios_instruction_master_read),                       //                                      .read
 		.HelloNios_instruction_master_readdata       (hellonios_instruction_master_readdata),                   //                                      .readdata
-		.adc_1_spi_spi_control_port_address          (mm_interconnect_0_adc_1_spi_spi_control_port_address),    //            adc_1_spi_spi_control_port.address
-		.adc_1_spi_spi_control_port_write            (mm_interconnect_0_adc_1_spi_spi_control_port_write),      //                                      .write
-		.adc_1_spi_spi_control_port_read             (mm_interconnect_0_adc_1_spi_spi_control_port_read),       //                                      .read
-		.adc_1_spi_spi_control_port_readdata         (mm_interconnect_0_adc_1_spi_spi_control_port_readdata),   //                                      .readdata
-		.adc_1_spi_spi_control_port_writedata        (mm_interconnect_0_adc_1_spi_spi_control_port_writedata),  //                                      .writedata
-		.adc_1_spi_spi_control_port_chipselect       (mm_interconnect_0_adc_1_spi_spi_control_port_chipselect), //                                      .chipselect
 		.DEBUG_avalon_jtag_slave_address             (mm_interconnect_0_debug_avalon_jtag_slave_address),       //               DEBUG_avalon_jtag_slave.address
 		.DEBUG_avalon_jtag_slave_write               (mm_interconnect_0_debug_avalon_jtag_slave_write),         //                                      .write
 		.DEBUG_avalon_jtag_slave_read                (mm_interconnect_0_debug_avalon_jtag_slave_read),          //                                      .read
@@ -282,29 +188,13 @@ module My_First_NIOS_II_Platform_Designer (
 		.HelloNios_debug_mem_slave_byteenable        (mm_interconnect_0_hellonios_debug_mem_slave_byteenable),  //                                      .byteenable
 		.HelloNios_debug_mem_slave_waitrequest       (mm_interconnect_0_hellonios_debug_mem_slave_waitrequest), //                                      .waitrequest
 		.HelloNios_debug_mem_slave_debugaccess       (mm_interconnect_0_hellonios_debug_mem_slave_debugaccess), //                                      .debugaccess
-		.pio_0_s1_address                            (mm_interconnect_0_pio_0_s1_address),                      //                              pio_0_s1.address
-		.pio_0_s1_write                              (mm_interconnect_0_pio_0_s1_write),                        //                                      .write
-		.pio_0_s1_readdata                           (mm_interconnect_0_pio_0_s1_readdata),                     //                                      .readdata
-		.pio_0_s1_writedata                          (mm_interconnect_0_pio_0_s1_writedata),                    //                                      .writedata
-		.pio_0_s1_chipselect                         (mm_interconnect_0_pio_0_s1_chipselect),                   //                                      .chipselect
-		.spi_0_spi_control_port_address              (mm_interconnect_0_spi_0_spi_control_port_address),        //                spi_0_spi_control_port.address
-		.spi_0_spi_control_port_write                (mm_interconnect_0_spi_0_spi_control_port_write),          //                                      .write
-		.spi_0_spi_control_port_read                 (mm_interconnect_0_spi_0_spi_control_port_read),           //                                      .read
-		.spi_0_spi_control_port_readdata             (mm_interconnect_0_spi_0_spi_control_port_readdata),       //                                      .readdata
-		.spi_0_spi_control_port_writedata            (mm_interconnect_0_spi_0_spi_control_port_writedata),      //                                      .writedata
-		.spi_0_spi_control_port_chipselect           (mm_interconnect_0_spi_0_spi_control_port_chipselect),     //                                      .chipselect
 		.SRAM_s1_address                             (mm_interconnect_0_sram_s1_address),                       //                               SRAM_s1.address
 		.SRAM_s1_write                               (mm_interconnect_0_sram_s1_write),                         //                                      .write
 		.SRAM_s1_readdata                            (mm_interconnect_0_sram_s1_readdata),                      //                                      .readdata
 		.SRAM_s1_writedata                           (mm_interconnect_0_sram_s1_writedata),                     //                                      .writedata
 		.SRAM_s1_byteenable                          (mm_interconnect_0_sram_s1_byteenable),                    //                                      .byteenable
 		.SRAM_s1_chipselect                          (mm_interconnect_0_sram_s1_chipselect),                    //                                      .chipselect
-		.SRAM_s1_clken                               (mm_interconnect_0_sram_s1_clken),                         //                                      .clken
-		.TIMER_s1_address                            (mm_interconnect_0_timer_s1_address),                      //                              TIMER_s1.address
-		.TIMER_s1_write                              (mm_interconnect_0_timer_s1_write),                        //                                      .write
-		.TIMER_s1_readdata                           (mm_interconnect_0_timer_s1_readdata),                     //                                      .readdata
-		.TIMER_s1_writedata                          (mm_interconnect_0_timer_s1_writedata),                    //                                      .writedata
-		.TIMER_s1_chipselect                         (mm_interconnect_0_timer_s1_chipselect)                    //                                      .chipselect
+		.SRAM_s1_clken                               (mm_interconnect_0_sram_s1_clken)                          //                                      .clken
 	);
 
 	My_First_NIOS_II_Platform_Designer_irq_mapper irq_mapper (
@@ -312,9 +202,6 @@ module My_First_NIOS_II_Platform_Designer (
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
-		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
-		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
-		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
 		.sender_irq    (hellonios_irq_irq)               //    sender.irq
 	);
 
