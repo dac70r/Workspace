@@ -9,7 +9,7 @@
    <inputclock preferredWidth="107" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="2522" height="1346" x="173" y="-1470" />
+ <library expandedCategories="Library,Project" />
+ <window width="1920" height="1008" x="454" y="-1380" />
  <generation simulation="VERILOG" />
 </preferences>

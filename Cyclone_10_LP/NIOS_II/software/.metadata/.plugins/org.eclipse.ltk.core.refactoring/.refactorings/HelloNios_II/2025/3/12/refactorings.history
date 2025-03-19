@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HelloNios_II/Src&apos; to &apos;imported_source&apos;" description="Rename resource &apos;Src&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src" name="imported_source" stamp="1742197203399" updateReferences="true"/>
+</session>

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 17, 2025 2:24:33 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1742192673075</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 18, 2025 11:15:38 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1742267738163</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\My_First_NIOS_II_Platform_Designer.sopcinfo</SopcDesignFile>
@@ -900,25 +900,25 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>SRAM</slaveDescriptor>
-                <addressRange>0x00001000 - 0x00001FFF</addressRange>
+                <addressRange>0x00020000 - 0x00020FFF</addressRange>
                 <addressSpan>4096</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>esc_spi</slaveDescriptor>
-                <addressRange>0x00003000 - 0x0000301F</addressRange>
+                <addressRange>0x00041000 - 0x0004101F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>GPIO</slaveDescriptor>
-                <addressRange>0x00003090 - 0x0000309F</addressRange>
+                <addressRange>0x00041020 - 0x0004102F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>DEBUG</slaveDescriptor>
-                <addressRange>0x000030A0 - 0x000030A7</addressRange>
+                <addressRange>0x00041030 - 0x00041037</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

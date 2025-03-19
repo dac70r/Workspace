@@ -28,7 +28,7 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux
-//   ST_DATA_W:           90
+//   ST_DATA_W:           95
 //   ST_CHANNEL_W:        5
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
@@ -46,7 +46,7 @@ module My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [90-1    : 0]   sink_data, // ST_DATA_W=90
+    input  [95-1    : 0]   sink_data, // ST_DATA_W=95
     input  [5-1 : 0]   sink_channel, // ST_CHANNEL_W=5
     input                         sink_startofpacket,
     input                         sink_endofpacket,
@@ -56,7 +56,7 @@ module My_First_NIOS_II_Platform_Designer_mm_interconnect_0_rsp_demux
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [90-1    : 0] src0_data, // ST_DATA_W=90
+    output reg [95-1    : 0] src0_data, // ST_DATA_W=95
     output reg [5-1 : 0] src0_channel, // ST_CHANNEL_W=5
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,

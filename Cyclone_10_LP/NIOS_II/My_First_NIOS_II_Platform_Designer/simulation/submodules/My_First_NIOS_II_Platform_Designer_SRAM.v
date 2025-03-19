@@ -36,11 +36,8 @@ module My_First_NIOS_II_Platform_Designer_SRAM (
                                                )
 ;
 
-  parameter INIT_FILE = "C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex";
-
-
   output  [ 31: 0] readdata;
-  input   [  9: 0] address;
+  input   [ 13: 0] address;
   input   [  3: 0] byteenable;
   input            chipselect;
   input            clk;
@@ -69,10 +66,10 @@ wire             wren;
     );
 
   defparam the_altsyncram.byte_size = 8,
-           the_altsyncram.init_file = INIT_FILE,
+           the_altsyncram.init_file = "UNUSED",
            the_altsyncram.lpm_type = "altsyncram",
-           the_altsyncram.maximum_depth = 1024,
-           the_altsyncram.numwords_a = 1024,
+           the_altsyncram.maximum_depth = 14057,
+           the_altsyncram.numwords_a = 14057,
            the_altsyncram.operation_mode = "SINGLE_PORT",
            the_altsyncram.outdata_reg_a = "UNREGISTERED",
            the_altsyncram.ram_block_type = "AUTO",
@@ -80,7 +77,7 @@ wire             wren;
            the_altsyncram.read_during_write_mode_port_a = "DONT_CARE",
            the_altsyncram.width_a = 32,
            the_altsyncram.width_byteena_a = 4,
-           the_altsyncram.widthad_a = 10;
+           the_altsyncram.widthad_a = 14;
 
   //s1, which is an e_avalon_slave
   //s2, which is an e_avalon_slave

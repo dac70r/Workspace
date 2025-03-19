@@ -4,38 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "LEDG[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[1]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[3]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[4]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[5]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[6]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDG[7]",
-					"strict" : false
-				},
-				{
 					"name" : "ADC1_MOSI",
 					"strict" : false
 				},
@@ -48,15 +16,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "esc_spi_external_MOSI",
+					"name" : "rx_buffer[0]",
 					"strict" : false
 				},
 				{
-					"name" : "esc_spi_external_SCLK",
+					"name" : "rx_buffer[1]",
 					"strict" : false
 				},
 				{
-					"name" : "esc_spi_external_SS_n",
+					"name" : "rx_buffer[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_buffer[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_buffer[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_buffer[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_buffer[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rx_buffer[7]",
 					"strict" : false
 				},
 				{
@@ -64,11 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "RST_N",
+					"name" : "ADC1_MISO",
 					"strict" : false
 				},
 				{
-					"name" : "esc_spi_external_MISO",
+					"name" : "RST_N",
 					"strict" : false
 				},
 				{

@@ -1,12 +1,12 @@
 
 #include "sys/alt_stdio.h"
-#include "peripheral_linker.h"
-
+#include "peripheral/peripheral_linker.h"
+#include "imported_source/ViCAT_LSC.h"
 int main()
 {
+	// led status will be used as ESC_SPI_NSS
 
-	// local status register for led
-	alt_u32 led_status = 0;
+	alt_u8 led_status = 0;
 	alt_u32 value =0;
 	value = IORD(0x3080, 0);
 	//adc_init();
@@ -14,10 +14,11 @@ int main()
 
 	// Event loop that runs forever
 	while (1){
-		IOWR_ALTERA_AVALON_PIO_DATA(GPIO, led_status);
+		IOWR_ALTERA_AVALON_PIO_DATA(0x3090, led_status);
 		alt_putstr("Delay 1000ms !\n");
-		led_status = led_status + 1;
+		led_status = ~led_status;
 		alt_busy_sleep(500000);
+		//main_initial();
 	}
 
   return 0;

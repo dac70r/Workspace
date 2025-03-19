@@ -20,10 +20,12 @@ module My_First_NIOS_II(
 	input 			esc_spi_external_MISO,     // ESC_SPI - MISO      
 	output        	esc_spi_external_MOSI,     // ESC_SPI - MISO           
 	output        	esc_spi_external_SCLK,     // ESC_SPI - MISO           
-	output        	esc_spi_external_SS_n      // ESC_SPI - MISO          	
+	output        	esc_spi_external_SS_n,     // ESC_SPI - MISO 
+
+	output	[7:0] rx_buffer
 );
 
-		
+/*
 My_First_NIOS_II_Platform_Designer u0 (
 		.clk_clk (CLOCK_50),   												//			system_clock
 		.gpio_external_connection_export(LEDG),						// 		led
@@ -32,7 +34,7 @@ My_First_NIOS_II_Platform_Designer u0 (
 		.esc_spi_external_MOSI(esc_spi_external_MOSI),           //       esc_spi_external.MOSI
 		.esc_spi_external_SCLK(esc_spi_external_SCLK),           //       esc_spi_external.SCLK
 		.esc_spi_external_SS_n(esc_spi_external_SS_n),           //       esc_spi_external.SS_n       
-	); 
+	); */ 
 	
 // Instatiation of SPI Interface
 adc_interface adc_uut1 (.system_clock(CLOCK_50),
@@ -41,6 +43,7 @@ adc_interface adc_uut1 (.system_clock(CLOCK_50),
 								.ADC_SPI_MOSI(ADC1_MOSI),
 								.ADC_SPI_SCLK(ADC1_CLOCK),
 								.ADC_SPI_CS(ADC1_SS),
-								.ADC_RESET(ADC1_RESET)
+								.ADC_RESET(ADC1_RESET),
+								.rx_buffer(rx_buffer)
 								);
 endmodule

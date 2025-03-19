@@ -1,7 +1,7 @@
 obj/default/hello_world_small.o: hello_world_small.c \
- ../HelloNios_II_bsp//HAL/inc/sys/alt_stdio.h peripheral_linker.h \
- ../HelloNios_II_bsp/system.h ../HelloNios_II_bsp/linker.h \
- ../HelloNios_II_bsp//HAL/inc/alt_types.h \
+ ../HelloNios_II_bsp//HAL/inc/sys/alt_stdio.h \
+ peripheral/peripheral_linker.h ../HelloNios_II_bsp/system.h \
+ ../HelloNios_II_bsp/linker.h ../HelloNios_II_bsp//HAL/inc/alt_types.h \
  ../HelloNios_II_bsp//drivers/inc/altera_avalon_pio_regs.h \
  ../HelloNios_II_bsp//HAL/inc/io.h \
  ../HelloNios_II_bsp//HAL/inc/alt_types.h \
@@ -9,11 +9,16 @@ obj/default/hello_world_small.o: hello_world_small.c \
  ../HelloNios_II_bsp//HAL/inc/sys/alt_irq.h \
  ../HelloNios_II_bsp//HAL/inc/nios2.h \
  ../HelloNios_II_bsp//drivers/inc/altera_avalon_spi.h \
- ../HelloNios_II_bsp//drivers/inc/altera_avalon_spi_regs.h
+ ../HelloNios_II_bsp//drivers/inc/altera_avalon_spi_regs.h \
+ imported_source/ViCAT_LSC.h \
+ imported_source/../imported_source/ecat_def.h \
+ imported_source/../imported_source/ecatappl.h \
+ imported_source/../imported_source/../imported_source/ecat_def.h \
+ imported_source/../imported_source/ViCAT_LSCObjects.h
 
 ../HelloNios_II_bsp//HAL/inc/sys/alt_stdio.h:
 
-peripheral_linker.h:
+peripheral/peripheral_linker.h:
 
 ../HelloNios_II_bsp/system.h:
 
@@ -36,3 +41,13 @@ peripheral_linker.h:
 ../HelloNios_II_bsp//drivers/inc/altera_avalon_spi.h:
 
 ../HelloNios_II_bsp//drivers/inc/altera_avalon_spi_regs.h:
+
+imported_source/ViCAT_LSC.h:
+
+imported_source/../imported_source/ecat_def.h:
+
+imported_source/../imported_source/ecatappl.h:
+
+imported_source/../imported_source/../imported_source/ecat_def.h:
+
+imported_source/../imported_source/ViCAT_LSCObjects.h:

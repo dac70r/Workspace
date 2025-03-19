@@ -9,28 +9,28 @@ z2
 cModel Technology
 dC:/Users/guan-ming.dennis-won/Documents/Code/ADS131A0X_SPI_RTL/simulation
 vadc_interface
-Z0 !s110 1741943024
+Z0 !s110 1742376732
 !i10b 1
-!s100 2i82;^8EPYlU:NIGMB8go0
-IPYnNDR@dGYoCSEZSeI6nE3
+!s100 `Bd<F5oa4A6dzbSomo7_=0
+I`?7WYA6nJL^?J6V63bT1n1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/Simulation
-w1741942993
-8C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\adc_interface.v
-FC:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\adc_interface.v
+w1742376626
+8C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/adc_interface.v
+FC:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/adc_interface.v
 L0 10
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1741943024.000000
-!s107 C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\adc_interface.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\adc_interface.v|
+Z4 !s108 1742376732.000000
+!s107 C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/adc_interface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/adc_interface.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 vMy_First_NIOS_II
-Z6 !s110 1739760434
+Z7 !s110 1739760434
 !i10b 1
 !s100 dYV[jGII7Ri6jHSa7nC`10
 I[^?_E^EHgKFzA`d]28SDT3
@@ -44,15 +44,15 @@ R3
 r1
 !s85 0
 31
-Z7 !s108 1739760434.000000
+Z8 !s108 1739760434.000000
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v|
 !i113 1
-R4
 R5
+R6
 n@my_@first_@n@i@o@s_@i@i
 vMy_First_NIOS_II_Platform_Designer
-R6
+R7
 !i10b 1
 !s100 i5M8]B40DDKdFGRl[5=h@2
 I>8Q>_c5I^R=EB8WoI^;bH2
@@ -66,36 +66,36 @@ R3
 r1
 !s85 0
 31
-R7
+R8
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II_Platform_Designer/synthesis/My_First_NIOS_II_Platform_Designer.v|
 !i113 1
-R4
 R5
+R6
 n@my_@first_@n@i@o@s_@i@i_@platform_@designer
 vtb_adc_interface
 R0
 !i10b 1
-!s100 UHjmTh[cT7I627kd7[DA:0
-IOz[ENX11gPTTFI?E;TL=S2
+!s100 2zK7M>KSFSe9;CkV20b6k1
+I0>U6;[bShI`]oI6_eFcV:0
 R1
 R2
-w1741942404
-8C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\tb_adc_interface.v
-FC:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\tb_adc_interface.v
+w1742376726
+8C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_adc_interface.v
+FC:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_adc_interface.v
 L0 3
 R3
 r1
 !s85 0
 31
-!s108 1741943023.000000
-!s107 C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\tb_adc_interface.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\tb_adc_interface.v|
-!i113 1
 R4
+!s107 C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_adc_interface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_adc_interface.v|
+!i113 1
 R5
-vtb_My_First_NIOS_II
 R6
+vtb_My_First_NIOS_II
+R7
 !i10b 1
 !s100 PPGf=ZVFj3T`BY9e2XX7J1
 I22R`=i]nKk9K@F`cb:35H1
@@ -109,10 +109,10 @@ R3
 r1
 !s85 0
 31
-R7
+R8
 !s107 C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_My_First_NIOS_II.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_My_First_NIOS_II.v|
 !i113 1
-R4
 R5
+R6
 ntb_@my_@first_@n@i@o@s_@i@i

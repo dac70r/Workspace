@@ -16,14 +16,14 @@ module My_First_NIOS_II_Platform_Designer (
 	wire  [31:0] hellonios_data_master_readdata;                          // mm_interconnect_0:HelloNios_data_master_readdata -> HelloNios:d_readdata
 	wire         hellonios_data_master_waitrequest;                       // mm_interconnect_0:HelloNios_data_master_waitrequest -> HelloNios:d_waitrequest
 	wire         hellonios_data_master_debugaccess;                       // HelloNios:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:HelloNios_data_master_debugaccess
-	wire  [13:0] hellonios_data_master_address;                           // HelloNios:d_address -> mm_interconnect_0:HelloNios_data_master_address
+	wire  [18:0] hellonios_data_master_address;                           // HelloNios:d_address -> mm_interconnect_0:HelloNios_data_master_address
 	wire   [3:0] hellonios_data_master_byteenable;                        // HelloNios:d_byteenable -> mm_interconnect_0:HelloNios_data_master_byteenable
 	wire         hellonios_data_master_read;                              // HelloNios:d_read -> mm_interconnect_0:HelloNios_data_master_read
 	wire         hellonios_data_master_write;                             // HelloNios:d_write -> mm_interconnect_0:HelloNios_data_master_write
 	wire  [31:0] hellonios_data_master_writedata;                         // HelloNios:d_writedata -> mm_interconnect_0:HelloNios_data_master_writedata
 	wire  [31:0] hellonios_instruction_master_readdata;                   // mm_interconnect_0:HelloNios_instruction_master_readdata -> HelloNios:i_readdata
 	wire         hellonios_instruction_master_waitrequest;                // mm_interconnect_0:HelloNios_instruction_master_waitrequest -> HelloNios:i_waitrequest
-	wire  [13:0] hellonios_instruction_master_address;                    // HelloNios:i_address -> mm_interconnect_0:HelloNios_instruction_master_address
+	wire  [18:0] hellonios_instruction_master_address;                    // HelloNios:i_address -> mm_interconnect_0:HelloNios_instruction_master_address
 	wire         hellonios_instruction_master_read;                       // HelloNios:i_read -> mm_interconnect_0:HelloNios_instruction_master_read
 	wire         mm_interconnect_0_debug_avalon_jtag_slave_chipselect;    // mm_interconnect_0:DEBUG_avalon_jtag_slave_chipselect -> DEBUG:av_chipselect
 	wire  [31:0] mm_interconnect_0_debug_avalon_jtag_slave_readdata;      // DEBUG:av_readdata -> mm_interconnect_0:DEBUG_avalon_jtag_slave_readdata
@@ -42,7 +42,7 @@ module My_First_NIOS_II_Platform_Designer (
 	wire  [31:0] mm_interconnect_0_hellonios_debug_mem_slave_writedata;   // mm_interconnect_0:HelloNios_debug_mem_slave_writedata -> HelloNios:debug_mem_slave_writedata
 	wire         mm_interconnect_0_sram_s1_chipselect;                    // mm_interconnect_0:SRAM_s1_chipselect -> SRAM:chipselect
 	wire  [31:0] mm_interconnect_0_sram_s1_readdata;                      // SRAM:readdata -> mm_interconnect_0:SRAM_s1_readdata
-	wire   [9:0] mm_interconnect_0_sram_s1_address;                       // mm_interconnect_0:SRAM_s1_address -> SRAM:address
+	wire  [13:0] mm_interconnect_0_sram_s1_address;                       // mm_interconnect_0:SRAM_s1_address -> SRAM:address
 	wire   [3:0] mm_interconnect_0_sram_s1_byteenable;                    // mm_interconnect_0:SRAM_s1_byteenable -> SRAM:byteenable
 	wire         mm_interconnect_0_sram_s1_write;                         // mm_interconnect_0:SRAM_s1_write -> SRAM:write
 	wire  [31:0] mm_interconnect_0_sram_s1_writedata;                     // mm_interconnect_0:SRAM_s1_writedata -> SRAM:writedata
