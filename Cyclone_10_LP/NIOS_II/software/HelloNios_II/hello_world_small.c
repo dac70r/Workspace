@@ -18,7 +18,7 @@ int main()
 		alt_putstr("Delay 1000ms !\n");
 		led_status = ~led_status;
 		alt_busy_sleep(500000);
-		//main_initial();
+		main_initial();
 	}
 
   return 0;

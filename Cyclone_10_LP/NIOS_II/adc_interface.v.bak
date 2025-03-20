@@ -18,8 +18,8 @@ module adc_interface (
 	output ADC_SPI_SCLK,									// Direction: Into ADC, Purpose: ADC SPI Clock
 	output ADC_SPI_CS,									// Direction: Into ADC, Purpose: ADC Chip Select
 	output ADC_RESET,										// Direction: Into ADC, Purpose: ADC Reset
-	input SPI_WR_TRIG,
-	input SPI_RD_TRIG,
+	//input SPI_WR_TRIG,
+	//input SPI_RD_TRIG,
 	
 	// Internal
 	/*
@@ -28,6 +28,7 @@ module adc_interface (
 	*/
 	
 	// DEBUG 
+	/*
 	output reg [7:0] presentState = 1,
 	output reg [7:0] nextState = 1,
 	output reg [10:0] delay_counter = 11'b0,		// keeps track of the delay between CS falling edge and rising edge of SCLK
@@ -40,12 +41,11 @@ module adc_interface (
 	output trigger,
 	output trigger_1,
 	output reg start_tx = 'd0,
-	output reg start_rx = 'd0,
-	output reg [7:0] rx_buffer 	 = 8'b1111_1111
+	output reg start_rx = 'd0, */
+	output reg [15:0] rx_buffer 	 = 16'b1111_1111_1111_1111
 	);
 
 // Helper Registers
-/*
 	 reg [7:0] presentState = 1;
 	 reg [7:0] nextState = 1;
 	 reg [10:0] delay_counter = 11'b0;		// keeps track of the delay between CS falling edge and rising edge of SCLK
@@ -59,8 +59,6 @@ module adc_interface (
 	 //output trigger_1;
 	 reg start_tx = 'd0;
 	 reg stop_tx = 'd0;
-	 reg start_rx = 'd0;
-	 reg stop_rx =  'd0; */
 	 
 // ADC Temp Registers
 reg ADC_SPI_SCLK_temp 	= 'd0;							// Temp for ADC_SPI_SCLK				
@@ -89,7 +87,7 @@ reg last_bit = 'd0;
   localparam DELAY_1 					= 8'd8;
   
   localparam RD_ASSERT_CS 				= 8'd9;
-  localparam RD_PROCESS 				= 8'd10;
+  localparam RD_PROCESS 				= 8'd10;  // 32 clock write cycles + 32 clock read cycles
   localparam RD_WAIT_FALLING_1MHZ 	= 8'd11;
   localparam RD_WAIT_DEASSERT_CS 	= 8'd12;
   localparam RD_DEASSERT_CS 			= 8'd13;
@@ -133,9 +131,9 @@ always @ (posedge system_clock) begin
 		
 		else if(start_rx)
 			begin
-					if(rx_index<=7) begin
+					if(rx_index<=15) begin
 						ADC_SPI_SCLK_temp <= 'd1;
-						rx_buffer[7-rx_index] <= ADC_SPI_MISO; 
+						rx_buffer[15-rx_index] <= ADC_SPI_MISO; 
 						rx_index <= rx_index + 1; 
 					end
 			end
@@ -158,14 +156,14 @@ always @ (posedge system_clock) begin
 		end
 		// Condition 1: While start_tx is TRUE, still transmitting, so during falling edge, we assert SCLK to be LOW
 		// Condition 2: While tx_index is 8, completed transmission, so during falling edgem we assert SCLK to be LOW
-		else if (start_rx || rx_index==8) begin 
+		else if (start_rx || rx_index==16) begin 
 			ADC_SPI_SCLK_temp <= 'd0; 
 		end
 	end
 end
 
-assign trigger = ((negedge_4mhz == posedge_4mhz) && (prev_negedge_4mhz!=negedge_4mhz || prev_posedge_4mhz!=posedge_4mhz));
-assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != negedge_4mhz || prev_posedge_4mhz != posedge_4mhz));
+//assign trigger = ((negedge_4mhz == posedge_4mhz) && (prev_negedge_4mhz!=negedge_4mhz || prev_posedge_4mhz!=posedge_4mhz));
+//assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != negedge_4mhz || prev_posedge_4mhz != posedge_4mhz));
 	
   // State Machine Operation - Signal Assertion 
 	always @ (posedge system_clock) begin
@@ -267,7 +265,8 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 					nextState = WAIT_FOR_RDWR;
 				end
 			WAIT_FOR_RDWR: begin
-					if(SPI_WR_TRIG) begin nextState = WR_ASSERT_CS; end
+					if(1/*SPI_WR_TRIG*/) begin nextState = WR_ASSERT_CS; end
+					//else if(SPI_RD_TRIG) begin nextState = RD_ASSERT_CS; end
 					else begin nextState = WAIT_FOR_RDWR; end
 				end
 			WR_ASSERT_CS: begin 
@@ -307,7 +306,7 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 						nextState = RD_ASSERT_CS;
 				end
 			RD_PROCESS: begin 
-					if(rx_index == 8) begin nextState = RD_WAIT_FALLING_1MHZ; end
+					if(rx_index == 16) begin nextState = RD_WAIT_FALLING_1MHZ; end
 					else nextState = RD_PROCESS;
 				end
 			RD_WAIT_FALLING_1MHZ: begin
@@ -315,19 +314,19 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 					else nextState = RD_WAIT_FALLING_1MHZ;
 				end
 			RD_WAIT_DEASSERT_CS:begin
-					if (delay_counter >= 'd15)
+					if (delay_counter >= 'd5)
 						nextState = RD_DEASSERT_CS;
 					else
 						nextState = RD_WAIT_DEASSERT_CS;
 				end
 			RD_DEASSERT_CS:	begin
 					if (delay_counter >= 'd15)  // Min 100ns
-						nextState = DELAY_1;	
+						nextState = DELAY_2;	
 					else nextState = RD_DEASSERT_CS;
 				end
 			DELAY_2: begin
 					// Introduce delay before next operation
-					if(delay_counter >= 'd10) 
+					if(delay_counter >= 'd25) 
 						nextState = WAIT_FOR_RDWR; 										
 					else	nextState = DELAY_2;
 				end	

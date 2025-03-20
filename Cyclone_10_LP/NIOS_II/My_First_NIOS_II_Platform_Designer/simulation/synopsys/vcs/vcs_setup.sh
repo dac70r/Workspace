@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.03.18.11:23:51
+# ACDS 18.1 625 win32 2025.03.20.17:55:07
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.03.18.11:23:51
+# ACDS 18.1 625 win32 2025.03.20.17:55:07
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="My_First_NIOS_II_Platform_Designer"

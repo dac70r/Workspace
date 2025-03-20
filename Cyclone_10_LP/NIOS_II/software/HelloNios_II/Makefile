@@ -143,7 +143,9 @@ ELF := HelloNios_II.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS += hello_world_small.c
+C_SRCS += peripheral/peripheral_linker.c
 C_SRCS += imported_source/ViCAT_LSC.c
+C_SRCS += imported_source/ax58100_hw.c
 C_SRCS += imported_source/bootmode.c
 C_SRCS += imported_source/coeappl.c
 C_SRCS += imported_source/ecatappl.c
@@ -154,8 +156,6 @@ C_SRCS += imported_source/foeappl.c
 C_SRCS += imported_source/mailbox.c
 C_SRCS += imported_source/objdef.c
 C_SRCS += imported_source/sdoserv.c
-C_SRCS += imported_source/ax58100_hw.c
-C_SRCS += peripheral/peripheral_linker.c
 CXX_SRCS :=
 ASM_SRCS :=
 

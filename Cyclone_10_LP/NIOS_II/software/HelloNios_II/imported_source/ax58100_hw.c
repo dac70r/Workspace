@@ -6,12 +6,12 @@
  *
  */
 
-#include "ecat_def.h"
-#include "ecatappl.h"
+#include "../imported_source/ecat_def.h"
+#include "../imported_source/ecatappl.h"
 #include "../peripheral/peripheral_linker.h"
 
 #define __AX58100_HW__ 1
-#include "ax58100_hw.h"
+#include "../imported_source/ax58100_hw.h"
 #undef __AX58100_HW__
 #define __AX58100_HW__ 0
 

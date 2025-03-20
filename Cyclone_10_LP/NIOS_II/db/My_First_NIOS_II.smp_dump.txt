@@ -1,17 +1,81 @@
 
+State Machine - |My_First_NIOS_II|adc_interface:adc_uut3|presentState
+Name presentState.DELAY_2 presentState.RD_DEASSERT_CS presentState.RD_WAIT_DEASSERT_CS presentState.RD_WAIT_FALLING_1MHZ presentState.RD_PROCESS presentState.RD_ASSERT_CS presentState.DELAY_1 presentState.WR_DEASSERT_CS presentState.WR_WAIT_DEASSERT_CS presentState.WR_WAIT_FALLING_1MHZ presentState.WR_PROCESS presentState.WR_ASSERT_CS presentState.WAIT_FOR_RDWR presentState.00000001 presentState.RESET 
+presentState.RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+presentState.00000001 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+presentState.WAIT_FOR_RDWR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+presentState.WR_ASSERT_CS 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+presentState.WR_PROCESS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+presentState.WR_WAIT_FALLING_1MHZ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+presentState.WR_WAIT_DEASSERT_CS 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+presentState.WR_DEASSERT_CS 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+presentState.DELAY_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+presentState.RD_ASSERT_CS 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+presentState.RD_PROCESS 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_FALLING_1MHZ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_DEASSERT_CS 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_DEASSERT_CS 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.DELAY_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |My_First_NIOS_II|adc_interface:adc_uut2|presentState
+Name presentState.DELAY_2 presentState.RD_DEASSERT_CS presentState.RD_WAIT_DEASSERT_CS presentState.RD_WAIT_FALLING_1MHZ presentState.RD_PROCESS presentState.RD_ASSERT_CS presentState.DELAY_1 presentState.WR_DEASSERT_CS presentState.WR_WAIT_DEASSERT_CS presentState.WR_WAIT_FALLING_1MHZ presentState.WR_PROCESS presentState.WR_ASSERT_CS presentState.WAIT_FOR_RDWR presentState.00000001 presentState.RESET 
+presentState.RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+presentState.00000001 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+presentState.WAIT_FOR_RDWR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+presentState.WR_ASSERT_CS 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+presentState.WR_PROCESS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+presentState.WR_WAIT_FALLING_1MHZ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+presentState.WR_WAIT_DEASSERT_CS 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+presentState.WR_DEASSERT_CS 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+presentState.DELAY_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+presentState.RD_ASSERT_CS 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+presentState.RD_PROCESS 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_FALLING_1MHZ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_DEASSERT_CS 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_DEASSERT_CS 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.DELAY_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |My_First_NIOS_II|adc_interface:adc_uut1|presentState
-Name presentState.DELAY_1 presentState.RD_DEASSERT_CS presentState.RD_WAIT_DEASSERT_CS presentState.RD_WAIT_FALLING_1MHZ presentState.RD_PROCESS presentState.RD_ASSERT_CS presentState.WR_DEASSERT_CS presentState.WR_WAIT_DEASSERT_CS presentState.WR_WAIT_FALLING_1MHZ presentState.WR_PROCESS presentState.WR_ASSERT_CS presentState.WAIT_FOR_RDWR presentState.00000001 presentState.RESET 
-presentState.RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-presentState.00000001 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-presentState.WAIT_FOR_RDWR 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-presentState.WR_ASSERT_CS 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-presentState.WR_PROCESS 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-presentState.WR_WAIT_FALLING_1MHZ 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-presentState.WR_WAIT_DEASSERT_CS 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-presentState.WR_DEASSERT_CS 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-presentState.RD_ASSERT_CS 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-presentState.RD_PROCESS 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-presentState.RD_WAIT_FALLING_1MHZ 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-presentState.RD_WAIT_DEASSERT_CS 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-presentState.RD_DEASSERT_CS 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-presentState.DELAY_1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name presentState.DELAY_2 presentState.RD_DEASSERT_CS presentState.RD_WAIT_DEASSERT_CS presentState.RD_WAIT_FALLING_1MHZ presentState.RD_PROCESS presentState.RD_ASSERT_CS presentState.DELAY_1 presentState.WR_DEASSERT_CS presentState.WR_WAIT_DEASSERT_CS presentState.WR_WAIT_FALLING_1MHZ presentState.WR_PROCESS presentState.WR_ASSERT_CS presentState.WAIT_FOR_RDWR presentState.00000001 presentState.RESET 
+presentState.RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+presentState.00000001 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+presentState.WAIT_FOR_RDWR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+presentState.WR_ASSERT_CS 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+presentState.WR_PROCESS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+presentState.WR_WAIT_FALLING_1MHZ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+presentState.WR_WAIT_DEASSERT_CS 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+presentState.WR_DEASSERT_CS 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+presentState.DELAY_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+presentState.RD_ASSERT_CS 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+presentState.RD_PROCESS 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_FALLING_1MHZ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_DEASSERT_CS 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_DEASSERT_CS 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.DELAY_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |My_First_NIOS_II|adc_interface:adc_uut0|presentState
+Name presentState.DELAY_2 presentState.RD_DEASSERT_CS presentState.RD_WAIT_DEASSERT_CS presentState.RD_WAIT_FALLING_1MHZ presentState.RD_PROCESS presentState.RD_ASSERT_CS presentState.DELAY_1 presentState.WR_DEASSERT_CS presentState.WR_WAIT_DEASSERT_CS presentState.WR_WAIT_FALLING_1MHZ presentState.WR_PROCESS presentState.WR_ASSERT_CS presentState.WAIT_FOR_RDWR presentState.00000001 presentState.RESET 
+presentState.RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+presentState.00000001 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+presentState.WAIT_FOR_RDWR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+presentState.WR_ASSERT_CS 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+presentState.WR_PROCESS 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+presentState.WR_WAIT_FALLING_1MHZ 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+presentState.WR_WAIT_DEASSERT_CS 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+presentState.WR_DEASSERT_CS 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+presentState.DELAY_1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+presentState.RD_ASSERT_CS 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+presentState.RD_PROCESS 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_FALLING_1MHZ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_WAIT_DEASSERT_CS 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.RD_DEASSERT_CS 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+presentState.DELAY_2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |My_First_NIOS_II|My_First_NIOS_II_Platform_Designer:u0|My_First_NIOS_II_Platform_Designer_HelloNios:hellonios|My_First_NIOS_II_Platform_Designer_HelloNios_cpu:cpu|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_nios2_oci:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_nios2_oci|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_wrapper|My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_tck:the_My_First_NIOS_II_Platform_Designer_HelloNios_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

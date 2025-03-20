@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Tue Mar 18 11:15:38 SGT 2025
+ * Generated: Thu Mar 20 17:48:15 SGT 2025
  */
 
 /*
@@ -208,8 +208,8 @@
 #define SRAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define SRAM_SINGLE_CLOCK_OP 0
 #define SRAM_SIZE_MULTIPLE 1
-#define SRAM_SIZE_VALUE 4096
-#define SRAM_SPAN 4096
+#define SRAM_SIZE_VALUE 34816
+#define SRAM_SPAN 34816
 #define SRAM_TYPE "altera_avalon_onchip_memory2"
 #define SRAM_WRITABLE 1
 

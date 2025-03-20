@@ -18,8 +18,8 @@ module adc_interface (
 	output ADC_SPI_SCLK,									// Direction: Into ADC, Purpose: ADC SPI Clock
 	output ADC_SPI_CS,									// Direction: Into ADC, Purpose: ADC Chip Select
 	output ADC_RESET,										// Direction: Into ADC, Purpose: ADC Reset
-	input SPI_WR_TRIG,
-	input SPI_RD_TRIG,
+	//input SPI_WR_TRIG,
+	//input SPI_RD_TRIG,
 	
 	// Internal
 	/*
@@ -28,6 +28,7 @@ module adc_interface (
 	*/
 	
 	// DEBUG 
+	/*
 	output reg [7:0] presentState = 1,
 	output reg [7:0] nextState = 1,
 	output reg [10:0] delay_counter = 11'b0,		// keeps track of the delay between CS falling edge and rising edge of SCLK
@@ -40,15 +41,14 @@ module adc_interface (
 	output trigger,
 	output trigger_1,
 	output reg start_tx = 'd0,
-	output reg start_rx = 'd0,
+	output reg start_rx = 'd0, */
 	output reg [15:0] rx_buffer 	 = 16'b1111_1111_1111_1111
 	);
 
 // Helper Registers
-/*
 	 reg [7:0] presentState = 1;
 	 reg [7:0] nextState = 1;
-	 reg [10:0] delay_counter = 11'b0;		// keeps track of the delay between CS falling edge and rising edge of SCLK
+	 reg [19:0] delay_counter = 20'b0;		// keeps track of the delay between CS falling edge and rising edge of SCLK
 	 reg [8:0]	tx_index	= 9'b0;			// keeps track of the number of bits transmitted
 	 reg [8:0]  rx_index = 9'b0;
 	 reg  posedge_4mhz = 'd0;					// keeps track of the positive edge count
@@ -58,23 +58,22 @@ module adc_interface (
 	 //output trigger;
 	 //output trigger_1;
 	 reg start_tx = 'd0;
-	 reg stop_tx = 'd0;
 	 reg start_rx = 'd0;
-	 reg stop_rx =  'd0; */
 	 
 // ADC Temp Registers
 reg ADC_SPI_SCLK_temp 	= 'd0;							// Temp for ADC_SPI_SCLK				
 reg ADC_SPI_MOSI_temp 	= 'd0;
-reg ADC_SPI_CS_temp 		= 'd1;
-reg SPI_BUSY_temp			= 'd0;
+reg ADC_SPI_CS_temp 		= 'd1;							// Active Low for CS Signal
+reg SPI_BUSY_temp			= 'd0;				
+reg ADC_RESET_temp		= 'd1;							// Active Low for Reset Signal 
 
 // SPI Command list
 localparam SPI_INIT = 16'hff04;							// SPI Initialization Command
-reg [15:0] tx_buffer_0 = 16'b1111_1111_0000_0100;	// 0xff04
+reg [15:0] tx_buffer_0 = 16'b0000_0000_0000_0000;  // 0xff04
+reg [15:0] tx_buffer_1 = 16'b0000_0110_0101_0101; 	// 0x0655
 
 // Other Registers
-reg asserted_low = 'd0;
-reg last_bit = 'd0;
+reg [3:0] count = 4'b0000; 
 
   // Definition of State Machine states
   localparam RESET 						= 8'd0;
@@ -112,18 +111,17 @@ begin
 end
 
 always @ (posedge system_clock) begin
-	prev_posedge_4mhz <= posedge_4mhz;
-	prev_negedge_4mhz <= negedge_4mhz;
-	
-	// Detects the Rising Edge of the SPI_Clock
+		prev_posedge_4mhz <= posedge_4mhz;
+		prev_negedge_4mhz <= negedge_4mhz;
+		
+	// Detects the Rising Edge of the SPI_Clock 
 	if((negedge_4mhz == posedge_4mhz) && (prev_negedge_4mhz!=negedge_4mhz || prev_posedge_4mhz!=posedge_4mhz)) begin
 		if (start_tx && start_rx) begin 
-			// this state should not be reached!
-			tx_index <= 999; //error
+				// this state should not be reached!
+				tx_index <= 999; //error
 		end
 		
-		else if(start_tx)
-			begin		
+		else if(start_tx) begin		
 					if(tx_index<=15) begin
 						ADC_SPI_SCLK_temp <= 'd1;
 						ADC_SPI_MOSI_temp <= tx_buffer_0[15-tx_index];
@@ -131,8 +129,7 @@ always @ (posedge system_clock) begin
 					end
 			end
 		
-		else if(start_rx)
-			begin
+		else if(start_rx) begin
 					if(rx_index<=15) begin
 						ADC_SPI_SCLK_temp <= 'd1;
 						rx_buffer[15-rx_index] <= ADC_SPI_MISO; 
@@ -145,7 +142,6 @@ always @ (posedge system_clock) begin
 			rx_index				<= 'd0;
 			ADC_SPI_SCLK_temp <= 'd0; 
 			ADC_SPI_MOSI_temp <= 'd0;
-			
 		end
 	end
 	
@@ -164,8 +160,8 @@ always @ (posedge system_clock) begin
 	end
 end
 
-assign trigger = ((negedge_4mhz == posedge_4mhz) && (prev_negedge_4mhz!=negedge_4mhz || prev_posedge_4mhz!=posedge_4mhz));
-assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != negedge_4mhz || prev_posedge_4mhz != posedge_4mhz));
+//assign trigger = ((negedge_4mhz == posedge_4mhz) && (prev_negedge_4mhz!=negedge_4mhz || prev_posedge_4mhz!=posedge_4mhz));
+//assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != negedge_4mhz || prev_posedge_4mhz != posedge_4mhz));
 	
   // State Machine Operation - Signal Assertion 
 	always @ (posedge system_clock) begin
@@ -175,10 +171,14 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 			RESET: begin
 					ADC_SPI_CS_temp 		<= 'd1; 
 					SPI_BUSY_temp 			<= 'd0;
+					ADC_RESET_temp			<= 'd0;
+					delay_counter 			<= delay_counter + 1;
 				end
 			IDLE: begin
+					ADC_RESET_temp			<= 'd1;
 					ADC_SPI_CS_temp 		<= 'd1; 
 					SPI_BUSY_temp 			<= 'd0;
+					delay_counter			<= 'd0;
 				end
 			WAIT_FOR_RDWR: begin 
 					ADC_SPI_CS_temp 		<= 'd1; 
@@ -261,7 +261,8 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 	always @ (*) begin
 		case (presentState)
 			RESET: begin
-					nextState = IDLE;
+					if(delay_counter == 225_000) begin nextState = IDLE; end 
+					else begin nextState = RESET; end
 				end
 			IDLE: begin
 					nextState = WAIT_FOR_RDWR;
@@ -352,5 +353,6 @@ assign trigger_1 = ((negedge_4mhz != posedge_4mhz) && (prev_negedge_4mhz != nege
 	assign ADC_SPI_MOSI = ADC_SPI_MOSI_temp;
 	assign ADC_SPI_CS = ADC_SPI_CS_temp;
 	assign SPI_BUSY = SPI_BUSY_temp;
+	assign ADC_RESET = ADC_RESET_temp;
 	
 endmodule

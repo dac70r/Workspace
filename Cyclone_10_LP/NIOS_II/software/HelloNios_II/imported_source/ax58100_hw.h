@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdint.h>
 //#include "appl.h"
-#include "esc.h"
+
+#include "../imported_source/esc.h"
 
 /* ESC Memory Mapping */
 #define ESC_ALIAS_ADDRESS_OFFSET 0x0012

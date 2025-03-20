@@ -12,8 +12,8 @@ wire ADC_SPI_CS;									// Direction: Into ADC, Purpose: ADC Chip Select
 wire ADC_RESET;
 
 
-reg SPI_WR_TRIG;									// Direction: Internal, Purpose: 
-reg SPI_RD_TRIG;									// Direction: Internal, Purpose: 
+//reg SPI_WR_TRIG;									// Direction: Internal, Purpose: 
+//reg SPI_RD_TRIG;									// Direction: Internal, Purpose: 
 /*
 reg SPI_ADDR;										// 
 reg SPI_RD_TRIG;									// Direction: Internal, Purpose: 
@@ -38,16 +38,16 @@ reg [15:0] rx_buffer 	 = 16'b1111_1111_1111_1111;
 adc_interface adc_int1 (.*);
 
 initial begin
-	system_clock = 0; SPI_WR_TRIG = 0; SPI_RD_TRIG = 0; ADC_SPI_MISO = 0;
+	system_clock = 0; ADC_SPI_MISO = 0;
     forever begin
       #10 system_clock = ~system_clock;  
 	 end
 end
 
 initial begin
-	#100 
-	SPI_WR_TRIG = 1; #50
-	SPI_WR_TRIG = 0; // #4000
+	//#100 
+	//SPI_WR_TRIG = 1; #50
+	//SPI_WR_TRIG = 0; // #4000
 	/*
 	ADC_SPI_MISO = 1; #200
 	ADC_SPI_MISO = 1; #200

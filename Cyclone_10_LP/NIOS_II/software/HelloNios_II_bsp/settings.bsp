@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 18, 2025 11:15:38 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1742267738163</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 20, 2025 5:48:15 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1742464095334</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\My_First_NIOS_II_Platform_Designer.sopcinfo</SopcDesignFile>
@@ -900,8 +900,8 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>SRAM</slaveDescriptor>
-                <addressRange>0x00020000 - 0x00020FFF</addressRange>
-                <addressSpan>4096</addressSpan>
+                <addressRange>0x00020000 - 0x000287FF</addressRange>
+                <addressSpan>34816</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
