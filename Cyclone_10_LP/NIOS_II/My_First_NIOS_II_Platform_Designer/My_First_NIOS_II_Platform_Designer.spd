@@ -181,6 +181,10 @@
    type="VERILOG"
    library="esc_spi" />
  <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_esc_eepdone.v"
+   type="VERILOG"
+   library="esc_eepdone" />
+ <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"
    type="VERILOG"
    library="SRAM" />

@@ -5,6 +5,7 @@
 `timescale 1 ps / 1 ps
 module My_First_NIOS_II_Platform_Designer (
 		input  wire       clk_clk,                         //                      clk.clk
+		input  wire       esc_eepdone_external_export,     //     esc_eepdone_external.export
 		input  wire       esc_spi_external_MISO,           //         esc_spi_external.MISO
 		output wire       esc_spi_external_MOSI,           //                         .MOSI
 		output wire       esc_spi_external_SCLK,           //                         .SCLK
@@ -52,6 +53,8 @@ module My_First_NIOS_II_Platform_Designer (
 	wire   [1:0] mm_interconnect_0_gpio_s1_address;                       // mm_interconnect_0:GPIO_s1_address -> GPIO:address
 	wire         mm_interconnect_0_gpio_s1_write;                         // mm_interconnect_0:GPIO_s1_write -> GPIO:write_n
 	wire  [31:0] mm_interconnect_0_gpio_s1_writedata;                     // mm_interconnect_0:GPIO_s1_writedata -> GPIO:writedata
+	wire  [31:0] mm_interconnect_0_esc_eepdone_s1_readdata;               // esc_eepdone:readdata -> mm_interconnect_0:esc_eepdone_s1_readdata
+	wire   [1:0] mm_interconnect_0_esc_eepdone_s1_address;                // mm_interconnect_0:esc_eepdone_s1_address -> esc_eepdone:address
 	wire         mm_interconnect_0_esc_spi_spi_control_port_chipselect;   // mm_interconnect_0:esc_spi_spi_control_port_chipselect -> esc_spi:spi_select
 	wire  [15:0] mm_interconnect_0_esc_spi_spi_control_port_readdata;     // esc_spi:data_to_cpu -> mm_interconnect_0:esc_spi_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_esc_spi_spi_control_port_address;      // mm_interconnect_0:esc_spi_spi_control_port_address -> esc_spi:mem_addr
@@ -61,7 +64,7 @@ module My_First_NIOS_II_Platform_Designer (
 	wire         irq_mapper_receiver0_irq;                                // DEBUG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                // esc_spi:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] hellonios_irq_irq;                                       // irq_mapper:sender_irq -> HelloNios:irq
-	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, esc_spi:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                          // rst_controller:reset_out -> [DEBUG:rst_n, GPIO:reset_n, HelloNios:reset_n, SRAM:reset, esc_eepdone:reset_n, esc_spi:reset_n, irq_mapper:reset, mm_interconnect_0:HelloNios_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                      // rst_controller:reset_req -> [HelloNios:reset_req, SRAM:reset_req, rst_translator:reset_req_in]
 
 	My_First_NIOS_II_Platform_Designer_DEBUG debug (
@@ -131,6 +134,14 @@ module My_First_NIOS_II_Platform_Designer (
 		.freeze     (1'b0)                                  // (terminated)
 	);
 
+	My_First_NIOS_II_Platform_Designer_esc_eepdone esc_eepdone (
+		.clk      (clk_clk),                                   //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),           //               reset.reset_n
+		.address  (mm_interconnect_0_esc_eepdone_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_esc_eepdone_s1_readdata), //                    .readdata
+		.in_port  (esc_eepdone_external_export)                // external_connection.export
+	);
+
 	My_First_NIOS_II_Platform_Designer_esc_spi esc_spi (
 		.clk           (clk_clk),                                               //              clk.clk
 		.reset_n       (~rst_controller_reset_out_reset),                       //            reset.reset_n
@@ -169,6 +180,8 @@ module My_First_NIOS_II_Platform_Designer (
 		.DEBUG_avalon_jtag_slave_writedata           (mm_interconnect_0_debug_avalon_jtag_slave_writedata),     //                                      .writedata
 		.DEBUG_avalon_jtag_slave_waitrequest         (mm_interconnect_0_debug_avalon_jtag_slave_waitrequest),   //                                      .waitrequest
 		.DEBUG_avalon_jtag_slave_chipselect          (mm_interconnect_0_debug_avalon_jtag_slave_chipselect),    //                                      .chipselect
+		.esc_eepdone_s1_address                      (mm_interconnect_0_esc_eepdone_s1_address),                //                        esc_eepdone_s1.address
+		.esc_eepdone_s1_readdata                     (mm_interconnect_0_esc_eepdone_s1_readdata),               //                                      .readdata
 		.esc_spi_spi_control_port_address            (mm_interconnect_0_esc_spi_spi_control_port_address),      //              esc_spi_spi_control_port.address
 		.esc_spi_spi_control_port_write              (mm_interconnect_0_esc_spi_spi_control_port_write),        //                                      .write
 		.esc_spi_spi_control_port_read               (mm_interconnect_0_esc_spi_spi_control_port_read),         //                                      .read

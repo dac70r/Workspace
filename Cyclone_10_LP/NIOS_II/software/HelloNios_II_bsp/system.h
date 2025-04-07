@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Thu Mar 20 17:48:15 SGT 2025
+ * Generated: Fri Apr 04 16:39:20 SGT 2025
  */
 
 /*
@@ -198,12 +198,12 @@
 #define SRAM_DUAL_PORT 0
 #define SRAM_GUI_RAM_BLOCK_TYPE "AUTO"
 #define SRAM_INIT_CONTENTS_FILE "My_First_NIOS_II_Platform_Designer_SRAM"
-#define SRAM_INIT_MEM_CONTENT 0
+#define SRAM_INIT_MEM_CONTENT 1
 #define SRAM_INSTANCE_ID "NONE"
 #define SRAM_IRQ -1
 #define SRAM_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SRAM_NAME "/dev/SRAM"
-#define SRAM_NON_DEFAULT_INIT_FILE_ENABLED 0
+#define SRAM_NON_DEFAULT_INIT_FILE_ENABLED 1
 #define SRAM_RAM_BLOCK_TYPE "AUTO"
 #define SRAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define SRAM_SINGLE_CLOCK_OP 0
@@ -248,6 +248,33 @@
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "My_First_NIOS_II_Platform_Designer"
+
+
+/*
+ * esc_eepdone configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_esc_eepdone altera_avalon_pio
+#define ESC_EEPDONE_BASE 0x0
+#define ESC_EEPDONE_BIT_CLEARING_EDGE_REGISTER 0
+#define ESC_EEPDONE_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ESC_EEPDONE_CAPTURE 0
+#define ESC_EEPDONE_DATA_WIDTH 1
+#define ESC_EEPDONE_DO_TEST_BENCH_WIRING 0
+#define ESC_EEPDONE_DRIVEN_SIM_VALUE 0
+#define ESC_EEPDONE_EDGE_TYPE "NONE"
+#define ESC_EEPDONE_FREQ 50000000
+#define ESC_EEPDONE_HAS_IN 1
+#define ESC_EEPDONE_HAS_OUT 0
+#define ESC_EEPDONE_HAS_TRI 0
+#define ESC_EEPDONE_IRQ -1
+#define ESC_EEPDONE_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ESC_EEPDONE_IRQ_TYPE "NONE"
+#define ESC_EEPDONE_NAME "/dev/esc_eepdone"
+#define ESC_EEPDONE_RESET_VALUE 0
+#define ESC_EEPDONE_SPAN 16
+#define ESC_EEPDONE_TYPE "altera_avalon_pio"
 
 
 /*

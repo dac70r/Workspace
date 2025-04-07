@@ -25,6 +25,7 @@ rst_controller:                         ./libraries/rst_controller/
 irq_mapper:                             ./libraries/irq_mapper/                            
 mm_interconnect_0:                      ./libraries/mm_interconnect_0/                     
 esc_spi:                                ./libraries/esc_spi/                               
+esc_eepdone:                            ./libraries/esc_eepdone/                           
 SRAM:                                   ./libraries/SRAM/                                  
 HelloNios:                              ./libraries/HelloNios/                             
 GPIO:                                   ./libraries/GPIO/                                  

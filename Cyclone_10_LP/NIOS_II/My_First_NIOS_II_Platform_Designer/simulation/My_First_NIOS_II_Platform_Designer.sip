@@ -31,6 +31,7 @@ set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MI
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_master_translator.sv"]
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/My_First_NIOS_II_Platform_Designer_esc_spi.v"]
+set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/My_First_NIOS_II_Platform_Designer_esc_eepdone.v"]
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"]
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v"]
 set_global_assignment -library "lib_My_First_NIOS_II_Platform_Designer" -name MISC_FILE [file join $::quartus(sip_path) "submodules/My_First_NIOS_II_Platform_Designer_HelloNios_cpu.sdc"]

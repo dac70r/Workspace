@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.03.20.17:55:07
+# ACDS 18.1 625 win32 2025.04.07.10:14:39
 
 # ----------------------------------------
 # Initialize variables
@@ -219,6 +219,8 @@ ensure_lib                                        ./libraries/mm_interconnect_0/
 vmap       mm_interconnect_0                      ./libraries/mm_interconnect_0/                     
 ensure_lib                                        ./libraries/esc_spi/                               
 vmap       esc_spi                                ./libraries/esc_spi/                               
+ensure_lib                                        ./libraries/esc_eepdone/                           
+vmap       esc_eepdone                            ./libraries/esc_eepdone/                           
 ensure_lib                                        ./libraries/SRAM/                                  
 vmap       SRAM                                   ./libraries/SRAM/                                  
 ensure_lib                                        ./libraries/HelloNios/                             
@@ -279,6 +281,7 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_irq_mapper.sv"                                          -work irq_mapper                            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v"                                    -work mm_interconnect_0                     
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_esc_spi.v"                                              -work esc_spi                               
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_esc_eepdone.v"                                          -work esc_eepdone                           
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"                                                 -work SRAM                                  
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v"                                            -work HelloNios                             
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_GPIO.v"                                                 -work GPIO                                  
@@ -290,14 +293,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L esc_spi -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L esc_spi -L esc_eepdone -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L esc_spi -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux -L cmd_mux_001 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_003 -L router_002 -L router_001 -L router -L DEBUG_avalon_jtag_slave_agent_rsp_fifo -L DEBUG_avalon_jtag_slave_agent -L HelloNios_data_master_agent -L DEBUG_avalon_jtag_slave_translator -L HelloNios_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L esc_spi -L esc_eepdone -L SRAM -L HelloNios -L GPIO -L DEBUG -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

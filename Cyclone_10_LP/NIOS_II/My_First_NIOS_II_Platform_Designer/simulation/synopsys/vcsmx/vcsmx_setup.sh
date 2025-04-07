@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2025.03.20.17:55:07
+# ACDS 18.1 625 win32 2025.04.07.10:14:39
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2025.03.20.17:55:07
+# ACDS 18.1 625 win32 2025.04.07.10:14:39
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="My_First_NIOS_II_Platform_Designer"
@@ -170,6 +170,7 @@ mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/esc_spi/
+mkdir -p ./libraries/esc_eepdone/
 mkdir -p ./libraries/SRAM/
 mkdir -p ./libraries/HelloNios/
 mkdir -p ./libraries/GPIO/
@@ -242,6 +243,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_irq_mapper.sv"                                          -work irq_mapper                            
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_mm_interconnect_0.v"                                    -work mm_interconnect_0                     
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_esc_spi.v"                                              -work esc_spi                               
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_esc_eepdone.v"                                          -work esc_eepdone                           
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_SRAM.v"                                                 -work SRAM                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_HelloNios.v"                                            -work HelloNios                             
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/My_First_NIOS_II_Platform_Designer_GPIO.v"                                                 -work GPIO                                  

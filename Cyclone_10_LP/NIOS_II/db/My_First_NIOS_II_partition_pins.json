@@ -96,6 +96,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ESC_EEPDONE",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},

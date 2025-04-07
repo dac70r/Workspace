@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Mon Mar 17 13:53:31 SGT 2025
+ * Generated: Fri Apr 04 16:39:20 SGT 2025
  */
 
 /*

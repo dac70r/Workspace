@@ -1,4 +1,4 @@
-17:52:23 **** Build of configuration Nios II for project HelloNios_II ****
+10:40:42 **** Build of configuration Nios II for project HelloNios_II ****
 make mem_init_generate 
 Info: Building ../HelloNios_II_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
@@ -11,5 +11,9 @@ elf2dat --infile=HelloNios_II.elf --outfile=mem_init/hdl_sim/My_First_NIOS_II_Pl
 		--little-endian-mem --create-lanes=0 
 Post-processing to create mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.sym...
 nios2-elf-nm -n HelloNios_II.elf > mem_init/hdl_sim/My_First_NIOS_II_Platform_Designer_SRAM.sym
-Post-processing to create mem_init/meminit.spd...
-Post-processing to create mem_init/meminit.qip...
+10:42:15 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+make all 
+Info: Building ../HelloNios_II_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
+[BSP build complete]
+[HelloNios_II build complete]

@@ -4,6 +4,7 @@ module My_First_NIOS_II(
 	input 			CLOCK_50,						// System Clock
 	output [7:0] 	LEDG,								// remove in the future
 	
+	input 			ESC_EEPDONE,
 	input 			RST_N,					
 
 	input 			ADC0_MISO,						// ADC0 - MISO
@@ -45,7 +46,7 @@ module My_First_NIOS_II(
 My_First_NIOS_II_Platform_Designer u0 (
 		.clk_clk (CLOCK_50),   												//			system_clock
 		.gpio_external_connection_export(LEDG),						// 		led
-		
+		.esc_eepdone_external_export(ESC_EEPDONE),					//			esc_eepdone
 		.esc_spi_external_MISO(esc_spi_external_MISO),           //			esc_spi_external.MISO
 		.esc_spi_external_MOSI(esc_spi_external_MOSI),           //       esc_spi_external.MOSI
 		.esc_spi_external_SCLK(esc_spi_external_SCLK),           //       esc_spi_external.SCLK
