@@ -96,6 +96,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "esc_spi_external_SS_n_actual",
+					"strict" : false
+				},
+				{
+					"name" : "LED_TESTER",
+					"strict" : false
+				},
+				{
 					"name" : "ESC_EEPDONE",
 					"strict" : false
 				},

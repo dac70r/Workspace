@@ -2,6 +2,7 @@
 module My_First_NIOS_II_Platform_Designer (
 	clk_clk,
 	esc_eepdone_external_export,
+	esc_spi_cs_manual_export,
 	esc_spi_external_MISO,
 	esc_spi_external_MOSI,
 	esc_spi_external_SCLK,
@@ -10,6 +11,7 @@ module My_First_NIOS_II_Platform_Designer (
 
 	input		clk_clk;
 	input		esc_eepdone_external_export;
+	output		esc_spi_cs_manual_export;
 	input		esc_spi_external_MISO;
 	output		esc_spi_external_MOSI;
 	output		esc_spi_external_SCLK;

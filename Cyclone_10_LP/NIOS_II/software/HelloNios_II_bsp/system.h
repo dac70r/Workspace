@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Fri Apr 04 16:39:20 SGT 2025
+ * Generated: Wed Apr 09 10:42:46 SGT 2025
  */
 
 /*
@@ -62,17 +62,17 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_gen2"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x00040820
+#define ALT_CPU_BREAK_ADDR 0x00020820
 #define ALT_CPU_CPU_ARCH_NIOS2_R1
 #define ALT_CPU_CPU_FREQ 50000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x13
+#define ALT_CPU_DATA_ADDR_WIDTH 0x12
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x00020020
+#define ALT_CPU_EXCEPTION_ADDR 0x00010020
 #define ALT_CPU_FLASH_ACCELERATOR_LINES 0
 #define ALT_CPU_FLASH_ACCELERATOR_LINE_SIZE 0
 #define ALT_CPU_FLUSHDA_SUPPORTED
@@ -87,10 +87,10 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0x13
+#define ALT_CPU_INST_ADDR_WIDTH 0x12
 #define ALT_CPU_NAME "HelloNios"
 #define ALT_CPU_OCI_VERSION 1
-#define ALT_CPU_RESET_ADDR 0x00020000
+#define ALT_CPU_RESET_ADDR 0x00010000
 
 
 /*
@@ -99,17 +99,17 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x00040820
+#define NIOS2_BREAK_ADDR 0x00020820
 #define NIOS2_CPU_ARCH_NIOS2_R1
 #define NIOS2_CPU_FREQ 50000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x13
+#define NIOS2_DATA_ADDR_WIDTH 0x12
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x00020020
+#define NIOS2_EXCEPTION_ADDR 0x00010020
 #define NIOS2_FLASH_ACCELERATOR_LINES 0
 #define NIOS2_FLASH_ACCELERATOR_LINE_SIZE 0
 #define NIOS2_FLUSHDA_SUPPORTED
@@ -123,9 +123,9 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0x13
+#define NIOS2_INST_ADDR_WIDTH 0x12
 #define NIOS2_OCI_VERSION 1
-#define NIOS2_RESET_ADDR 0x00020000
+#define NIOS2_RESET_ADDR 0x00010000
 
 
 /*
@@ -134,7 +134,7 @@
  */
 
 #define ALT_MODULE_CLASS_DEBUG altera_avalon_jtag_uart
-#define DEBUG_BASE 0x41030
+#define DEBUG_BASE 0x210a0
 #define DEBUG_IRQ 0
 #define DEBUG_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define DEBUG_NAME "/dev/DEBUG"
@@ -155,6 +155,7 @@
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SPI
+#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -164,7 +165,7 @@
  */
 
 #define ALT_MODULE_CLASS_GPIO altera_avalon_pio
-#define GPIO_BASE 0x41020
+#define GPIO_BASE 0x21090
 #define GPIO_BIT_CLEARING_EDGE_REGISTER 0
 #define GPIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define GPIO_CAPTURE 0
@@ -193,7 +194,7 @@
 #define ALT_MODULE_CLASS_SRAM altera_avalon_onchip_memory2
 #define SRAM_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define SRAM_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define SRAM_BASE 0x20000
+#define SRAM_BASE 0x10000
 #define SRAM_CONTENTS_INFO ""
 #define SRAM_DUAL_PORT 0
 #define SRAM_GUI_RAM_BLOCK_TYPE "AUTO"
@@ -208,8 +209,8 @@
 #define SRAM_READ_DURING_WRITE_MODE "DONT_CARE"
 #define SRAM_SINGLE_CLOCK_OP 0
 #define SRAM_SIZE_MULTIPLE 1
-#define SRAM_SIZE_VALUE 34816
-#define SRAM_SPAN 34816
+#define SRAM_SIZE_VALUE 40960
+#define SRAM_SPAN 40960
 #define SRAM_TYPE "altera_avalon_onchip_memory2"
 #define SRAM_WRITABLE 1
 
@@ -230,19 +231,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/DEBUG"
-#define ALT_STDERR_BASE 0x41030
+#define ALT_STDERR_BASE 0x210a0
 #define ALT_STDERR_DEV DEBUG
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/DEBUG"
-#define ALT_STDIN_BASE 0x41030
+#define ALT_STDIN_BASE 0x210a0
 #define ALT_STDIN_DEV DEBUG
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/DEBUG"
-#define ALT_STDOUT_BASE 0x41030
+#define ALT_STDOUT_BASE 0x210a0
 #define ALT_STDOUT_DEV DEBUG
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -256,7 +257,7 @@
  */
 
 #define ALT_MODULE_CLASS_esc_eepdone altera_avalon_pio
-#define ESC_EEPDONE_BASE 0x0
+#define ESC_EEPDONE_BASE 0x21080
 #define ESC_EEPDONE_BIT_CLEARING_EDGE_REGISTER 0
 #define ESC_EEPDONE_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define ESC_EEPDONE_CAPTURE 0
@@ -283,7 +284,7 @@
  */
 
 #define ALT_MODULE_CLASS_esc_spi altera_avalon_spi
-#define ESC_SPI_BASE 0x41000
+#define ESC_SPI_BASE 0x21060
 #define ESC_SPI_CLOCKMULT 1
 #define ESC_SPI_CLOCKPHASE 1
 #define ESC_SPI_CLOCKPOLARITY 1
@@ -303,9 +304,36 @@
 #define ESC_SPI_PREFIX "spi_"
 #define ESC_SPI_SPAN 32
 #define ESC_SPI_SYNC_REG_DEPTH 2
-#define ESC_SPI_TARGETCLOCK 3125000u
+#define ESC_SPI_TARGETCLOCK 25000000u
 #define ESC_SPI_TARGETSSDELAY "0.0"
 #define ESC_SPI_TYPE "altera_avalon_spi"
+
+
+/*
+ * esc_spi_cs configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_esc_spi_cs altera_avalon_pio
+#define ESC_SPI_CS_BASE 0x0
+#define ESC_SPI_CS_BIT_CLEARING_EDGE_REGISTER 0
+#define ESC_SPI_CS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ESC_SPI_CS_CAPTURE 0
+#define ESC_SPI_CS_DATA_WIDTH 1
+#define ESC_SPI_CS_DO_TEST_BENCH_WIRING 0
+#define ESC_SPI_CS_DRIVEN_SIM_VALUE 0
+#define ESC_SPI_CS_EDGE_TYPE "NONE"
+#define ESC_SPI_CS_FREQ 50000000
+#define ESC_SPI_CS_HAS_IN 0
+#define ESC_SPI_CS_HAS_OUT 1
+#define ESC_SPI_CS_HAS_TRI 0
+#define ESC_SPI_CS_IRQ -1
+#define ESC_SPI_CS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ESC_SPI_CS_IRQ_TYPE "NONE"
+#define ESC_SPI_CS_NAME "/dev/esc_spi_cs"
+#define ESC_SPI_CS_RESET_VALUE 1
+#define ESC_SPI_CS_SPAN 16
+#define ESC_SPI_CS_TYPE "altera_avalon_pio"
 
 
 /*
@@ -317,5 +345,83 @@
 #define ALT_MAX_FD 4
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
+
+
+/*
+ * test_led_1s configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_test_led_1s altera_avalon_timer
+#define TEST_LED_1S_ALWAYS_RUN 0
+#define TEST_LED_1S_BASE 0x21000
+#define TEST_LED_1S_COUNTER_SIZE 32
+#define TEST_LED_1S_FIXED_PERIOD 0
+#define TEST_LED_1S_FREQ 50000000
+#define TEST_LED_1S_IRQ 4
+#define TEST_LED_1S_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TEST_LED_1S_LOAD_VALUE 49999999
+#define TEST_LED_1S_MULT 1.0
+#define TEST_LED_1S_NAME "/dev/test_led_1s"
+#define TEST_LED_1S_PERIOD 1
+#define TEST_LED_1S_PERIOD_UNITS "s"
+#define TEST_LED_1S_RESET_OUTPUT 0
+#define TEST_LED_1S_SNAPSHOT 1
+#define TEST_LED_1S_SPAN 32
+#define TEST_LED_1S_TICKS_PER_SEC 1
+#define TEST_LED_1S_TIMEOUT_PULSE_OUTPUT 0
+#define TEST_LED_1S_TYPE "altera_avalon_timer"
+
+
+/*
+ * timer_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
+#define TIMER_0_ALWAYS_RUN 0
+#define TIMER_0_BASE 0x21040
+#define TIMER_0_COUNTER_SIZE 32
+#define TIMER_0_FIXED_PERIOD 0
+#define TIMER_0_FREQ 50000000
+#define TIMER_0_IRQ 1
+#define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_0_LOAD_VALUE 49999
+#define TIMER_0_MULT 0.001
+#define TIMER_0_NAME "/dev/timer_0"
+#define TIMER_0_PERIOD 1
+#define TIMER_0_PERIOD_UNITS "ms"
+#define TIMER_0_RESET_OUTPUT 0
+#define TIMER_0_SNAPSHOT 1
+#define TIMER_0_SPAN 32
+#define TIMER_0_TICKS_PER_SEC 1000
+#define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_0_TYPE "altera_avalon_timer"
+
+
+/*
+ * timer_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_timer_1 altera_avalon_timer
+#define TIMER_1_ALWAYS_RUN 0
+#define TIMER_1_BASE 0x21020
+#define TIMER_1_COUNTER_SIZE 32
+#define TIMER_1_FIXED_PERIOD 0
+#define TIMER_1_FREQ 50000000
+#define TIMER_1_IRQ 2
+#define TIMER_1_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_1_LOAD_VALUE 99999
+#define TIMER_1_MULT 0.001
+#define TIMER_1_NAME "/dev/timer_1"
+#define TIMER_1_PERIOD 2
+#define TIMER_1_PERIOD_UNITS "ms"
+#define TIMER_1_RESET_OUTPUT 0
+#define TIMER_1_SNAPSHOT 1
+#define TIMER_1_SPAN 32
+#define TIMER_1_TICKS_PER_SEC 500
+#define TIMER_1_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_1_TYPE "altera_avalon_timer"
 
 #endif /* __SYSTEM_H_ */

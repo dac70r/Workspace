@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Fri Apr 04 16:39:20 SGT 2025
+ * Generated: Mon Apr 07 13:22:04 SGT 2025
  */
 
 /*
@@ -61,6 +61,7 @@
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_spi.h"
+#include "altera_avalon_timer.h"
 
 /*
  * Allocate the device storage
@@ -69,6 +70,9 @@
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( HELLONIOS, HelloNios);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( DEBUG, DEBUG);
 ALTERA_AVALON_SPI_INSTANCE ( ESC_SPI, esc_spi);
+ALTERA_AVALON_TIMER_INSTANCE ( TEST_LED_1S, test_led_1s);
+ALTERA_AVALON_TIMER_INSTANCE ( TIMER_0, timer_0);
+ALTERA_AVALON_TIMER_INSTANCE ( TIMER_1, timer_1);
 
 /*
  * Initialize the interrupt controller devices
@@ -91,6 +95,9 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
+    ALTERA_AVALON_TIMER_INIT ( TEST_LED_1S, test_led_1s);
+    ALTERA_AVALON_TIMER_INIT ( TIMER_0, timer_0);
+    ALTERA_AVALON_TIMER_INIT ( TIMER_1, timer_1);
     ALTERA_AVALON_JTAG_UART_INIT ( DEBUG, DEBUG);
     ALTERA_AVALON_SPI_INIT ( ESC_SPI, esc_spi);
 }

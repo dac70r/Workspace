@@ -25,14 +25,9 @@
         __set_PRIMASK(0); \
     } while (0)
 
-#define DISABLE_AL_EVENT_INT \
-    do {                     \
-        __set_PRIMASK(1);    \
-    } while (0)
-#define ENABLE_AL_EVENT_INT \
-    do {                    \
-        __set_PRIMASK(0);   \
-    } while (0)
+#define DISABLE_AL_EVENT_INT {alt_irq_disable_all();}
+#define INT_STATUS 	0x01
+#define ENABLE_AL_EVENT_INT {alt_irq_enable_all(INT_STATUS);}
 
 #endif
 
@@ -67,10 +62,10 @@ static int32_t HW_SPI_TransmitReceive(uint8_t* pTxData, uint8_t* pRxData,
                                       uint16_t Size, uint32_t Timeout) {
 #if SPI_ACTIVE_LOW == 1
     //HAL_GPIO_WritePin(HW_SPI_ESC_CS_PORT, HW_SPI_ESC_CS_PIN, GPIO_PIN_RESET);
-	IOWR_ALTERA_AVALON_PIO_DATA(GPIO, 0);
+	IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x00);
 #else
     //HAL_GPIO_WritePin(HW_SPI_ESC_CS_PORT, HW_SPI_ESC_CS_PIN, GPIO_PIN_SET);
-	IOWR_ALTERA_AVALON_PIO_DATA(GPIO, 1);
+	IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x01);
 #endif
 
     int32_t errorcode = spi_command(pTxData, Size, Size, pRxData);
@@ -79,10 +74,10 @@ static int32_t HW_SPI_TransmitReceive(uint8_t* pTxData, uint8_t* pRxData,
 
 #if SPI_ACTIVE_LOW == 1
     //HAL_GPIO_WritePin(HW_SPI_ESC_CS_PORT, HW_SPI_ESC_CS_PIN, GPIO_PIN_SET);
-    IOWR_ALTERA_AVALON_PIO_DATA(GPIO, 1);
+    IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x01);
 #else
     //HAL_GPIO_WritePin(HW_SPI_ESC_CS_PORT, HW_SPI_ESC_CS_PIN, GPIO_PIN_RESET);
-    IOWR_ALTERA_AVALON_PIO_DATA(GPIO, 0);
+    IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x00);
 #endif
 
     return errorcode;
@@ -134,10 +129,22 @@ static void HW_SPI_Read(uint8_t* pBuf, uint16_t Addr, uint16_t ByteLen) {
         DataOffset++;
 
         /* Start read */
-        if (HW_SPI_TransmitReceive(spiTxBuf, spiRxBuf, DataOffset + XferLen,
-                                   HW_SPI_XFER_TIMEOUT) != 0) {
-            break;
-        }
+        IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x00);
+
+    	int spi_check = alt_avalon_spi_command(ESC_SPI_BASE,
+    												0,									// number of slaves
+													0,									// number of bytes to send to SPI Slave, '0' if only reading
+													0,									// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+													(DataOffset - 1) + XferLen,			// The number of bytes to read from the SPI slave, '0' if only writing
+													spiRxBuf,							// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+    												0									// Special control flags for the SPI command
+    												);
+
+    	IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x01);
+
+		if (spi_check != 0) {
+				break;
+			}
 
         /* Store received data */
         for (i = 0; i < XferLen; i++) {
@@ -194,17 +201,38 @@ static void HW_SPI_Write(uint8_t* pData, uint16_t Addr, uint16_t ByteLen) {
         DataOffset++;
 
         /* Start write */
-        if (HW_SPI_TransmitReceive(spiTxBuf, spiRxBuf,
-                                   (DataOffset - 1) + XferLen,
-                                   HW_SPI_XFER_TIMEOUT) != 0) {
-            break;
-        }
+        IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x00);
+
+    	int spi_check = alt_avalon_spi_command(ESC_SPI_BASE,
+    												0,							// number of slaves
+													(DataOffset - 1) + XferLen,		// number of bytes to send to SPI Slave, '0' if only reading
+													spiTxBuf,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+    												0,							// The number of bytes to read from the SPI slave, '0' if only writing
+    												0,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+    												0							// Special control flags for the SPI command
+    												);
+    	/*
+    	spi_check = alt_avalon_spi_command(ESC_SPI_BASE,
+						0,							// number of slaves
+						0,		// number of bytes to send to SPI Slave, '0' if only reading
+						0,				// A pointer to the data buffer that contains the data to be written, 'NULL' if N/A
+						(DataOffset - 1) + XferLen,							// The number of bytes to read from the SPI slave, '0' if only writing
+						spiRxBuf,		// A pointer to the buffer where the received (read) data will be stored, 'NULL' if N/A
+						0							// Special control flags for the SPI command
+						);
+		*/
+    	//IOWR_ALTERA_AVALON_SPI_TXDATA(ESC_SPI_BASE, 0x0000);
+    	IOWR_ALTERA_AVALON_PIO_DATA(ESC_SPI_CS_BASE, 0x01);
+
+    	if (spi_check != 0) {
+                break;
+            }
 
         Addr += XferLen;
         pData += XferLen;
         ByteLen -= XferLen;
     }
-}
+} /*        int32_t errorcode = spi_command(spiTxBuf, (DataOffset - 1) + XferLen, (DataOffset - 1) + XferLen, spiRxBuf);*/
 
 /**
  * @brief  The function operates a SPI access without addressing.
@@ -250,7 +278,9 @@ static void ISR_GetInterruptRegister(void) {
  */
 uint8_t HW_Init(void) {
     uint32_t intMask;
-    uint16_t startTime;
+    uint16_t startTimeL;
+    uint16_t startTimeH;
+    uint32_t startTime;
     uint16_t currentTime;
     uint16_t elapsedTime;
 
@@ -274,7 +304,10 @@ uint8_t HW_Init(void) {
             return 1;  // Timeout occurred
         }
     } while (HAL_GPIO_ReadPin(HW_EEPROM_PORT, HW_EEPROM_PIN) == GPIO_PIN_RESET);
-*/
+*/	// Read the timer counter register (assuming it's a 32-bit counter)
+    //startTimeL = IORD_ALTERA_AVALON_TIMER_PERIODL(TIMER_1_BASE);
+    //startTimeH = IORD_ALTERA_AVALON_TIMER_PERIODH(TIMER_1_BASE);
+    //startTime = startTimeH << 16 | startTimeL;
     do {
         intMask = 0x93;
         HW_EscWriteDWord(intMask, ESC_AL_EVENTMASK_OFFSET);
@@ -349,12 +382,12 @@ uint16_t HW_GetALEventRegister_Isr(void) {
  */
 void HW_EscRead(MEM_ADDR* pData, uint16_t Address, uint16_t Len) {
 #if AL_EVENT_ENABLED
-    //DISABLE_AL_EVENT_INT;
+    DISABLE_AL_EVENT_INT;
 #endif
     HW_SPI_Read((uint8_t*)pData, Address, Len);
 
 #if AL_EVENT_ENABLED
-    //ENABLE_AL_EVENT_INT;
+    ENABLE_AL_EVENT_INT;
 #endif
 }
 
@@ -385,12 +418,12 @@ void HW_EscReadIsr(MEM_ADDR* pData, uint16_t Address, uint16_t Len) {
  */
 void HW_EscWrite(MEM_ADDR* pData, uint16_t Address, uint16_t Len) {
 #if AL_EVENT_ENABLED
-    //DISABLE_AL_EVENT_INT;
+    DISABLE_AL_EVENT_INT;
 #endif
     HW_SPI_Write((uint8_t*)pData, Address, Len);
 
 #if AL_EVENT_ENABLED
-    //ENABLE_AL_EVENT_INT;
+    ENABLE_AL_EVENT_INT;
 #endif
 }
 

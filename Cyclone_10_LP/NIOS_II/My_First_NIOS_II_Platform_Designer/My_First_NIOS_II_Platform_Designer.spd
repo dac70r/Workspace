@@ -177,6 +177,22 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_timer_1.v"
+   type="VERILOG"
+   library="timer_1" />
+ <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_timer_0.v"
+   type="VERILOG"
+   library="timer_0" />
+ <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_test_led_1s.v"
+   type="VERILOG"
+   library="test_led_1s" />
+ <file
+   path="simulation/submodules/My_First_NIOS_II_Platform_Designer_esc_spi_cs.v"
+   type="VERILOG"
+   library="esc_spi_cs" />
+ <file
    path="simulation/submodules/My_First_NIOS_II_Platform_Designer_esc_spi.v"
    type="VERILOG"
    library="esc_spi" />

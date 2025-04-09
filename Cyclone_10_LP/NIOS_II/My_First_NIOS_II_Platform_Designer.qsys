@@ -26,7 +26,7 @@
    {
       datum baseAddress
       {
-         value = "266288";
+         value = "135328";
          type = "String";
       }
    }
@@ -42,7 +42,7 @@
    {
       datum baseAddress
       {
-         value = "266272";
+         value = "135312";
          type = "String";
       }
    }
@@ -58,7 +58,7 @@
    {
       datum baseAddress
       {
-         value = "264192";
+         value = "133120";
          type = "String";
       }
    }
@@ -74,7 +74,7 @@
    {
       datum baseAddress
       {
-         value = "131072";
+         value = "65536";
          type = "String";
       }
    }
@@ -126,6 +126,14 @@
          type = "int";
       }
    }
+   element esc_eepdone.s1
+   {
+      datum baseAddress
+      {
+         value = "135296";
+         type = "String";
+      }
+   }
    element esc_spi
    {
       datum _sortIndex
@@ -138,8 +146,16 @@
    {
       datum baseAddress
       {
-         value = "266240";
+         value = "135264";
          type = "String";
+      }
+   }
+   element esc_spi_cs
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
       }
    }
    element pio_0
@@ -174,6 +190,54 @@
          type = "String";
       }
    }
+   element test_led_1s
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element test_led_1s.s1
+   {
+      datum baseAddress
+      {
+         value = "135168";
+         type = "String";
+      }
+   }
+   element timer_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "135232";
+         type = "String";
+      }
+   }
+   element timer_1
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element timer_1.s1
+   {
+      datum baseAddress
+      {
+         value = "135200";
+         type = "String";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -200,6 +264,11 @@
  <interface
    name="esc_eepdone_external"
    internal="esc_eepdone.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="esc_spi_cs_manual"
+   internal="esc_spi_cs.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -264,10 +333,10 @@
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
-  <parameter name="dataAddrWidth" value="19" />
+  <parameter name="dataAddrWidth" value="18" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='esc_eepdone.s1' start='0x0' end='0x10' type='altera_avalon_pio.s1' /><slave name='SRAM.s1' start='0x20000' end='0x28800' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x40800' end='0x41000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='esc_spi.spi_control_port' start='0x41000' end='0x41020' type='altera_avalon_spi.spi_control_port' /><slave name='GPIO.s1' start='0x41020' end='0x41030' type='altera_avalon_pio.s1' /><slave name='DEBUG.avalon_jtag_slave' start='0x41030' end='0x41038' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='esc_spi_cs.s1' start='0x0' end='0x10' type='altera_avalon_pio.s1' /><slave name='SRAM.s1' start='0x10000' end='0x1A000' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='test_led_1s.s1' start='0x21000' end='0x21020' type='altera_avalon_timer.s1' /><slave name='timer_1.s1' start='0x21020' end='0x21040' type='altera_avalon_timer.s1' /><slave name='timer_0.s1' start='0x21040' end='0x21060' type='altera_avalon_timer.s1' /><slave name='esc_spi.spi_control_port' start='0x21060' end='0x21080' type='altera_avalon_spi.spi_control_port' /><slave name='esc_eepdone.s1' start='0x21080' end='0x21090' type='altera_avalon_pio.s1' /><slave name='GPIO.s1' start='0x21090' end='0x210A0' type='altera_avalon_pio.s1' /><slave name='DEBUG.avalon_jtag_slave' start='0x210A0' end='0x210A8' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -305,15 +374,15 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
-  <parameter name="instAddrWidth" value="19" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x20000' end='0x28800' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x40800' end='0x41000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="18" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SRAM.s1' start='0x10000' end='0x1A000' type='altera_avalon_onchip_memory2.s1' /><slave name='HelloNios.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="9" />
+  <parameter name="internalIrqMaskSystemInfo" value="31" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -445,7 +514,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName">C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/software/HelloNios_II/mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex</parameter>
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="34816" />
+  <parameter name="memorySize" value="40960" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -522,8 +591,22 @@
   <parameter name="masterSPI" value="true" />
   <parameter name="numberOfSlaves" value="1" />
   <parameter name="syncRegDepth" value="2" />
-  <parameter name="targetClockRate" value="3125000" />
+  <parameter name="targetClockRate" value="25000000" />
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
+ </module>
+ <module name="esc_spi_cs" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
  </module>
  <module name="pio_0" kind="altera_avalon_pio" version="18.1" enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -555,13 +638,53 @@
   <parameter name="targetClockRate" value="3125000" />
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
  </module>
+ <module
+   name="test_led_1s"
+   kind="altera_avalon_timer"
+   version="18.1"
+   enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="SEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
+ <module name="timer_0" kind="altera_avalon_timer" version="18.1" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="MSEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
+ <module name="timer_1" kind="altera_avalon_timer" version="18.1" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="2" />
+  <parameter name="periodUnits" value="MSEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
  <connection
    kind="avalon"
    version="18.1"
    start="HelloNios.data_master"
    end="DEBUG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041030" />
+  <parameter name="baseAddress" value="0x000210a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -570,7 +693,7 @@
    start="HelloNios.data_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040800" />
+  <parameter name="baseAddress" value="0x00020800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -579,7 +702,7 @@
    start="HelloNios.data_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="baseAddress" value="0x00010000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -588,7 +711,7 @@
    start="HelloNios.data_master"
    end="GPIO.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041020" />
+  <parameter name="baseAddress" value="0x00021090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -614,6 +737,42 @@
    version="18.1"
    start="HelloNios.data_master"
    end="esc_eepdone.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021080" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="HelloNios.data_master"
+   end="timer_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="HelloNios.data_master"
+   end="timer_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="HelloNios.data_master"
+   end="test_led_1s.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00021000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="HelloNios.data_master"
+   end="esc_spi_cs.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
@@ -642,7 +801,7 @@
    start="HelloNios.data_master"
    end="esc_spi.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00041000" />
+  <parameter name="baseAddress" value="0x00021060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -651,7 +810,7 @@
    start="HelloNios.instruction_master"
    end="HelloNios.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040800" />
+  <parameter name="baseAddress" value="0x00020800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -660,7 +819,7 @@
    start="HelloNios.instruction_master"
    end="SRAM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00020000" />
+  <parameter name="baseAddress" value="0x00010000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="HelloNios.clk" />
@@ -672,6 +831,10 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="adc_1_spi.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="esc_spi.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="esc_eepdone.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="timer_0.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="timer_1.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="test_led_1s.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="esc_spi_cs.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="SRAM.clk1" />
  <connection kind="interrupt" version="18.1" start="HelloNios.irq" end="DEBUG.irq">
   <parameter name="irqNumber" value="0" />
@@ -694,6 +857,27 @@
    version="18.1"
    start="HelloNios.irq"
    end="adc_1_spi.irq">
+  <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="HelloNios.irq"
+   end="timer_0.irq">
+  <parameter name="irqNumber" value="1" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="HelloNios.irq"
+   end="timer_1.irq">
+  <parameter name="irqNumber" value="2" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="HelloNios.irq"
+   end="test_led_1s.irq">
   <parameter name="irqNumber" value="4" />
  </connection>
  <connection
@@ -721,6 +905,26 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="esc_eepdone.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="timer_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="timer_1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="test_led_1s.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="esc_spi_cs.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="SRAM.reset1" />
  <connection
    kind="reset"

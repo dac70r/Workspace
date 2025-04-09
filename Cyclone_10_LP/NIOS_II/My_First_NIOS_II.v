@@ -35,24 +35,30 @@ module My_First_NIOS_II(
 	output        	esc_spi_external_MOSI,     // ESC_SPI - MISO           
 	output        	esc_spi_external_SCLK,     // ESC_SPI - MISO           
 	output        	esc_spi_external_SS_n,     // ESC_SPI - MISO 
+	output 			esc_spi_external_SS_n_actual, // use this to control the CS pin
 
 	output	[15:0] rx_buffer_adc0,
 	output	[15:0] rx_buffer_adc1,
 	output	[15:0] rx_buffer_adc2,
-	output	[15:0] rx_buffer_adc3
+	output	[15:0] rx_buffer_adc3,
+	
+	output 			LED_TESTER
 );
+
+wire ground; 
 
 // Instantiation of NIOS Softcore 
 My_First_NIOS_II_Platform_Designer u0 (
 		.clk_clk (CLOCK_50),   												//			system_clock
+		.esc_spi_cs_manual_export(esc_spi_external_SS_n_actual), 		 	//     esc_eepdone_external.export
 		.gpio_external_connection_export(LEDG),						// 		led
 		.esc_eepdone_external_export(ESC_EEPDONE),					//			esc_eepdone
 		.esc_spi_external_MISO(esc_spi_external_MISO),           //			esc_spi_external.MISO
 		.esc_spi_external_MOSI(esc_spi_external_MOSI),           //       esc_spi_external.MOSI
 		.esc_spi_external_SCLK(esc_spi_external_SCLK),           //       esc_spi_external.SCLK
-		.esc_spi_external_SS_n(esc_spi_external_SS_n),           //       esc_spi_external.SS_n       
+		.esc_spi_external_SS_n(esc_spi_external_SS_n)        		//       esc_spi_external.SS_n       
 );
-	
+
 // Instatiation of SPI Interfaces
 adc_interface adc_uut0 (.system_clock(CLOCK_50),					// ADC0
 								.rst_n(RST_N),
@@ -93,4 +99,6 @@ adc_interface adc_uut3 (.system_clock(CLOCK_50),					// ADC3
 								.ADC_RESET(ADC3_RESET),
 								.rx_buffer(rx_buffer_3)
 								);
+								
+assign LED_TESTER = esc_spi_external_SS_n_actual;
 endmodule

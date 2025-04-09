@@ -4,7 +4,7 @@
  * Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
  * SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
  *
- * Generated: Fri Apr 04 16:39:20 SGT 2025
+ * Generated: Mon Apr 07 13:43:02 SGT 2025
  */
 
 /*
@@ -65,10 +65,10 @@
  *
  */
 
-#define RESET_REGION_BASE 0x20000
+#define RESET_REGION_BASE 0x10000
 #define RESET_REGION_SPAN 32
-#define SRAM_REGION_BASE 0x20020
-#define SRAM_REGION_SPAN 34784
+#define SRAM_REGION_BASE 0x10020
+#define SRAM_REGION_SPAN 40928
 
 
 /*

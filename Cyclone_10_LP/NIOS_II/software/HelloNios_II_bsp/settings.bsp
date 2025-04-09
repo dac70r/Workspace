@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 7, 2025 10:20:11 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1743992411297</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 9, 2025 10:43:03 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1744166583946</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\guan-ming.dennis-won\Documents\Code\Workspace\Workspace\Cyclone_10_LP\NIOS_II\software\HelloNios_II_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\My_First_NIOS_II_Platform_Designer.sopcinfo</SopcDesignFile>
@@ -899,32 +899,56 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
-                <slaveDescriptor>esc_eepdone</slaveDescriptor>
+                <slaveDescriptor>esc_spi_cs</slaveDescriptor>
                 <addressRange>0x00000000 - 0x0000000F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SRAM</slaveDescriptor>
-                <addressRange>0x00020000 - 0x000287FF</addressRange>
-                <addressSpan>34816</addressSpan>
+                <addressRange>0x00010000 - 0x00019FFF</addressRange>
+                <addressSpan>40960</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>test_led_1s</slaveDescriptor>
+                <addressRange>0x00021000 - 0x0002101F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>timer_1</slaveDescriptor>
+                <addressRange>0x00021020 - 0x0002103F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>timer_0</slaveDescriptor>
+                <addressRange>0x00021040 - 0x0002105F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes>timer</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>esc_spi</slaveDescriptor>
-                <addressRange>0x00041000 - 0x0004101F</addressRange>
+                <addressRange>0x00021060 - 0x0002107F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>esc_eepdone</slaveDescriptor>
+                <addressRange>0x00021080 - 0x0002108F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>GPIO</slaveDescriptor>
-                <addressRange>0x00041020 - 0x0004102F</addressRange>
+                <addressRange>0x00021090 - 0x0002109F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>DEBUG</slaveDescriptor>
-                <addressRange>0x00041030 - 0x00041037</addressRange>
+                <addressRange>0x000210A0 - 0x000210A7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

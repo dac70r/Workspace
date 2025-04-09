@@ -69,79 +69,79 @@ CHIP  "My_First_NIOS_II"  ASSIGNED TO AN: 10CL025YU256I7G
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
-rx_buffer_adc1[8]            : A2        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc3[0]            : A3        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc1[14]           : A2        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc0[7]            : A3        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
-rx_buffer_adc1[12]           : A5        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc3[2]            : A6        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc1[7]            : A7        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc1[4]            : A5        : output : 2.5 V             :         : 8         : N              
+ADC0_MOSI                    : A6        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc3[12]           : A7        : output : 2.5 V             :         : 8         : N              
 GND+                         : A8        :        :                   :         : 8         :                
 GND+                         : A9        :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
-ADC0_RESET                   : A11       : output : 2.5 V             :         : 7         : N              
-ADC0_CLOCK                   : A12       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc2[11]           : A13       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc0[5]            : A14       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc1[10]           : A15       : output : 2.5 V             :         : 7         : N              
+ADC0_SS                      : A10       : output : 2.5 V             :         : 7         : N              
+LEDG[5]                      : A11       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc3[15]           : A12       : output : 2.5 V             :         : 7         : N              
+ADC3_MISO                    : A13       : input  : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
+rx_buffer_adc0[13]           : A15       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-rx_buffer_adc3[8]            : B1        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 8         :                
-rx_buffer_adc0[4]            : B4        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc1[5]            : B5        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc0[0]            : B3        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
+rx_buffer_adc2[7]            : B5        : output : 2.5 V             :         : 8         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8         :                
-ADC2_RESET                   : B7        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc1[11]           : B7        : output : 2.5 V             :         : 8         : N              
 GND+                         : B8        :        :                   :         : 8         :                
 GND+                         : B9        :        :                   :         : 7         :                
-rx_buffer_adc1[2]            : B10       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc0[2]            : B11       : output : 2.5 V             :         : 7         : N              
-ADC0_SS                      : B12       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc0[8]            : B13       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 7         :                
+ADC2_SS                      : B10       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc0[12]           : B11       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc1[13]           : B12       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc1[2]            : B13       : output : 2.5 V             :         : 7         : N              
+ADC2_MISO                    : B14       : input  : 2.5 V             :         : 7         : N              
 GND                          : B15       : gnd    :                   :         :           :                
-ADC3_MISO                    : B16       : input  : 2.5 V             :         : 6         : N              
+rx_buffer_adc3[10]           : B16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
-rx_buffer_adc2[12]           : C3        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc1[1]            : C2        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
 VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
 GND                          : C5        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
+rx_buffer_adc2[9]            : C6        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
-ADC3_SS                      : C9        : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc1[0]            : C8        : output : 2.5 V             :         : 8         : N              
+ADC2_RESET                   : C9        : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
-ADC2_MOSI                    : C11       : output : 2.5 V             :         : 7         : N              
+ADC0_CLOCK                   : C11       : output : 2.5 V             :         : 7         : N              
 GND                          : C12       : gnd    :                   :         :           :                
 VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
-ADC2_MISO                    : C14       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 6         :                
+rx_buffer_adc1[10]           : C14       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc2[5]            : C15       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
+rx_buffer_adc0[9]            : D1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
-rx_buffer_adc3[11]           : D3        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D3        :        :                   :         : 8         :                
 VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
 GND                          : D5        : gnd    :                   :         :           :                
-ADC0_MISO                    : D6        : input  : 2.5 V             :         : 8         : N              
+rx_buffer_adc1[6]            : D6        : output : 2.5 V             :         : 8         : N              
 GND                          : D7        : gnd    :                   :         :           :                
-ADC2_CLOCK                   : D8        : output : 2.5 V             :         : 8         : N              
-ADC3_RESET                   : D9        : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
+LEDG[4]                      : D9        : output : 2.5 V             :         : 7         : N              
 GND                          : D10       : gnd    :                   :         :           :                
-rx_buffer_adc3[13]           : D11       : output : 2.5 V             :         : 7         : N              
-rx_buffer_adc0[9]            : D12       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc2[6]            : D11       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :         : 7         :                
 VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 6         :                
-rx_buffer_adc3[9]            : D16       : output : 2.5 V             :         : 6         : N              
+rx_buffer_adc2[3]            : D14       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc0[8]            : D15       : output : 2.5 V             :         : 6         : N              
+ADC0_MISO                    : D16       : input  : 2.5 V             :         : 6         : N              
 CLOCK_50                     : E1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND+                         : E2        :        :                   :         : 1         :                
 VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
 GND                          : E4        : gnd    :                   :         :           :                
 GNDA3                        : E5        : gnd    :                   :         :           :                
-rx_buffer_adc2[1]            : E6        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc0[11]           : E7        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc2[15]           : E8        : output : 2.5 V             :         : 8         : N              
-ADC3_CLOCK                   : E9        : output : 2.5 V             :         : 7         : N              
-ADC0_MOSI                    : E10       : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc3[2]            : E6        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc0[2]            : E7        : output : 2.5 V             :         : 8         : N              
+rx_buffer_adc2[13]           : E8        : output : 2.5 V             :         : 8         : N              
+ADC2_CLOCK                   : E9        : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc1[7]            : E10       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E11       :        :                   :         : 7         :                
 GNDA2                        : E12       : gnd    :                   :         :           :                
 GND                          : E13       : gnd    :                   :         :           :                
@@ -150,22 +150,22 @@ GND+                         : E15       :        :                   :         
 GND+                         : E16       :        :                   :         : 6         :                
 GND                          : F1        : gnd    :                   :         :           :                
 GND                          : F2        : gnd    :                   :         :           :                
-rx_buffer_adc2[7]            : F3        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
 nSTATUS                      : F4        :        :                   :         : 1         :                
 VCCA3                        : F5        : power  :                   : 2.5V    :           :                
 GND                          : F6        : gnd    :                   :         :           :                
 VCCINT                       : F7        : power  :                   : 1.2V    :           :                
-ADC2_SS                      : F8        : output : 2.5 V             :         : 8         : N              
-rx_buffer_adc2[6]            : F9        : output : 2.5 V             :         : 7         : N              
+rx_buffer_adc0[3]            : F8        : output : 2.5 V             :         : 8         : N              
+ADC0_RESET                   : F9        : output : 2.5 V             :         : 7         : N              
 GND                          : F10       : gnd    :                   :         :           :                
 VCCINT                       : F11       : power  :                   : 1.2V    :           :                
 VCCA2                        : F12       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 6         :                
+LEDG[6]                      : F13       : output : 2.5 V             :         : 6         : N              
 RST_N                        : F14       : input  : 2.5 V             :         : 6         : Y              
-rx_buffer_adc0[7]            : F15       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 6         :                
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
-rx_buffer_adc1[4]            : G2        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
 VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
 GND                          : G4        : gnd    :                   :         :           :                
 GND                          : G5        : gnd    :                   :         :           :                
@@ -178,8 +178,8 @@ GND                          : G11       : gnd    :                   :         
 MSEL2                        : G12       :        :                   :         : 6         :                
 GND                          : G13       : gnd    :                   :         :           :                
 VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 6         :                
+rx_buffer_adc0[10]           : G15       : output : 2.5 V             :         : 6         : N              
+rx_buffer_adc0[15]           : G16       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
 altera_reserved_tck          : H3        : input  : 2.5 V             :         : 1         : N              
@@ -196,8 +196,8 @@ MSEL0                        : H13       :        :                   :         
 CONF_DONE                    : H14       :        :                   :         : 6         :                
 GND                          : H15       : gnd    :                   :         :           :                
 GND                          : H16       : gnd    :                   :         :           :                
-LEDG[4]                      : J1        : output : 2.5 V             :         : 2         : N              
-LEDG[5]                      : J2        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc2[2]            : J1        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc3[14]           : J2        : output : 2.5 V             :         : 2         : N              
 nCE                          : J3        :        :                   :         : 1         :                
 altera_reserved_tdo          : J4        : output : 2.5 V             :         : 1         : N              
 altera_reserved_tms          : J5        : input  : 2.5 V             :         : 1         : N              
@@ -208,15 +208,15 @@ GND                          : J9        : gnd    :                   :         
 GND                          : J10       : gnd    :                   :         :           :                
 GND                          : J11       : gnd    :                   :         :           :                
 VCCINT                       : J12       : power  :                   : 1.2V    :           :                
-LEDG[3]                      : J13       : output : 2.5 V             :         : 5         : Y              
+LED_TESTER                   : J13       : output : 2.5 V             :         : 5         : Y              
 LEDG[2]                      : J14       : output : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : J15       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J16       :        :                   :         : 5         :                
+ADC2_MOSI                    : J15       : output : 2.5 V             :         : 5         : N              
+rx_buffer_adc1[12]           : J16       : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 2         :                
-rx_buffer_adc3[7]            : K2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 2         :                
 VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
 GND                          : K4        : gnd    :                   :         :           :                
-rx_buffer_adc3[6]            : K5        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc2[4]            : K5        : output : 2.5 V             :         : 2         : N              
 GND                          : K6        : gnd    :                   :         :           :                
 VCCINT                       : K7        : power  :                   : 1.2V    :           :                
 GND                          : K8        : gnd    :                   :         :           :                
@@ -227,15 +227,15 @@ GND                          : K12       : gnd    :                   :         
 GND                          : K13       : gnd    :                   :         :           :                
 VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
 LEDG[1]                      : K15       : output : 2.5 V             :         : 5         : Y              
-rx_buffer_adc1[1]            : K16       : output : 2.5 V             :         : 5         : N              
-rx_buffer_adc1[3]            : L1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 5         :                
+ADC3_MOSI                    : L1        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L2        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
-rx_buffer_adc0[3]            : L4        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc2[8]            : L3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 2         :                
 VCCA1                        : L5        : power  :                   : 2.5V    :           :                
 VCCINT                       : L6        : power  :                   : 1.2V    :           :                
-rx_buffer_adc2[4]            : L7        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc2[3]            : L8        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
+rx_buffer_adc0[11]           : L8        : output : 2.5 V             :         : 3         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -249,78 +249,78 @@ GND+                         : M2        :        :                   :         
 VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
 GND                          : M4        : gnd    :                   :         :           :                
 GNDA1                        : M5        : gnd    :                   :         :           :                
-rx_buffer_adc1[13]           : M6        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc0[10]           : M7        : output : 2.5 V             :         : 3         : N              
-LEDG[6]                      : M8        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc2[0]            : M6        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 3         :                
+ADC3_SS                      : M8        : output : 2.5 V             :         : 3         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
-rx_buffer_adc0[13]           : M10       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc1[9]            : M10       : output : 2.5 V             :         : 4         : N              
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
 GNDA4                        : M12       : gnd    :                   :         :           :                
 GND                          : M13       : gnd    :                   :         :           :                
 VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
 GND+                         : M15       :        :                   :         : 5         :                
 GND+                         : M16       :        :                   :         : 5         :                
-rx_buffer_adc0[15]           : N1        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc3[9]            : N1        : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
 esc_spi_external_MISO        : N3        : input  : 2.5 V             :         : 3         : Y              
 VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
-rx_buffer_adc3[4]            : N5        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc1[0]            : N6        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc2[12]           : N5        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc3[13]           : N6        : output : 2.5 V             :         : 3         : N              
 GND                          : N7        : gnd    :                   :         :           :                
-LEDG[7]                      : N8        : output : 2.5 V             :         : 3         : N              
-ADC3_MOSI                    : N9        : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc1[3]            : N8        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc2[1]            : N9        : output : 2.5 V             :         : 4         : N              
 GND                          : N10       : gnd    :                   :         :           :                
-rx_buffer_adc3[12]           : N11       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[0]            : N11       : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N12       :        :                   :         : 4         :                
 VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
 ADC1_RESET                   : N14       : output : 2.5 V             :         : 5         : Y              
-rx_buffer_adc2[10]           : N15       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N15       :        :                   :         : 5         :                
 ADC1_SS                      : N16       : output : 2.5 V             :         : 5         : Y              
 esc_spi_external_SCLK        : P1        : output : 2.5 V             :         : 2         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
-rx_buffer_adc1[6]            : P3        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc2[15]           : P2        : output : 2.5 V             :         : 2         : N              
+rx_buffer_adc0[14]           : P3        : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
 GND                          : P5        : gnd    :                   :         :           :                
 esc_spi_external_SS_n        : P6        : output : 2.5 V             :         : 3         : Y              
 VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
-rx_buffer_adc2[8]            : P8        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P9        :        :                   :         : 4         :                
+ADC3_CLOCK                   : P8        : output : 2.5 V             :         : 3         : N              
+LEDG[7]                      : P9        : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P11       :        :                   :         : 4         :                
+rx_buffer_adc3[7]            : P11       : output : 2.5 V             :         : 4         : N              
 GND                          : P12       : gnd    :                   :         :           :                
 VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
-rx_buffer_adc1[15]           : P14       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
+rx_buffer_adc3[4]            : P14       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc2[10]           : P15       : output : 2.5 V             :         : 5         : N              
 ADC1_MISO                    : P16       : input  : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
 GND                          : R2        : gnd    :                   :         :           :                
 esc_spi_external_MOSI        : R3        : output : 2.5 V             :         : 3         : Y              
 ESC_EEPDONE                  : R4        : input  : 2.5 V             :         : 3         : Y              
-rx_buffer_adc2[0]            : R5        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc1[14]           : R6        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc3[3]            : R7        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 3         :                
+esc_spi_external_SS_n_actual : R6        : output : 2.5 V             :         : 3         : Y              
+rx_buffer_adc0[1]            : R7        : output : 2.5 V             :         : 3         : N              
 GND+                         : R8        :        :                   :         : 3         :                
 GND+                         : R9        :        :                   :         : 4         :                
-rx_buffer_adc3[5]            : R10       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc3[1]            : R11       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc3[10]           : R12       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc2[2]            : R13       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc0[6]            : R14       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[3]            : R10       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc2[14]           : R11       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[5]            : R12       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[11]           : R13       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc2[11]           : R14       : output : 2.5 V             :         : 4         : N              
 GND                          : R15       : gnd    :                   :         :           :                
-rx_buffer_adc3[14]           : R16       : output : 2.5 V             :         : 5         : N              
+rx_buffer_adc0[4]            : R16       : output : 2.5 V             :         : 5         : N              
 VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
-rx_buffer_adc0[12]           : T2        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc0[14]           : T3        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc2[9]            : T4        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc2[14]           : T5        : output : 2.5 V             :         : 3         : N              
-rx_buffer_adc0[1]            : T6        : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T2        :        :                   :         : 3         :                
+rx_buffer_adc0[5]            : T3        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc1[5]            : T4        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc1[8]            : T5        : output : 2.5 V             :         : 3         : N              
+rx_buffer_adc1[15]           : T6        : output : 2.5 V             :         : 3         : N              
+ADC3_RESET                   : T7        : output : 2.5 V             :         : 3         : N              
 GND+                         : T8        :        :                   :         : 3         :                
 GND+                         : T9        :        :                   :         : 4         :                
-rx_buffer_adc2[5]            : T10       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc2[13]           : T11       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc3[15]           : T12       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc1[9]            : T13       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc1[11]           : T14       : output : 2.5 V             :         : 4         : N              
-rx_buffer_adc0[0]            : T15       : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 4         :                
+rx_buffer_adc3[8]            : T11       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[6]            : T12       : output : 2.5 V             :         : 4         : N              
+LEDG[3]                      : T13       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc3[1]            : T14       : output : 2.5 V             :         : 4         : N              
+rx_buffer_adc0[6]            : T15       : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

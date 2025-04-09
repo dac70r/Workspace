@@ -1,0 +1,24 @@
+
+#include "sys/alt_stdio.h"
+#include "peripheral/peripheral_linker.h"
+#include "imported_source/ViCAT_LSC.h"
+#include "stdint.h"
+#include "system.h"				// must include otherwise will not work
+int main()
+{
+	uint8_t out = 0;
+	init_timer();
+
+	// Event loop that runs forever
+	while (1){
+		out = IORD_ALTERA_AVALON_PIO_DATA(0x0);
+		IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, out); // testing out
+		//alt_putstr("Delay 1000ms !\n");
+		//led_status = ~led_status;
+		//alt_busy_sleep(500000);
+	}
+
+	main_initial();
+
+  return 0;
+}
