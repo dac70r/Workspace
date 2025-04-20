@@ -1,9 +1,9 @@
-14:10:05 **** Incremental Build of configuration Nios II for project HelloNios_II ****
+11:25:01 **** Build of configuration Nios II for project HelloNios_II ****
 make all 
-Info: Building ../HelloNios_II_bsp/
-C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloNios_II_bsp/
-[BSP build complete]
-[HelloNios_II build complete]
+Cannot run program "make": Launching failed
 
-14:10:06 Build Finished (took 972ms)
+Error: Program "make" not found in PATH
+PATH=[C:/intelfpga_lite/23.1std/quartus/bin64;C:/intelfpga_lite/23.1std/nios2eds/bin/cygpath;C:/intelfpga_lite/23.1std/quartus/sopc_builder/model/lib;C:/intelfpga_lite/23.1std/quartus/bin32;c:\intelfpga_lite\23.1std\quartus\bin64\;C:\TwinCAT\Common64;C:\TwinCAT\Common32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Users\guan-ming.dennis-won\AppData\Local\Microsoft\WindowsApps;C:\Users\guan-ming.dennis-won\AppData\Local\Programs\Microsoft VS Code\bin;C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem;C:\intelFPGA_lite\23.1std\questa_fse\win64;C:\intelFPGA_lite\18.1\nios2eds\bin;]
+
+11:25:01 Build Finished (took 89ms)
 

@@ -1,0 +1,4 @@
+#include "peripheral_linker.h"  // Include the linker header file with peripheral definitions
+#include "system.h"
+#include "stdint.h"
+

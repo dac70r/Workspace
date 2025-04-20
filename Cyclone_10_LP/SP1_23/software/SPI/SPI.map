@@ -1,0 +1,1358 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                              obj/default/imported_source/ecatslv.o (__divsi3)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+                              obj/default/hello_world_small.o (__mulsi3)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+                              obj/default/imported_source/ecatcoe.o (malloc)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o) (_malloc_r)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                              obj/default/imported_source/ax58100_hw.o (memcpy)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+                              obj/default/imported_source/ax58100_hw.o (memset)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                              obj/default/imported_source/objdef.o (strlen)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o) (_impure_ptr)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o) (_sbrk_r)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o) (_free_r)
+c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o) (errno)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o (alt_load)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o (alt_main)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o) (__malloc_lock)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+                              c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o) (sbrk)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+                              obj/default/hello_world_small.o (usleep)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o) (alt_irq_init)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+                              obj/default/peripheral/peripheral_linker.o (alt_avalon_spi_command)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o) (alt_busy_sleep)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                              c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+reset            0x00010000         0x00000020
+RAM              0x00010020         0x00009fe0
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/hello_world_small.o
+LOAD obj/default/imported_source/ViCAT_LSC.o
+LOAD obj/default/imported_source/ax58100_hw.o
+LOAD obj/default/imported_source/bootmode.o
+LOAD obj/default/imported_source/coeappl.o
+LOAD obj/default/imported_source/ecatappl.o
+LOAD obj/default/imported_source/ecatcoe.o
+LOAD obj/default/imported_source/ecatfoe.o
+LOAD obj/default/imported_source/ecatslv.o
+LOAD obj/default/imported_source/foeappl.o
+LOAD obj/default/imported_source/mailbox.o
+LOAD obj/default/imported_source/objdef.o
+LOAD obj/default/imported_source/sdoserv.o
+LOAD obj/default/peripheral/peripheral_linker.o
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libstdc++.a
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libm.a
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a
+START GROUP
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a
+LOAD c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libm.a
+END GROUP
+LOAD c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a
+                0x00010000                        __alt_mem_RAM = 0x10000
+
+.entry          0x00010000       0x20
+ *(.entry)
+ .entry         0x00010000       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+                0x00010000                __reset
+                0x0001000c                _exit
+
+.exceptions     0x00010020        0x0
+                0x00010020                        PROVIDE (__ram_exceptions_start = ABSOLUTE (.))
+                0x00010020                        . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ *(.exceptions.entry.user)
+ *(.exceptions.entry.ecc_fatal)
+ *(.exceptions.entry)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ *(.exceptions.notirq.label)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ *(.exceptions.exit.label)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ *(.exceptions)
+                0x00010020                        PROVIDE (__ram_exceptions_end = ABSOLUTE (.))
+                0x00010020                        PROVIDE (__flash_exceptions_start = LOADADDR (.exceptions))
+
+.text           0x00010020     0x763c
+                [!provide]                        PROVIDE (stext = ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00010020       0x3c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+                0x00010020                _start
+ .text          0x0001005c       0x20 obj/default/hello_world_small.o
+                0x0001005c                delay_ms
+ .text.startup  0x0001007c       0x18 obj/default/hello_world_small.o
+                0x0001007c                main
+ .text          0x00010094      0x23c obj/default/imported_source/ViCAT_LSC.o
+                0x00010094                APPL_AckErrorInd
+                0x00010098                APPL_StartMailboxHandler
+                0x000100a0                APPL_StopMailboxHandler
+                0x000100a8                APPL_StartInputHandler
+                0x000100b0                APPL_StopInputHandler
+                0x000100b8                APPL_StartOutputHandler
+                0x000100c0                APPL_StopOutputHandler
+                0x000100c8                APPL_GenerateMapping
+                0x00010288                APPL_InputMapping
+                0x0001028c                APPL_OutputMapping
+                0x00010290                APPL_Application
+                0x00010294                APPL_GetDeviceID
+                0x0001029c                main_initial
+ .text          0x000102d0      0x3d0 obj/default/imported_source/ax58100_hw.o
+                0x0001052c                HW_Release
+                0x00010530                HW_GetALEventRegister_Isr
+                0x00010558                HW_EscRead
+                0x00010590                HW_GetALEventRegister
+                0x000105b8                HW_EscReadIsr
+                0x000105c4                HW_EscWrite
+                0x000105fc                HW_Init
+                0x00010680                HW_EscWriteIsr
+                0x0001068c                HW_RestartTarget
+                0x00010690                HW_ALEVENT_IRQHandler
+                0x00010694                HW_SYNC0_IRQHandler
+                0x00010698                HW_SYNC1_IRQHandler
+                0x0001069c                HW_TIMETASK_IRQHandler
+ .text          0x000106a0       0x14 obj/default/imported_source/bootmode.o
+                0x000106a0                BL_Start
+                0x000106a4                BL_Stop
+                0x000106a8                BL_StartDownload
+                0x000106ac                BL_Data
+ .text          0x000106b4      0x510 obj/default/imported_source/coeappl.o
+                0x000106b4                COE_SyncTimeStamp
+                0x00010720                Read0x10F8
+                0x000107b8                COE_GetObjectDictionary
+                0x000107c0                COE_UpdateSyncErrorStatus
+                0x0001081c                COE_AddObjectToDic
+                0x000108a8                COE_RemoveDicEntry
+                0x000108fc                COE_ClearObjDictionary
+                0x00010938                AddObjectsToObjDictionary
+                0x00010988                COE_ObjDictionaryInit
+                0x000109c8                COE_ObjInit
+                0x00010af8                COE_Main
+ .text          0x00010bc4      0xb1c obj/default/imported_source/ecatappl.o
+                0x00010bc4                ECAT_CheckTimer
+                0x00010c54                GetSystemTimeDelay
+                0x00010cbc                PDO_InputMapping
+                0x00010d6c                HandleCycleTimeMeasurement
+                0x00010dd8                PDO_OutputMapping
+                0x00010e98                Sync1_Isr
+                0x00010eec                MainInit
+                0x00010fe8                ECAT_Application
+                0x00011024                Sync0_Isr
+                0x00011184                PDI_Isr
+                0x00011344                MainLoop
+                0x00011418                ESC_EepromAccess
+                0x00011630                ESC_EepromWriteCRC
+ .text          0x000116e0       0xbc obj/default/imported_source/ecatcoe.o
+                0x000116e0                COE_Init
+                0x000116ec                COE_ServiceInd
+                0x00011734                COE_ContinueInd
+ .text          0x0001179c      0x3e0 obj/default/imported_source/ecatfoe.o
+                0x0001179c                FOE_Init
+                0x000117ac                FOE_ServiceInd
+                0x00011b48                FOE_ContinueInd
+ .text          0x00011b7c     0x1f70 obj/default/imported_source/ecatslv.o
+                0x00011b7c                ResetALEventMask
+                0x00011bc8                SetALEventMask
+                0x00011c14                UpdateEEPROMLoadedState
+                0x00011c4c                GetSyncMan
+                0x00011c7c                DisableSyncManChannel
+                0x00011cdc                EnableSyncManChannel
+                0x00011d38                CheckSmSettings
+                0x00011fa8                StartInputHandler
+                0x00012714                StartOutputHandler
+                0x00012770                StopOutputHandler
+                0x0001277c                StopInputHandler
+                0x0001281c                BackToInitTransition
+                0x00012824                SetALStatus
+                0x000128c8                AL_ControlInd
+                0x000131dc                AL_ControlRes
+                0x000134e4                DC_CheckWatchdog
+                0x000135a4                CheckIfEcatError
+                0x0001367c                ECAT_StateChange
+                0x00013860                ECAT_Init
+                0x00013944                ECAT_Main
+ .text          0x00013aec       0xe8 obj/default/imported_source/foeappl.o
+                0x00013aec                FOE_Read
+                0x00013b28                FOE_Write
+                0x00013b40                FOE_Data
+                0x00013b9c                FOE_Ack
+                0x00013bb8                FOE_Busy
+                0x00013bc4                FOE_Error
+ .text          0x00013bd4      0x9a0 obj/default/imported_source/mailbox.o
+                0x00013bd4                PutInMbxQueue
+                0x00013c24                GetOutOfMbxQueue
+                0x00013c68                MBX_Init
+                0x00013d18                MBX_StartMailboxHandler
+                0x00013df4                MBX_StopMailboxHandler
+                0x00013f00                MailboxServiceInd
+                0x00013f48                MBX_CopyToSendMailbox
+                0x00014094                MBX_MailboxReadInd
+                0x00014154                MBX_MailboxRepeatReq
+                0x000141bc                MBX_MailboxSendReq
+                0x0001429c                MBX_MailboxWriteInd
+                0x0001437c                MBX_CheckAndCopyMailbox
+                0x000144b0                MBX_Main
+ .text          0x00014574     0x155c obj/default/imported_source/objdef.o
+                0x00014574                OBJ_GetObjectHandle
+                0x000145b0                OBJ_GetObjectLength
+                0x000146bc                OBJ_CopyNumberToString
+                0x0001473c                OBJ_GetDesc
+                0x00014874                OBJ_GetEntryDesc
+                0x000148b0                OBJ_GetNoOfObjects
+                0x00014968                OBJ_GetObjectList
+                0x00014ab0                OBJ_GetObjDesc
+                0x00014ab8                OBJ_GetEntryOffset
+                0x00014c74                CheckSyncTypeValue
+                0x00014d80                OBJ_Read
+                0x00015390                OBJ_Write
+ .text          0x00015ad0      0xfb4 obj/default/imported_source/sdoserv.o
+                0x00015ad0                SdoRes
+                0x00015c30                SDOS_SdoInd
+                0x00016524                SDOS_SdoRes
+                0x00016634                SDOS_ClearPendingResponse
+                0x000166ac                SDOS_SdoInfoInd
+ .text          0x00016a84      0x334 obj/default/peripheral/peripheral_linker.o
+                0x00016a84                adc_init
+                0x00016bf4                spi_transmit_receive
+                0x00016ca4                adc_init_spi_transmit_receive
+ .text          0x00016db8      0x1b4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                0x00016db8                __divsi3
+                0x00016e38                __modsi3
+                0x00016eac                __udivsi3
+                0x00016f10                __umodsi3
+ .text          0x00016f6c       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+                0x00016f6c                __mulsi3
+ .text          0x00016f94        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .text.malloc   0x00016f94       0x10 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+                0x00016f94                malloc
+ .text.free     0x00016fa4       0x10 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+                0x00016fa4                free
+ .text          0x00016fb4        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .text.sbrk_aligned
+                0x00016fb4       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .text._malloc_r
+                0x00017040      0x1cc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                0x00017040                _malloc_r
+ .text          0x0001720c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .text.memcpy   0x0001720c       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                0x0001720c                memcpy
+ .text          0x00017234        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .text.memset   0x00017234       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+                0x00017234                memset
+ .text          0x00017254        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .text.strlen   0x00017254       0x1c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                0x00017254                strlen
+ .text          0x00017270        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .text          0x00017270        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .text._sbrk_r  0x00017270       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+                0x00017270                _sbrk_r
+ .text          0x000172b8        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .text._free_r  0x000172b8      0x100 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+                0x000172b8                _free_r
+ .text          0x000173b8        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .text          0x000173b8       0x84 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+                0x000173b8                alt_load
+ .text          0x0001743c       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+                0x0001743c                alt_main
+ .text          0x00017468        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+                0x00017468                __malloc_lock
+                0x0001746c                __malloc_unlock
+ .text          0x00017470       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+                0x00017470                sbrk
+ .text          0x000174bc        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+                0x000174bc                usleep
+ .text          0x000174c0       0x24 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x000174c0                alt_irq_init
+                0x000174e0                alt_sys_init
+ .text          0x000174e4       0xd8 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+                0x000174e4                alt_avalon_spi_command
+ .text          0x000175bc       0x90 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                0x000175bc                alt_busy_sleep
+ .text          0x0001764c        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0001764c                alt_dcache_flush_all
+ .text          0x00017650        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x00017650                alt_icache_flush_all
+ .text          0x00017654        0x8 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x00017654                altera_nios2_gen2_irq_init
+ *(.gnu.warning.*)
+ *(.fini)
+                [!provide]                        PROVIDE (__etext = ABSOLUTE (.))
+                [!provide]                        PROVIDE (_etext = ABSOLUTE (.))
+                [!provide]                        PROVIDE (etext = ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x0001765c                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start = ABSOLUTE (.))
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__init_array_start = ABSOLUTE (.))
+ *(SORT_BY_INIT_PRIORITY(.init_array.*))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__fini_array_start = ABSOLUTE (.))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table .gcc_except_table.*)
+ *(.dynamic)
+                [!provide]                        PROVIDE (__CTOR_LIST__ = ABSOLUTE (.))
+ *(.ctors)
+ *(SORT_BY_NAME(.ctors.*))
+                [!provide]                        PROVIDE (__CTOR_END__ = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__DTOR_LIST__ = ABSOLUTE (.))
+ *(.dtors)
+ *(SORT_BY_NAME(.dtors.*))
+                [!provide]                        PROVIDE (__DTOR_END__ = ABSOLUTE (.))
+ *(.jcr)
+                0x0001765c                        . = ALIGN (0x4)
+
+.rodata         0x0001765c      0x694
+                0x0001765c                        PROVIDE (__ram_rodata_start = ABSOLUTE (.))
+                0x0001765c                        . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0001765c      0x5fc obj/default/imported_source/coeappl.o
+                0x0001765c                aName0x1C33
+                0x00017764                aName0x1C32
+                0x0001786c                asEntryDesc0x1C3x
+                0x00017934                aName0x1C00
+                0x00017946                asEntryDesc0x1C00
+                0x00017954                aName0x10F8
+                0x00017968                aName0x10F1
+                0x000179a8                asEntryDesc0x10F1
+                0x000179bc                aName0x1018
+                0x00017a04                asEntryDesc0x1018
+                0x00017a24                aName0x100A
+                0x00017a44                aName0x1009
+                0x00017a64                aName0x1008
+                0x00017a70                aName0x1001
+                0x00017a80                aName0x1000
+                0x00017a8c                aName0x8008
+                0x00017ae4                asEntryDesc0x8008
+                0x00017afc                aName0x8000
+                0x00017b2e                asEntryDesc0x8000
+                0x00017b40                aName0x7000
+                0x00017b5c                asEntryDesc0x7000
+                0x00017b68                aName0x6000
+                0x00017b82                asEntryDesc0x6000
+                0x00017b90                aName0x1C13
+                0x00017bac                asEntryDesc0x1C13
+                0x00017bb8                aName0x1C12
+                0x00017bd4                asEntryDesc0x1C12
+                0x00017be0                aName0x1A00
+                0x00017c10                asEntryDesc0x1A00
+                0x00017c1c                aName0x1600
+                0x00017c4c                asEntryDesc0x1600
+ .rodata        0x00017c58       0x20 obj/default/imported_source/objdef.o
+                0x00017c58                cBitMask
+ .rodata        0x00017c78       0x78 obj/default/imported_source/sdoserv.o
+                0x00017c78                cAbortCode
+ *(.rodata1)
+                0x00017cf0                        . = ALIGN (0x4)
+                0x00017cf0                        PROVIDE (__ram_rodata_end = ABSOLUTE (.))
+                0x0001765c                        PROVIDE (__flash_rodata_start = LOADADDR (.rodata))
+
+.rwdata         0x00017cf0      0x458 load address 0x00018148
+                0x00017cf0                        PROVIDE (__ram_rwdata_start = ABSOLUTE (.))
+                0x00017cf0                        . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00017cf0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .data          0x00017cf0        0x0 obj/default/hello_world_small.o
+ .data          0x00017cf0       0x18 obj/default/imported_source/ViCAT_LSC.o
+                0x00017cf0                ADCParameterSetting0x8008
+                0x00017cfc                MLParameterSetting0x8000
+ .data          0x00017d08        0x0 obj/default/imported_source/ax58100_hw.o
+ .data          0x00017d08        0x0 obj/default/imported_source/bootmode.o
+ .data          0x00017d08      0x368 obj/default/imported_source/coeappl.o
+                0x00017d08                GenObjDic
+                0x00017ee8                sIdentity
+                0x00017efc                acDevicename
+                0x00017f08                ApplicationObjDic
+ .data          0x00018070        0x0 obj/default/imported_source/ecatappl.o
+ .data          0x00018070        0x0 obj/default/imported_source/ecatcoe.o
+ .data          0x00018070        0x0 obj/default/imported_source/ecatfoe.o
+ .data          0x00018070        0x0 obj/default/imported_source/ecatslv.o
+ .data          0x00018070        0x0 obj/default/imported_source/foeappl.o
+ .data          0x00018070        0x0 obj/default/imported_source/mailbox.o
+ .data          0x00018070       0x1c obj/default/imported_source/objdef.o
+                0x00018070                aSubindexDesc
+                0x00018080                sErrorSettings
+ .data          0x0001808c        0x0 obj/default/imported_source/sdoserv.o
+ .data          0x0001808c        0x0 obj/default/peripheral/peripheral_linker.o
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .data          0x0001808c        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .data._impure_data
+                0x0001808c       0x54 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                0x0001808c                _impure_data
+ .data          0x000180e0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .data          0x000180e0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .data          0x000180e0        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x000180e0        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x000200e0                        _gp = ABSOLUTE ((. + 0x8000))
+                [!provide]                        PROVIDE (gp = _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x000180e0       0x20 obj/default/imported_source/ViCAT_LSC.o
+                0x000180e0                OUT_GENERIC0x7000
+                0x000180e4                IN_GENERIC0x6000
+                0x000180e8                sTxPDOassign
+                0x000180ec                sRxPDOassign
+                0x000180f0                IN_GENERICProcessDataMapping0x1A00
+                0x000180f8                OUT_GENERICProcessDataMapping0x1600
+ .sdata         0x00018100       0x3c obj/default/imported_source/coeappl.o
+                0x00018100                sSyncmanagertype
+                0x00018106                sEntryDesc0x10F8
+                0x0001810c                sEntryDesc0x100A
+                0x00018114                acSoftwareversion
+                0x0001811a                sEntryDesc0x1009
+                0x00018120                acHardwareversion
+                0x00018126                sEntryDesc0x1008
+                0x0001812c                sEntryDesc0x1001
+                0x00018132                sEntryDesc0x1000
+                0x00018138                u32Devicetype
+ .sdata._impure_ptr
+                0x0001813c        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                0x0001813c                _impure_ptr
+ .sdata         0x00018140        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .sdata         0x00018144        0x4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x00018144                DEBUG
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x00018148                        . = ALIGN (0x4)
+                0x00018148                        _edata = ABSOLUTE (.)
+                [!provide]                        PROVIDE (edata = ABSOLUTE (.))
+                0x00018148                        PROVIDE (__ram_rwdata_end = ABSOLUTE (.))
+                0x00018148                        PROVIDE (__flash_rwdata_start = LOADADDR (.rwdata))
+
+.bss            0x000185a0      0x488
+                0x000185a0                        __bss_start = ABSOLUTE (.)
+                [!provide]                        PROVIDE (__sbss_start = ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_start = ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x000185a0        0x4 obj/default/imported_source/ax58100_hw.o
+                0x000185a0                bootSwitchID
+                0x000185a2                EscALEvent
+ .sbss          0x000185a4       0x18 obj/default/imported_source/coeappl.o
+                0x000185a4                ObjDicList
+                0x000185a8                u16ErrorRegister
+                0x000185ac                u32CheckForDcOverrunCnt
+                0x000185b0                u32LastDc32Value
+                0x000185b4                u64Timestamp
+ .sbss          0x000185bc       0x3c obj/default/imported_source/ecatappl.o
+                0x000185bc                bInitFinished
+                0x000185c0                u32MinCycleTimeValue
+                0x000185c4                bMinCycleTimeMeasurementStarted
+                0x000185c8                u32SystemTimeReadFailure
+                0x000185cc                u32MinCycleTimeStartValue
+                0x000185d0                u32CycleTimeStartValue
+                0x000185d4                pAPPL_MainLoop
+                0x000185d8                pAPPL_CoeWriteInd
+                0x000185dc                pAPPL_CoeReadInd
+                0x000185e0                pAPPL_FoeWriteData
+                0x000185e4                pAPPL_FoeWrite
+                0x000185e8                pAPPL_FoeError
+                0x000185ec                pAPPL_FoeReadData
+                0x000185f0                pAPPL_FoeRead
+                0x000185f4                bRunApplication
+                0x000185f5                bEtherCATErrorLed
+                0x000185f6                bEtherCATRunLed
+                0x000185f7                bEcatWaitForInputUpdate
+ .sbss          0x000185f8        0x4 obj/default/imported_source/ecatcoe.o
+                0x000185f8                pCoeSendStored
+ .sbss          0x000185fc       0x18 obj/default/imported_source/ecatfoe.o
+                0x000185fc                u16FoeMaxSendBlockSize
+                0x00018600                pFoeSendStored
+                0x00018604                u16FileAccessState
+                0x00018608                u32LastFileOffset
+                0x0001860c                u32FileOffset
+                0x00018610                u32PacketNo
+ .sbss          0x00018614       0x4c obj/default/imported_source/ecatslv.o
+                0x00018614                EepromLoaded
+                0x00018616                SyncManInfo
+                0x0001861e                SMActivate
+                0x0001861f                u8dummy
+                0x00018620                u16IdValue
+                0x00018622                u16ALEventMask
+                0x00018624                nEscAddrInputData
+                0x00018626                nEscAddrOutputData
+                0x00018628                EcatWdValue
+                0x0001862a                bExplicitDevIdRequested
+                0x0001862b                nAlStatus
+                0x0001862c                nMaxEscAddress
+                0x0001862e                nMaxSyncMan
+                0x00018630                nPdOutputSize
+                0x00018632                nPdInputSize
+                0x00018634                nEcatStateTrans
+                0x00018636                bEcatWaitForAlControlRes
+                0x00018637                bApplEsmPending
+                0x00018638                u8LocalErrorState
+                0x0001863a                u16LocalErrorCode
+                0x0001863c                b3BufferMode
+                0x0001863d                bEscIntEnabled
+                0x0001863e                b32BitDc
+                0x00018640                LatchInputSync0Counter
+                0x00018642                LatchInputSync0Value
+                0x00018644                Sync1WdValue
+                0x00018646                Sync1WdCounter
+                0x00018648                Sync0WdValue
+                0x0001864a                Sync0WdCounter
+                0x0001864c                i16WaitForPllRunningCnt
+                0x0001864e                i16WaitForPllRunningTimeout
+                0x00018650                bSmSyncSequenceValid
+                0x00018652                u16SmSync0Value
+                0x00018654                u16SmSync0Counter
+                0x00018656                bDcRunning
+                0x00018658                EsmTimeoutCounter
+                0x0001865a                bDcSyncActive
+                0x0001865b                bWdTrigger
+                0x0001865c                bEcatFirstOutputsReceived
+                0x0001865d                bEcatInputUpdateRunning
+                0x0001865e                bEcatOutputUpdateRunning
+                0x0001865f                bBootMode
+ .sbss          0x00018660       0x24 obj/default/imported_source/mailbox.o
+                0x00018660                bNoMbxMemoryAvailable
+                0x00018664                psStoreMbx
+                0x00018668                psRepeatMbx
+                0x0001866c                psReadMbx
+                0x00018670                psWriteMbx
+                0x00018674                u8MailboxSendReqStored
+                0x00018675                u8MbxReadCounter
+                0x00018676                u8MbxWriteCounter
+                0x00018678                u16EscAddrSendMbx
+                0x0001867a                u16EscAddrReceiveMbx
+                0x0001867c                u16ReceiveMbxSize
+                0x0001867e                u16SendMbxSize
+                0x00018680                bMbxRepeatToggle
+                0x00018681                bMbxRunning
+                0x00018682                bSendMbxIsFull
+                0x00018683                bReceiveMbxIsLocked
+ .sbss          0x00018684        0x3 obj/default/imported_source/objdef.o
+                0x00018684                sCycleDiag
+                0x00018686                bSyncSetByUser
+ *fill*         0x00018687        0x1 
+ .sbss          0x00018688       0x39 obj/default/imported_source/sdoserv.o
+                0x00018688                pSdoSegObjEntry
+                0x0001868c                nSdoSegCompleteSize
+                0x00018690                bSdoSegLastToggle
+                0x00018694                nSdoSegBytesToHandle
+                0x00018698                nSdoSegSubindex
+                0x0001869a                nSdoSegIndex
+                0x0001869c                bSdoSegAccess
+                0x0001869d                bSdoSegFollows
+                0x0001869e                nSdoSegService
+                0x0001869f                bSdoInWork
+                0x000186a0                pSdoResStored
+                0x000186a4                pSdoInfoObjEntry
+                0x000186a8                nSdoInfoIndex
+                0x000186aa                nSdoInfoFragmentsLeft
+                0x000186ac                pSdoSegData
+                0x000186b0                pSdoPendFunc
+                0x000186b4                pStoreData
+                0x000186b8                u32StoreDataSize
+                0x000186bc                u16StoreIndex
+                0x000186be                u8StoreSubindex
+                0x000186bf                bStoreCompleteAccess
+                0x000186c0                u8PendingSdo
+ *fill*         0x000186c1        0x3 
+ .sbss.__malloc_sbrk_start
+                0x000186c4        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                0x000186c4                __malloc_sbrk_start
+ .sbss.__malloc_free_list
+                0x000186c8        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                0x000186c8                __malloc_free_list
+ .sbss.errno    0x000186cc        0x4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+                0x000186cc                errno
+ .sbss          0x000186d0        0xc c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+                0x000186d0                alt_envp
+                0x000186d4                alt_argv
+                0x000186d8                alt_argc
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_end = ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000186dc        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .bss           0x000186dc        0x0 obj/default/hello_world_small.o
+ .bss           0x000186dc        0x0 obj/default/imported_source/ViCAT_LSC.o
+ .bss           0x000186dc       0x18 obj/default/imported_source/ax58100_hw.o
+                0x000186dc                spiRxBuf
+                0x000186e8                spiTxBuf
+ .bss           0x000186f4        0x0 obj/default/imported_source/bootmode.o
+ .bss           0x000186f4        0x0 obj/default/imported_source/coeappl.o
+ .bss           0x000186f4      0x234 obj/default/imported_source/ecatappl.o
+                0x000186f4                aPdInputData
+                0x00018918                aPdOutputData
+ .bss           0x00018928        0x0 obj/default/imported_source/ecatcoe.o
+ .bss           0x00018928        0x0 obj/default/imported_source/ecatfoe.o
+ .bss           0x00018928        0x0 obj/default/imported_source/ecatslv.o
+ .bss           0x00018928        0x0 obj/default/imported_source/foeappl.o
+ .bss           0x00018928       0x68 obj/default/imported_source/mailbox.o
+                0x00018928                sMbxReceiveQueue
+                0x0001895c                sMbxSendQueue
+ .bss           0x00018990       0x88 obj/default/imported_source/objdef.o
+                0x00018990                sSyncManInPar
+                0x000189d4                sSyncManOutPar
+ .bss           0x00018a18       0x10 obj/default/imported_source/sdoserv.o
+                0x00018a18                aSdoInfoHeader
+ .bss           0x00018a28        0x0 obj/default/peripheral/peripheral_linker.o
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .bss           0x00018a28        0x0 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x00018a28        0x0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ *(COMMON)
+                0x00018a28                        . = ALIGN (0x4)
+                0x00018a28                        __bss_end = ABSOLUTE (.)
+
+.RAM            0x00018a28        0x0
+                [!provide]                        PROVIDE (_alt_partition_RAM_start = ABSOLUTE (.))
+ *(.RAM .RAM. RAM.*)
+                0x00018a28                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_RAM_end = ABSOLUTE (.))
+                0x00018a28                        _end = ABSOLUTE (.)
+                0x00018a28                        end = ABSOLUTE (.)
+                0x00018a28                        __alt_stack_base = ABSOLUTE (.)
+                [!provide]                        PROVIDE (_alt_partition_RAM_load_addr = LOADADDR (.RAM))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2d
+ *(.comment)
+ .comment       0x00000000       0x2d obj/default/hello_world_small.o
+                                 0x2e (size before relaxing)
+ .comment       0x0000002d       0x2e obj/default/imported_source/ViCAT_LSC.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/ax58100_hw.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/bootmode.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/coeappl.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/ecatappl.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/ecatcoe.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/ecatfoe.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/ecatslv.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/foeappl.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/mailbox.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/objdef.o
+ .comment       0x0000002d       0x2e obj/default/imported_source/sdoserv.o
+ .comment       0x0000002d       0x2e obj/default/peripheral/peripheral_linker.o
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .comment       0x0000002d       0x2e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x0000002d       0x2e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x4b0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x00000028       0x28 obj/default/hello_world_small.o
+ .debug_aranges
+                0x00000050       0x20 obj/default/imported_source/ViCAT_LSC.o
+ .debug_aranges
+                0x00000070       0x20 obj/default/imported_source/ax58100_hw.o
+ .debug_aranges
+                0x00000090       0x20 obj/default/imported_source/bootmode.o
+ .debug_aranges
+                0x000000b0       0x20 obj/default/imported_source/coeappl.o
+ .debug_aranges
+                0x000000d0       0x20 obj/default/imported_source/ecatappl.o
+ .debug_aranges
+                0x000000f0       0x20 obj/default/imported_source/ecatcoe.o
+ .debug_aranges
+                0x00000110       0x20 obj/default/imported_source/ecatfoe.o
+ .debug_aranges
+                0x00000130       0x20 obj/default/imported_source/ecatslv.o
+ .debug_aranges
+                0x00000150       0x20 obj/default/imported_source/foeappl.o
+ .debug_aranges
+                0x00000170       0x20 obj/default/imported_source/mailbox.o
+ .debug_aranges
+                0x00000190       0x20 obj/default/imported_source/objdef.o
+ .debug_aranges
+                0x000001b0       0x20 obj/default/imported_source/sdoserv.o
+ .debug_aranges
+                0x000001d0       0x20 obj/default/peripheral/peripheral_linker.o
+ .debug_aranges
+                0x000001f0       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_aranges
+                0x00000210       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_aranges
+                0x00000230       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_aranges
+                0x00000258       0x28 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_aranges
+                0x00000280       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_aranges
+                0x000002a0       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_aranges
+                0x000002c0       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_aranges
+                0x000002e0       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_aranges
+                0x000002f8       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_aranges
+                0x00000318       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_aranges
+                0x00000338       0x18 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_aranges
+                0x00000350       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x00000370       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x00000390       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .debug_aranges
+                0x000003b0       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_aranges
+                0x000003d0       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_aranges
+                0x000003f0       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x00000410       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_aranges
+                0x00000430       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_aranges
+                0x00000450       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x00000470       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x00000490       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xccbe
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x3f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x0000003f      0x16f obj/default/hello_world_small.o
+ .debug_info    0x000001ae      0x6f9 obj/default/imported_source/ViCAT_LSC.o
+ .debug_info    0x000008a7      0x98b obj/default/imported_source/ax58100_hw.o
+ .debug_info    0x00001232      0x10c obj/default/imported_source/bootmode.o
+ .debug_info    0x0000133e     0x112b obj/default/imported_source/coeappl.o
+ .debug_info    0x00002469      0xf00 obj/default/imported_source/ecatappl.o
+ .debug_info    0x00003369      0x55b obj/default/imported_source/ecatcoe.o
+ .debug_info    0x000038c4      0x5ae obj/default/imported_source/ecatfoe.o
+ .debug_info    0x00003e72     0x17a8 obj/default/imported_source/ecatslv.o
+ .debug_info    0x0000561a      0x3e8 obj/default/imported_source/foeappl.o
+ .debug_info    0x00005a02      0xe4c obj/default/imported_source/mailbox.o
+ .debug_info    0x0000684e     0x1181 obj/default/imported_source/objdef.o
+ .debug_info    0x000079cf     0x14b3 obj/default/imported_source/sdoserv.o
+ .debug_info    0x00008e82      0x61d obj/default/peripheral/peripheral_linker.o
+ .debug_info    0x0000949f      0x347 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_info    0x000097e6       0xc4 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_info    0x000098aa      0x588 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_info    0x00009e32      0x7bd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_info    0x0000a5ef      0x121 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_info    0x0000a710       0xe6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_info    0x0000a7f6       0xd1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_info    0x0000a8c7      0x4eb c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_info    0x0000adb2      0x569 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_info    0x0000b31b      0x638 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_info    0x0000b953       0x85 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_info    0x0000b9d8      0x239 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x0000bc11      0x13e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000bd4f      0x72d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .debug_info    0x0000c47c      0x1c2 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_info    0x0000c63e       0xe4 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_info    0x0000c722      0x127 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000c849      0x1c2 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_info    0x0000ca0b      0x10c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_info    0x0000cb17       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000cba4       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000cc31       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_abbrev   0x00000000     0x38e4
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x1f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x0000001f       0xcd obj/default/hello_world_small.o
+ .debug_abbrev  0x000000ec      0x312 obj/default/imported_source/ViCAT_LSC.o
+ .debug_abbrev  0x000003fe      0x330 obj/default/imported_source/ax58100_hw.o
+ .debug_abbrev  0x0000072e       0xaf obj/default/imported_source/bootmode.o
+ .debug_abbrev  0x000007dd      0x354 obj/default/imported_source/coeappl.o
+ .debug_abbrev  0x00000b31      0x2dd obj/default/imported_source/ecatappl.o
+ .debug_abbrev  0x00000e0e      0x20c obj/default/imported_source/ecatcoe.o
+ .debug_abbrev  0x0000101a      0x22a obj/default/imported_source/ecatfoe.o
+ .debug_abbrev  0x00001244      0x39c obj/default/imported_source/ecatslv.o
+ .debug_abbrev  0x000015e0      0x142 obj/default/imported_source/foeappl.o
+ .debug_abbrev  0x00001722      0x36a obj/default/imported_source/mailbox.o
+ .debug_abbrev  0x00001a8c      0x373 obj/default/imported_source/objdef.o
+ .debug_abbrev  0x00001dff      0x385 obj/default/imported_source/sdoserv.o
+ .debug_abbrev  0x00002184      0x173 obj/default/peripheral/peripheral_linker.o
+ .debug_abbrev  0x000022f7      0x10c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x00002403       0x80 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_abbrev  0x00002483      0x1cf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_abbrev  0x00002652      0x241 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_abbrev  0x00002893       0xc1 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_abbrev  0x00002954       0x9e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_abbrev  0x000029f2       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_abbrev  0x00002a7e      0x142 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_abbrev  0x00002bc0      0x1c6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_abbrev  0x00002d86      0x23b c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_abbrev  0x00002fc1       0x39 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_abbrev  0x00002ffa      0x12c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x00003126       0xeb c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00003211      0x1bc c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .debug_abbrev  0x000033cd      0x147 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_abbrev  0x00003514       0x9b c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_abbrev  0x000035af      0x107 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x000036b6       0xac c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_abbrev  0x00003762       0xb9 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_abbrev  0x0000381b       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000385e       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x000038a1       0x43 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_line     0x00000000     0x7d98
+ *(.debug_line)
+ .debug_line    0x00000000       0x66 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x00000066       0x97 obj/default/hello_world_small.o
+ .debug_line    0x000000fd      0x302 obj/default/imported_source/ViCAT_LSC.o
+ .debug_line    0x000003ff      0x489 obj/default/imported_source/ax58100_hw.o
+ .debug_line    0x00000888       0x5c obj/default/imported_source/bootmode.o
+ .debug_line    0x000008e4      0x5d7 obj/default/imported_source/coeappl.o
+ .debug_line    0x00000ebb      0x99a obj/default/imported_source/ecatappl.o
+ .debug_line    0x00001855      0x12a obj/default/imported_source/ecatcoe.o
+ .debug_line    0x0000197f      0x43d obj/default/imported_source/ecatfoe.o
+ .debug_line    0x00001dbc     0x1d56 obj/default/imported_source/ecatslv.o
+ .debug_line    0x00003b12      0x151 obj/default/imported_source/foeappl.o
+ .debug_line    0x00003c63      0x98e obj/default/imported_source/mailbox.o
+ .debug_line    0x000045f1     0x130a obj/default/imported_source/objdef.o
+ .debug_line    0x000058fb      0xf90 obj/default/imported_source/sdoserv.o
+ .debug_line    0x0000688b      0x260 obj/default/peripheral/peripheral_linker.o
+ .debug_line    0x00006aeb      0x2e3 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_line    0x00006dce       0x88 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_line    0x00006e56       0x93 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_line    0x00006ee9      0x30c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_line    0x000071f5       0x8c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_line    0x00007281       0x87 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_line    0x00007308       0x7c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_line    0x00007384       0x4c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+ .debug_line    0x000073d0       0xa8 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_line    0x00007478      0x1ac c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_line    0x00007624       0x3a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_line    0x0000765e       0xd2 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x00007730       0xa2 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x000077d2       0x6b c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .debug_line    0x0000783d       0xea c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_line    0x00007927       0x70 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_line    0x00007997       0x94 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x00007a2b      0x19d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_line    0x00007bc8       0xe2 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_line    0x00007caa       0x4e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00007cf8       0x4c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x00007d44       0x54 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_frame    0x00000000     0x1460
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x44 obj/default/hello_world_small.o
+ .debug_frame   0x00000044      0x120 obj/default/imported_source/ViCAT_LSC.o
+ .debug_frame   0x00000164      0x19c obj/default/imported_source/ax58100_hw.o
+ .debug_frame   0x00000300       0x50 obj/default/imported_source/bootmode.o
+ .debug_frame   0x00000350      0x158 obj/default/imported_source/coeappl.o
+ .debug_frame   0x000004a8      0x200 obj/default/imported_source/ecatappl.o
+ .debug_frame   0x000006a8       0x50 obj/default/imported_source/ecatcoe.o
+ .debug_frame   0x000006f8       0x68 obj/default/imported_source/ecatfoe.o
+ .debug_frame   0x00000760      0x330 obj/default/imported_source/ecatslv.o
+ .debug_frame   0x00000a90       0x94 obj/default/imported_source/foeappl.o
+ .debug_frame   0x00000b24      0x1f0 obj/default/imported_source/mailbox.o
+ .debug_frame   0x00000d14      0x244 obj/default/imported_source/objdef.o
+ .debug_frame   0x00000f58      0x118 obj/default/imported_source/sdoserv.o
+ .debug_frame   0x00001070       0x68 obj/default/peripheral/peripheral_linker.o
+ .debug_frame   0x000010d8       0x50 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_frame   0x00001128       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_frame   0x00001148       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_frame   0x00001178       0x68 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_frame   0x000011e0       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_frame   0x00001200       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_frame   0x00001220       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_frame   0x00001240       0x30 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_frame   0x00001270       0x38 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_frame   0x000012a8       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x000012d4       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00001300       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+ .debug_frame   0x00001330       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_frame   0x00001350       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_frame   0x00001370       0x3c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x000013ac       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_frame   0x000013cc       0x34 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+ .debug_frame   0x00001400       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00001420       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x00001440       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_str      0x00000000     0x29cf
+ *(.debug_str)
+ .debug_str     0x00000000       0x8d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+                                 0x94 (size before relaxing)
+ .debug_str     0x0000008d      0x109 obj/default/hello_world_small.o
+                                0x147 (size before relaxing)
+ .debug_str     0x00000196      0x3d3 obj/default/imported_source/ViCAT_LSC.o
+                                0x50e (size before relaxing)
+ .debug_str     0x00000569      0x255 obj/default/imported_source/ax58100_hw.o
+                                0x3ce (size before relaxing)
+ .debug_str     0x000007be       0x33 obj/default/imported_source/bootmode.o
+                                0x12c (size before relaxing)
+ .debug_str     0x000007f1      0x6cb obj/default/imported_source/coeappl.o
+                                0xa33 (size before relaxing)
+ .debug_str     0x00000ebc      0x4a1 obj/default/imported_source/ecatappl.o
+                                0x8d7 (size before relaxing)
+ .debug_str     0x0000135d      0x161 obj/default/imported_source/ecatcoe.o
+                                0x305 (size before relaxing)
+ .debug_str     0x000014be      0x171 obj/default/imported_source/ecatfoe.o
+                                0x2d9 (size before relaxing)
+ .debug_str     0x0000162f      0x4c9 obj/default/imported_source/ecatslv.o
+                                0xb04 (size before relaxing)
+ .debug_str     0x00001af8       0x32 obj/default/imported_source/foeappl.o
+                                0x1eb (size before relaxing)
+ .debug_str     0x00001b2a      0x18a obj/default/imported_source/mailbox.o
+                                0x597 (size before relaxing)
+ .debug_str     0x00001cb4      0x1df obj/default/imported_source/objdef.o
+                                0x68c (size before relaxing)
+ .debug_str     0x00001e93      0x265 obj/default/imported_source/sdoserv.o
+                                0x791 (size before relaxing)
+ .debug_str     0x000020f8       0xc9 obj/default/peripheral/peripheral_linker.o
+                                0x233 (size before relaxing)
+ .debug_str     0x000021c1       0xba c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                                0x122 (size before relaxing)
+ .debug_str     0x0000227b       0xe6 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_str     0x0000227b      0x2f2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+                                0x3b4 (size before relaxing)
+ .debug_str     0x0000256d       0xbd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                                0x46f (size before relaxing)
+ .debug_str     0x0000262a       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                                0x122 (size before relaxing)
+ .debug_str     0x0000263e      0x10e c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_str     0x0000263e       0x14 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                                0x114 (size before relaxing)
+ .debug_str     0x0000263e        0xd c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                                0x390 (size before relaxing)
+ .debug_str     0x0000264b        0xa c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+                                0x399 (size before relaxing)
+ .debug_str     0x00002655       0x24 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+                                0x410 (size before relaxing)
+ .debug_str     0x00002679      0x106 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+ .debug_str     0x00002679      0x100 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+                                0x208 (size before relaxing)
+ .debug_str     0x00002779       0x4b c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+                                0x138 (size before relaxing)
+ .debug_str     0x000027c4       0xc0 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+                                0x40f (size before relaxing)
+ .debug_str     0x00002884       0x38 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+                                0x172 (size before relaxing)
+ .debug_str     0x000028bc       0x1c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+                                0x116 (size before relaxing)
+ .debug_str     0x000028d8       0x7d c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+                                0x184 (size before relaxing)
+ .debug_str     0x00002955       0x60 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+                                0x190 (size before relaxing)
+ .debug_str     0x000029b5       0x1a c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                                0x12c (size before relaxing)
+ .debug_str     0x000029cf       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x000029cf       0xfd c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x000029cf      0x103 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x00000000       0x40
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x00000000       0x10 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+ .debug_alt_sim_info
+                0x00000010       0x30 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                0x0001a000                        __alt_data_end = 0x1a000
+                0x0001a000                        PROVIDE (__alt_stack_pointer = __alt_data_end)
+                [!provide]                        PROVIDE (__alt_stack_limit = __alt_stack_base)
+                0x00018a28                        PROVIDE (__alt_heap_start = end)
+                0x0001a000                        PROVIDE (__alt_heap_limit = 0x1a000)
+OUTPUT(SPI.elf elf32-littlenios2)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0x20
+ .debug_ranges  0x00000000       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp//obj/HAL/src/crt0.o
+
+.debug_loclists
+                0x00000000     0x574c
+ .debug_loclists
+                0x00000000       0x23 obj/default/hello_world_small.o
+ .debug_loclists
+                0x00000023      0x235 obj/default/imported_source/ViCAT_LSC.o
+ .debug_loclists
+                0x00000258      0x2ce obj/default/imported_source/ax58100_hw.o
+ .debug_loclists
+                0x00000526      0x246 obj/default/imported_source/coeappl.o
+ .debug_loclists
+                0x0000076c      0x3c9 obj/default/imported_source/ecatappl.o
+ .debug_loclists
+                0x00000b35       0x80 obj/default/imported_source/ecatcoe.o
+ .debug_loclists
+                0x00000bb5      0x41f obj/default/imported_source/ecatfoe.o
+ .debug_loclists
+                0x00000fd4     0x109d obj/default/imported_source/ecatslv.o
+ .debug_loclists
+                0x00002071      0x1fa obj/default/imported_source/foeappl.o
+ .debug_loclists
+                0x0000226b      0x3dc obj/default/imported_source/mailbox.o
+ .debug_loclists
+                0x00002647     0x18ae obj/default/imported_source/objdef.o
+ .debug_loclists
+                0x00003ef5      0xc39 obj/default/imported_source/sdoserv.o
+ .debug_loclists
+                0x00004b2e       0xf2 obj/default/peripheral/peripheral_linker.o
+ .debug_loclists
+                0x00004c20      0x37a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_loclists
+                0x00004f9a       0x5b c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+ .debug_loclists
+                0x00004ff5       0x48 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_loclists
+                0x0000503d      0x249 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_loclists
+                0x00005286       0xcc c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_loclists
+                0x00005352       0x7c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_loclists
+                0x000053ce       0x32 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_loclists
+                0x00005400       0x4c c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_loclists
+                0x0000544c       0xcf c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_loclists
+                0x0000551b       0x46 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+ .debug_loclists
+                0x00005561       0x1e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+ .debug_loclists
+                0x0000557f       0x1e c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_loclists
+                0x0000559d      0x125 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+ .debug_loclists
+                0x000056c2       0x8a c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+
+.debug_rnglists
+                0x00000000      0x69f
+ .debug_rnglists
+                0x00000000       0x19 obj/default/hello_world_small.o
+ .debug_rnglists
+                0x00000019       0x6d obj/default/imported_source/ax58100_hw.o
+ .debug_rnglists
+                0x00000086       0x32 obj/default/imported_source/coeappl.o
+ .debug_rnglists
+                0x000000b8       0x5d obj/default/imported_source/ecatappl.o
+ .debug_rnglists
+                0x00000115       0x52 obj/default/imported_source/ecatfoe.o
+ .debug_rnglists
+                0x00000167       0xb1 obj/default/imported_source/ecatslv.o
+ .debug_rnglists
+                0x00000218       0x7b obj/default/imported_source/mailbox.o
+ .debug_rnglists
+                0x00000293      0x16e obj/default/imported_source/objdef.o
+ .debug_rnglists
+                0x00000401      0x14c obj/default/imported_source/sdoserv.o
+ .debug_rnglists
+                0x0000054d       0x20 obj/default/peripheral/peripheral_linker.o
+ .debug_rnglists
+                0x0000056d       0x3f c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+ .debug_rnglists
+                0x000005ac       0x19 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+ .debug_rnglists
+                0x000005c5       0x31 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+ .debug_rnglists
+                0x000005f6       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+ .debug_rnglists
+                0x00000609       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+ .debug_rnglists
+                0x0000061c       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+ .debug_rnglists
+                0x0000062f       0x13 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+ .debug_rnglists
+                0x00000642       0x20 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+ .debug_rnglists
+                0x00000662       0x23 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_rnglists
+                0x00000685       0x1a c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+
+.debug_line_str
+                0x00000000      0xe49
+ .debug_line_str
+                0x00000000       0x8b obj/default/hello_world_small.o
+                                0x121 (size before relaxing)
+ .debug_line_str
+                0x0000008b      0x12d obj/default/imported_source/ViCAT_LSC.o
+                                0x27d (size before relaxing)
+ .debug_line_str
+                0x000001b8      0x1fb obj/default/imported_source/ax58100_hw.o
+                                0x3f0 (size before relaxing)
+ .debug_line_str
+                0x000003b3       0x1b obj/default/imported_source/bootmode.o
+                                0x107 (size before relaxing)
+ .debug_line_str
+                0x000003ce       0x37 obj/default/imported_source/coeappl.o
+                                0x381 (size before relaxing)
+ .debug_line_str
+                0x00000405       0x27 obj/default/imported_source/ecatappl.o
+                                0x288 (size before relaxing)
+ .debug_line_str
+                0x0000042c       0x2e obj/default/imported_source/ecatcoe.o
+                                0x2a9 (size before relaxing)
+ .debug_line_str
+                0x0000045a       0x2e obj/default/imported_source/ecatfoe.o
+                                0x1dc (size before relaxing)
+ .debug_line_str
+                0x00000488       0x87 obj/default/imported_source/ecatslv.o
+                                0x32b (size before relaxing)
+ .debug_line_str
+                0x0000050f       0x1a obj/default/imported_source/foeappl.o
+                                0x181 (size before relaxing)
+ .debug_line_str
+                0x00000529       0x1a obj/default/imported_source/mailbox.o
+                                0x389 (size before relaxing)
+ .debug_line_str
+                0x00000543       0x19 obj/default/imported_source/objdef.o
+                                0x2ab (size before relaxing)
+ .debug_line_str
+                0x0000055c       0x1a obj/default/imported_source/sdoserv.o
+                                0x2fa (size before relaxing)
+ .debug_line_str
+                0x00000576       0xa6 obj/default/peripheral/peripheral_linker.o
+                                0x2f1 (size before relaxing)
+ .debug_line_str
+                0x0000061c       0xf2 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-divmod.o)
+                                0x187 (size before relaxing)
+ .debug_line_str
+                0x0000070e       0x3a c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/mno-hw-mul\libgcc.a(lib2-mul.o)
+                                0x17e (size before relaxing)
+ .debug_line_str
+                0x00000748      0x223 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-malloc.o)
+                                0x2c9 (size before relaxing)
+ .debug_line_str
+                0x0000096b       0xac c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-mallocr.o)
+                                0x357 (size before relaxing)
+ .debug_line_str
+                0x00000a17       0x69 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memcpy.o)
+                                0x259 (size before relaxing)
+ .debug_line_str
+                0x00000a80       0x39 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-memset.o)
+                                0x259 (size before relaxing)
+ .debug_line_str
+                0x00000ab9       0x39 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-strlen.o)
+                                0x259 (size before relaxing)
+ .debug_line_str
+                0x00000af2       0x67 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-impure.o)
+                                0x25a (size before relaxing)
+ .debug_line_str
+                0x00000b59       0x37 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-sbrkr.o)
+                                0x2c3 (size before relaxing)
+ .debug_line_str
+                0x00000b90       0x38 c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-freer.o)
+                                0x2cd (size before relaxing)
+ .debug_line_str
+                0x00000bc8       0x3b c:/intelfpga_lite/23.1std/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/12.3.1/../../../../../H-x86_64-mingw32/nios2-elf/lib/mno-hw-mul\libsmallc.a(libc_a-int_errno.o)
+                                0x186 (size before relaxing)
+ .debug_line_str
+                0x00000c03       0xb1 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_load.o)
+                                0x145 (size before relaxing)
+ .debug_line_str
+                0x00000cb4       0x40 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_main.o)
+                                0x144 (size before relaxing)
+ .debug_line_str
+                0x00000cf4       0x21 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_malloc_lock.o)
+                                0x1e4 (size before relaxing)
+ .debug_line_str
+                0x00000d15       0x13 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sbrk.o)
+                                0x171 (size before relaxing)
+ .debug_line_str
+                0x00000d28       0x2f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_usleep.o)
+                                0x191 (size before relaxing)
+ .debug_line_str
+                0x00000d57       0x4f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_sys_init.o)
+                                0x15d (size before relaxing)
+ .debug_line_str
+                0x00000da6       0x2c c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_avalon_spi.o)
+                                0x138 (size before relaxing)
+ .debug_line_str
+                0x00000dd2       0x19 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_busy_sleep.o)
+                                0x127 (size before relaxing)
+ .debug_line_str
+                0x00000deb       0x1f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                                0x123 (size before relaxing)
+ .debug_line_str
+                0x00000e0a       0x1f c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                                0x123 (size before relaxing)
+ .debug_line_str
+                0x00000e29       0x20 c:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/SP1_23/software/SPI_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                0x126 (size before relaxing)
