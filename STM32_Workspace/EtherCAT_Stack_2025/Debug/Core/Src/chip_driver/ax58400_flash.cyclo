@@ -1,0 +1,5 @@
+../Core/Src/chip_driver/ax58400_flash.c:51:5:Ax58400Flash_Erase	2
+../Core/Src/chip_driver/ax58400_flash.c:83:10:Ax58400Flash_Write	3
+../Core/Src/chip_driver/ax58400_flash.c:107:17:GetSector	31
+../Core/Src/chip_driver/ax58400_flash.c:173:10:Ax58400Flash_GetWriteProtectionStatus	3
+../Core/Src/chip_driver/ax58400_flash.c:217:10:Ax58400Flash_WriteProtectionConfig	2

@@ -1,4 +1,4 @@
-//Legal Notice: (C)2024 Altera Corporation. All rights reserved.  Your
+//Legal Notice: (C)2025 Altera Corporation. All rights reserved.  Your
 //use of Altera Corporation's design tools, logic functions and other
 //software and tools, and its AMPP partner logic functions, and any
 //output files any of the foregoing (including device programming or
@@ -32,7 +32,7 @@
 //DATABITS: 8
 //TARGETCLOCK: 3125000
 //NUMSLAVES: 1
-//CPOL: 1
+//CPOL: 0
 //CPHA: 1
 //LSBFIRST: 0
 //EXTRADELAY: 0
@@ -345,7 +345,7 @@ wire             write_tx_holding;
           tx_holding_reg <= 0;
           tx_holding_primed <= 0;
           transmitting <= 0;
-          SCLK_reg <= 1;
+          SCLK_reg <= 0;
           MISO_reg <= 0;
           transaction_primed <= 0;
         end
@@ -396,7 +396,7 @@ wire             write_tx_holding;
               rx_holding_reg <= shift_reg;
 
               //This may be unnecessary...
-              SCLK_reg <= 1;
+              SCLK_reg <= 0;
 
               if (RRDY)
                   ROE <= 1;
@@ -408,7 +408,7 @@ wire             write_tx_holding;
               else if (state != 0)
                   if (transmitting)
                       SCLK_reg <= ~SCLK_reg;
-              if (SCLK_reg ^ 1 ^ 1)
+              if (SCLK_reg ^ 1 ^ 0)
                 begin
                   if (state != 0 && state != 1)
                       shift_reg <= {shift_reg[6 : 0], MISO_reg};

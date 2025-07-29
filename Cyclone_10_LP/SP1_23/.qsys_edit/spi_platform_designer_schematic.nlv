@@ -1,0 +1,28 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst spi_platform_designer.SPI -pg 1 -lvl 3 -y 150
+preplace inst spi_platform_designer.ESC_eepdone -pg 1 -lvl 3 -y 570
+preplace inst spi_platform_designer.ESC_SPI_SS_Manual -pg 1 -lvl 3 -y 370
+preplace inst spi_platform_designer.CLK -pg 1 -lvl 1 -y 300
+preplace inst spi_platform_designer -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst spi_platform_designer.NIOS -pg 1 -lvl 2 -y 280
+preplace inst spi_platform_designer.NIOS.clock_bridge -pg 1
+preplace inst spi_platform_designer.SPI_adc_reset -pg 1 -lvl 2 -y 490
+preplace inst spi_platform_designer.RAM -pg 1 -lvl 3 -y 470
+preplace inst spi_platform_designer.NIOS.cpu -pg 1
+preplace inst spi_platform_designer.NIOS.reset_bridge -pg 1
+preplace inst spi_platform_designer.ESC_SPI -pg 1 -lvl 3 -y 30
+preplace inst spi_platform_designer.DEBUG -pg 1 -lvl 3 -y 270
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)ESC_SPI.external,(SLAVE)spi_platform_designer.esc_spi_export) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)ESC_eepdone.external_connection,(SLAVE)spi_platform_designer.esc_spi_eepdone_export) 1 0 3 NJ 600 NJ 600 NJ
+preplace netloc FAN_OUT<net_container>spi_platform_designer</net_container>(SLAVE)DEBUG.clk,(SLAVE)ESC_SPI_SS_Manual.clk,(SLAVE)ESC_eepdone.clk,(SLAVE)ESC_SPI.clk,(SLAVE)NIOS.clk,(SLAVE)RAM.clk1,(MASTER)CLK.clk,(SLAVE)SPI_adc_reset.clk,(SLAVE)SPI.clk) 1 1 2 380 440 800
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)spi_platform_designer.reset,(SLAVE)CLK.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)CLK.clk_in,(SLAVE)spi_platform_designer.clk) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>spi_platform_designer</net_container>(SLAVE)SPI.irq,(SLAVE)ESC_SPI.irq,(SLAVE)DEBUG.irq,(MASTER)NIOS.irq) 1 2 1 780
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)spi_platform_designer.spi_adc_reset_export,(SLAVE)SPI_adc_reset.external_connection) 1 0 2 NJ 520 NJ
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)ESC_SPI_SS_Manual.external_connection,(SLAVE)spi_platform_designer.esc_spi_ss_export) 1 0 3 NJ 420 NJ 420 NJ
+preplace netloc EXPORT<net_container>spi_platform_designer</net_container>(SLAVE)SPI.external,(SLAVE)spi_platform_designer.spi_export) 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc FAN_OUT<net_container>spi_platform_designer</net_container>(SLAVE)SPI_adc_reset.reset,(SLAVE)ESC_SPI.reset,(SLAVE)ESC_eepdone.reset,(SLAVE)NIOS.reset,(SLAVE)SPI.reset,(MASTER)CLK.clk_reset,(SLAVE)DEBUG.reset,(SLAVE)RAM.reset1,(SLAVE)ESC_SPI_SS_Manual.reset) 1 1 2 360 460 820
+preplace netloc INTERCONNECT<net_container>spi_platform_designer</net_container>(SLAVE)ESC_SPI.spi_control_port,(MASTER)NIOS.instruction_master,(SLAVE)ESC_SPI_SS_Manual.s1,(SLAVE)NIOS.debug_mem_slave,(SLAVE)SPI.spi_control_port,(SLAVE)SPI_adc_reset.s1,(MASTER)NIOS.data_master,(SLAVE)DEBUG.avalon_jtag_slave,(SLAVE)RAM.s1,(SLAVE)ESC_eepdone.s1) 1 1 2 400 480 760
+levelinfo -pg 1 0 150 1030
+levelinfo -hier spi_platform_designer 160 190 520 870 1020

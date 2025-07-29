@@ -1,11 +1,13 @@
 	component My_First_NIOS_II_Platform_Designer is
 		port (
 			clk_clk                         : in  std_logic                    := 'X'; -- clk
-			gpio_external_connection_export : out std_logic_vector(7 downto 0);        -- export
-			spi_0_external_MISO             : in  std_logic                    := 'X'; -- MISO
-			spi_0_external_MOSI             : out std_logic;                           -- MOSI
-			spi_0_external_SCLK             : out std_logic;                           -- SCLK
-			spi_0_external_SS_n             : out std_logic                            -- SS_n
+			esc_eepdone_external_export     : in  std_logic                    := 'X'; -- export
+			esc_spi_cs_manual_export        : out std_logic;                           -- export
+			esc_spi_external_MISO           : in  std_logic                    := 'X'; -- MISO
+			esc_spi_external_MOSI           : out std_logic;                           -- MOSI
+			esc_spi_external_SCLK           : out std_logic;                           -- SCLK
+			esc_spi_external_SS_n           : out std_logic;                           -- SS_n
+			gpio_external_connection_export : out std_logic_vector(7 downto 0)         -- export
 		);
 	end component My_First_NIOS_II_Platform_Designer;
 

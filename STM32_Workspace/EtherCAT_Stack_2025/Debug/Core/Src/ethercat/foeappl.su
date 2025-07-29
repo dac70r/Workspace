@@ -1,0 +1,6 @@
+../Core/Src/ethercat/foeappl.c:113:8:FOE_Read	40	static
+../Core/Src/ethercat/foeappl.c:150:8:FOE_Write	24	static
+../Core/Src/ethercat/foeappl.c:183:8:FOE_Data	24	static
+../Core/Src/ethercat/foeappl.c:238:8:FOE_Ack	16	static
+../Core/Src/ethercat/foeappl.c:274:8:FOE_Busy	24	static
+../Core/Src/ethercat/foeappl.c:288:6:FOE_Error	16	static

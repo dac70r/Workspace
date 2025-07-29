@@ -1,0 +1,6 @@
+../Core/Src/chip_driver/ax58400_foeappl.c:45:10:AX58400_FoeRead	5
+../Core/Src/chip_driver/ax58400_foeappl.c:105:10:AX58400_FoeWrite	9
+../Core/Src/chip_driver/ax58400_foeappl.c:154:10:AX58400_FoeWriteData	5
+../Core/Src/chip_driver/ax58400_foeappl.c:201:10:AX58400_FoeReadData	4
+../Core/Src/chip_driver/ax58400_foeappl.c:231:6:AX58400_FoeError	2
+../Core/Src/chip_driver/ax58400_foeappl.c:245:6:AX58400_FoeInit	1

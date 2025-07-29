@@ -1,0 +1,12 @@
+
+module spi(
+
+	input spi_miso,
+	output spi_mosi,
+	output spi_sclk,
+	output spi_ss,
+	output spi_reset
+	
+);
+
+endmodule

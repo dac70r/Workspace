@@ -3,7 +3,7 @@
 # Machine generated for CPU 'HelloNios' in SOPC Builder design 'My_First_NIOS_II_Platform_Designer'
 # SOPC Builder design path: ../../My_First_NIOS_II_Platform_Designer.sopcinfo
 #
-# Generated: Thu Dec 26 13:17:42 SGT 2024
+# Generated: Mon Apr 07 13:43:02 SGT 2025
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # SRAM
-memory 0x1000 0x2000 cache
+memory 0x10000 0x1a000 cache

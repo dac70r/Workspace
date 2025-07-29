@@ -1,0 +1,8 @@
+../Drivers/CMSIS/Include/core_cm7.h:2156:34:__NVIC_SystemReset	1
+../Core/Src/chip_driver/bootmode.c:53:6:BL_Start	2
+../Core/Src/chip_driver/bootmode.c:66:6:BL_Init	1
+../Core/Src/chip_driver/bootmode.c:76:6:BL_Stop	1
+../Core/Src/chip_driver/bootmode.c:83:6:BL_StartDownload	2
+../Core/Src/chip_driver/bootmode.c:106:10:BL_Data	23
+../Core/Src/chip_driver/bootmode.c:273:17:FirmwareChecksum32	7
+../Core/Src/chip_driver/bootmode.c:314:6:BL_Reboot	3

@@ -1,0 +1,15 @@
+C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v {1 {vlog -work work -stats=none C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/My_First_NIOS_II.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module My_First_NIOS_II
+
+Top level modules:
+	My_First_NIOS_II
+
+} {} {}} C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_My_First_NIOS_II.v {1 {vlog -work work -stats=none C:/Users/guan-ming.dennis-won/Documents/Code/Workspace/Workspace/Cyclone_10_LP/NIOS_II/tb_My_First_NIOS_II.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_My_First_NIOS_II
+
+Top level modules:
+	tb_My_First_NIOS_II
+
+} {} {}}

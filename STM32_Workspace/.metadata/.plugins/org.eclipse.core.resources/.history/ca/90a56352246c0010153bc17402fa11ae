@@ -1,0 +1,4072 @@
+/*
+* This source file is part of the EtherCAT Slave Stack Code licensed by Beckhoff Automation GmbH & Co KG, 33415 Verl, Germany.
+* The corresponding license agreement applies. This hint shall not be removed.
+*/
+
+/**
+\addtogroup TENCL040_ESC TENCL040_ESC
+@{
+*/
+
+/**
+\file TENCL040_ESC.c
+\brief Implementation
+ Created with SSC Tool application parser 1.6.4.0
+\version 0.0.0.1
+*/
+
+
+/*-----------------------------------------------------------------------------------------
+------
+------    Includes
+------
+-----------------------------------------------------------------------------------------*/
+#include "ecat_def.h"
+
+#include "applInterface.h"
+
+#define _TENCL040__ESC_ 1
+#include "TENCL040_ESC.h"
+#undef _TENCL040__ESC_
+/*--------------------------------------------------------------------------------------
+------
+------    local types and defines
+------
+--------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------
+------
+------    local variables and constants
+------
+-----------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------
+------
+------    application specific functions
+------
+-----------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------
+------
+------    generic functions
+------
+-----------------------------------------------------------------------------------------*/
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \brief    The function is called when an error state was acknowledged by the master
+
+*////////////////////////////////////////////////////////////////////////////////////////
+
+void    APPL_AckErrorInd(UINT16 stateTrans)
+{
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+
+ \brief    The function is called in the state transition from INIT to PREOP when
+             all general settings were checked to start the mailbox handler. This function
+             informs the application about the state transition, the application can refuse
+             the state transition when returning an AL Status error code.
+            The return code NOERROR_INWORK can be used, if the application cannot confirm
+            the state transition immediately, in that case this function will be called cyclically
+            until a value unequal NOERROR_INWORK is returned
+
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StartMailboxHandler(void)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return     0, NOERROR_INWORK
+
+ \brief    The function is called in the state transition from PREEOP to INIT
+             to stop the mailbox handler. This functions informs the application
+             about the state transition, the application cannot refuse
+             the state transition.
+
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StopMailboxHandler(void)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param    pIntMask    pointer to the AL Event Mask which will be written to the AL event Mask
+                       register (0x204) when this function is succeeded. The event mask can be adapted
+                       in this function
+ \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+
+ \brief    The function is called in the state transition from PREOP to SAFEOP when
+           all general settings were checked to start the input handler. This function
+           informs the application about the state transition, the application can refuse
+           the state transition when returning an AL Status error code.
+           The return code NOERROR_INWORK can be used, if the application cannot confirm
+           the state transition immediately, in that case the application need to be complete 
+           the transition by calling ECAT_StateChange.
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StartInputHandler(UINT16 *pIntMask)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return     0, NOERROR_INWORK
+
+ \brief    The function is called in the state transition from SAFEOP to PREEOP
+             to stop the input handler. This functions informs the application
+             about the state transition, the application cannot refuse
+             the state transition.
+
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StopInputHandler(void)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return    AL Status Code (see ecatslv.h ALSTATUSCODE_....)
+
+ \brief    The function is called in the state transition from SAFEOP to OP when
+             all general settings were checked to start the output handler. This function
+             informs the application about the state transition, the application can refuse
+             the state transition when returning an AL Status error code.
+           The return code NOERROR_INWORK can be used, if the application cannot confirm
+           the state transition immediately, in that case the application need to be complete 
+           the transition by calling ECAT_StateChange.
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StartOutputHandler(void)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return     0, NOERROR_INWORK
+
+ \brief    The function is called in the state transition from OP to SAFEOP
+             to stop the output handler. This functions informs the application
+             about the state transition, the application cannot refuse
+             the state transition.
+
+*////////////////////////////////////////////////////////////////////////////////////////
+
+UINT16 APPL_StopOutputHandler(void)
+{
+    return ALSTATUSCODE_NOERROR;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+\return     0(ALSTATUSCODE_NOERROR), NOERROR_INWORK
+\param      pInputSize  pointer to save the input process data length
+\param      pOutputSize  pointer to save the output process data length
+
+\brief    This function calculates the process data sizes from the actual SM-PDO-Assign
+            and PDO mapping
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT16 APPL_GenerateMapping(UINT16 *pInputSize,UINT16 *pOutputSize)
+{
+    UINT16 result = ALSTATUSCODE_NOERROR;
+    UINT16 InputSize = 0;
+    UINT16 OutputSize = 0;
+
+#if COE_SUPPORTED
+    UINT16 PDOAssignEntryCnt = 0;
+    OBJCONST TOBJECT OBJMEM * pPDO = NULL;
+    UINT16 PDOSubindex0 = 0;
+    UINT32 *pPDOEntry = NULL;
+    UINT16 PDOEntryCnt = 0;
+   
+#if MAX_PD_OUTPUT_SIZE > 0
+    /*Scan object 0x1C12 RXPDO assign*/
+    for(PDOAssignEntryCnt = 0; PDOAssignEntryCnt < sRxPDOassign.u16SubIndex0; PDOAssignEntryCnt++)
+    {
+        pPDO = OBJ_GetObjectHandle(sRxPDOassign.aEntries[PDOAssignEntryCnt]);
+        if(pPDO != NULL)
+        {
+            PDOSubindex0 = *((UINT16 *)pPDO->pVarPtr);
+            for(PDOEntryCnt = 0; PDOEntryCnt < PDOSubindex0; PDOEntryCnt++)
+            {
+                pPDOEntry = (UINT32 *)(((UINT16 *)pPDO->pVarPtr) + (OBJ_GetEntryOffset((PDOEntryCnt+1),pPDO)>>4));    //goto PDO entry
+                // we increment the expected output size depending on the mapped Entry
+                OutputSize += (UINT16) ((*pPDOEntry) & 0xFF);
+            }
+        }
+        else
+        {
+            /*assigned PDO was not found in object dictionary. return invalid mapping*/
+            OutputSize = 0;
+            result = ALSTATUSCODE_INVALIDOUTPUTMAPPING;
+            break;
+        }
+    }
+
+    OutputSize = (OutputSize + 7) >> 3;
+#endif
+
+#if MAX_PD_INPUT_SIZE > 0
+    if(result == 0)
+    {
+        /*Scan Object 0x1C13 TXPDO assign*/
+        for(PDOAssignEntryCnt = 0; PDOAssignEntryCnt < sTxPDOassign.u16SubIndex0; PDOAssignEntryCnt++)
+        {
+            pPDO = OBJ_GetObjectHandle(sTxPDOassign.aEntries[PDOAssignEntryCnt]);
+            if(pPDO != NULL)
+            {
+                PDOSubindex0 = *((UINT16 *)pPDO->pVarPtr);
+                for(PDOEntryCnt = 0; PDOEntryCnt < PDOSubindex0; PDOEntryCnt++)
+                {
+                    pPDOEntry = (UINT32 *)(((UINT16 *)pPDO->pVarPtr) + (OBJ_GetEntryOffset((PDOEntryCnt+1),pPDO)>>4));    //goto PDO entry
+                    // we increment the expected output size depending on the mapped Entry
+                    InputSize += (UINT16) ((*pPDOEntry) & 0xFF);
+                }
+            }
+            else
+            {
+                /*assigned PDO was not found in object dictionary. return invalid mapping*/
+                InputSize = 0;
+                result = ALSTATUSCODE_INVALIDINPUTMAPPING;
+                break;
+            }
+        }
+    }
+    InputSize = (InputSize + 7) >> 3;
+#endif
+
+#else
+#if _WIN32
+   #pragma message ("Warning: Define 'InputSize' and 'OutputSize'.")
+#else
+    #warning "Define 'InputSize' and 'OutputSize'."
+#endif
+#endif
+
+    *pInputSize = InputSize;
+    *pOutputSize = OutputSize;
+    return result;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+\param      pData  pointer to input process data
+
+\brief      This function will copies the inputs from the local memory to the ESC memory
+            to the hardware
+*////////////////////////////////////////////////////////////////////////////////////////
+void APPL_InputMapping(UINT16* pData)
+{
+	UINT8 *pTmpData = (UINT8 *)pData;
+			for (UINT8 j = 0; j < sTxPDOassign.u16SubIndex0; j++) {
+				switch (sTxPDOassign.aEntries[j]) {
+					case 0x1A00:
+						memcpy(pTmpData, &DeviceID0x6000.DeviceID,
+							   sizeof(DeviceID0x6000.DeviceID));
+						pTmpData += sizeof(DeviceID0x6000.DeviceID);
+						break;
+					case 0x1A01:
+						memcpy(pTmpData, &CurrentChannel0MA0x6008.CurrentChannel0MA,
+							   sizeof(CurrentChannel0MA0x6008.CurrentChannel0MA));
+						pTmpData += sizeof(CurrentChannel0MA0x6008.CurrentChannel0MA);
+						break;
+					case 0x1A02:
+						memcpy(pTmpData, &CurrentChannel1MA0x6010.CurrentChannel1MA,
+							   sizeof(CurrentChannel1MA0x6010.CurrentChannel1MA));
+						pTmpData += sizeof(CurrentChannel1MA0x6010.CurrentChannel1MA);
+						break;
+					case 0x1A03:
+						memcpy(pTmpData, &CurrentChannel2MA0x6018.CurrentChannel2MA,
+							   sizeof(CurrentChannel2MA0x6018.CurrentChannel2MA));
+						pTmpData += sizeof(CurrentChannel2MA0x6018.CurrentChannel2MA);
+						break;
+					case 0x1A04:
+						memcpy(pTmpData, &CurrentChannel3MA0x6020.CurrentChannel3MA,
+							   sizeof(CurrentChannel3MA0x6020.CurrentChannel3MA));
+						pTmpData += sizeof(CurrentChannel3MA0x6020.CurrentChannel3MA);
+						break;
+					case 0x1A05:
+						memcpy(pTmpData, &CurrentChannel4MA0x6028.CurrentChannel4MA,
+							   sizeof(CurrentChannel4MA0x6028.CurrentChannel4MA));
+						pTmpData += sizeof(CurrentChannel4MA0x6028.CurrentChannel4MA);
+						break;
+					case 0x1A06:
+						memcpy(pTmpData, &CurrentChannel5MA0x6030.CurrentChannel5MA,
+							   sizeof(CurrentChannel5MA0x6030.CurrentChannel5MA));
+						pTmpData += sizeof(CurrentChannel5MA0x6030.CurrentChannel5MA);
+						break;
+					case 0x1A07:
+						memcpy(pTmpData, &CurrentChannel6MA0x6038.CurrentChannel6MA,
+							   sizeof(CurrentChannel6MA0x6038.CurrentChannel6MA));
+						pTmpData += sizeof(CurrentChannel6MA0x6038.CurrentChannel6MA);
+						break;
+					case 0x1A08:
+						memcpy(pTmpData, &CurrentChannel7MA0x6040.CurrentChannel7MA,
+							   sizeof(CurrentChannel7MA0x6040.CurrentChannel7MA));
+						pTmpData += sizeof(CurrentChannel7MA0x6040.CurrentChannel7MA);
+						break;
+					case 0x1A09:
+						memcpy(pTmpData, &VoltageChannel0MV0x6048.VoltageChannel0MV,
+							   sizeof(VoltageChannel0MV0x6048.VoltageChannel0MV));
+						pTmpData += sizeof(VoltageChannel0MV0x6048.VoltageChannel0MV);
+						break;
+					case 0x1A0A:
+						memcpy(pTmpData, &VoltageChannel1MV0x6050.VoltageChannel1MV,
+							   sizeof(VoltageChannel1MV0x6050.VoltageChannel1MV));
+						pTmpData += sizeof(VoltageChannel1MV0x6050.VoltageChannel1MV);
+						break;
+					case 0x1A0B:
+						memcpy(pTmpData, &VoltageChannel2MV0x6058.VoltageChannel2MV,
+							   sizeof(VoltageChannel2MV0x6058.VoltageChannel2MV));
+						pTmpData += sizeof(VoltageChannel2MV0x6058.VoltageChannel2MV);
+						break;
+					case 0x1A0C:
+						memcpy(pTmpData, &VoltageChannel3MV0x6060.VoltageChannel3MV,
+							   sizeof(VoltageChannel3MV0x6060.VoltageChannel3MV));
+						pTmpData += sizeof(VoltageChannel3MV0x6060.VoltageChannel3MV);
+						break;
+					case 0x1A0D:
+						memcpy(pTmpData, &VoltageChannel4MV0x6068.VoltageChannel4MV,
+							   sizeof(VoltageChannel4MV0x6068.VoltageChannel4MV));
+						pTmpData += sizeof(VoltageChannel4MV0x6068.VoltageChannel4MV);
+						break;
+					case 0x1A0E:
+						memcpy(pTmpData, &VoltageChannel5MV0x6070.VoltageChannel5MV,
+							   sizeof(VoltageChannel5MV0x6070.VoltageChannel5MV));
+						pTmpData += sizeof(VoltageChannel5MV0x6070.VoltageChannel5MV);
+						break;
+					case 0x1A0F:
+						memcpy(pTmpData, &VoltageChannel6MV0x6078.VoltageChannel6MV,
+							   sizeof(VoltageChannel6MV0x6078.VoltageChannel6MV));
+						pTmpData += sizeof(VoltageChannel6MV0x6078.VoltageChannel6MV);
+						break;
+					case 0x1A10:
+						memcpy(pTmpData, &VoltageChannel7MV0x6080.VoltageChannel7MV,
+							   sizeof(VoltageChannel7MV0x6080.VoltageChannel7MV));
+						pTmpData += sizeof(VoltageChannel7MV0x6080.VoltageChannel7MV);
+						break;
+					case 0x1A11:
+						memcpy(pTmpData, &MLInferenceChannel0x6088.aEntries,
+						sizeof(MLInferenceChannel0x6088.aEntries));
+						pTmpData += sizeof(MLInferenceChannel0x6088.aEntries);
+						break;
+					case 0x1A12:
+						memcpy(pTmpData, &DigitalInputStatus0x6090.DigitalInputStatus,
+							   sizeof(DigitalInputStatus0x6090.DigitalInputStatus));
+						pTmpData += sizeof(DigitalInputStatus0x6090.DigitalInputStatus);
+						break;
+					case 0x1A13:
+						/*
+						memcpy(pTmpData, &HaltOperation0x6098.HaltOperation,
+							   sizeof(HaltOperation0x6098.HaltOperation));
+						pTmpData += sizeof(HaltOperation0x6098.HaltOperation);
+						*/
+						*pTmpData = HaltOperation0x6098.HaltOperation;
+						pTmpData++;
+						break;
+				}
+			}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+\param      pData  pointer to output process data
+
+\brief    This function will copies the outputs from the ESC memory to the local memory
+            to the hardware
+*////////////////////////////////////////////////////////////////////////////////////////
+void APPL_OutputMapping(UINT16* pData)
+{
+	UINT8 *pTmpData = (UINT8 *)pData;
+		for (UINT8 j = 0; j < sRxPDOassign.u16SubIndex0; j++) {
+			switch (sRxPDOassign.aEntries[j]) {
+				case 0x1660:
+					memcpy(&MLControlChannel0x7300.aEntries, pTmpData,
+						   sizeof(MLControlChannel0x7300.aEntries));
+					pTmpData += sizeof(MLControlChannel0x7300.aEntries);
+					break;
+				case 0x16A0:
+					memcpy(&OnOffContinuousModeGroup0x7500.aEntries, pTmpData,
+						   sizeof(OnOffContinuousModeGroup0x7500.aEntries));
+					pTmpData += sizeof(OnOffContinuousModeGroup0x7500.aEntries);
+					break;
+			}
+		}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+\brief    This function will called from the synchronisation ISR 
+            or from the mainloop if no synchronisation is supported
+*////////////////////////////////////////////////////////////////////////////////////////
+void APPL_Application(void)
+{
+	/*
+DeviceID0x6000.DeviceID = (uint8_t) MLControlChannel0x7300.aEntries[0]; //APPL_GetDeviceID();
+\
+	read_adc_fifo_128bit(ADC1_data, ADC_FIFO_READER_MM_SLAVE_0_BASE); //ADC_1_ADC_FIFO_READER_BASE);
+	read_adc_fifo_128bit(ADC2_data, ADC_FIFO_READER_MM_SLAVE_1_BASE); //ADC_2_ADC_FIFO_READER_BASE);
+	read_adc_fifo_128bit(ADC3_data, ADC_FIFO_READER_MM_SLAVE_2_BASE); //ADC_3_ADC_FIFO_READER_BASE);
+	read_adc_fifo_128bit(ADC4_data, ADC_FIFO_READER_MM_SLAVE_3_BASE); //ADC_4_ADC_FIFO_READER_BASE);
+
+	CurrentChannel0MA0x6008.CurrentChannel0MA = ADC1_data[0] *channel[0].adc_current_gradient- channel[0].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel1MA0x6010.CurrentChannel1MA = ADC1_data[1] *channel[1].adc_current_gradient- channel[1].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel2MA0x6018.CurrentChannel2MA = ADC1_data[2] *channel[2].adc_current_gradient- channel[2].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel3MA0x6020.CurrentChannel3MA = ADC1_data[3] *channel[3].adc_current_gradient- channel[3].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel4MA0x6028.CurrentChannel4MA = ADC3_data[0] *channel[4].adc_current_gradient- channel[4].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel5MA0x6030.CurrentChannel5MA = ADC3_data[1] *channel[5].adc_current_gradient- channel[5].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel6MA0x6038.CurrentChannel6MA = ADC3_data[2] *channel[6].adc_current_gradient- channel[6].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+	CurrentChannel7MA0x6040.CurrentChannel7MA = ADC3_data[3] *channel[7].adc_current_gradient- channel[7].adc_current_offset; //AIN_COFFECIENT_CURRENT;
+
+	VoltageChannel0MV0x6048.VoltageChannel0MV = ADC2_data[0] *channel[0].adc_voltage_gradient- channel[0].adc_voltage_offset; //voltage_gradient_channel[0];
+	VoltageChannel1MV0x6050.VoltageChannel1MV = ADC2_data[1] *channel[1].adc_voltage_gradient- channel[1].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+	VoltageChannel2MV0x6058.VoltageChannel2MV = ADC2_data[2] *channel[2].adc_voltage_gradient- channel[2].adc_voltage_offset; //adc_voltage_gradientAIN_COFFECIENT_VOLTAGE;
+	VoltageChannel3MV0x6060.VoltageChannel3MV = ADC2_data[3] *channel[3].adc_voltage_gradient- channel[3].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+	VoltageChannel4MV0x6068.VoltageChannel4MV = ADC4_data[0] *channel[4].adc_voltage_gradient- channel[4].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+	VoltageChannel5MV0x6070.VoltageChannel5MV = ADC4_data[1] *channel[5].adc_voltage_gradient- channel[5].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+	VoltageChannel6MV0x6078.VoltageChannel6MV = ADC4_data[2] *channel[6].adc_voltage_gradient- channel[6].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+	VoltageChannel7MV0x6080.VoltageChannel7MV = ADC4_data[3] *channel[7].adc_voltage_gradient- channel[7].adc_voltage_offset; //AIN_COFFECIENT_VOLTAGE;
+
+	// dummy inputs
+	MLInferenceChannel0x6088.aEntries[0] = ADC2_data[0] ;
+	MLInferenceChannel0x6088.aEntries[1] = ADC2_data[1] ;
+	MLInferenceChannel0x6088.aEntries[2] = ADC2_data[2] ;
+	MLInferenceChannel0x6088.aEntries[3] = ADC2_data[3] ;
+	MLInferenceChannel0x6088.aEntries[4] = ADC4_data[0] ;
+	MLInferenceChannel0x6088.aEntries[5] = ADC4_data[1] ;
+	MLInferenceChannel0x6088.aEntries[6] = ADC4_data[2] ;
+	MLInferenceChannel0x6088.aEntries[7] = ADC4_data[3] ;
+
+	DigitalInputStatus0x6090.DigitalInputStatus = 0x9306;
+	HaltOperation0x6098.HaltOperation = 1;
+
+	//IOWR_32DIRECT(LSC_FIFO_READER_MM_SLAVE_0_BASE, 0x00, lsc_fifo_constant++);
+*/
+}
+#if EXPLICIT_DEVICE_ID
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \return    The Explicit Device ID of the EtherCAT slave
+
+ \brief     Read the Explicit Device ID (from an external ID switch)
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT16 APPL_GetDeviceID()
+{
+	return 0x5;
+}
+#endif
+
+void main_initial(void) {
+    /* initialize the Hardware and the EtherCAT Slave Controller */
+    HW_Init();
+    MainInit();
+
+    bRunApplication = TRUE;
+    do {
+        MainLoop();
+    } while (bRunApplication == TRUE);
+
+    HW_Release();
+}
+// ALL SDO APPLICATION GOES HERE
+
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8000(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 2;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+        	MLParameterSetting0x8000.MLSetting0 = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &MLParameterSetting0x8000.MLSetting0, dataSize);
+            break;
+        case 2:  // Refers to 0x8000 : Index 2
+        	MLParameterSetting0x8000.MLSetting1 = 99; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &MLParameterSetting0x8000.MLSetting1, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8000(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 2;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&MLParameterSetting0x8000.MLSetting0, pData, dataSize);
+            break;
+        case 2:  // Refers to 0x8000 : Index 2
+            memcpy(&MLParameterSetting0x8000.MLSetting1, pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8008
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8008(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8008
+            *pData = 3;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8008 : Index 1
+        	ADCParameterSetting0x8008.ADCSensorSetting0 = 1; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ADCParameterSetting0x8008.ADCSensorSetting0, dataSize);
+            break;
+        case 2:  // Refers to 0x8008 : Index 2
+        	ADCParameterSetting0x8008.ADCSensorSetting1 = 2; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ADCParameterSetting0x8008.ADCSensorSetting1, dataSize);
+            break;
+        case 3:  // Refers to 0x8008 : Index 3
+        	ADCParameterSetting0x8008.ADCSensorSetting2 = 3; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ADCParameterSetting0x8008.ADCSensorSetting2, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8008(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8008
+            *pData = 3;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8008 : Index 1
+            memcpy(&ADCParameterSetting0x8008.ADCSensorSetting0, pData, dataSize);
+            //setParameterValues(ADCParameterSetting0x8008.ADCSensorSetting0, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x8008 : Index 2
+            memcpy(&ADCParameterSetting0x8008.ADCSensorSetting1, pData, dataSize);
+            //setParameterValues(ADCParameterSetting0x8008.ADCSensorSetting1, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x8008 : Index 3
+            memcpy(&ADCParameterSetting0x8008.ADCSensorSetting2, pData, dataSize);
+            //setParameterValues(ADCParameterSetting0x8008.ADCSensorSetting2, LOWER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8010
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8010(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8010
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8010 : Index 1
+        	AnalogOutputChannelReleaseGroup0x8010.AnalogOutputChannelReleaseGroup = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelReleaseGroup0x8010.AnalogOutputChannelReleaseGroup, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8010(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8010
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8010 : Index 1
+            memcpy(&AnalogOutputChannelReleaseGroup0x8010.AnalogOutputChannelReleaseGroup, pData, dataSize);
+            //setParameterValues(AnalogOutputChannelReleaseGroup0x8010.AnalogOutputChannelReleaseGroup, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8018
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8018(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8018
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8018 : Index 1
+        	AnalogOutputChannelSaveGroupSetting0x8018.AnalogOutputChannelSaveGroupSetting = 789; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelSaveGroupSetting0x8018.AnalogOutputChannelSaveGroupSetting, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8018(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&AnalogOutputChannelSaveGroupSetting0x8018.AnalogOutputChannelSaveGroupSetting, pData, dataSize);
+            //setParameterValues(AnalogOutputChannelSaveGroupSetting0x8018.AnalogOutputChannelSaveGroupSetting, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8020
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8020(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[0] = 12;	//getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8000 : Index 2
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[1] = 23;	//getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8000 : Index 1
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[2] = 12;	//getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8000 : Index 2
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[3] = 23;	//getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8000 : Index 1
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[4] = 12;	//getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8000 : Index 2
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[5] = 23;	//getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8000 : Index 1
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[6] = 12;	//getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8000 : Index 2
+        	AnalogOutputGroupMappingChannel0x8020.aEntries[7] = 23;	//getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputGroupMappingChannel0x8020.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8020(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8020
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8020 : Index 1
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[0], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x8020 : Index 2
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[1], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x8020 : Index 1
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[2], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x8020 : Index 2
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[3], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x8020 : Index 1
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[4], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 6:  // Refers to 0x8020 : Index 2
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[5], pData, dataSize);
+            ///setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 7:  // Refers to 0x8020 : Index 1
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[6], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 8:  // Refers to 0x8020 : Index 2
+            memcpy(&AnalogOutputGroupMappingChannel0x8020.aEntries[7], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8038
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8038(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8038
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8038 : Index 1
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[0] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8038 : Index 2
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[1] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8038 : Index 3
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[2] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8038 : Index 4
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[3] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8038 : Index 5
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[4] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8038 : Index 6
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[5] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8038 : Index 7
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[6] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8038 : Index 8
+        	AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[7] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8038(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8038
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8038 : Index 1
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[0], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x8038 : Index 2
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[1], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x8038 : Index 3
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[2], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x8038 : Index 4
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[3], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x8038 : Index 5
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[4], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 6:  // Refers to 0x8038 : Index 6
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[5], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 7:  // Refers to 0x8038 : Index 7
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[6], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 8:  // Refers to 0x8038 : Index 8
+            memcpy(&AnalogOutputMinimumTriggerPulseWidthChannelOrGroup0x8038.aEntries[7], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8040
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8040(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8040
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8040 : Index 1
+        	AnalogOutputPulseWidthLimitClearOutputResetEventCounter0x8040.AnalogOutputPulseWidthLimitClearOutputResetEventCounter = 890; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitClearOutputResetEventCounter0x8040.AnalogOutputPulseWidthLimitClearOutputResetEventCounter, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8040(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8040
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8040 : Index 1
+            memcpy(&AnalogOutputPulseWidthLimitClearOutputResetEventCounter0x8040.AnalogOutputPulseWidthLimitClearOutputResetEventCounter, pData, dataSize);
+            //setParameterValues(AnalogOutputPulseWidthLimitClearOutputResetEventCounter0x8040.UpperLimit, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8048
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8048(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8048
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8048 : Index 1
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[0] = 1617; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8048 : Index 2
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[1] = 1415; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8048 : Index 3
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[2] = 1213; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8048 : Index 4
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[3] = 1011; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8048 : Index 5
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[4] = 89; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8048 : Index 6
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[5] = 67; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8048 : Index 7
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[6] = 45; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8048 : Index 8
+        	AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[7] = 23; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8048(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8048
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8048 : Index 1
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[0], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x8048 : Index 2
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[1], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x8048 : Index 3
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[2], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x8048 : Index 4
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[3], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x8048 : Index 5
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[4], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 6:  // Refers to 0x8048 : Index 6
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[5], pData, dataSize);
+            //setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 7:  // Refers to 0x8048 : Index 7
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[6], pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 8:  // Refers to 0x8048 : Index 8
+            memcpy(&AnalogOutputPulseWidthLimitChannelOrGroup0x8048.aEntries[7], pData, dataSize);
+            //setParameterValues(Parameters0x8000.aEntries[8], LOWER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8050
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8050(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[0] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[1] = 23; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[2] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[3] = 23; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[4] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[5] = 23; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[6] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8050
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[7] = 23; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8050(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8050
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8050 : Index 1
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[0], pData, dataSize);
+            break;
+        case 2:  // Refers to 0x8050 : Index 2
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[1], pData, dataSize);
+            break;
+        case 3:  // Refers to 0x8050 : Index 3
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[2], pData, dataSize);
+            break;
+        case 4:  // Refers to 0x8050 : Index 4
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[3], pData, dataSize);
+            break;
+        case 5:  // Refers to 0x8050 : Index 5
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[4], pData, dataSize);
+            break;
+        case 6:  // Refers to 0x8050 : Index 6
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[5], pData, dataSize);
+            break;
+        case 7:  // Refers to 0x8050 : Index 7
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[6], pData, dataSize);
+            break;
+        case 8:  // Refers to 0x8050 : Index 8
+            memcpy(&AnalogOutputRetrieveOutputResetEventCounterGroup0x8050.aEntries[7], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8058
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8058(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8058
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8058 : Index 1
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[0] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8058 : Index 2
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[1] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8058 : Index 3
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[2] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8058 : Index 4
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[3] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8058 : Index 5
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[4] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8058 : Index 6
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[5] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8058 : Index 7
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[6] = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8058 : Index 8
+        	AnalogOutputTriggerDelayGroup0x8058.aEntries[7] = 223; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputTriggerDelayGroup0x8058.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8058(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8058
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8058 : Index 1
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[0], pData, dataSize);
+            break;
+        case 2:  // Refers to 0x8058 : Index 2
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[1], pData, dataSize);
+            break;
+        case 3:  // Refers to 0x8058 : Index 3
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[2], pData, dataSize);
+            break;
+        case 4:  // Refers to 0x8058 : Index 4
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[3], pData, dataSize);
+            break;
+        case 5:  // Refers to 0x8058 : Index 5
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[4], pData, dataSize);
+            break;
+        case 6:  // Refers to 0x8058 : Index 6
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[5], pData, dataSize);
+            break;
+        case 7:  // Refers to 0x8058 : Index 7
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[6], pData, dataSize);
+            break;
+        case 8:  // Refers to 0x8058 : Index 8
+            memcpy(&AnalogOutputTriggerDelayGroup0x8058.aEntries[7], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8060
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8060(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8060
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8060 : Index 1
+        	*pData = AnalogOutputChannelConfigIntensityUnits0x8060.AnalogOutputChannelConfigIntensityUnits;
+        	//AnalogOutputChannelConfigIntensityUnits0x8060.AnalogOutputChannelConfigIntensityUnits = *pData;
+        	//memcpy(pData, &AnalogOutputChannelConfigIntensityUnits0x8060.AnalogOutputChannelConfigIntensityUnits, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8060(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8060
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8060 : Index 1
+            //memcpy(&AnalogOutputChannelConfigIntensityUnits0x8060.AnalogOutputChannelConfigIntensityUnits, pData, dataSize);
+            AnalogOutputChannelConfigIntensityUnits0x8060.AnalogOutputChannelConfigIntensityUnits = *pData;
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8068
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8068(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8068
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8068 : Index 1
+        	AnalogOutputChannelConfigSaveSetting0x8068.AnalogOutputChannelConfigSaveSetting = 23; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigSaveSetting0x8068.AnalogOutputChannelConfigSaveSetting, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8068(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&AnalogOutputChannelConfigSaveSetting0x8068.AnalogOutputChannelConfigSaveSetting, pData, dataSize);
+            //setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8070
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8070(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+
+    switch (subindex) {
+        case 0:          // Refers to 0x8070
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8070 : Index 1
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[0] = 123;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8070 : Index 2
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[1] = 223;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8070 : Index 3
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[2] = 13;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x8070 : Index 4
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[3] = 23;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x8070 : Index 5
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[4] = 31;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x8070 : Index 6
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[5] = 32;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x8070 : Index 7
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[6] = 113;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x8070 : Index 8
+        	AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[7] = 23;
+            memcpy(pData, &AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8070(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8070
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8070 : Index 1
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[0], pData, dataSize);
+            break;
+        case 2:  // Refers to 0x8070 : Index 2
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[1], pData, dataSize);
+            break;
+        case 3:  // Refers to 0x8070 : Index 3
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[2], pData, dataSize);
+            break;
+        case 4:  // Refers to 0x8070 : Index 4
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[3], pData, dataSize);
+            break;
+        case 5:  // Refers to 0x8070 : Index 5
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[4], pData, dataSize);
+            break;
+        case 6:  // Refers to 0x8070 : Index 6
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[5], pData, dataSize);
+            break;
+        case 7:  // Refers to 0x8070 : Index 7
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[6], pData, dataSize);
+            break;
+        case 8:  // Refers to 0x8070 : Index 8
+            memcpy(&AnalogOutputChannelConfigMaxIntensityChannel0x8070.aEntries[7], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8078
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8078(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:
+            *pData = 32;
+            break;
+
+        case 1:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[0] = 101;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[0], dataSize);
+            break;
+        case 2:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[1] = 102;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[1], dataSize);
+            break;
+        case 3:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[2] = 103;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[2], dataSize);
+            break;
+        case 4:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[3] = 104;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[3], dataSize);
+            break;
+        case 5:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[4] = 105;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[4], dataSize);
+            break;
+        case 6:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[5] = 106;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[5], dataSize);
+            break;
+        case 7:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[6] = 107;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[6], dataSize);
+            break;
+        case 8:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[7] = 108;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[7], dataSize);
+            break;
+        case 9:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[8] = 109;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[8], dataSize);
+            break;
+        case 10:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[9] = 110;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[9], dataSize);
+            break;
+        case 11:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[10] = 111;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[10], dataSize);
+            break;
+        case 12:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[11] = 112;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[11], dataSize);
+            break;
+        case 13:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[12] = 113;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[12], dataSize);
+            break;
+        case 14:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[13] = 114;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[13], dataSize);
+            break;
+        case 15:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[14] = 115;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[14], dataSize);
+            break;
+        case 16:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[15] = 116;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[15], dataSize);
+            break;
+        case 17:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[16] = 117;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[16], dataSize);
+            break;
+        case 18:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[17] = 118;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[17], dataSize);
+            break;
+        case 19:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[18] = 119;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[18], dataSize);
+            break;
+        case 20:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[19] = 120;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[19], dataSize);
+            break;
+        case 21:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[20] = 121;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[20], dataSize);
+            break;
+        case 22:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[21] = 122;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[21], dataSize);
+            break;
+        case 23:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[22] = 123;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[22], dataSize);
+            break;
+        case 24:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[23] = 124;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[23], dataSize);
+            break;
+        case 25:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[24] = 125;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[24], dataSize);
+            break;
+        case 26:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[25] = 126;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[25], dataSize);
+            break;
+        case 27:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[26] = 127;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[26], dataSize);
+            break;
+        case 28:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[27] = 128;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[27], dataSize);
+            break;
+        case 29:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[28] = 129;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[28], dataSize);
+            break;
+        case 30:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[29] = 130;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[29], dataSize);
+            break;
+        case 31:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[30] = 131;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[30], dataSize);
+            break;
+        case 32:
+            AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[31] = 132;
+            memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[31], dataSize);
+            break;
+
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8078(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel10x8078.aEntries[subindex - 1], pData, dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8080
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8080(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+		  if (subindex >= 1 && subindex <= 32) {
+			  AnalogOutputChannelConfigOperatingIntensityChannel20x8080.aEntries[subindex - 1] = 300 + subindex;
+			  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel20x8080.aEntries[subindex - 1],  dataSize);
+		  }
+		  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8080(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8088
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel20x8080.aEntries[subindex - 1], pData, dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8088
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8088(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8088
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  AnalogOutputChannelConfigOperatingIntensityChannel30x8088.aEntries[subindex - 1] = 200 + subindex;
+				  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel30x8088.aEntries[subindex - 1],  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8088(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  //AnalogOutputChannelConfigOperatingIntensityChannel40x8090.aEntries[subindex - 1] = 200 + subindex;
+				  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel30x8088.aEntries[subindex - 1], pData,  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8090
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8090(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  AnalogOutputChannelConfigOperatingIntensityChannel40x8090.aEntries[subindex - 1] = 200 + subindex;
+				  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel40x8090.aEntries[subindex - 1],  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8090(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			if (subindex >= 1 && subindex <= 32) {
+			  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel40x8090.aEntries[subindex - 1], pData,  dataSize);
+			}
+			break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8098
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8098(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  AnalogOutputChannelConfigOperatingIntensityChannel50x8098.aEntries[subindex - 1] = 200 + subindex;
+				  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel50x8098.aEntries[subindex - 1],  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8098(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			if (subindex >= 1 && subindex <= 32) {
+			  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel50x8098.aEntries[subindex - 1], pData,  dataSize);
+			}
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80A0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80A0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  AnalogOutputChannelConfigOperatingIntensityChannel60x80A0.aEntries[subindex - 1] = 200 + subindex;
+				  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel60x80A0.aEntries[subindex - 1],  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80A0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+	case 1 ... 32:
+		  if (subindex >= 1 && subindex <= 32) {
+			  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel60x80A0.aEntries[subindex - 1], pData,  dataSize);
+		  }
+		  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80A8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80A8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+			  if (subindex >= 1 && subindex <= 32) {
+				  // Example dummy values, you may replace them with getParameterValues() or actual logic
+				  AnalogOutputChannelConfigOperatingIntensityChannel70x80A8.aEntries[subindex - 1] = 100 + subindex;
+				  memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel70x80A8.aEntries[subindex - 1],  dataSize);
+			  }
+			  break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80A8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1 ... 32:
+              if (subindex >= 1 && subindex <= 32) {
+                  // Example dummy values, you may replace them with getParameterValues() or actual logic
+            	  //AnalogOutputChannelConfigOperatingIntensityChannel70x80A8.aEntries[subindex - 1] = 100 + subindex;
+                  memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel70x80A8.aEntries[subindex - 1], pData,  dataSize);
+              }
+              break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80B0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80B0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[0] = 89;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[0], dataSize);
+                break;
+            case 2:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[1] = 23;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[1], dataSize);
+                break;
+            case 3:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[2] = 47;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[2], dataSize);
+                break;
+            case 4:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[3] = 12;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[3], dataSize);
+                break;
+            case 5:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[4] = 93;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[4], dataSize);
+                break;
+            case 6:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[5] = 31;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[5], dataSize);
+                break;
+            case 7:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[6] = 76;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[6], dataSize);
+                break;
+            case 8:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[7] = 14;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[7], dataSize);
+                break;
+            case 9:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[8] = 58;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[8], dataSize);
+                break;
+            case 10:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[9] = 5;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[9], dataSize);
+                break;
+            case 11:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[10] = 67;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[10], dataSize);
+                break;
+            case 12:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[11] = 82;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[11], dataSize);
+                break;
+            case 13:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[12] = 39;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[12], dataSize);
+                break;
+            case 14:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[13] = 11;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[13], dataSize);
+                break;
+            case 15:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[14] = 70;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[14], dataSize);
+                break;
+            case 16:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[15] = 33;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[15], dataSize);
+                break;
+            case 17:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[16] = 99;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[16], dataSize);
+                break;
+            case 18:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[17] = 2;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[17], dataSize);
+                break;
+            case 19:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[18] = 46;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[18], dataSize);
+                break;
+            case 20:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[19] = 19;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[19], dataSize);
+                break;
+            case 21:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[20] = 56;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[20], dataSize);
+                break;
+            case 22:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[21] = 62;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[21], dataSize);
+                break;
+            case 23:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[22] = 28;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[22], dataSize);
+                break;
+            case 24:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[23] = 91;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[23], dataSize);
+                break;
+            case 25:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[24] = 7;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[24], dataSize);
+                break;
+            case 26:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[25] = 81;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[25], dataSize);
+                break;
+            case 27:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[26] = 38;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[26], dataSize);
+                break;
+            case 28:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[27] = 96;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[27], dataSize);
+                break;
+            case 29:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[28] = 15;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[28], dataSize);
+                break;
+            case 30:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[29] = 44;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[29], dataSize);
+                break;
+            case 31:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[30] = 9;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[30], dataSize);
+                break;
+            case 32:
+                AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[31] = 52;
+                memcpy(pData, &AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[31], dataSize);
+                break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80B0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[0], pData, dataSize);
+            break;
+        case 2:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[1], pData, dataSize);
+            break;
+        case 3:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[2], pData, dataSize);
+            break;
+        case 4:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[3], pData, dataSize);
+            break;
+        case 5:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[4], pData, dataSize);
+            break;
+        case 6:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[5], pData, dataSize);
+            break;
+        case 7:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[6], pData, dataSize);
+            break;
+        case 8:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[7], pData, dataSize);
+            break;
+        case 9:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[8], pData, dataSize);
+            break;
+        case 10:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[9], pData, dataSize);
+            break;
+        case 11:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[10], pData, dataSize);
+            break;
+        case 12:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[11], pData, dataSize);
+            break;
+        case 13:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[12], pData, dataSize);
+            break;
+        case 14:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[13], pData, dataSize);
+            break;
+        case 15:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[14], pData, dataSize);
+            break;
+        case 16:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[15], pData, dataSize);
+            break;
+        case 17:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[16], pData, dataSize);
+            break;
+        case 18:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[17], pData, dataSize);
+            break;
+        case 19:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[18], pData, dataSize);
+            break;
+        case 20:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[19], pData, dataSize);
+            break;
+        case 21:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[20], pData, dataSize);
+            break;
+        case 22:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[21], pData, dataSize);
+            break;
+        case 23:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[22], pData, dataSize);
+            break;
+        case 24:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[23], pData, dataSize);
+            break;
+        case 25:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[24], pData, dataSize);
+            break;
+        case 26:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[25], pData, dataSize);
+            break;
+        case 27:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[26], pData, dataSize);
+            break;
+        case 28:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[27], pData, dataSize);
+            break;
+        case 29:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[28], pData, dataSize);
+            break;
+        case 30:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[29], pData, dataSize);
+            break;
+        case 31:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[30], pData, dataSize);
+            break;
+        case 32:
+            memcpy(&AnalogOutputChannelConfigOperatingIntensityChannel80x80B0.aEntries[31], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80B8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80B8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80B8
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80B8 : Index 1
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[0] = 99; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x80B8 : Index 2
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[1] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x80B8 : Index 3
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[2] = 99; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x80B8 : Index 4
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[3] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x80B8 : Index 5
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[4] = 99; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x80B8 : Index 6
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[5] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x80B8 : Index 7
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[6] = 99; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x80B8 : Index 8
+        	AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[7] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80B8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80B8
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80B8 : Index 1
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[0], pData, dataSize);
+            break;
+        case 2:  // Refers to 0x80B8 : Index 2
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[1], pData, dataSize);
+            break;
+        case 3:  // Refers to 0x80B8 : Index 3
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[2], pData, dataSize);
+            break;
+        case 4:  // Refers to 0x80B8 : Index 4
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[3], pData, dataSize);
+            break;
+        case 5:  // Refers to 0x80B8 : Index 5
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[4], pData, dataSize);
+            break;
+        case 6:  // Refers to 0x80B8 : Index 6
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[5], pData, dataSize);
+            break;
+        case 7:  // Refers to 0x80B8 : Index 7
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[6], pData, dataSize);
+            break;
+        case 8:  // Refers to 0x80B8 : Index 8
+            memcpy(&AnalogOutputChannelConfigLightModeChannel0x80B8.aEntries[7], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80C0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80C0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80C0
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80C0 : Index 1
+        	*pData = DigitalInputGroupingStatus0x80C0.DigitalInputGroupingStatus;
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80C0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80C0
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80C0 : Index 1
+        	DigitalInputGroupingStatus0x80C0.DigitalInputGroupingStatus = *pData;
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80C8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+/*UINT8 ReadObject0x80C8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80C8
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80C8 : Index 1
+        	DigitalInputGroupReset0x80C8.DigitalInputGroupReset = 125; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputGroupReset0x80C8.DigitalInputGroupReset, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80C8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80C8
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80C8 : Index 1
+            memcpy(&DigitalInputGroupReset0x80C8.DigitalInputGroupReset, pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80D0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80D0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80D0
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80D0 : Index 1
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[0] = 90; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x80D0 : Index 2
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[1] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x80D0 : Index 3
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[2] = 90; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x80D0 : Index 4
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[3] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x80D0 : Index 5
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[4] = 90; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x80D0 : Index 6
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[5] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x80D0 : Index 7
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[6] = 90; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x80D0 : Index 8
+        	DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[7] = 89; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80D0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80D0
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80D0 : Index 1
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[0], pData, dataSize);
+            break;
+        case 2:  // Refers to 0x80D0 : Index 2
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[1], pData, dataSize);
+            break;
+        case 3:  // Refers to 0x80D0 : Index 3
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[2], pData, dataSize);
+            break;
+        case 4:  // Refers to 0x80D0 : Index 4
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[3], pData, dataSize);
+            break;
+        case 5:  // Refers to 0x80D0 : Index 5
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[4], pData, dataSize);
+            break;
+        case 6:  // Refers to 0x80D0 : Index 6
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[5], pData, dataSize);
+            break;
+        case 7:  // Refers to 0x80D0 : Index 7
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[6], pData, dataSize);
+            break;
+        case 8:  // Refers to 0x80D0 : Index 8
+            memcpy(&DigitalInputChannelGroupMappingChannelRSTTRG0x80D0.aEntries[7], pData, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80D8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80D8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80D8
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80D8 : Index 1
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[0] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x80D8 : Index 2
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[1] = 34; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x80D8 : Index 1
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[2] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x80D8 : Index 2
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[3] = 34; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x80D8 : Index 1
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[4] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x80D8 : Index 2
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[5] = 34; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x80D8 : Index 1
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[6] = 12; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x80D8 : Index 2
+        	DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[7] = 34; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80D8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80D8 : Index 1
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[0], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x80D8 : Index 2
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[1], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x80D8 : Index 3
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[2], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x80D8 : Index 4
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[3], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x80D8 : Index 5
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[4], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.UpperLimit, UPPER_LIMIT);
+            break;
+        case 6:  // Refers to 0x80D8 : Index 6
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[5], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.LowerLimit, LOWER_LIMIT);
+            break;
+        case 7:  // Refers to 0x80D8 : Index 7
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[6], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.UpperLimit, UPPER_LIMIT);
+            break;
+        case 8:  // Refers to 0x80D8 : Index 8
+            memcpy(&DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.aEntries[7], pData, dataSize);
+            //setParameterValues(DigitalInputGroupAndOutputGroupMappingOutputGroup0x80D8.LowerLimit, LOWER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80E0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80E0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80E0
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80E0 : Index 1
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[0] = 34; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x80E0 : Index 2
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[1] = 55; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x80E0 : Index 3
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[2] = 34; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x80E0 : Index 4
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[3] = 55; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x80E0 : Index 5
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[4] = 34; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x80E0 : Index 6
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[5] = 55; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x80E0 : Index 7
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[6] = 34; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x80E0 : Index 8
+        	ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[7] = 55; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80E0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80E0
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80E0 : Index 1
+            memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[0], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x80E0 : Index 2
+            memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[1], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x80E0 : Index 3
+            memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[2], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x80E0 : Index 4
+            memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[3], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x80E0 : Index 5
+             memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[4], pData, dataSize);
+             //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+             break;
+         case 6:  // Refers to 0x80E0 : Index 6
+             memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[5], pData, dataSize);
+             //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+             break;
+         case 7:  // Refers to 0x80E0 : Index 7
+             memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[6], pData, dataSize);
+             //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+             break;
+         case 8:  // Refers to 0x80E0 : Index 8
+             memcpy(&ResetRisingEdgeChannelByDigitalInputGroupInputGroup0x80E0.aEntries[7], pData, dataSize);
+             //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+             break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80E8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80E8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x80E8
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x80E8 : Index 1
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[0] = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x80E8 : Index 2
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[1] = 99; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x80E8 : Index 3
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[2] = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[2], dataSize);
+            break;
+        case 4:  // Refers to 0x80E8 : Index 4
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[3] = 99; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[3], dataSize);
+            break;
+        case 5:  // Refers to 0x80E8 : Index 5
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[4] = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[4], dataSize);
+            break;
+        case 6:  // Refers to 0x80E8 : Index 6
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[5] = 99; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[5], dataSize);
+            break;
+        case 7:  // Refers to 0x80E8 : Index 7
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[6] = 78; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[6], dataSize);
+            break;
+        case 8:  // Refers to 0x80E8 : Index 8
+        	ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[7] = 99; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[7], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80E8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 8;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[0], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 2:  // Refers to 0x8000 : Index 2
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[1], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 3:  // Refers to 0x8000 : Index 3
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[2], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 4:  // Refers to 0x8000 : Index 4
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[3], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 5:  // Refers to 0x8000 : Index 5
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[4], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 6:  // Refers to 0x8000 : Index 6
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[5], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+            break;
+        case 7:  // Refers to 0x8000 : Index 7
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[6], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        case 8:  // Refers to 0x8000 : Index 8
+            memcpy(&ResetFallingEdgeChannelByDigitalInputGroupInputGroup0x80E8.aEntries[7], pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80F0
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80F0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+        	NumberOfConnectedLightSource0x80F0.NumberOfConnectedLightSource = 123; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &NumberOfConnectedLightSource0x80F0.NumberOfConnectedLightSource, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80F0(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&NumberOfConnectedLightSource0x80F0.NumberOfConnectedLightSource, pData, dataSize);
+            //TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x80F8
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x80F8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+        	SetTargetedLightSourceIndex0x80F8.SetTargetedLightSourceIndex = 64; //= getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &SetTargetedLightSourceIndex0x80F8.SetTargetedLightSourceIndex, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x80F8(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+            memcpy(&SetTargetedLightSourceIndex0x80F8.SetTargetedLightSourceIndex, pData, dataSize);
+            //TODO: setParameterValues(SetTargetedLightSourceIndex0x80F8.SetTargetedLightSourceIndex, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8100
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8100(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8100
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8100 : Index 0
+        	ReadTargetedLightSourceInfo0x8100.aEntries[0] = 3.14278; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8100 : Index 1
+        	ReadTargetedLightSourceInfo0x8100.aEntries[1] = 6.28278; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[1], dataSize);
+            break;
+        case 3:  // Refers to 0x8100 : Index 2
+			ReadTargetedLightSourceInfo0x8100.aEntries[2] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[2], dataSize);
+			break;
+		case 4:  // Refers to 0x8100 : Index 3
+			ReadTargetedLightSourceInfo0x8100.aEntries[3] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[3], dataSize);
+			break;
+		case 5:  // Refers to 0x8100 : Index 4
+			ReadTargetedLightSourceInfo0x8100.aEntries[4] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[4], dataSize);
+			break;
+		case 6:  // Refers to 0x8100 : Index 5
+			ReadTargetedLightSourceInfo0x8100.aEntries[5] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[5], dataSize);
+			break;
+		case 7:  // Refers to 0x8100 : Index 6
+			ReadTargetedLightSourceInfo0x8100.aEntries[6] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[6], dataSize);
+			break;
+		case 8:  // Refers to 0x8100 : Index 7
+			ReadTargetedLightSourceInfo0x8100.aEntries[7] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[7], dataSize);
+			break;
+        case 9:  // Refers to 0x8100 : Index 8
+        	ReadTargetedLightSourceInfo0x8100.aEntries[8] = 3.14278; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[8], dataSize);
+            break;
+        case 10:  // Refers to 0x8100 : Index 9
+        	ReadTargetedLightSourceInfo0x8100.aEntries[9] = 6.28278; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[9], dataSize);
+            break;
+        case 11:  // Refers to 0x8100 : Index 10
+			ReadTargetedLightSourceInfo0x8100.aEntries[10] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[10], dataSize);
+			break;
+		case 12:  // Refers to 0x8100 : Index 11
+			ReadTargetedLightSourceInfo0x8100.aEntries[11] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[11], dataSize);
+			break;
+		case 13:  // Refers to 0x8100 : Index 12
+			ReadTargetedLightSourceInfo0x8100.aEntries[12] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[12], dataSize);
+			break;
+		case 14:  // Refers to 0x8100 : Index 13
+			ReadTargetedLightSourceInfo0x8100.aEntries[13] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[13], dataSize);
+			break;
+		case 15:  // Refers to 0x8100 : Index 14
+			ReadTargetedLightSourceInfo0x8100.aEntries[14] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[14], dataSize);
+			break;
+		case 16:  // Refers to 0x8100 : Index 15
+			ReadTargetedLightSourceInfo0x8100.aEntries[15] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[15], dataSize);
+			break;
+        case 17:  // Refers to 0x8100 : Index 16
+        	ReadTargetedLightSourceInfo0x8100.aEntries[16] = 3.14278; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[16], dataSize);
+            break;
+        case 18:  // Refers to 0x8100 : Index 17
+        	ReadTargetedLightSourceInfo0x8100.aEntries[17] = 6.28278; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[17], dataSize);
+            break;
+        case 19:  // Refers to 0x8100 : Index 18
+			ReadTargetedLightSourceInfo0x8100.aEntries[18] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[18], dataSize);
+			break;
+		case 20:  // Refers to 0x8100 : Index 19
+			ReadTargetedLightSourceInfo0x8100.aEntries[19] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[19], dataSize);
+			break;
+		case 21:  // Refers to 0x8100 : Index 20
+			ReadTargetedLightSourceInfo0x8100.aEntries[20] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[20], dataSize);
+			break;
+		case 22:  // Refers to 0x8100 : Index 21
+			ReadTargetedLightSourceInfo0x8100.aEntries[21] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[21], dataSize);
+			break;
+		case 23:  // Refers to 0x8100 : Index 22
+			ReadTargetedLightSourceInfo0x8100.aEntries[22] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[22], dataSize);
+			break;
+		case 24:  // Refers to 0x8100 : Index 23
+			ReadTargetedLightSourceInfo0x8100.aEntries[23] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[23], dataSize);
+			break;
+        case 25:  // Refers to 0x8100 : Index 24
+        	ReadTargetedLightSourceInfo0x8100.aEntries[24] = 3.14278; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[24], dataSize);
+            break;
+        case 26:  // Refers to 0x8100 : Index 25
+        	ReadTargetedLightSourceInfo0x8100.aEntries[25] = 6.28278; //getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[25], dataSize);
+            break;
+        case 27:  // Refers to 0x8100 : Index 26
+			ReadTargetedLightSourceInfo0x8100.aEntries[26] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[26], dataSize);
+			break;
+		case 28:  // Refers to 0x8100 : Index 27
+			ReadTargetedLightSourceInfo0x8100.aEntries[27] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[27], dataSize);
+			break;
+		case 29:  // Refers to 0x8100 : Index 28
+			ReadTargetedLightSourceInfo0x8100.aEntries[28] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[28], dataSize);
+			break;
+		case 30:  // Refers to 0x8100 : Index 29
+			ReadTargetedLightSourceInfo0x8100.aEntries[29] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[29], dataSize);
+			break;
+		case 31:  // Refers to 0x8100 : Index 30
+			ReadTargetedLightSourceInfo0x8100.aEntries[30] = 3.14278; //getParameterValues(UPPER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[30], dataSize);
+			break;
+		case 32:  // Refers to 0x8100 : Index 31
+			ReadTargetedLightSourceInfo0x8100.aEntries[31] = 6.28278; //getParameterValues(LOWER_LIMIT);
+			memcpy(pData, &ReadTargetedLightSourceInfo0x8100.aEntries[31], dataSize);
+			break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8100(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8100
+            *pData = 32;  // Indicate the number of sub-indexes
+            break;
+		case 1:  // Refers to 0x8100 : Index 1
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[0], pData, dataSize);
+		   // TODO: setParameterValues(Parameters0x8000.UpperLimit, UPPER_LIMIT);
+		   break;
+		case 2:  // Refers to 0x8100 : Index 2
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[1], pData, dataSize);
+		   // TODO: setParameterValues(Parameters0x8000.LowerLimit, LOWER_LIMIT);
+		   break;
+		case 3:  // Refers to 0x8100 : Index 3
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[2], pData, dataSize);
+		   break;
+		case 4:  // Refers to 0x8100 : Index 4
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[3], pData, dataSize);
+		   break;
+		case 5:  // Refers to 0x8100 : Index 5
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[4], pData, dataSize);
+		   break;
+		case 6:  // Refers to 0x8100 : Index 6
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[5], pData, dataSize);
+		   break;
+		case 7:  // Refers to 0x8100 : Index 7
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[6], pData, dataSize);
+		   break;
+		case 8:  // Refers to 0x8100 : Index 8
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[7], pData, dataSize);
+		   break;
+		case 9:  // Refers to 0x8100 : Index 9
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[8], pData, dataSize);
+		   break;
+		case 10:  // Refers to 0x8100 : Index 10
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[9], pData, dataSize);
+		   break;
+		case 11:  // Refers to 0x8100 : Index 11
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[10], pData, dataSize);
+		   break;
+		case 12:  // Refers to 0x8100 : Index 12
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[11], pData, dataSize);
+		   break;
+		case 13:  // Refers to 0x8100 : Index 13
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[12], pData, dataSize);
+		   break;
+		case 14:  // Refers to 0x8100 : Index 14
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[13], pData, dataSize);
+		   break;
+		case 15:  // Refers to 0x8100 : Index 15
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[14], pData, dataSize);
+		   break;
+		case 16:  // Refers to 0x8100 : Index 16
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[15], pData, dataSize);
+		   break;
+		case 17:  // Refers to 0x8100 : Index 17
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[16], pData, dataSize);
+		   break;
+		case 18:  // Refers to 0x8100 : Index 18
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[17], pData, dataSize);
+		   break;
+		case 19:  // Refers to 0x8100 : Index 19
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[18], pData, dataSize);
+		   break;
+		case 20:  // Refers to 0x8100 : Index 20
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[19], pData, dataSize);
+		   break;
+		case 21:  // Refers to 0x8100 : Index 21
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[20], pData, dataSize);
+		   break;
+		case 22:  // Refers to 0x8100 : Index 22
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[21], pData, dataSize);
+		   break;
+		case 23:  // Refers to 0x8100 : Index 23
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[22], pData, dataSize);
+		   break;
+		case 24:  // Refers to 0x8100 : Index 24
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[23], pData, dataSize);
+		   break;
+		case 25:  // Refers to 0x8100 : Index 25
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[24], pData, dataSize);
+		   break;
+		case 26:  // Refers to 0x8100 : Index 26
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[25], pData, dataSize);
+		   break;
+		case 27:  // Refers to 0x8100 : Index 27
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[26], pData, dataSize);
+		   break;
+		case 28:  // Refers to 0x8100 : Index 28
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[27], pData, dataSize);
+		   break;
+		case 29:  // Refers to 0x8100 : Index 29
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[28], pData, dataSize);
+		   break;
+		case 30:  // Refers to 0x8100 : Index 30
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[29], pData, dataSize);
+		   break;
+		case 31:  // Refers to 0x8100 : Index 31
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[30], pData, dataSize);
+		   break;
+		case 32:  // Refers to 0x8100 : Index 32
+		   memcpy(&ReadTargetedLightSourceInfo0x8100.aEntries[31], pData, dataSize);
+		   break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8108
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+/*UINT8 ReadObject0x8108(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8000 : Index 1
+        	//FactoryReset0x8108.FactoryReset = 1; //getParameterValues(UPPER_LIMIT);
+            //memcpy(pData, &FactoryReset0x8108.FactoryReset, dataSize);
+        	*pData = FactoryReset0x8108.FactoryReset;
+        	break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8108(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8108
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8108 : Index 1
+        	FactoryReset0x8108.FactoryReset = *pData;
+            //memcpy(&FactoryReset0x8108.FactoryReset, pData, dataSize);
+            //TODO: setParameterValues(FactoryReset0x8108.UpperLimit, UPPER_LIMIT);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8110
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+/*UINT8 ReadObject0x8110(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8110
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8110 : Index 1
+        	GetTotalCurrentSetting0x8110.GetTotalCurrentSetting = 0x7899; //getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &GetTotalCurrentSetting0x8110.GetTotalCurrentSetting, dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8110(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8110
+            *pData = 1;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8110 : Index 1
+            memcpy(&GetTotalCurrentSetting0x8110.GetTotalCurrentSetting, pData, dataSize);
+            //IOWR_32DIRECT(LSC_FIFO_READER_MM_SLAVE_0_BASE, 0x00, lsc_fifo_constant++);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8118
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8118(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8000
+            *pData = 2;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8118 : Index 1
+        	GetTemperatureReading0x8118.aEntries[0] = 78; //TODO: getParameterValues(UPPER_LIMIT);
+            memcpy(pData, &GetTemperatureReading0x8118.aEntries[0], dataSize);
+            break;
+        case 2:  // Refers to 0x8118 : Index 2
+        	GetTemperatureReading0x8118.aEntries[1] = 99; //TODO: getParameterValues(LOWER_LIMIT);
+            memcpy(pData, &GetTemperatureReading0x8118.aEntries[1], dataSize);
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8118(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8118
+            *pData = 2;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8118 : Index 1
+            memcpy(&GetTemperatureReading0x8118.aEntries[0], pData, dataSize);
+            // TODO Function
+            break;
+        case 2:  // Refers to 0x8118 : Index 2
+            memcpy(&GetTemperatureReading0x8118.aEntries[1], pData, dataSize);
+            // TODO Function
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+}
+
+// 0x8120
+////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 ReadObject0x8120(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                       UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8120
+            *pData = 5;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8120 : Index 1
+			// TODO: Function to retrieve local value
+            //AnalogHWSetting0x8400.AnalogHWSetting0 =
+            //    (uint16_t)getFeedbackValue(TEMP, ADC_ML_MERGED, 0);
+			ADCCalibrationSetting0x8120.CurrentGradient = channel[current_channel].adc_current_gradient; 	//voltage_gradient_channel[0];
+            memcpy(pData, &ADCCalibrationSetting0x8120.CurrentGradient, dataSize);
+            break;
+        case 2:  // Refers to 0x8120 : Index 2
+			// TODO: Function to retrieve local value
+            //AnalogHWSetting0x8400.AnalogHWSetting1 =
+            //    getFeedbackValue(ADC_GRADIENT, ADC_ML_MERGED, 0);
+			ADCCalibrationSetting0x8120.CurrentOffset = channel[current_channel].adc_current_offset; 		//voltage_offset_channel[0];
+            memcpy(pData, &ADCCalibrationSetting0x8120.CurrentOffset, dataSize);
+            break;
+        case 3:  // Refers to 0x8120 : Index 3
+			// TODO: Function to retrieve local value
+            //AnalogHWSetting0x8400.AnalogHWSetting0 =
+            //    (uint16_t)getFeedbackValue(TEMP, ADC_ML_MERGED, 0);
+			ADCCalibrationSetting0x8120.VoltageGradient = channel[current_channel].adc_voltage_gradient; 	//voltage_gradient_channel[0];
+            memcpy(pData, &ADCCalibrationSetting0x8120.VoltageGradient, dataSize);
+            break;
+        case 4:  // Refers to 0x8120 : Index 4
+			// TODO: Function to retrieve local value
+            //AnalogHWSetting0x8400.AnalogHWSetting1 =
+            //    getFeedbackValue(ADC_GRADIENT, ADC_ML_MERGED, 0);
+			ADCCalibrationSetting0x8120.VoltageOffset = channel[current_channel].adc_voltage_offset; 		//voltage_offset_channel[0];
+            memcpy(pData, &ADCCalibrationSetting0x8120.VoltageOffset, dataSize);
+            break;
+        case 5:  // Refers to 0x8120 : Index 5
+			ADCCalibrationSetting0x8120.Channel = current_channel;  				// voltage_offset_channel[0];
+			memcpy(pData, &ADCCalibrationSetting0x8120.Channel, dataSize);
+			break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+ \param     index               index of the requested object.
+ \param     subindex            subindex of the requested object.
+ \param     objSize             size of the requested object data, calculated
+ with OBJ_GetObjectLength \param     pData               Pointer to the buffer
+ where the data can be copied to \param     bCompleteAccess     Indicates if a
+ complete read of all subindices of the object shall be done or not
+
+ \return    ABORTIDX_XXX
+
+ \brief     Handles SDO read requests to TxPDO Parameter
+*////////////////////////////////////////////////////////////////////////////////////////
+UINT8 WriteObject0x8120(UINT16 index, UINT8 subindex, UINT32 dataSize,
+                        UINT16 MBXMEM *pData, UINT8 bCompleteAccess) {
+
+    if (bCompleteAccess) {
+        return ABORTIDX_UNSUPPORTED_ACCESS;
+    }
+    switch (subindex) {
+        case 0:          // Refers to 0x8120
+            *pData = 5;  // Indicate the number of sub-indexes
+            break;
+        case 1:  // Refers to 0x8120 : Index 1
+            memcpy(&ADCCalibrationSetting0x8120.CurrentGradient, pData, dataSize);
+            channel[current_channel].adc_current_gradient = ADCCalibrationSetting0x8120.CurrentGradient;
+            //voltage_gradient_channel[channel] = ADCCalibrationSetting0x8120.Gradient;
+            break;
+        case 2:  // Refers to 0x8120 : Index 2
+            memcpy(&ADCCalibrationSetting0x8120.CurrentOffset, pData, dataSize);
+            //voltage_offset_channel[0] = ADCCalibrationSetting0x8120.Offset;
+            channel[current_channel].adc_current_offset = ADCCalibrationSetting0x8120.CurrentOffset;
+            break;
+        case 3:  // Refers to 0x8120 : Index 3
+            memcpy(&ADCCalibrationSetting0x8120.VoltageGradient, pData, dataSize);
+            channel[current_channel].adc_voltage_gradient = ADCCalibrationSetting0x8120.VoltageGradient;
+            //voltage_gradient_channel[channel] = ADCCalibrationSetting0x8120.Gradient;
+            break;
+        case 4:  // Refers to 0x8120 : Index 4
+            memcpy(&ADCCalibrationSetting0x8120.VoltageOffset, pData, dataSize);
+            //voltage_offset_channel[0] = ADCCalibrationSetting0x8120.Offset;
+            channel[current_channel].adc_voltage_offset = ADCCalibrationSetting0x8120.VoltageOffset;
+            break;
+        case 5:  // Refers to 0x8120 : Index 5
+            memcpy(&ADCCalibrationSetting0x8120.Channel, pData, dataSize);
+            current_channel = ADCCalibrationSetting0x8120.Channel;
+            break;
+        default:
+            return ABORTIDX_SUBINDEX_NOT_EXISTING;
+            break;
+    }
+    return 0;
+
+}
+
+
+/** @} */

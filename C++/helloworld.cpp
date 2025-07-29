@@ -1,3 +1,12 @@
+/*
+ * 
+ * File: helloworld.cpp
+ * 
+ * Download a C++ Compiler - MinGW and add the installation folder to path before running this program
+ * 
+ * or use command: g++ -o helloworld helloworld.cpp 
+ * 
+*/
 #include <iostream>
 using namespace std;
 

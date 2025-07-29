@@ -1,0 +1,58 @@
+
+#include "sys/alt_stdio.h"
+#include "stdint.h"
+#include "system.h"				// must include otherwise will not work
+#include "altera_avalon_spi.h"
+#include "altera_avalon_spi_regs.h"
+#include "alt_types.h"
+#include "altera_avalon_pio_regs.h"
+
+// Delay function
+void delay_ms(int milliseconds) {
+    usleep(milliseconds * 1000);  // Convert to microseconds
+}
+
+int main()
+{
+	// Event loop that runs forever
+	while (1){
+
+		int spi_check = -1;
+		alt_u8 opcode_null[4] = {0x00,0x00,0x00,0x00};
+		alt_u8 opcode_null_receive[4] = {0x00, 0x00, 0x000, 0x00};
+		alt_u8 opcode_ready[4] = {0x06, 0x55, 0x00, 0x00};
+		alt_u8 opcode_ready_receive[4] = {0x05, 0x06, 0x07, 0x08};
+		uint8_t opcode_lock[4] = {0x05, 0x55, 0x00, 0x00};
+		uint8_t opcode_lock_receive[4] = {0x00, 0x00, 0x00, 0x00};
+
+		IOWR_ALTERA_AVALON_PIO_DATA(SPI_ADC_RESET_BASE, 0b00000000);
+		delay_ms(5);
+		IOWR_ALTERA_AVALON_PIO_DATA(SPI_ADC_RESET_BASE, 0b00000001);
+		delay_ms(20);
+
+		spi_check = alt_avalon_spi_command(SPI_BASE,0,4,opcode_null,0,0,0);
+		spi_check = alt_avalon_spi_command(SPI_BASE,0,0,0,4,opcode_null_receive,0);
+		alt_avalon_spi_command(SPI_BASE, 0,
+		                           4, opcode_ready,
+		                           0, NULL,
+		                           0);
+		alt_avalon_spi_command(SPI_BASE, 0,
+		                           0, NULL,
+		                           4, opcode_ready_receive,
+		                           0);
+		spi_check = alt_avalon_spi_command(SPI_BASE,0,4,opcode_lock,0,0,0);
+		spi_check = alt_avalon_spi_command(SPI_BASE,0,0,0,4,opcode_lock_receive,0);
+
+			uint8_t out = 0;
+			while(out != 1){
+				out = IORD_ALTERA_AVALON_PIO_DATA(ESC_EEPDONE_BASE);
+				//IOWR_ALTERA_AVALON_PIO_DATA(GPIO_BASE, out); // testing out
+			}
+
+		main_initial();
+	}
+
+
+
+	return 0;
+}

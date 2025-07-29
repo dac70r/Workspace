@@ -1,0 +1,15 @@
+../Core/Src/ethercat/New_Analog.c:62:9:APPL_AckErrorInd	1
+../Core/Src/ethercat/New_Analog.c:81:8:APPL_StartMailboxHandler	1
+../Core/Src/ethercat/New_Analog.c:97:8:APPL_StopMailboxHandler	1
+../Core/Src/ethercat/New_Analog.c:118:8:APPL_StartInputHandler	1
+../Core/Src/ethercat/New_Analog.c:134:8:APPL_StopInputHandler	1
+../Core/Src/ethercat/New_Analog.c:152:8:APPL_StartOutputHandler	1
+../Core/Src/ethercat/New_Analog.c:168:8:APPL_StopOutputHandler	1
+../Core/Src/ethercat/New_Analog.c:182:8:APPL_GenerateMapping	8
+../Core/Src/ethercat/New_Analog.c:271:6:APPL_InputMapping	12
+../Core/Src/ethercat/New_Analog.c:356:6:APPL_OutputMapping	3
+../Core/Src/ethercat/New_Analog.c:382:7:ReadObject0x8000	1
+../Core/Src/ethercat/New_Analog.c:433:7:WriteObject0x8000	1
+../Core/Src/ethercat/New_Analog.c:477:6:APPL_Application	1
+../Core/Src/ethercat/New_Analog.c:625:8:APPL_GetDeviceID	1
+../Core/Src/ethercat/New_Analog.c:635:6:main_initial	2

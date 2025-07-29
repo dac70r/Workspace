@@ -36,11 +36,75 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_MOSI",
+					"name" : "ADC0_CLOCK",
 					"strict" : false
 				},
 				{
-					"name" : "SPI_SS",
+					"name" : "ADC0_SS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC0_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "ADC1_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "ADC1_SS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC1_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "ADC2_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "ADC2_SS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC2_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "ADC3_CLOCK",
+					"strict" : false
+				},
+				{
+					"name" : "ADC3_SS",
+					"strict" : false
+				},
+				{
+					"name" : "ADC3_RESET",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_SS_n_actual",
+					"strict" : false
+				},
+				{
+					"name" : "LED_TESTER",
+					"strict" : false
+				},
+				{
+					"name" : "ESC_EEPDONE",
 					"strict" : false
 				},
 				{
@@ -48,7 +112,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SPI_MISO",
+					"name" : "RST_N",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_external_MISO",
 					"strict" : false
 				},
 				{

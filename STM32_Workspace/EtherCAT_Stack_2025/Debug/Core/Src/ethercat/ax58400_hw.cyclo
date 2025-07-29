@@ -1,0 +1,17 @@
+../Core/Src/ethercat/ax58400_hw.c:76:16:HW_SPI_TransmitReceive	1
+../Core/Src/ethercat/ax58400_hw.c:103:13:HW_SPI_Read	5
+../Core/Src/ethercat/ax58400_hw.c:167:13:HW_SPI_Write	4
+../Core/Src/ethercat/ax58400_hw.c:221:13:GetInterruptRegister	1
+../Core/Src/ethercat/ax58400_hw.c:237:13:ISR_GetInterruptRegister	1
+../Core/Src/ethercat/ax58400_hw.c:248:9:HW_Init	3
+../Core/Src/ethercat/ax58400_hw.c:320:6:HW_Release	1
+../Core/Src/ethercat/ax58400_hw.c:327:10:HW_GetALEventRegister	1
+../Core/Src/ethercat/ax58400_hw.c:340:10:HW_GetALEventRegister_Isr	1
+../Core/Src/ethercat/ax58400_hw.c:355:6:HW_EscRead	1
+../Core/Src/ethercat/ax58400_hw.c:378:6:HW_EscReadIsr	1
+../Core/Src/ethercat/ax58400_hw.c:392:6:HW_EscWrite	1
+../Core/Src/ethercat/ax58400_hw.c:415:6:HW_EscWriteIsr	1
+../Core/Src/ethercat/ax58400_hw.c:426:6:HW_RestartTarget	1
+../Core/Src/ethercat/ax58400_hw.c:445:6:EXTI9_5_IRQHandler	3
+../Core/Src/ethercat/ax58400_hw.c:464:6:EXTI4_IRQHandler	2
+../Core/Src/ethercat/ax58400_hw.c:478:6:TIM7_IRQHandler	3

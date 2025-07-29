@@ -12,6 +12,10 @@
 							<targetPlatform id="altera.nios2.mingw.gcc4.1394412919" name="Nios II" superClass="altera.nios2.mingw.gcc4"/>
 							<builder buildPath="${workspace_loc://HelloNios_II}" id="altera.tool.gnu.builder.mingw.1102796094" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="altera.tool.gnu.builder.mingw"/>
 							<tool id="altera.tool.gnu.c.compiler.mingw.1429046472" name="Nios II GCC C Compiler" superClass="altera.tool.gnu.c.compiler.mingw">
+								<option id="gnu.c.compiler.option.include.paths.1053321457" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/HelloNios_bsp}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/HelloNios_II}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.947457783" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="altera.tool.gnu.cpp.compiler.mingw.1759217043" name="Nios II GCC C++ Compiler" superClass="altera.tool.gnu.cpp.compiler.mingw">
@@ -24,6 +28,7 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.412830742.1773002785" name="My_First_NIOS_II_Platform_Designer_SRAM.hex" rcbsApplicability="disable" resourcePath="mem_init/My_First_NIOS_II_Platform_Designer_SRAM.hex" toolsToInvoke=""/>
 				</configuration>
 			</storageModule>
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.412830742" moduleId="org.eclipse.cdt.core.settings" name="Nios II">
@@ -80,4 +85,10 @@
 			</target>
 		</buildTargets>
 	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Nios II">
+			<resource resourceType="PROJECT" workspacePath="/HelloNios_II"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

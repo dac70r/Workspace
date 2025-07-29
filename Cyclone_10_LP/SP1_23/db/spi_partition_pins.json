@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "esc_spi_export_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_export_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_export_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_ss_export_export",
+					"strict" : false
+				},
+				{
+					"name" : "spi_adc_reset_export_export",
+					"strict" : false
+				},
+				{
+					"name" : "spi_export_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "spi_export_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "spi_export_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_eepdone_export_export",
+					"strict" : false
+				},
+				{
+					"name" : "reset_reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "esc_spi_export_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "spi_export_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
