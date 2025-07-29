@@ -1,0 +1,66 @@
+#include <app_core.h>
+
+/* init done flag to set only run after init */
+bool initDoneFlag = 0;  //
+
+/* init done flag for adc */
+bool adcFlag = 0;
+
+/**
+ * @brief initialize stage for application
+ *
+ */
+void AppInit(void) {
+#if ADS131A04 == 1
+    /* init for ad4111 */
+    //    adcFlag = initADC();
+    // ADS131A04_init(ADS131A04_ADC1, &hspi6);
+    // adcStartup();
+	StartExtADC();
+#endif
+
+#if DEBUG == 1
+    //printToConsole("Init Complete");
+#endif
+
+    initDoneFlag = 1;
+}
+
+// uint32_t timerCounter = 0;
+
+/**
+ * @brief  run timer timely task
+ *
+ */
+void AppTimerRun(void) {
+    // timerCounter++;
+
+    /* prevent overflow */
+    //    if (timerCounter == 4294967294) {
+    //        timerCounter = 0;
+    //    }
+
+    // TODO do ethercat averaging for ADS131A04
+    // if ((timerCounter % 1000) == 0) {
+#if ADS131A04 == 1
+            //    readADC();
+        // ADS131A04_receive_data();
+#endif
+        // timerCounter = 0;
+
+        //        LEDHeartbeatToggle();
+    // }
+}
+
+/**
+ * @brief checking if ad4111 is ready to run
+ *
+ * @return true when ready
+ * @return false when not ready
+ */
+bool RunReady(void) {
+    if (initDoneFlag && adcFlag) {
+        return true;
+    }
+    return false;
+}

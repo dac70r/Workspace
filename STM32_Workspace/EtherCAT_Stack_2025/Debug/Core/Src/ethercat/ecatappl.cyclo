@@ -1,0 +1,13 @@
+../Core/Src/ethercat/ecatappl.c:222:6:PDO_InputMapping	6
+../Core/Src/ethercat/ecatappl.c:292:6:PDO_OutputMapping	6
+../Core/Src/ethercat/ecatappl.c:342:6:ECAT_CheckTimer	6
+../Core/Src/ethercat/ecatappl.c:382:6:HandleCycleTimeMeasurement	7
+../Core/Src/ethercat/ecatappl.c:417:8:GetSystemTimeDelay	5
+../Core/Src/ethercat/ecatappl.c:457:6:PDI_Isr	16
+../Core/Src/ethercat/ecatappl.c:574:6:Sync0_Isr	21
+../Core/Src/ethercat/ecatappl.c:672:6:Sync1_Isr	5
+../Core/Src/ethercat/ecatappl.c:706:8:MainInit	6
+../Core/Src/ethercat/ecatappl.c:816:6:MainLoop	14
+../Core/Src/ethercat/ecatappl.c:908:6:ECAT_Application	4
+../Core/Src/ethercat/ecatappl.c:997:8:ESC_EepromAccess	17
+../Core/Src/ethercat/ecatappl.c:1176:8:ESC_EepromWriteCRC	6

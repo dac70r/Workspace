@@ -1,0 +1,13 @@
+../Core/Src/ethercat/mailbox.c:189:7:PutInMbxQueue	24	static
+../Core/Src/ethercat/mailbox.c:222:15:GetOutOfMbxQueue	24	static
+../Core/Src/ethercat/mailbox.c:257:6:MBX_Init	16	static
+../Core/Src/ethercat/mailbox.c:304:8:MBX_StartMailboxHandler	16	static
+../Core/Src/ethercat/mailbox.c:371:6:MBX_StopMailboxHandler	16	static
+../Core/Src/ethercat/mailbox.c:452:7:MailboxServiceInd	24	static
+../Core/Src/ethercat/mailbox.c:494:6:MBX_MailboxWriteInd	24	static
+../Core/Src/ethercat/mailbox.c:551:6:MBX_MailboxReadInd	16	static
+../Core/Src/ethercat/mailbox.c:633:6:MBX_MailboxRepeatReq	16	static
+../Core/Src/ethercat/mailbox.c:696:7:MBX_MailboxSendReq	24	static
+../Core/Src/ethercat/mailbox.c:763:6:MBX_CheckAndCopyMailbox	16	static
+../Core/Src/ethercat/mailbox.c:868:7:MBX_CopyToSendMailbox	32	static
+../Core/Src/ethercat/mailbox.c:959:6:MBX_Main	16	static
